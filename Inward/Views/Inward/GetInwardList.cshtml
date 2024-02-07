@@ -1,0 +1,71 @@
+﻿@using Inward.Entity
+<!-- Views/Your/List.cshtml -->
+@model IEnumerable<InwardEntity>
+
+@{
+    ViewData["Title"] = "List";
+    var msg = TempData["SaveStatus"] as string;
+    Layout = null;
+}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
+<link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">List of Inwards</h3>
+                    </div>
+                    <div class="card-body">
+                        <table id="InwardList" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Inward No</th>
+                                    <th>Inward date</th>
+                                    <th>Farmer Name </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.InwardNo</td>
+                                        <td>@item.InwardDate</td>
+                                        <td>@item.Farmer_Name</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.7/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+
+<script>
+    $(document).ready(function () {
+        debugger
+        var messageFromTempData = '@msg';
+        if (messageFromTempData != null && messageFromTempData != '') {
+            // ShowDynamicSwalAlert("", messageFromTempData);
+            alert(messageFromTempData)
+        }
+
+
+        $('#InwardList').DataTable();
+    });
+</script>

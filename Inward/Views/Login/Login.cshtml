@@ -1,0 +1,118 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+@model Inward.Entity.UserMaster
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KFM | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link href="~/assets/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
+    <link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
+    @* <link href="~/assets/dist/css/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" /> *@
+    <link href="~/assets/dist/css/fontawesome-free/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="hold-transition login-page">
+    <div class="login-page bg-white">
+        <div class="container-fluid h-auto-small p-0">
+            <div class="row m-0">
+                <div class="col-md-8 px-0">
+                    <div class="d-flex justify-content-center align-items-center log_bg" style="min-height: 100vh; --darkreader-inline-bgcolor: initial;">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <img src="~/images/bg2.jpg" class="w-50" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 shadow h-100 d-flex justify-content-center align-items-center">
+                    <div class="login-box rounded d-flex align-items-center flex-column justify-content-between m-auto pt-4 log_bg" style="min-height: 100vh; --darkreader-inline-bgcolor: initial;">
+                        <!-- /.login-logo -->
+                        <div>&nbsp;</div>
+                        <!--<div class="login-logo">
+                            <a href="index.html"><b>Lo</b>go</a>
+                        </div>-->
+                        <!-- /.login-logo -->
+                        @* <img src="assets/img/logo.png" class="mb-3" width="250"> *@
+                        <div class="card border-0 shadow">
+                            <div class="card-body p-4 border-0">
+                                <div class="text-center">
+                                    @*                                     <img src="~/images/.png" class="w-25 m-auto" />
+                                    *@
+                                </div>
+                                <div class="card-body login-card-body">
+                                    <form asp-action="Login" asp-controller="Login">
+                                        @* <div class="pt-2"> *@
+                                        <div>
+                                            User Name
+                                            <div class="input-group my-3">
+                                                <input asp-for="UserName" type="text" class="form-control">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fa fa-user"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="UserName" class="text-danger"></span>
+                                        </div>
+
+                                        <div>
+                                            Password
+                                            <div class="input-group my-3">
+                                                <input asp-for="Password" type="password" class="form-control">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        <span class="fa fa-key"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span asp-validation-for="Password" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="row">
+                                            <!-- /.col -->
+                                            <div class="col-4">
+                                                <button type="submit" class="btn btn-primary btn-block btn-center">Sign In</button>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.login-card-body -->
+                    </div>
+                    <div>&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- /.login-box -->
+    <script src="~/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @* <script src="~/assets/dist/js/common.js"></script> *@
+    <script src="~/js/common.js"></script>
+    <script src="~/assets/dist/js/sweetalert.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        var msg = '@Html.Raw(@ViewBag.Message)';
+        if (msg != null && msg != '') {
+            ShowDynamicSwalAlert("", msg);
+        }
+    });
+    $("#UserName").change(function () {
+        $("#lblErrorMsg").text('');
+    });
+</script>
+
