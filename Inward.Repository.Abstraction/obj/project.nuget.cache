@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rvhJVx7ACek=",
+  "dgSpecHash": "COQ4zkGd2w4=",
   "success": true,
-  "projectFilePath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+  "projectFilePath": "E:\\jiju\\GITHUB_GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yaxp2\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\yaxp2\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

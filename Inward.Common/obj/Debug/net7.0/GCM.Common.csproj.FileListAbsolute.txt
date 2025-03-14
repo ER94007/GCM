@@ -11,3 +11,16 @@ E:\jiju\GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.dll
 E:\jiju\GCM\Inward.Common\obj\Debug\net7.0\refint\GCM.Common.dll
 E:\jiju\GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.pdb
 E:\jiju\GCM\Inward.Common\obj\Debug\net7.0\ref\GCM.Common.dll
+E:\jiju\GITHUB_GCM\Inward.Common\bin\Debug\net7.0\GCM.Common.deps.json
+E:\jiju\GITHUB_GCM\Inward.Common\bin\Debug\net7.0\GCM.Common.dll
+E:\jiju\GITHUB_GCM\Inward.Common\bin\Debug\net7.0\GCM.Common.pdb
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.csproj.AssemblyReference.cache
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.GeneratedMSBuildEditorConfig.editorconfig
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.AssemblyInfoInputs.cache
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.AssemblyInfo.cs
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.csproj.CoreCompileInputs.cache
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.sourcelink.json
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.dll
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\refint\GCM.Common.dll
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\GCM.Common.pdb
+E:\jiju\GITHUB_GCM\Inward.Common\obj\Debug\net7.0\ref\GCM.Common.dll

@@ -7280,11 +7280,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj",
+      "projectUniqueName": "E:\\jiju\\GITHUB_GCM\\Inward.Services\\GCM.Services.csproj",
       "projectName": "GCM.Services",
-      "projectPath": "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj",
+      "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.Services\\GCM.Services.csproj",
       "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
-      "outputPath": "E:\\jiju\\GCM\\Inward.Services\\obj\\",
+      "outputPath": "E:\\jiju\\GITHUB_GCM\\Inward.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7305,17 +7305,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+            "E:\\jiju\\GITHUB_GCM\\Inward.Common\\GCM.Common.csproj": {
+              "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.Common\\GCM.Common.csproj"
             },
-            "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+            "E:\\jiju\\GITHUB_GCM\\Inward.Entity\\GCM.Entity.csproj": {
+              "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.Entity\\GCM.Entity.csproj"
             },
-            "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+            "E:\\jiju\\GITHUB_GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+              "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
             },
-            "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
-              "projectPath": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
+            "E:\\jiju\\GITHUB_GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+              "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
             }
           }
         }
