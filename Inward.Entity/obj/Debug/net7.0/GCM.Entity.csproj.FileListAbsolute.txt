@@ -1,0 +1,12 @@
+E:\jiju\GCM\Inward.Entity\bin\Debug\net7.0\GCM.Entity.deps.json
+E:\jiju\GCM\Inward.Entity\bin\Debug\net7.0\GCM.Entity.dll
+E:\jiju\GCM\Inward.Entity\bin\Debug\net7.0\GCM.Entity.pdb
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.GeneratedMSBuildEditorConfig.editorconfig
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.AssemblyInfoInputs.cache
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.AssemblyInfo.cs
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.csproj.CoreCompileInputs.cache
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.sourcelink.json
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.dll
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\refint\GCM.Entity.dll
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\GCM.Entity.pdb
+E:\jiju\GCM\Inward.Entity\obj\Debug\net7.0\ref\GCM.Entity.dll

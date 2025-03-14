@@ -1,0 +1,12 @@
+E:\jiju\KFM 14032025\Inward.Entity\bin\Debug\net7.0\Inward.Entity.deps.json
+E:\jiju\KFM 14032025\Inward.Entity\bin\Debug\net7.0\Inward.Entity.dll
+E:\jiju\KFM 14032025\Inward.Entity\bin\Debug\net7.0\Inward.Entity.pdb
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.GeneratedMSBuildEditorConfig.editorconfig
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.AssemblyInfoInputs.cache
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.AssemblyInfo.cs
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.csproj.CoreCompileInputs.cache
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.sourcelink.json
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.dll
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\refint\Inward.Entity.dll
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\Inward.Entity.pdb
+E:\jiju\KFM 14032025\Inward.Entity\obj\Debug\net7.0\ref\Inward.Entity.dll

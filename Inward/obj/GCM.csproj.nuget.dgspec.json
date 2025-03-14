@@ -1,0 +1,617 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\jiju\\GCM\\Inward\\GCM.csproj": {}
+  },
+  "projects": {
+    "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectName": "GCM.Common",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "projectName": "GCM.Entity",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "projectName": "GCM.Repository.Abstraction",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward.Repository\\GCM.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Repository\\GCM.Repository.csproj",
+        "projectName": "GCM.Repository",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Repository\\GCM.Repository.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "projectName": "GCM.Services.Abstraction",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj",
+        "projectName": "GCM.Services",
+        "projectPath": "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\jiju\\GCM\\Inward\\GCM.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\jiju\\GCM\\Inward\\GCM.csproj",
+        "projectName": "GCM",
+        "projectPath": "E:\\jiju\\GCM\\Inward\\GCM.csproj",
+        "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+        "outputPath": "E:\\jiju\\GCM\\Inward\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Common\\GCM.Common.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Repository\\GCM.Repository.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Repository\\GCM.Repository.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
+              },
+              "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj": {
+                "projectPath": "E:\\jiju\\GCM\\Inward.Services\\GCM.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.28, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
