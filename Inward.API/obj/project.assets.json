@@ -466,11 +466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\jiju\\GCM\\Inward.API\\GCM.API.csproj",
+      "projectUniqueName": "E:\\jiju\\GITHUB_GCM\\Inward.API\\GCM.API.csproj",
       "projectName": "GCM.API",
-      "projectPath": "E:\\jiju\\GCM\\Inward.API\\GCM.API.csproj",
+      "projectPath": "E:\\jiju\\GITHUB_GCM\\Inward.API\\GCM.API.csproj",
       "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
-      "outputPath": "E:\\jiju\\GCM\\Inward.API\\obj\\",
+      "outputPath": "E:\\jiju\\GITHUB_GCM\\Inward.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
