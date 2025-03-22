@@ -1,165 +1,101 @@
 ﻿@{
-    Layout = null;
-    var modelCnt = 1;
-    if (@Model != null && @Model.GradeDetails != null)
+    
+    var msg = TempData["SaveStatus"] as string;
+    long studentid = 0;
+    if(Model.studentid != 0)
     {
-        modelCnt = @Model.GradeDetails.Count();
-        var msg = TempData["Message"] as string;
-
+        studentid = Model.studentid;
     }
 }
-@model Inward.Entity.InwardEntity
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Admin Panel</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-
-    <!-- AdminLTE CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
-
-    <link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
-
-
-    <style>
-        /* Custom Styles for Smaller Sidebar and Content */
-        .main-sidebar {
-            width: 200px; /* Adjust the width as needed */
-        }
-
-        .content-wrapper {
-            margin-left: 200px; /* Adjust the margin as needed */
-        }
-
-        /* Custom Styles for Smaller Labels, Textboxes, and Dropdowns */
-        label, input, select {
-            font-size: 12px; /* Adjust the font size as needed */
-        }
-    </style>
-</head>
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-bell"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="#" class="brand-link">
-                <span class="brand-text font-weight-light">AdminLTE</span>
-            </a>
-            <div class="sidebar">
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
-
+@model Inward.Entity.Student
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div class="content-header">
-                <div class="container-fluid">
-                    <!-- <h1 class="m-0 text-dark">Welcome to Your Admin Panel</h1> -->
-                </div>
-            </div>
-
             <!-- Main content -->
-            <div class="content">
+            @* <div class="content"> *@
                 <div class="container-fluid">
 
                     <form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
-
+                        <input type="hidden" asp-for="studentid" value="@studentid"/>
                         <!-- Inward Information -->
                         <div class="row mb-3">
                             <div class="col-md-12">
 
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title">Inward Information</h3>
+                                        <h3 class="card-title">Student Information</h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <!-- Inward No -->
                                                 <div class="form-group">
-                                                    <label for="inwardNo">Inward No:</label>
-                                                    <input asp-for="InwardNo" type="text" class="form-control" id="inwardNo" placeholder="Enter Inward No" value="@ViewBag.InwardNo" readonly>
-                                                    <span asp-validation-for="InwardNo" class="text-danger"></span>
+                                                    <label for="name">Student Name</label>
+                                                    <input asp-for="name" type="text" class="form-control"  placeholder="Enter Name" >
+                                                    <span asp-validation-for="name" class="text-danger"></span>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <!-- Inward Date -->
                                                 <div class="form-group">
-                                                    <label for="inwardDate">Inward Date:</label>
-                                                    <input asp-for="InwardDate" type="date" class="form-control" id="inwardDate">
-                                                    <span asp-validation-for="InwardDate" class="text-danger"></span>
+                                                    <label for="mobileno">Mobile No</label>
+                                                    <input asp-for="mobileno" type="text" class="form-control" >
+                                                    <span asp-validation-for="mobileno" class="text-danger"></span>
+
+                                                </div>
+                                            </div> 
+                                            <div class="col-md-4">
+                                                <!-- Inward Date -->
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input asp-for="email" type="email" class="form-control" >
+                                                    <span asp-validation-for="email" class="text-danger"></span>
 
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <!-- Name of Farmer Dropdown -->
                                                 <div class="form-group">
-                                                    <label for="farmerName">Name of Farmer:</label>
+                                                    <label for="genderid">Gender:</label>
 
 
-                                                    <select asp-for="Farmer_Id" id="FarmerIds" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.FarmerNames, "Value", "Text"))">
-                                                        <option value="">---Select Farmer---</option>
+                                                    <select asp-for="genderid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.GenderList, "Value", "Text"))">
+                                                        <option value="">---Select Gender---</option>
                                                     </select>
-                                                    <span asp-validation-for="Farmer_Id" class="text-danger"></span>
+                                                    <span asp-validation-for="genderid" class="text-danger"></span>
 
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <!-- Add Farmer Button Icon -->
+                                            <div class="col-md-4">
+                                                <!-- Name of Farmer Dropdown -->
                                                 <div class="form-group">
-                                                    <button type="button" class="btn btn-primary"><i class="fas fa-user-plus"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <!-- Contact No -->
-                                                <div class="form-group">
-                                                    <label for="contactNo">Contact No:</label>
-                                                    <input asp-for="Contact_No" type="text" class="form-control" id="contactNo" placeholder="Enter Contact No" readonly>
-                                                    <span asp-validation-for="Contact_No" class="text-danger"></span>
+                                                    <label for="categoryid">Category:</label>
+
+
+                                                    <select asp-for="categoryid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.CategoryList, "Value", "Text"))">
+                                                        <option value="">---Select Category---</option>
+                                                    </select>
+                                                    <span asp-validation-for="categoryid" class="text-danger"></span>
 
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <!-- Pan Card No -->
-                                                <div class="form-group">
-                                                    <label for="panCardNo">Pan Card No:</label>
-                                                    <input asp-for="Pan_Card_No" type="text" class="form-control" id="panCardNo" placeholder="Enter Pan Card No" readonly>
-                                                    <span asp-validation-for="Pan_Card_No" class="text-danger"></span>
+                                        <div class="col-md-4">
+                                            <!-- Inward Date -->
+                                            <div class="form-group">
+                                                <label for="applicationno">Application No</label>
+                                                <input asp-for="applicationno" type="text" class="form-control">
+                                                <span asp-validation-for="applicationno" class="text-danger"></span>
 
-                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- Inward Date -->
+                                            <div class="form-group">
+                                                <label for="enrollmentno">Enrollment No</label>
+                                                <input asp-for="enrolmentno" type="text" class="form-control">
+                                                <span asp-validation-for="enrolmentno" class="text-danger"></span>
+
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -167,150 +103,7 @@
                         </div>
 
 
-                        <div class="card-body pb-0">
-
-                            @*    <a id="GradeButton" class="btn btn-info rounded-0" style="min-width:220px;" data-toggle="collapse" href="#Grade" aria-expanded="false">
-                            <i class="fa fa-train"></i> Train Reservation
-                            </a> *@
-
-                            <div id="GradeId">
-                                <div class="border border-info card-body">
-                                    <table class="table bg-white table-bordered text-center table-sm" id="GradeList">
-                                        <thead>
-                                            <tr class="bg-light">
-                                                <th>
-                                                    <span>Name of Grade</span>
-                                                </th>
-                                                <th>
-                                                    <span>Name of Unit</span>
-                                                </th>
-                                                <th>
-                                                    <span>Total Weight kg</span>
-                                                </th>
-                                                <th>
-                                                    <span>Total Karat</span>
-                                                </th>
-                                                <th>
-                                                    <span>Auction Rate (Per Karat)</span>
-                                                </th>
-                                                <th>
-                                                    <span>Vendor Rate</span>
-                                                </th>
-                                                <th>
-                                                    <span>Vendor Code</span>
-                                                </th>
-
-                                                <th>
-                                                    <span>Net Amount</span>
-                                                </th>
-                                                @* <th>
-                                                <span>Action<span class="text-danger"></span></span>
-                                                </th> *@
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if (Model != null && Model.GradeDetails != null && Model.GradeDetails.Count() > 0)
-                                            {
-                                                @for (int i = 0; i < Model.GradeDetails.Count; i++)
-                                                {
-                                                    <tr id="@("tr" + i)">
-                                                        <td>
-                                                            <select asp-for="@Model.GradeDetails[i].GradeName" asp-items="@(new SelectList(ViewBag.GradeNames, "Value", "Text"))" class="form-control">
-                                                                <option value="">---Select Grade---</option>
-                                                            </select>
-                                                            <span asp-validation-for="@Model.GradeDetails[i].GradeName" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <select asp-for="@Model.GradeDetails[i].UnitName" asp-items="@(new SelectList(ViewBag.UnitNames, "Value", "Text"))" class="form-control">
-                                                                <option value="">---Select Unit---</option>
-                                                            </select>
-                                                            <span asp-validation-for="@Model.GradeDetails[i].UnitName" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].TotalWeight" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].TotalWeight" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].TotalCarat" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].TotalCarat" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].AuctionRate" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].AuctionRate" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].VendorRate" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].VendorRate" class="text-danger"></span>
-                                                        </td>
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].VendorCode" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].VendorCode" class="text-danger"></span>
-                                                        </td>
-
-                                                        <td>
-                                                            <input asp-for="@Model.GradeDetails[i].NetAmount" class="form-control">
-                                                            <span asp-validation-for="@Model.GradeDetails[i].NetAmount" class="text-danger"></span>
-                                                        </td>
-                                                        @if (i != 0)
-                                                        {
-                                                            <td><input type="button" value="Remove" onclick="RemoveTextBox(this, '@i');"></td>
-                                                        }
-                                                    </tr>
-                                                }
-                                            }
-                                            else
-                                            {
-                                                <tr>
-                                                    <td>
-                                                        <input type="hidden" id="@("hdnIsDeletedTrain")" asp-for="@Model.GradeDetails[0].isDeleted" />
-                                                        <select asp-for="@Model.GradeDetails[0].GradeName" asp-items="@(new SelectList(ViewBag.GradeNames, "Value", "Text"))" class="form-control">
-                                                            <option value="">---Select Grade---</option>
-                                                        </select>
-                                                        <span asp-validation-for="@Model.GradeDetails[0].GradeName" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <select asp-for="@Model.GradeDetails[0].UnitName" asp-items="@(new SelectList(ViewBag.UnitNames, "Value", "Text"))" class="form-control">
-                                                            <option value="">---Select Unit---</option>
-                                                        </select>
-                                                        <span asp-validation-for="@Model.GradeDetails[0].UnitName" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].TotalWeight" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].TotalWeight" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].TotalCarat" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].TotalCarat" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].AuctionRate" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].AuctionRate" class="text-danger"></span>
-                                                    </td>
-
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].VendorRate" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].VendorRate" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].VendorCode" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].VendorCode" class="text-danger"></span>
-                                                    </td>
-                                                    <td>
-                                                        <input asp-for="@Model.GradeDetails[0].NetAmount" class="form-control">
-                                                        <span asp-validation-for="@Model.GradeDetails[0].NetAmount" class="text-danger"></span>
-                                                    </td>
-                                                </tr>
-                                            }
-                                        </tbody>
-
-                                    </table>
-                                    <div class="text-left mt-2">
-                                        <input id="AddbuttonGrade" class="btn btn-success btn-sm" type="button" value="Add" />
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                       
 
 
                         <div class="text-center mt-3">
@@ -318,25 +111,49 @@
                                 <i class="fas fa-save mr-1"></i>
                                 Save
                             </button>
-
-
-                            @* <button type="button" id="btnCancel" onclick="funCancelForm('EmployeeTravelReqDetails','InsertEmployeeReqDetails');" class="btn btn-light border">
-                            <i class="fas fa-times mr-1"></i>
-                            Cancel
-                            </button> *@
+                            <a href="@Url.Action("ViewStudents", "Inward")" class="btn btn-secondary">
+                                <i class="fas fa-list mr-1"></i>
+                                Go to List
+                            </a>
+                            <button type="button" id="btnUploadExcel" class="btn btn-success" data-toggle="modal" data-target="#uploadModal">
+                                <i class="fas fa-upload mr-1"></i>
+                                Upload Excel
+                            </button>
                         </div>
 
                     </form>
                 </div>
-            </div>
+            @* </div> *@
         </div>
 
-        <footer class="main-footer">
-            <div class="float-right d-none d-sm-block">
-                Version 1.0
+        
+    
+    <!-- Upload Excel Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form asp-action="FileUpload" enctype="multipart/form-data">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Upload Student Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                        @* <div class="form-group"> *@
+                        @*     <label for="excelFile">Choose Excel File</label> *@
+                        @*     <input asp-for="studentfile" type="file" class="form-control-file" accept=".xlsx, .xls"> *@
+                        @* </div> *@
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-success" value="Upload  ">
+                </div>
             </div>
-            <strong>&copy; 2024 KFM</strong> All rights reserved.
-        </footer>
+            </form>
+        </div>
     </div>
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
@@ -353,207 +170,10 @@
     <script type="text/javascript">
         $(document).ready(function () {
             debugger;
-            var msg = '@Html.Raw(@ViewBag.Message)';
+            var msg = '@msg';
             if (msg != null && msg != '') {
                 ShowDynamicSwalAlert("", msg);
             }
         });
-        $("#UserName").change(function () {
-            $("#lblErrorMsg").text('');
-        });
+        
     </script>
-
-
-
-    <script>
-        $(document).ready(function () {
-
-
-
-
-            var rowCount = 0;
-
-            // AJAX logic for fetching farmer details
-            $("#FarmerIds").on("change", function () {
-                var selectedFarmerId = $(this).val();
-                if (selectedFarmerId) {
-                    // Use AJAX to fetch details based on selectedFarmerId and update the textboxes
-                    $.ajax({
-                        url: "/Inward/GetFarmerDetailsById",
-                        type: "GET",
-                        data: { farmerId: selectedFarmerId },
-                        dataType: 'json',
-                        success: function (data) {
-                            console.log(data);
-                            $("#contactNo").val(data.contactNo);
-                            $("#panCardNo").val(data.panCardNo);
-                        },
-                        error: function () {
-                            // Handle error if needed
-                        }
-                    });
-                } else {
-                    // Clear textboxes if no farmer selected
-                    $("#contactNo").val("");
-                    $("#panCardNo").val("");
-                }
-            });
-
-
-            $(document).on("change", "[name^='GradeDetails'][name$='GradeName']", function () {
-                debugger
-                var gradeId = $(this).val();
-                var currentRow = $(this).closest('tr');
-                var unitDropdown = currentRow.find("[name^='GradeDetails'][name$='UnitName']");
-
-                // Use AJAX to fetch details based on gradeId and update the Unit dropdown
-                $.ajax({
-                    url: "/Inward/GetUnitDetailsByGrade",
-                    type: "GET",
-                    data: { gradeId: gradeId },
-                    dataType: 'json',
-                    success: function (data) {
-                        console.log("Received data:", data); // Check if data is received
-
-                        // Clear and populate the Unit dropdown with fetched data
-                        unitDropdown.empty();
-                        unitDropdown.append("<option value=''>---Select Unit---</option>");
-                        $.each(data, function (index, item) {
-                            // Exclude disabled options
-                            if (!item.disabled) {
-                                unitDropdown.append("<option value='" + item.value + "'>" + item.text + "</option>");
-                            }
-                        });
-                    },
-                    error: function () {
-                        console.error("Error fetching unit details"); // Check for errors
-                    }
-                });
-
-
-            });
-
-            function calculateRowValues(row) {
-                var totalWeight = parseFloat(row.find("[name$='TotalWeight']").val()) || 0;
-                var auctionRate = parseFloat(row.find("[name$='AuctionRate']").val()) || 0;
-
-                var roundedTotalWeight = Math.round(totalWeight / 20);
-                var roundedAuctionRate = Math.round(auctionRate / 20);
-                var totalCarat = Math.round(totalWeight / 20);
-
-                var vendorrate = roundedAuctionRate;
-                var netAmount = totalWeight * vendorrate;
-
-                row.find("[name$='RoundedTotalWeight']").val(roundedTotalWeight);
-                row.find("[name$='VendorRate']").val(vendorrate);
-                row.find("[name$='NetAmount']").val(netAmount);
-                row.find("[name$='TotalCarat']").val(totalCarat);
-
-            }
-
-            $(document).on("input", "[name^='GradeDetails'][name$='TotalWeight'], [name^='GradeDetails'][name$='AuctionRate']", function () {
-                calculateRowValues($(this).closest('tr'));
-            });
-
-        });
-    </script>
-
-
-
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            var msg = '@Html.Raw(@ViewBag.Message)';
-            if (msg != null && msg != '') {
-                ShowDynamicSwalAlert("", msg);
-            }
-
-            var ttlCount = @modelCnt;
-            var removeCount = 0;
-            var rowIdx = 0;
-            var strHTML = "";
-
-            $("#AddbuttonGrade").on("click", function () {
-
-                debugger
-                var flag = true;
-                if (flag) {
-                    strHTML += "<tr id='tr" + ttlCount + "'>";
-                    strHTML += "<td>";
-                    strHTML += "<select name='GradeDetails[" + ttlCount + "].GradeName' class='form-control'>";
-                    strHTML += "<option value=''>---Select Grade---</option>";
-
-        @foreach (var grade in ViewBag.GradeNames)
-        {
-            <text>
-                            strHTML += "<option value=' @grade.Value '>" + '@grade.Text' + "</option>";
-            </text>
-        }
-
-
-
-                        strHTML += "</select>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].GradeName' class='text-danger'></span>";
-                    strHTML += "</td>";
-
-
-                    strHTML += "<td>";
-                    strHTML += "<select name='GradeDetails[" + ttlCount + "].UnitName' class='form-control'>";
-                    strHTML += "<option value=''>---Select Unit---</option>";
-
-        @foreach (var unit in ViewBag.UnitNames)
-        {
-            <text>
-                            strHTML += "<option value='" + @unit.Value + "'>" + '@unit.Text' + "</option>";
-            </text>
-        }
-
-                        strHTML += "</select>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].UnitName' class='text-danger'></span>";
-                    strHTML += "</td>";
-
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].TotalWeight' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].TotalWeight' class='text-danger'></span></td>";
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].AuctionRate' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].AuctionRate' class='text-danger'></span></td>";
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].VendorCode' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].VendorCode' class='text-danger'></span></td>";
-
-
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].TotalCarat' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].TotalCarat' class='text-danger'></span></td>";
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].VendorRate' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].VendorRate' class='text-danger'></span></td>";
-
-                    strHTML += "<td><input name='GradeDetails[" + ttlCount + "].NetAmount' class='form-control'>";
-                    strHTML += "<span asp-validation-for='GradeDetails[" + ttlCount + "].NetAmount' class='text-danger'></span></td>";
-
-                    strHTML += "<td><input type='button' class='btn btn-danger btn-sm small' value='Remove' onclick='RemoveTextBox(this, " + parseInt(ttlCount) + ");'></td>";
-                    strHTML += "</tr>";
-
-                    ttlCount++;
-                    $("#GradeList").append(strHTML);
-                }
-            });
-
-        });
-
-        function RemoveTextBox(button, rowId) {
-            $(button).closest('tr').remove();
-            $("#hdnIsDeletedTrain" + rowId).val(true);
-            removeCount++;
-        }
-
-    </script>
-
-
-
-
-
-</body>
-</html>

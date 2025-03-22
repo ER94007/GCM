@@ -8,6 +8,15 @@ namespace Inward.Entity
 {
     public class StoreProcedures
     {
+        public static string AddUpdateStudent = "AddUpdateStudentDetail";
+        public static string BindYear = "BindYear";
+        public static string BindTerm = "BindTerm";
+        public static string BindSubhead = "BindSubhead";
+        public static string DeleteStudent = "DeleteStudent";
+        public static string GetStudentById = "GetStudentById";
+        public static string GetStudents = "GetStudentList";
+        public static string BindGender = "getgendermaster";
+        public static string BindCategory = "getcategorymaster";
         public static string UserAuthenticationByCredentials = "UserAuthenticationByCredentials";
         public static string FillFarmer = "BindFarmer";
         public static string FillGrade = "BindGrade";

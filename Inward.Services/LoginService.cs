@@ -1,6 +1,7 @@
 ﻿using Inward.Entity;
 using Inward.Repository.Abstraction;
 using Inward.Services.Abstraction;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,31 @@ namespace Inward.Services
         {
             _LoginRepo = userLoginRepo ?? throw new ArgumentNullException(nameof(userLoginRepo));
         }
+        public  async Task<ResponseMessage> DeleteStudent(long studentid)
+        {
+            return await _LoginRepo.DeleteStudent(studentid);
+        }
+        public async Task<Student> GetStudentByid(long studentid)
+        {
+            return await _LoginRepo.GetStudentByid(studentid);
+        }
+        public async Task<ResponseMessage> AddUpdateStudent(Student st)
+        {
+            return await _LoginRepo.AddUpdateStudent(st);
+        }
 
+        public async Task<IEnumerable<Student>> GetStudentList()
+        {
+            return await _LoginRepo.GetStudentList();
+        }
+        public async Task<List<SelectListItem>> BindGender()
+        {
+            return await _LoginRepo.BindGender();
+        }
+        public async Task<List<SelectListItem>> BindCategory()
+        {
+            return await _LoginRepo.BindCategory();
+        }
         public async Task<UserMaster> AuthenticateUser(UserMaster userMaster)
         {
             return await _LoginRepo.AuthenticateUser(userMaster);
