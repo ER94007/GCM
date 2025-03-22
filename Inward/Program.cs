@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using GCM.Services.Abstraction;
+using GCM.Services;
+using GCM.Repository.Abstraction;
+using GCM.Repository;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,6 +50,9 @@ builder.Services.AddControllersWithViews()
 
     services.AddScoped<ILoginService, LoginService>();
     services.AddScoped<ILoginRepo, LoginRepo>();
+
+    services.AddScoped<IFinancialYearTermWiseFeeService, FinancialYearTermWiseFeeService>();
+    services.AddScoped<IFinancialYearTermWiseFeeRepo, FinancialYearTermWiseFeeRepo>();
 
 
 

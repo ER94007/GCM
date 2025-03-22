@@ -1,4 +1,5 @@
 ﻿using Inward.Entity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +20,12 @@ namespace Inward.Services.Abstraction
         Task<List<InwardEntity>> GetInwardList();
         Task<InwardEntity> GetLastInwardNo();
         Task<List<FarmerEntity>> FillUnit(string gradeId);
+        Task<List<SelectListItem>> BindGender();
+        Task<List<SelectListItem>> BindCategory();
+        Task<ResponseMessage> AddUpdateStudent(Student st);
+        Task<IEnumerable<Student>> GetStudentList();
+        Task<ResponseMessage> DeleteStudent(long studentid);
+        Task<Student> GetStudentByid(long studentId);
 
     }
 }

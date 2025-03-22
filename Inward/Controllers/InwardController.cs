@@ -1,4 +1,5 @@
-﻿using Inward.Common;
+﻿using GCM.Entity;
+using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Mvc;
@@ -22,33 +23,37 @@ namespace Inward.Controllers
             _userLoginService = userLoginService ?? throw new ArgumentNullException(nameof(userLoginService));
             _config = config;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? studentid)
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-
+            Student student = new Student();
             if (userIdClaim == null)
             {
                 return RedirectToAction("Login", "Login");
             }
+            if (studentid != null)
+            {
+                student = await _userLoginService.GetStudentByid(Convert.ToInt64(studentid));
+            }
+            ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            ViewBag.CategoryList = _userLoginService.BindCategory().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList(); ;
+            //var FarmerName = _userLoginService.FillFarmer().Result
+            //.Select(c => new SelectListItem() { Text = c.Farmer_Nm, Value = c.Farmer_Id.ToString() }).ToList();
+            //    ViewBag.FarmerNames = FarmerName;
 
-
-            var FarmerName = _userLoginService.FillFarmer().Result
-        .Select(c => new SelectListItem() { Text = c.Farmer_Nm, Value = c.Farmer_Id.ToString() }).ToList();
-            ViewBag.FarmerNames = FarmerName;
-
-            var GradeName = _userLoginService.FillGrade().Result
-        .Select(c => new SelectListItem() { Text = c.Grade_Name, Value = c.Grade_Id.ToString() }).ToList();
-            ViewBag.GradeNames = GradeName;
+            //    var GradeName = _userLoginService.FillGrade().Result
+            //.Select(c => new SelectListItem() { Text = c.Grade_Name, Value = c.Grade_Id.ToString() }).ToList();
+            //    ViewBag.GradeNames = GradeName;
 
 
             //    var UnitName = _userLoginService.FillUnit().Result
             //.Select(c => new SelectListItem() { Text = c.Unit_Name, Value = c.Unit_Id.ToString() }).ToList();
             //    ViewBag.UnitNames = UnitName;
-            ViewBag.UnitNames = GetUnitDetailsByGrade(string.Empty);
+            //ViewBag.UnitNames = GetUnitDetailsByGrade(string.Empty);
 
-            var InwardLastData = await _userLoginService.GetLastInwardNo();
+            //var InwardLastData = await _userLoginService.GetLastInwardNo();
 
-            ViewBag.InwardNo = Convert.ToInt32(InwardLastData.InwardNo) + 1;
+            //ViewBag.InwardNo = Convert.ToInt32(InwardLastData.InwardNo) + 1;
 
             //if (InwardId != null)
             //{
@@ -58,7 +63,40 @@ namespace Inward.Controllers
             //    return View(InwardMaster);
 
             //}
-            return View();
+            return View(student);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ViewStudents()
+        {
+            var students = await _userLoginService.GetStudentList();
+            return View(students);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> FileUpload(FileStream studentfile)
+        {
+            return RedirectToAction("Index");
+        }
+        public async Task<IActionResult> DeleteStudent(long studentid)
+        {
+            var result = _userLoginService.DeleteStudent(studentid);
+            if(result.Id > 0)
+            {
+                return Json(new { success = true, message = "Student deleted successfully." });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Failed to delete the student." });
+            }
+        }
+
+        [HttpGet]
+
+        public async Task<IActionResult> AddSubHead()
+        {
+            SubHeadEntity sh = new SubHeadEntity();
+            return View(sh);
         }
 
         [HttpGet]
@@ -87,91 +125,31 @@ namespace Inward.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(InwardEntity inwardEntity)
+        public async Task<IActionResult> Index(Student st)
         {
             try
             {
-                var InwardLastData = await _userLoginService.GetLastInwardNo();
-
-                ViewBag.InwardNo = Convert.ToInt32(InwardLastData.InwardNo) + 1;
-
-                var FarmerName = _userLoginService.FillFarmer().Result
-            .Select(c => new SelectListItem() { Text = c.Farmer_Nm, Value = c.Farmer_Id.ToString() }).ToList();
-                ViewBag.FarmerNames = FarmerName;
-
-                var GradeName = _userLoginService.FillGrade().Result
-.Select(c => new SelectListItem() { Text = c.Grade_Name, Value = c.Grade_Id.ToString() }).ToList();
-                ViewBag.GradeNames = GradeName;
-
-                ViewBag.UnitNames = GetUnitDetailsByGrade(string.Empty);
-
-
                 if (ModelState.IsValid)
                 {
                     var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
 
-                    inwardEntity.UserId = userIdClaim.Value;
-                    var lstGradeDetails = new List<GradeDetail>();
-                    if (inwardEntity.GradeDetails != null)
-                    {
-                        // CommonUtils.WriteToLogFile("Model is valid - requestDetails is not null", LogPath);
-                        foreach (var Grade in inwardEntity.GradeDetails)
-                        {
-                            if (Grade.GradeName != null)
-                            {
-                                GradeDetail objGradeDetails = new GradeDetail();
-                                objGradeDetails.GradeName = Grade.GradeName;
-                                objGradeDetails.TotalWeight = Grade.TotalWeight;
-                                objGradeDetails.AuctionRate = Grade.AuctionRate;
-                                objGradeDetails.VendorRate = Grade.VendorRate;
-                                objGradeDetails.VendorCode = Grade.VendorCode;
-                                objGradeDetails.UnitName = Grade.UnitName;
-                                objGradeDetails.TotalCarat = Grade.TotalCarat;
-                                objGradeDetails.VendorRate = Grade.VendorRate;
-                                objGradeDetails.NetAmount = Grade.NetAmount;
-
-                                lstGradeDetails.Add(objGradeDetails);
-                            }
-                        }
-                    }
-
-                    if (lstGradeDetails.Count > 0)
-                    {
-                        // CommonUtils.WriteToLogFile("Model is valid - inside if to call database is not null", LogPath);
-
-                        DataTable dtGradeData = CommonMethods.ToDataTable(lstGradeDetails);
-
-
-
-                        var regResponse = await _userLoginService.InsertInwardDetail(inwardEntity, dtGradeData);
+                        st.userid= userIdClaim.Value;
+                        var regResponse = await _userLoginService.AddUpdateStudent(st);
                         var msg = regResponse.Msg;
-                     
                         if (regResponse.Id > 0)
                         {
-                            TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(),
-                         Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
-
-                            return RedirectToAction("GetInwardList", "Inward");
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(),Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
 
                         }
                      
-                    }
-                    else
-                    {
+                 }
+                 
                         //  CommonUtils.WriteToLogFile("Model is valid - inside else to call database is  null", LogPath);
                         //  TempData["Message"] = CommonUtils.ConcatString("Please Fill Atleast One Reservation Details", Convert.ToString((int)EnumLookup.ResponseMsgType.error), "||");
                         //return RedirectToAction("Index", "Inward", new { InwardId = inwardEntity.InwardId.ToString() });                        //return RedirectToAction("Index", "Inward", new { InwardId = inwardEntity.InwardId.ToString() });
                         //TempData["SaveStatus"] = CommonMethods.ConcatString(msg,
                         //    Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
-                        return RedirectToAction("Index", "Inward");  
-
-                    }
-
-                }
-                {
-                    return View(inwardEntity);
-
-                }
+                        return RedirectToAction("Index", "Inward");   
 
             }
             catch (Exception ex)

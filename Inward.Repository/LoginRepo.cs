@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Inward.Entity;
 using Inward.Repository.Abstraction;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,132 @@ namespace Inward.Repository
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
 
+        public async Task<Student> GetStudentByid(long studentid)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@studentid", studentid);
+                    var res = await conn.QueryFirstOrDefaultAsync<Student>(StoreProcedures.GetStudentById, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<IEnumerable<Student>> GetStudentList()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<Student>(StoreProcedures.GetStudents, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<List<SelectListItem>> BindGender()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindGender, queryParameters, commandType: CommandType.StoredProcedure);
+                    var genderList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return genderList;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+        }
+
+        public async Task<List<SelectListItem>> BindCategory()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindCategory, queryParameters, commandType: CommandType.StoredProcedure);
+                    var categoryList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return categoryList;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+        }
+        public async Task<ResponseMessage> DeleteStudent(long studentid)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@studentid", studentid);
+                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.DeleteStudent, queryParameters, commandType: CommandType.StoredProcedure);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<ResponseMessage> AddUpdateStudent(Student st)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@studentid", st.studentid);
+                    queryParameters.Add("@studentname", st.name);
+                    queryParameters.Add("@mobileno", st.mobileno);
+                    queryParameters.Add("@email", st.email);
+                    queryParameters.Add("@genderid", st.genderid);
+                    queryParameters.Add("@categoryid", st.categoryid);
+                    queryParameters.Add("@applicationno", st.applicationno);
+                    queryParameters.Add("@enrollmentno", st.enrolmentno);
+                    return  await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateStudent, queryParameters, commandType: CommandType.StoredProcedure);
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+
+            }
+        }
         public async Task<UserMaster> AuthenticateUser(UserMaster userMaster)
         {
             try

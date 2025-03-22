@@ -3,11 +3,28 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Http;    
 namespace Inward.Entity
 {
+    public class Student
+    {
+        public long studentid { get; set; }
+        public string name { get; set; }
+        public string mobileno { get; set; }
+        public string email { get; set; }
+        public long genderid { get; set; }
+        public string? gendername { get; set; }
+        public long categoryid { get; set; }
+        public string? categoryname { get; set; }
+        public string? enrolmentno { get; set; }
+        public string? applicationno { get; set; }
+        public string? userid { get; set; }
+        //public IFileForm studentfile { get; set; }
+    
+    }
     public class InwardEntity
     {
         public int InwardId { get; set; }
