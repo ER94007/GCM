@@ -15,6 +15,15 @@
           }
         }
       },
+      "EPPlus.Interfaces/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/EPPlus.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/EPPlus.Interfaces.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -2378,6 +2387,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "EPPlus.Interfaces": "8.0.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Newtonsoft.Json": "13.0.3"
         },
@@ -2392,6 +2402,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "EPPlus.Interfaces": "8.0.0",
           "Microsoft.AspNetCore.Http": "2.3.0"
         },
         "compile": {
@@ -2406,6 +2417,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Dapper": "2.1.28",
+          "EPPlus.Interfaces": "8.0.0",
           "GCM.Common": "1.0.0",
           "GCM.Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0",
@@ -2440,6 +2452,26 @@
         "lib/net7.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml",
+        "readme.md"
+      ]
+    },
+    "EPPlus.Interfaces/8.0.0": {
+      "sha512": "EFr/vUbDYK55sxjfUfLUiv7oiz1f6ZLRYMKILHyfnWS019cYX5zJaQ1U3OojRuED8tgEeXX9QeG7Kj/b0XE7hQ==",
+      "type": "package",
+      "path": "epplus.interfaces/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EPPlusLogo.png",
+        "epplus.interfaces.8.0.0.nupkg.sha512",
+        "epplus.interfaces.nuspec",
+        "lib/net35/EPPlus.Interfaces.dll",
+        "lib/net462/EPPlus.Interfaces.dll",
+        "lib/net8.0/EPPlus.Interfaces.dll",
+        "lib/net9.0/EPPlus.Interfaces.dll",
+        "lib/netstandard2.0/EPPlus.Interfaces.dll",
+        "lib/netstandard2.1/EPPlus.Interfaces.dll",
+        "license.md",
         "readme.md"
       ]
     },
@@ -7292,6 +7324,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "EPPlus.Interfaces >= 8.0.0",
       "GCM.Common >= 1.0.0",
       "GCM.Entity >= 1.0.0",
       "GCM.Repository.Abstraction >= 1.0.0",
@@ -7306,11 +7339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectUniqueName": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "projectName": "GCM.Services.Abstraction",
-      "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\GCM\\Inward.Services.Abstraction\\obj\\",
+      "outputPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7331,14 +7364,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+            "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj"
             },
-            "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+            "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj"
             },
-            "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+            "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
             }
           }
         }
@@ -7359,6 +7392,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "EPPlus.Interfaces": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.0, )"

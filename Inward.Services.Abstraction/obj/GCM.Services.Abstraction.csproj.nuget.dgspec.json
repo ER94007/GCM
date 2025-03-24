@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {}
+    "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {}
   },
   "projects": {
-    "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
+    "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj",
         "projectName": "GCM.Common",
-        "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Common\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "EPPlus.Interfaces": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.ViewFeatures": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -79,14 +83,14 @@
         }
       }
     },
-    "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+    "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj",
         "projectName": "GCM.Entity",
-        "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Entity\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -125,6 +129,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "EPPlus.Interfaces": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -150,14 +158,14 @@
         }
       }
     },
-    "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+    "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
         "projectName": "GCM.Repository.Abstraction",
-        "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Repository.Abstraction\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -178,11 +186,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+              "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj"
               },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj"
               }
             }
           }
@@ -206,6 +214,10 @@
             "Dapper": {
               "target": "Package",
               "version": "[2.1.28, )"
+            },
+            "EPPlus.Interfaces": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -240,14 +252,14 @@
         }
       }
     },
-    "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+    "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
         "projectName": "GCM.Services.Abstraction",
-        "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Services.Abstraction\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -268,14 +280,14 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+              "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj"
               },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj"
               },
-              "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
               }
             }
           }
@@ -296,6 +308,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "EPPlus.Interfaces": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"

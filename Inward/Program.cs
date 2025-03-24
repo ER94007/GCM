@@ -12,10 +12,12 @@ using GCM.Services.Abstraction;
 using GCM.Services;
 using GCM.Repository.Abstraction;
 using GCM.Repository;
+using OfficeOpenXml;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpContextAccessor();
@@ -54,7 +56,8 @@ builder.Services.AddControllersWithViews()
     services.AddScoped<IFinancialYearTermWiseFeeService, FinancialYearTermWiseFeeService>();
     services.AddScoped<IFinancialYearTermWiseFeeRepo, FinancialYearTermWiseFeeRepo>();
 
-
+    services.AddScoped<IStudentService, StudentService>();
+    services.AddScoped<IStudent, StudentRepo>();
 
     var app = builder.Build();
 
