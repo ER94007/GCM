@@ -1,7 +1,23 @@
-﻿@model GCM.Entity.FinancialYearTermWiseFeeEntity;
+﻿@{
+	var msg = TempData["SaveStatus"] as string;
+}
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Include Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@model GCM.Entity.FinancialYearTermWiseFeeEntity;
 <div class="content-wrapper">
 	<!-- Main content -->
-	<div class="content">
+	<section class="content">
 		<div class="container-fluid">
 			<form method="post" asp-action="AddFinancialYearTermFee">
 				<div class="row mb-3">
@@ -28,14 +44,14 @@
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label for="TermId">Finance Year:</label>
+											<label for="TermId">Term:</label>
 
 
-											<select asp-for="TermId" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))">
+											<select multiple="multiple" asp-for="TermId" class="js-example-basic-multiple js-example-responsive form-control " asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))" onchange="bindterm(this)">
 												<option value="">---Select Term---</option>
 											</select>
 											<span asp-validation-for="TermId" class="text-danger"></span>
-
+											<input type="hidden" asp-for="SelectedTermIds" />
 										</div>
 									</div>
 								</div>
@@ -53,7 +69,13 @@
 										<tbody>
 											<tr>
 												<td>
-													<input name="financeLists[0].SubHeadId" type="text" class="form-control" placeholder="Enter Subhead">
+													<select name="financeLists[0].SubHeadId" class="form-control subhead-select">
+														<option value="">---Select Subhead---</option>
+														@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+														{
+															<option value="@subhead.Value">@subhead.Text</option>
+														}
+													</select>
 												</td>
 												<td>
 													<input name="financeLists[0].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
@@ -73,29 +95,70 @@
 							
 						</div>
 					</div>
-					<div class="card-footer text-end">
+					<div class="card-footer text-center">
 						<button type="submit" class="btn btn-success">Submit</button>
+						<a href="@Url.Action("GetFinancialTermData", "FinancialYearTermWiseFee")" class="btn btn-secondary">
+							<i class="fas fa-list mr-1"></i>
+							Go to List
+						</a>
 					</div>
 				</div>
 			</form>
 
 		</div>
-	</div>
+	</section>
 </div>
+<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
+	 $(document).ready(function () {
+			debugger;
+			var msg = '@msg';
+			if (msg != null && msg != '') {
+				ShowDynamicSwalAlert("", msg);
+			}
+		});
+
+
+		  $('.js-example-basic-multiple').select2();
+
+		  function bindterm(selectElement) {
+		// Get selected options
+		const selectedOptions = Array.from(selectElement.selectedOptions).map(option => option.value);
+
+		// Update the selectedTerms array
+		selectedTerms = [...new Set(selectedOptions)];
+
+		// Update the hidden input with comma-separated values
+		const hiddenInput = document.getElementById('SelectedTermIds');
+		if (hiddenInput) {
+			hiddenInput.value = selectedTerms.join(',');
+		}
+
+		console.log(selectedTerms); // For debugging purposes
+	}
+
+
+		document.addEventListener('DOMContentLoaded', function () {
 		const addRowBtn = document.getElementById('addRowBtn');
 		const dynamicTable = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
 
-		let rowIndex = @Model.financeLists?.Count ?? 1; // Ensure at least one row is rendered
+		// Initialize rowIndex based on the number of existing rows in the table
+		let rowIndex = dynamicTable.rows.length;
 
 		// Add Row Functionality
 		addRowBtn.addEventListener('click', () => {
 			const newRow = document.createElement('tr');
 			newRow.innerHTML = `
 				<td>
-					<input name="financeLists[${rowIndex}].SubHeadId" type="text" class="form-control" placeholder="Enter Subhead">
+					<select name="financeLists[${rowIndex}].SubHeadId" class="form-control subhead-select">
+						<option value="">---Select Subhead---</option>
+	@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+	{
+								<option value="@subhead.Value">@subhead.Text</option>
+	}
+					</select>
 				</td>
 				<td>
 					<input name="financeLists[${rowIndex}].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
@@ -108,7 +171,8 @@
 				</td>
 			`;
 			dynamicTable.appendChild(newRow);
-			rowIndex++;
+			rowIndex++; // Increment rowIndex for the next row
+			updateDropdowns();
 		});
 
 		// Remove Row Functionality
@@ -118,10 +182,37 @@
 				const rows = dynamicTable.getElementsByTagName('tr');
 				if (rows.length > 1) {
 					row.remove();
+					updateDropdowns();
 				} else {
 					alert('At least one row must be present!');
 				}
 			}
 		});
+
+		// Update Dropdown Options
+		dynamicTable.addEventListener('change', (event) => {
+			if (event.target.classList.contains('subhead-select')) {
+				updateDropdowns();
+			}
+		});
+
+		function updateDropdowns() {
+			const allSelects = document.querySelectorAll('.subhead-select');
+			const selectedValues = Array.from(allSelects).map(select => select.value);
+
+			allSelects.forEach(select => {
+				const currentValue = select.value;
+				const options = select.querySelectorAll('option');
+				options.forEach(option => {
+					if (option.value !== "" && selectedValues.includes(option.value) && option.value !== currentValue) {
+						option.style.display = 'none';
+					} else {
+						option.style.display = 'block';
+					}
+				});
+			});
+		}
 	});
+
+	
 </script>
