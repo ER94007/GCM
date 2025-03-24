@@ -44,7 +44,7 @@
 											<label for="TermId">Term:</label>
 
 
-											<select multiple="multiple" asp-for="TermId" class="js-example-basic-multiple select2 form-control " asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))">
+											<select  asp-for="TermId" class="js-example-basic-multiple select2 form-control " asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))">
 												<option value="">---Select Term---</option>
 											</select>
 											<span asp-validation-for="TermId" class="text-danger"></span>
