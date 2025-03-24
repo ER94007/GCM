@@ -24,6 +24,14 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2lhbFllYXJUZXJtRmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinancialTermData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEZpbmFuY2lhbFRlcm1EYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateFinancialById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFVwZGF0ZUZpbmFuY2lhbEJ5SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GCM/Inward/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
