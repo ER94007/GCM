@@ -24,6 +24,25 @@ namespace GCM.Repository
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
 
+        public async Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearId", ft.FinancialYearId);
+                    //queryParameters.Add("@TermId", financialYearTermWiseFeeEntity.TermId);
+                    queryParameters.Add("@dt", ft.fdt.AsTableValuedParameter("gsm.SubHeadAmountBalance"));
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddFinanceBalance, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<ResponseMessage> DeleteFinanceYearTerm(long id)
         {
             try

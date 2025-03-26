@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 7.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinanceYearBalance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2VZZWFyQmFsYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinancialYearTermFee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2lhbFllYXJUZXJtRmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -30,4 +30,20 @@ namespace GCM.Entity
         public decimal femalefee { get; set; }
 
     }
+
+    public class FinanceBalanceEntity
+    {
+        public long FinancialYearBalanceId { get; set; }
+        public long FinancialYearId { get; set; }
+        public long SubHeadId { get; set; }
+        public decimal amount { get; set; }
+        public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();
+        public DataTable fdt { get; set; }
+    }
+
+    public class BalanceList
+    {
+        public long SubHeadId { get; set; }
+        public decimal amount { get; set; }
+    }
 }

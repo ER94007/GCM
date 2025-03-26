@@ -53,7 +53,11 @@ namespace GCM.Controllers
             {
                 TempData["SaveStatus"] = CommonMethods.ConcatString(result.Result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
             }
-            return RedirectToAction("AddFinancialYearTermFee");
+            else
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+            }
+                return RedirectToAction("AddFinancialYearTermFee");
         }
 
         public async Task<IActionResult> GetFinancialTermData()
@@ -93,6 +97,39 @@ namespace GCM.Controllers
             {
                 return Json(new { success = false, message = "Failed to delete the student." });
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AddFinanceYearBalance()
+        {
+            FinanceBalanceEntity ft = new FinanceBalanceEntity();
+            ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            return View(ft);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddFinanceYearBalance(FinanceBalanceEntity ft)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("SubHeadId", typeof(long));
+            dataTable.Columns.Add("amount", typeof(decimal));
+
+            foreach (var data in ft.balanceLists)
+            {
+                dataTable.Rows.Add( data.SubHeadId, data.amount);
+            }
+            ft.fdt = dataTable;
+            var result = await _ifinancialYearTermWiseFee.AddFinanceYearBalance(ft);
+            if (result.Msg == "Data inserted successfully.")
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+            }
+            else
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+            }
+            return RedirectToAction("AddFinanceYearBalance");
         }
     }
 }
