@@ -28,49 +28,24 @@ namespace GCM.Controllers
             _userLoginService = userLoginService ?? throw new ArgumentNullException(nameof(userLoginService));
             _config = config;
         }
-       
-        //[HttpPost]
-        //public async Task<IActionResult> AddStudents(Student st)
-        //{
-        //    try
-        //    {
-        //        if (ModelState.IsValid)
-        //        {
-        //            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-
-        //            st.userid = userIdClaim.Value;
-        //            var regResponse = await _studentService.AddStudent(st);
-        //            var msg = regResponse.Msg;
-        //            if (regResponse.Id > 0)
-        //            {
-        //                TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
-
-        //            }
-        //        }
-        //        return RedirectToAction("Index", "Inward");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //}
+              
 
         [HttpGet]
-        public async Task<IActionResult> ViewStudents()
+        public IActionResult ViewStudents()
+        {
+            // Get the list of students from TempData
+            var students = TempData["Students"] as List<Student>;
+
+            // If TempData is null, initialize an empty list
+            if (students == null)
             {
-            // Check if there are students in TempData
-            if (TempData.ContainsKey("Students"))
-            {
-                var studentsJson = TempData["Students"].ToString();
-                var students = JsonSerializer.Deserialize<List<Student>>(studentsJson); // Assuming Student is your model
-                return View(students);
+                students = new List<Student>();
             }
 
-            // If no students are in TempData, fetch from the database/service
-            var defaultStudents = await _userLoginService.GetStudentList();
-            return View(defaultStudents);
+            return View(students);
         }
 
+              
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -78,29 +53,27 @@ namespace GCM.Controllers
         {
             if (file != null && file.Length > 0)
             {
+                // Define the file path to save the uploaded file
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", file.FileName);
 
+                // Save the file to the specified path
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    file.CopyTo(stream);
+                    await file.CopyToAsync(stream); // Use async to ensure non-blocking
                 }
 
+                // Extract students from the Excel file (custom method)
                 var students = GetStudentsFromExcel(filePath);
 
-                //var studentTable = new DataTable();
-                //foreach (var student in students)
-                //{
-                //    studentTable.Rows.Add(student.studentid, student.name, student.mobileno, student.email,
-                //                          student.gendername, student.categoryid, student.categoryname,
-                //                          student.enrolmentno, student.applicationno, student.userid);
-                //}
-                
-                //var regResponse = await _studentService.AddStudent(studentTable);
-                
-                _students.AddRange(students);
+                // Convert the list of students to a DataTable
+                DataTable dataTable = ConvertStudentsToDataTable(students);
 
-                TempData["Students"] = JsonSerializer.Serialize(students);
-            }
+                // Call the service to add students (pass the DataTable)
+                var regResponse = await _studentService.AddStudent(dataTable);
+
+                }
+
+            // Redirect to the ViewStudents action to display the students
             return RedirectToAction(nameof(ViewStudents));
         }
 
@@ -117,21 +90,59 @@ namespace GCM.Controllers
                 {
                     var student = new Student
                     {
-                        studentid = int.Parse(worksheet.Cells[row, 1].Text),
-                        name = worksheet.Cells[row, 2].Text,
-                        mobileno = worksheet.Cells[row, 3].Text,
-                        email = worksheet.Cells[row, 4].Text,
-                        gendername = worksheet.Cells[row, 5].Text,
-                        categoryid = int.Parse(worksheet.Cells[row, 6].Text),
-                        categoryname = worksheet.Cells[row, 7].Text,
-                        enrolmentno = worksheet.Cells[row, 8].Text,
-                        applicationno = worksheet.Cells[row, 9].Text,
-                        userid = worksheet.Cells[row, 10].Text
+                        name = worksheet.Cells[row, 1].Text,
+                        mobileno = worksheet.Cells[row, 2].Text,
+                        email = worksheet.Cells[row, 3].Text,
+                        //gendername = worksheet.Cells[row, 4].Text,
+                        genderid = int.Parse(worksheet.Cells[row, 4].Text),
+                        categoryid = int.Parse(worksheet.Cells[row, 5].Text),
+                        categoryname = worksheet.Cells[row, 6].Text,
+                        enrolmentno = worksheet.Cells[row, 7].Text,
+                        applicationno = worksheet.Cells[row, 8].Text,
+                        userid = worksheet.Cells[row, 9].Text
                     };
                     students.Add(student);
                 }
             }
             return students;
         }
+
+        private DataTable ConvertStudentsToDataTable(List<Student> students)
+        {
+            // Create a new DataTable object
+            DataTable dataTable = new DataTable();
+
+            // Add columns to the DataTable based on the properties of the Student class
+            dataTable.Columns.Add("name", typeof(string));
+            dataTable.Columns.Add("mobileno", typeof(string));
+            dataTable.Columns.Add("email", typeof(string));
+            //dataTable.Columns.Add("gendername", typeof(string));
+            dataTable.Columns.Add("categoryid", typeof(int));
+           //ataTable.Columns.Add("categoryname", typeof(string));
+            dataTable.Columns.Add("enrolmentno", typeof(string));   
+            dataTable.Columns.Add("applicationno", typeof(string));
+            dataTable.Columns.Add("userid", typeof(string));
+            // Add other columns based on your Student properties if necessary
+
+            // Loop through the list of students and add rows to the DataTable
+            foreach (var student in students)
+            {
+                var row = dataTable.NewRow();
+                row["name"] = student.name;  // Replace with actual property names
+                row["mobileno"] = student.mobileno;
+                row["email"] = student.email;
+                //row["gendername"] = student.gendername;
+                row["categoryid"] = student.categoryid;
+               // row["categoryname"] = student.categoryname;
+                row["enrolmentno"] = student.enrolmentno;
+                row["applicationno"] = student.applicationno;
+                row["userid"] = student.userid;
+                // Add other properties as needed
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
     }
 }

@@ -31,6 +31,7 @@ namespace Inward.Entity
         public static string GetInwardsById = "GetInwardsById";
         public static string GetLastInwardNo = "GetLastInwardNo";
         public static string GetInwardList = "GetInwardList";
+        public static string AddStudentExcel = "AddStudentExcel";
 
     }
 }

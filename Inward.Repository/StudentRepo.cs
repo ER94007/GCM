@@ -29,25 +29,21 @@ namespace GCM.Repository
                 using (var conn = GetConnection())
                 {
                     var queryParameters = new DynamicParameters();
-                    queryParameters.Add("@studentTable", studentTable);
-                    //queryParameters.Add("@studentname", st.name);
-                    //queryParameters.Add("@mobileno", st.mobileno);
-                    //queryParameters.Add("@email", st.email);
-                    //queryParameters.Add("@genderid", st.genderid);
-                    //queryParameters.Add("@categoryid", st.categoryid);
-                    //queryParameters.Add("@applicationno", st.applicationno);
-                    //queryParameters.Add("@enrollmentno", st.enrolmentno);
-                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateStudent, queryParameters, commandType: CommandType.StoredProcedure);
 
+                    // Add the DataTable as a TVP parameter (SQL Server's table type)
+                    queryParameters.Add("@Students", studentTable.AsTableValuedParameter("dbo.StudentTableType"));
+
+                    // Call the stored procedure
+                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddStudentExcel, queryParameters,commandType: CommandType.StoredProcedure);
                 }
             }
             catch (Exception ex)
             {
-
-                throw ex;
-
+                // Log the exception and rethrow it
+                throw new Exception("Error adding students", ex);
             }
         }
+
     }
 }
     
