@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Inward.Entity.Student>
+@{
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "ViewStudents";
+}
+
+<h1>ViewStudents</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mobileno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.genderid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gendername)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoryid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categoryname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.enrolmentno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.applicationno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userid)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+           <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mobileno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.genderid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gendername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoryid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.categoryname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.enrolmentno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.applicationno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userid)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

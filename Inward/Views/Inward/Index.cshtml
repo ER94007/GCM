@@ -1,179 +1,209 @@
 ﻿@{
-    
-    var msg = TempData["SaveStatus"] as string;
-    long studentid = 0;
-    if(Model.studentid != 0)
-    {
-        studentid = Model.studentid;
-    }
+
+	var msg = TempData["SaveStatus"] as string;
+	long studentid = 0;
+	if (Model.studentid != 0)
+	{
+		studentid = Model.studentid;
+	}
 }
 @model Inward.Entity.Student
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Main content -->
-            @* <div class="content"> *@
-                <div class="container-fluid">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+	<!-- Main content -->
+	@* <div class="content"> *@
+	<div class="container-fluid">
 
-                    <form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
-                        <input type="hidden" asp-for="studentid" value="@studentid"/>
-                        <!-- Inward Information -->
-                        <div class="row mb-3">
-                            <div class="col-md-12">
+		<form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
+			<input type="hidden" asp-for="studentid" value="@studentid" />
+			<!-- Inward Information -->
+			<div class="row mb-3">
+				<div class="col-md-12">
 
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Student Information</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <!-- Inward No -->
-                                                <div class="form-group">
-                                                    <label for="name">Student Name</label>
-                                                    <input asp-for="name" type="text" class="form-control"  placeholder="Enter Name" >
-                                                    <span asp-validation-for="name" class="text-danger"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <!-- Inward Date -->
-                                                <div class="form-group">
-                                                    <label for="mobileno">Mobile No</label>
-                                                    <input asp-for="mobileno" type="text" class="form-control" >
-                                                    <span asp-validation-for="mobileno" class="text-danger"></span>
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Student Information</h3>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-4">
+									<!-- Inward No -->
+									<div class="form-group">
+										<label for="name">Student Name</label>
+										<input asp-for="name" type="text" class="form-control" placeholder="Enter Name">
+										<span asp-validation-for="name" class="text-danger"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Inward Date -->
+									<div class="form-group">
+										<label for="mobileno">Mobile No</label>
+										<input asp-for="mobileno" type="text" class="form-control">
+										<span asp-validation-for="mobileno" class="text-danger"></span>
 
-                                                </div>
-                                            </div> 
-                                            <div class="col-md-4">
-                                                <!-- Inward Date -->
-                                                <div class="form-group">
-                                                    <label for="email">Email</label>
-                                                    <input asp-for="email" type="email" class="form-control" >
-                                                    <span asp-validation-for="email" class="text-danger"></span>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Inward Date -->
+									<div class="form-group">
+										<label for="email">Email</label>
+										<input asp-for="email" type="email" class="form-control">
+										<span asp-validation-for="email" class="text-danger"></span>
 
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <!-- Name of Farmer Dropdown -->
-                                                <div class="form-group">
-                                                    <label for="genderid">Gender:</label>
-
-
-                                                    <select asp-for="genderid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.GenderList, "Value", "Text"))">
-                                                        <option value="">---Select Gender---</option>
-                                                    </select>
-                                                    <span asp-validation-for="genderid" class="text-danger"></span>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <!-- Name of Farmer Dropdown -->
-                                                <div class="form-group">
-                                                    <label for="categoryid">Category:</label>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Name of Farmer Dropdown -->
+									<div class="form-group">
+										<label for="genderid">Gender:</label>
 
 
-                                                    <select asp-for="categoryid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.CategoryList, "Value", "Text"))">
-                                                        <option value="">---Select Category---</option>
-                                                    </select>
-                                                    <span asp-validation-for="categoryid" class="text-danger"></span>
+										<select asp-for="genderid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.GenderList, "Value", "Text"))">
+											<option value="">---Select Gender---</option>
+										</select>
+										<span asp-validation-for="genderid" class="text-danger"></span>
 
-                                                </div>
-                                            </div>
-                                        <div class="col-md-4">
-                                            <!-- Inward Date -->
-                                            <div class="form-group">
-                                                <label for="applicationno">Application No</label>
-                                                <input asp-for="applicationno" type="text" class="form-control">
-                                                <span asp-validation-for="applicationno" class="text-danger"></span>
-
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <!-- Inward Date -->
-                                            <div class="form-group">
-                                                <label for="enrollmentno">Enrollment No</label>
-                                                <input asp-for="enrolmentno" type="text" class="form-control">
-                                                <span asp-validation-for="enrolmentno" class="text-danger"></span>
-
-                                            </div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Name of Farmer Dropdown -->
+									<div class="form-group">
+										<label for="categoryid">Category:</label>
 
 
-                       
+										<select asp-for="categoryid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.CategoryList, "Value", "Text"))">
+											<option value="">---Select Category---</option>
+										</select>
+										<span asp-validation-for="categoryid" class="text-danger"></span>
+
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Inward Date -->
+									<div class="form-group">
+										<label for="applicationno">Application No</label>
+										<input asp-for="applicationno" type="text" class="form-control">
+										<span asp-validation-for="applicationno" class="text-danger"></span>
+
+									</div>
+								</div>
+								<div class="col-md-4">
+									<!-- Inward Date -->
+									<div class="form-group">
+										<label for="enrollmentno">Enrollment No</label>
+										<input asp-for="enrolmentno" type="text" class="form-control">
+										<span asp-validation-for="enrolmentno" class="text-danger"></span>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
-                        <div class="text-center mt-3">
-                            <button type="submit" id="btnSave" class="btn btn-primary mr-1">
-                                <i class="fas fa-save mr-1"></i>
-                                Save
-                            </button>
-                            <a href="@Url.Action("ViewStudents", "Inward")" class="btn btn-secondary">
-                                <i class="fas fa-list mr-1"></i>
-                                Go to List
-                            </a>
-                            <button type="button" id="btnUploadExcel" class="btn btn-success" data-toggle="modal" data-target="#uploadModal">
-                                <i class="fas fa-upload mr-1"></i>
-                                Upload Excel
-                            </button>
-                        </div>
 
-                    </form>
-                </div>
-            @* </div> *@
-        </div>
 
-        
-    
-    <!-- Upload Excel Modal -->
-    <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <form asp-action="FileUpload" enctype="multipart/form-data">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="uploadModalLabel">Upload Student Data</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    
-                        @* <div class="form-group"> *@
-                        @*     <label for="excelFile">Choose Excel File</label> *@
-                        @*     <input asp-for="studentfile" type="file" class="form-control-file" accept=".xlsx, .xls"> *@
-                        @* </div> *@
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-success" value="Upload  ">
-                </div>
-            </div>
-            </form>
-        </div>
-    </div>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+			<div class="text-center mt-3">
+				<button type="submit" id="btnSave" class="btn btn-primary mr-1">
+					<i class="fas fa-save mr-1"></i>
+					Save
+				</button>
+				<a href="@Url.Action("ViewStudents", "Inward")" class="btn btn-secondary">
+					<i class="fas fa-list mr-1"></i>
+					Go to List
+				</a>
+				<button type="button" id="btnUploadExcel" onclick="AddStudents()" class="btn btn-success">
+					<i class="fas fa-upload mr-1"></i>
+					Upload Excel
+				</button>
 
-    <!-- AdminLTE JS -->
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
-    <script src="~/js/common.js"></script>
-    <script src="~/assets/dist/js/sweetalert.js"></script>
+			
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            debugger;
-            var msg = '@msg';
-            if (msg != null && msg != '') {
-                ShowDynamicSwalAlert("", msg);
-            }
-        });
-        
-    </script>
+			</div>
+
+		</form>
+
+		<form asp-action="Upload" asp-controller="Student" method="post" id="AddStudents" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="file">Choose Excel File</label>
+				<input type="file" name="file" class="form-control" />
+			</div>
+			<button type="submit" class="btn btn-primary">Upload</button>
+		</form>
+	</div>
+	@* </div> *@
+</div>
+
+
+
+<!-- Upload Excel Modal -->
+<div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<form asp-action="FileUpload" enctype="multipart/form-data">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="uploadModalLabel">Upload Student Data</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					@* <div class="form-group"> *@
+					@*     <label for="excelFile">Choose Excel File</label> *@
+					@*     <input asp-for="studentfile" type="file" class="form-control-file" accept=".xlsx, .xls"> *@
+					@* </div> *@
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<input type="submit" class="btn btn-success" value="Upload  ">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- AdminLTE JS -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		debugger;
+		var msg = '@msg';
+		if (msg != null && msg != '') {
+			ShowDynamicSwalAlert("", msg);
+		}
+	});
+
+		function AddStudents() {
+			if (confirm("Are you sure you want to add this student?")) {
+				$.ajax({
+					url: '/Student/AddStudents',  // Adjust the URL based on your controller
+					type: 'POST',
+					success: function (response) {
+						if (response.success) {
+							alert(response.message);
+							location.reload(); // Reload the page to update the list
+						} else {
+							alert("Error: " + response.message);
+						}
+					},
+					error: function () {
+						alert("An error occurred while deleting the student.");
+					}
+				});
+			}
+		}
+</script>
