@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x9JuCg32B14=",
+  "dgSpecHash": "td3fbZipns8=",
   "success": true,
-  "projectFilePath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj",
+  "projectFilePath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\epplus.interfaces\\8.0.0\\epplus.interfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.http\\2.3.0\\microsoft.aspnetcore.http.2.3.0.nupkg.sha512",

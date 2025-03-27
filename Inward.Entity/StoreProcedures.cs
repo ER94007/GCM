@@ -9,6 +9,7 @@ namespace Inward.Entity
     public class StoreProcedures
     {
         public static string AddUpdateStudent = "AddUpdateStudentDetail";
+        public static string AddFinanceBalance = "AddFinanceYearBalance";
         public static string DeleteFinanceData = "DeleteFinanceDataById";
         public static string UpdateFinanceData = "UpdateFinanceById";
         public static string GetFinancialDataById = "GetFinancialDataById";
