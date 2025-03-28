@@ -8,12 +8,44 @@
 	}
 }
 @model Inward.Entity.Student
+
+<style>
+	.green-radio {
+		width: 20px;
+		height: 20px;
+		border: 2px solid green;
+		background-color: green;
+	}
+
+		.green-radio:checked {
+			background-color: darkgreen;
+			border-color: darkgreen;
+		}
+
+		.green-radio:focus {
+			outline: none;
+		}
+
+		/* Optional: Change text color for green radio */
+		.green-radio + label {
+			color: green;
+		}
+</style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Main content -->
 	@* <div class="content"> *@
 	<div class="container-fluid">
+		<div class="card-header">
+			<h3 class="card-title">Add Student Information</h3>
+		</div>
+		<div style="margin-top: 20px;"></div>
+		<div>
+			<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio"> 1. Add by Form
+			<input type="radio" name="formType" value="form2" id="form2" class="green-radio"> 2. Upload Excel
+		</div>
 
+		<div style="margin-top: 20px;"></div>
 		<form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
 			<input type="hidden" asp-for="studentid" value="@studentid" />
 			<!-- Inward Information -->
@@ -102,10 +134,6 @@
 				</div>
 			</div>
 
-
-
-
-
 			<div class="text-center mt-3">
 				<button type="submit" id="btnSave" class="btn btn-primary mr-1">
 					<i class="fas fa-save mr-1"></i>
@@ -120,7 +148,7 @@
 					Upload Excel
 				</button>
 
-			
+
 
 			</div>
 
@@ -131,8 +159,59 @@
 				<label for="file">Choose Excel File</label>
 				<input type="file" name="file" class="form-control" />
 			</div>
-			<button type="submit" class="btn btn-primary">Upload</button>
+
+			<div style="margin-top: 20px;"></div>
+			<button id="showDataBtn" class="btn btn-primary">Show Data</button>
+			<div style="margin-top: 20px;"></div>
+
+			<div id="showdatadiv">
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="row">
+								<div class="col-12">
+									<div class="card">
+										<div class="card-header">
+											<h3 class="card-title">List of Students</h3>
+										</div>
+										<div class="card-body">
+											<table id="InwardList" class="table table-bordered table-striped">
+												<thead>
+													<tr>
+														<th>Sr.</th>
+														<th>Name</th>
+														<th>Mobile No</th>
+														<th>Email</th>
+														<th>Category</th>
+														<th>Gender</th>
+														<th>Application No</th>
+														<th>Enrollment No</th>
+													</tr>
+												</thead>
+												<tbody>
+													<!-- Dynamic table rows will be inserted here via JavaScript -->
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						@* <div class="text-center mt-3">
+						<a href="@Url.Action("Index", "Inward")" class="btn btn-secondary">
+							<i class="fas fa-list mr-1"></i>
+							Go to Form
+						</a>
+					</div> *@
+					</div>
+				</div>
+
+				<div style="margin-top: 20px;"></div>
+				<button type="button" id="uploadButton" class="btn btn-primary">Upload</button>
+			</div>
 		</form>
+
+
 	</div>
 	@* </div> *@
 </div>
@@ -173,6 +252,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Make sure jQuery is loaded first -->
+<script src="path/to/select2.min.js"></script>
+
 <!-- AdminLTE JS -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
 <script src="~/js/common.js"></script>
@@ -185,25 +267,168 @@
 		if (msg != null && msg != '') {
 			ShowDynamicSwalAlert("", msg);
 		}
+		$("#showdatadiv").hide();
+		$("#fillDetailsForm").show();
+		$("#AddStudents").hide();
+		$("input[name='formType']").change(function () {
+			if ($("#form1").is(":checked")) {
+				$("#fillDetailsForm").show();
+				$("#AddStudents").hide();
+			} else {
+				$("#fillDetailsForm").hide();
+				$("#AddStudents").show();
+			}
+		});
+
+		// Trigger Modal on Upload Excel Button Click
+		$('#btnUploadExcel').click(function () {
+			$('#uploadModal').modal('show');
+		});
+
+
+
+				$('#showDataBtn').click(function (e) {
+		$("#showdatadiv").show();
+		e.preventDefault();
+		var fileInput = $('input[type="file"][name="file"]')[0];
+		var file = fileInput.files[0];
+
+		var formData = new FormData();
+		formData.append('file', file);
+		debugger;
+				$.ajax({
+			url: '@Url.Action("show", "Student")',
+			type: 'POST',
+			data: formData,
+			contentType: false,
+			processData: false,
+			success: function (response) {
+				// Clear the table first
+				$('#InwardList tbody').empty();
+
+				if (response.success === false) {
+					// Hide table headers if there are duplicates
+					$('#InwardList thead').hide();
+
+					// Display duplicates inside the table
+					if (response.duplicates) {
+						let row = `<tr>
+									<td colspan="8" class="text-center text-danger"><strong>Duplicate Data Found:</strong></td>
+								   </tr>`;
+						$('#InwardList tbody').append(row);
+
+						// Show duplicate Emails
+						if (response.duplicates.emails.length > 0) {
+							let emailRow = `<tr>
+											 <td colspan="8" class="text-center text-warning">Duplicate Emails: ${response.duplicates.emails.join(', ')}</td>
+											</tr>`;
+							$('#InwardList tbody').append(emailRow);
+						}
+
+						// Show duplicate Application Numbers
+						if (response.duplicates.applicationnos.length > 0) {
+							let appNoRow = `<tr>
+											 <td colspan="8" class="text-center text-warning">Duplicate Application Numbers: ${response.duplicates.applicationnos.join(', ')}</td>
+											</tr>`;
+							$('#InwardList tbody').append(appNoRow);
+						}
+
+						// Show duplicate Enrolment Numbers
+						if (response.duplicates.enrolmentnos.length > 0) {
+							let enrolmentNoRow = `<tr>
+												 <td colspan="8" class="text-center text-warning">Duplicate Enrolment Numbers: ${response.duplicates.enrolmentnos.join(', ')}</td>
+												</tr>`;
+							$('#InwardList tbody').append(enrolmentNoRow);
+						}
+					}
+
+					// Display gender and category validation errors
+					if (response.errors) {
+						if (response.errors.genderErrors.length > 0) {
+							let genderErrorRow = `<tr>
+													<td colspan="8" class="text-center text-danger">Invalid Gender: ${response.errors.genderErrors.join(', ')}</td>
+												   </tr>`;
+							$('#InwardList tbody').append(genderErrorRow);
+						}
+
+						if (response.errors.categoryErrors.length > 0) {
+							let categoryErrorRow = `<tr>
+													  <td colspan="8" class="text-center text-danger">Invalid Category: ${response.errors.categoryErrors.join(', ')}</td>
+													 </tr>`;
+							$('#InwardList tbody').append(categoryErrorRow);
+						}
+					}
+
+					// Display missing field errors
+					if (response.errors && response.errors.missingFields.length > 0) {
+						let missingFieldRow = `<tr>
+												 <td colspan="8" class="text-center text-danger">Missing Fields: ${response.errors.missingFields.join(', ')}</td>
+												</tr>`;
+						$('#InwardList tbody').append(missingFieldRow);
+			}
+				} else {
+					// Show table headers and insert valid student data into the table
+					$('#InwardList thead').show();
+
+					response.students.forEach(function (student, index) {
+						var row = `<tr>
+									<td>${index + 1}</td>
+									<td>${student.name}</td>
+									<td>${student.mobileno}</td>
+									<td>${student.email}</td>
+									<td>${student.categoryname}</td>
+									<td>${student.gendername}</td>
+									<td>${student.applicationno}</td>
+									<td>${student.enrolmentno}</td>
+								   </tr>`;
+						$('#InwardList tbody').append(row);
+					});
+				}
+			},
+			error: function () {
+				alert('Error uploading file.');
+			}
+		});
+
 	});
 
-		function AddStudents() {
-			if (confirm("Are you sure you want to add this student?")) {
-				$.ajax({
-					url: '/Student/AddStudents',  // Adjust the URL based on your controller
-					type: 'POST',
-					success: function (response) {
-						if (response.success) {
-							alert(response.message);
-							location.reload(); // Reload the page to update the list
-						} else {
-							alert("Error: " + response.message);
-						}
-					},
-					error: function () {
-						alert("An error occurred while deleting the student.");
-					}
-				});
+		$('#uploadButton').click(function (e) {
+		alert(11)
+		e.preventDefault();
+		
+		var studentData = [];
+		$('#InwardList tbody tr').each(function () {
+			var row = $(this);
+			var student = {
+				name: row.find('td:eq(1)').text(),
+				mobileno: row.find('td:eq(2)').text(),
+				email: row.find('td:eq(3)').text(),
+				categoryname: row.find('td:eq(4)').text(),
+				gendername: row.find('td:eq(5)').text(),
+				applicationno: row.find('td:eq(6)').text(),
+				enrolmentno: row.find('td:eq(7)').text(),
+			};
+			studentData.push(student);
+		});
+
+		// Send the student data to the server for saving
+		$.ajax({
+			url: '@Url.Action("SaveStudents", "Student")',  // You will need to create this action in your controller
+			type: 'POST',
+			data: { students: studentData },
+			success: function (response) {
+				if (response.success) {
+					alert('Students saved successfully!');
+				} else {
+					alert('Error saving students.');
+				}
+			},
+			error: function () {
+				alert('Error saving students.');
 			}
-		}
+		});
+	});
+
+	});
+
 </script>

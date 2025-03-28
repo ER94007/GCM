@@ -8793,6 +8793,10 @@
       "PackagePath": "staticwebassets\\uploads\\std.xlsx"
     },
     {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\uploads\\stu.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\stu.xlsx"
+    },
+    {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\uploads\\student.xlsx",
       "PackagePath": "staticwebassets\\uploads\\student.xlsx"
     },
