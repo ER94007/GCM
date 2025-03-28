@@ -13,6 +13,7 @@ namespace GCM.Repository.Abstraction
     public interface IFinancialYearTermWiseFeeRepo  : IBaseRepository<BaseDataTableEntity>
     {
         Task<ResponseMessage> DeleteFinanceYearTerm(long id);
+        Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft);
         Task<ResponseMessage> UpdateFinanceData(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity);
         Task<FinancialYearTermWiseFeeEntity> GetFinanceDataById(long id);
         Task<IEnumerable<FinancialYearTermWiseFeeEntity>> GetFinanceData();

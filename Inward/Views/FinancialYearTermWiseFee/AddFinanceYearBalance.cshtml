@@ -1,0 +1,164 @@
+﻿<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+@model GCM.Entity.FinanceBalanceEntity;
+@{
+	var msg = TempData["SaveStatus"] as string;
+}
+<div class="content-wrapper">
+	<form method="post" action="AddFinanceYearBalance">
+	<div class="container-fluid">
+		<div class="row mt-2">
+			<div class="card card2">
+				<div class="card-body p-2">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-horizontal form-bordered">
+								<div class="form-group row">
+									<label class="control-label col-md-3">Finance Year:</label>
+
+									<div class="col-md-9 control-form">
+										<select asp-for="FinancialYearId" class="form-control select2" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
+											<option class="bi-option" value="">---Select Year---</option>
+										</select>
+										<span asp-validation-for="FinancialYearId" class="text-danger"></span>
+									</div>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+					<div class="table-responsive mt-4">
+						<button type="button" class="btn btn-primary btn-add mb-2" id="addRowBtn">Add Row</button>
+						<table class="table table-bordered" id="dynamicTable">
+							<thead class="">
+								<tr>
+									<th>Subhead</th>
+									<th>Amount</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<select name="balanceLists[0].SubHeadId" class="form-control subhead-select">
+											<option value="">---Select Subhead---</option>
+											@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+											{
+												<option value="@subhead.Value">@subhead.Text</option>
+											}
+										</select>
+									</td>
+									<td>
+										<input name="balanceLists[0].amount" type="number" class="form-control" placeholder="Enter Amount">
+									</td>
+									
+									<td>
+										<button type="button" class="btn btn-danger btn-remove">Remove</button>
+									</td>
+								</tr>
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class=" text-center">
+			<button type="submit" class="btn btn-success">Submit</button>
+			<a href="@Url.Action("GetFinancialTermData", "FinancialYearTermWiseFee")" class="btn btn-secondary">
+				<i class="fas fa-list mr-1"></i>
+				Go to List
+			</a>
+		</div>
+	</div>
+	</form>
+</div>
+
+											<script>
+												$(document).ready(function () {
+
+			debugger;
+			var msg = '@msg';
+			if (msg != null && msg != '') {
+				ShowDynamicSwalAlert("", msg);
+			}
+		});
+
+												document.addEventListener('DOMContentLoaded', function () {
+		const addRowBtn = document.getElementById('addRowBtn');
+		const dynamicTable = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
+
+		// Initialize rowIndex based on the number of existing rows in the table
+		let rowIndex = dynamicTable.rows.length;
+
+		// Add Row Functionality
+		addRowBtn.addEventListener('click', () => {
+			const newRow = document.createElement('tr');
+			newRow.innerHTML = `
+				<td>
+					<select name="balanceLists[${rowIndex}].SubHeadId" class="form-control subhead-select" select2>
+						<option value="">---Select Subhead---</option>
+	@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+	{
+													<option value="@subhead.Value">@subhead.Text</option>
+	}
+					</select>
+				</td>
+				<td>
+					<input name="balanceLists[${rowIndex}].amount" type="number" class="form-control" placeholder="Enter Amount">
+				</td>
+				
+				<td>
+					<button type="button" class="btn btn-danger btn-remove">Remove</button>
+				</td>
+			`;
+			dynamicTable.appendChild(newRow);
+			rowIndex++; // Increment rowIndex for the next row
+			updateDropdowns();
+
+		});
+
+		// Remove Row Functionality
+		dynamicTable.addEventListener('click', (event) => {
+			if (event.target.classList.contains('btn-remove')) {
+				const row = event.target.closest('tr');
+				const rows = dynamicTable.getElementsByTagName('tr');
+				if (rows.length > 1) {
+
+					row.remove();
+					updateDropdowns();
+				} else {
+					alert('At least one row must be present!');
+				}
+			}
+		});
+
+		// Update Dropdown Options
+		dynamicTable.addEventListener('change', (event) => {
+			if (event.target.classList.contains('subhead-select')) {
+				updateDropdowns();
+			}
+		});
+
+		function updateDropdowns() {
+			const allSelects = document.querySelectorAll('.subhead-select');
+			const selectedValues = Array.from(allSelects).map(select => select.value);
+
+			allSelects.forEach(select => {
+				const currentValue = select.value;
+				const options = select.querySelectorAll('option');
+				options.forEach(option => {
+					if (option.value !== "" && selectedValues.includes(option.value) && option.value !== currentValue) {
+						option.style.display = 'none';
+					} else {
+						option.style.display = 'block';
+					}
+				});
+			});
+		}
+	});
+											</script>
