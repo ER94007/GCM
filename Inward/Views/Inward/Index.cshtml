@@ -393,7 +393,6 @@
 	});
 
 		$('#uploadButton').click(function (e) {
-		alert(11)
 		e.preventDefault();
 		
 		var studentData = [];
@@ -419,6 +418,8 @@
 			success: function (response) {
 				if (response.success) {
 					alert('Students saved successfully!');
+					
+				window.location.href = '@Url.Action("ViewStudents", "Inward")';
 				} else {
 					alert('Error saving students.');
 				}

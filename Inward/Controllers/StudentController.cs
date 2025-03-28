@@ -101,70 +101,6 @@ namespace GCM.Controllers
         }
 
 
-        //private List<Student> GetStudentsFromExcel(string filePath)
-        //{
-        //    var students = new List<Student>();
-        //    using (var package = new ExcelPackage(new FileInfo(filePath)))
-        //    {
-        //        var worksheet = package.Workbook.Worksheets[0];
-        //        var rowCount = worksheet.Dimension.Rows;
-
-        //        for (int row = 2; row <= rowCount; row++)
-        //        {
-        //            var student = new Student
-        //            {
-        //                name = worksheet.Cells[row, 1].Text,
-        //                mobileno = worksheet.Cells[row, 2].Text,
-        //                email = worksheet.Cells[row, 3].Text,
-        //                gendername = worksheet.Cells[row, 4].Text,
-        //                // Set genderid based on gendername
-        //                genderid = worksheet.Cells[row, 4].Text.ToLower() == "male" ? 1 :
-        //                           worksheet.Cells[row, 4].Text.ToLower() == "female" ? 2 : 0,
-        //                // Set categoryid based on categoryname
-        //                categoryname = worksheet.Cells[row, 5].Text,
-        //                categoryid = worksheet.Cells[row, 5].Text.ToLower() == "general" ? 1 :
-        //                             worksheet.Cells[row, 5].Text.ToLower() == "ews" ? 2 :
-        //                             worksheet.Cells[row, 5].Text.ToLower() == "sc" ? 3 :
-        //                             worksheet.Cells[row, 5].Text.ToLower() == "st" ? 4 : 0,
-        //                enrolmentno = worksheet.Cells[row, 6].Text,
-        //                applicationno = worksheet.Cells[row, 7].Text,
-        //                userid = worksheet.Cells[row, 8].Text
-        //            };
-        //            students.Add(student);
-        //        }
-        //    }
-        //    return students;
-        //}
-
-        //private List<Student> GetStudentsFromExcel(string filePath)
-        //{
-        //    var students = new List<Student>();
-        //    using (var package = new ExcelPackage(new FileInfo(filePath)))
-        //    {
-        //        var worksheet = package.Workbook.Worksheets[0];
-        //        var rowCount = worksheet.Dimension.Rows;
-
-        //        for (int row = 2; row <= rowCount; row++)
-        //        {
-        //            var student = new Student
-        //            {
-        //                name = worksheet.Cells[row, 1].Text,
-        //                mobileno = worksheet.Cells[row, 2].Text,
-        //                email = worksheet.Cells[row, 3].Text,
-        //                gendername = worksheet.Cells[row, 4].Text,
-        //                genderid = int.Parse(worksheet.Cells[row, 4].Text),
-        //                categoryid = int.Parse(worksheet.Cells[row, 5].Text),
-        //                categoryname = worksheet.Cells[row, 6].Text,
-        //                enrolmentno = worksheet.Cells[row, 7].Text,
-        //                applicationno = worksheet.Cells[row, 8].Text,
-        //                userid = worksheet.Cells[row, 9].Text
-        //            };
-        //            students.Add(student);
-        //        }
-        //    }
-        //    return students;
-        //}
-
         private DataTable ConvertStudentsToDataTable(List<Student> students)
         {
             // Create a new DataTable object
@@ -394,24 +330,25 @@ namespace GCM.Controllers
                 // Call the AddStudent method and pass the DataTable
                 var regResponse = await _studentService.AddStudent(studentsDataTable);
 
-                // Handle the response and return a JSON result
+                // Return a success or failure response as JSON
                 if (regResponse.Id == 1)
                 {
-                    return Json(new { success = true });
+                    // Success, return JSON with the success flag
+                    return Json(new { success = true, message = "Students added successfully." });
                 }
                 else
                 {
-                    return Json(new { success = false});
+                    // Failure, return JSON with the failure flag
+                    return Json(new { success = false, message = "Error while adding students." });
                 }
             }
             catch (Exception ex)
             {
-                // Handle any exceptions
-                return Json(new { success = false, message = ex.Message });
+                // Handle exceptions and return error message
+                return Json(new { success = false, message = "An error occurred: " + ex.Message });
             }
         }
 
-        // Helper method to convert List<Student> to DataTable
         public static DataTable ConvertToDataTable(List<Student> students)
         {
             var dataTable = new DataTable();
@@ -420,8 +357,8 @@ namespace GCM.Controllers
             dataTable.Columns.Add("Name", typeof(string));
             dataTable.Columns.Add("MobileNo", typeof(string));
             dataTable.Columns.Add("Email", typeof(string));
-            dataTable.Columns.Add("Category", typeof(string));
-            dataTable.Columns.Add("Gender", typeof(string));
+            dataTable.Columns.Add("CategoryId", typeof(int));  // Adding CategoryId column
+            dataTable.Columns.Add("GenderId", typeof(int));    // Adding GenderId column
             dataTable.Columns.Add("ApplicationNo", typeof(string));
             dataTable.Columns.Add("EnrollmentNo", typeof(string));
 
@@ -432,15 +369,68 @@ namespace GCM.Controllers
                 row["Name"] = student.name;
                 row["MobileNo"] = student.mobileno;
                 row["Email"] = student.email;
-                row["Category"] = student.categoryname;
-                row["Gender"] = student.gendername;
+
+                // Set CategoryId based on category name
+                if (student.categoryname.ToLower() == "sc")
+                {
+                    row["CategoryId"] = 3; // SC Category
+                }
+                else if (student.categoryname.ToLower() == "st")
+                {
+                    row["CategoryId"] = 4; // ST Category
+                }
+                else if (student.categoryname.ToLower() == "general")
+                {
+                    row["CategoryId"] = 1; // General Category
+                }
+                else if (student.categoryname.ToLower() == "obc")
+                {
+                    row["CategoryId"] = 3; // OBC Category
+                }
+                else if (student.categoryname.ToLower() == "ews")
+                {
+                    row["CategoryId"] = 5; // EWS Category
+                }
+                else if (student.categoryname.ToLower() == "sebc")
+                {
+                    row["CategoryId"] = 2; // SEBC Category
+                }
+                else
+                {
+                    row["CategoryId"] = DBNull.Value; // Unknown category
+                }
+
+                // Set GenderId based on gender name
+                if (student.gendername.ToLower() == "male")
+                {
+                    row["GenderId"] = 1; // Male
+                }
+                else if (student.gendername.ToLower() == "female")
+                {
+                    row["GenderId"] = 2; // Female
+                }
+                else if (student.gendername.ToLower() == "transgender")
+                {
+                    row["GenderId"] = 3; // Transgender
+                }
+                else if (student.gendername.ToLower() == "other")
+                {
+                    row["GenderId"] = 3; // Other
+                }
+                else
+                {
+                    row["GenderId"] = DBNull.Value; // Unknown gender
+                }
+
                 row["ApplicationNo"] = student.applicationno;
                 row["EnrollmentNo"] = student.enrolmentno;
+
                 dataTable.Rows.Add(row);
             }
 
             return dataTable;
         }
+
 
     }
 }
