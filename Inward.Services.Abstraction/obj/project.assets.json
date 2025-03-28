@@ -7339,11 +7339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectUniqueName": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "projectName": "GCM.Services.Abstraction",
-      "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\GCM\\Inward.Services.Abstraction\\obj\\",
+      "outputPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -7364,14 +7364,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+            "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj"
             },
-            "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+            "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj"
             },
-            "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+            "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+              "projectPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
             }
           }
         }

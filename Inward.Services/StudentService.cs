@@ -21,7 +21,11 @@ namespace GCM.Services
         }
         public async Task<ResponseMessage> AddStudent(DataTable studentTable)
         {
-            return await _StudentRepo.AddStudent(studentTable);
+           // return await _StudentRepo.AddStudent(studentTable);
+            var result = await _StudentRepo.AddStudent(studentTable);
+
+            // Return the result to the caller
+            return result;
         }
         
     }

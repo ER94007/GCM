@@ -39540,13 +39540,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-<<<<<<< HEAD
       <Fingerprint>0ob31of7el</Fingerprint>
       <Integrity>MPGccAtnZL2jNafv68UxeaJVWLCty0LRQ8mV6Gjqed4=</Integrity>
-=======
-      <Fingerprint>4c3gxref2h</Fingerprint>
-      <Integrity>5CHnm2RCEc4Vj5X7PX6wUvDsuFTOlyC3KuKpFhFWQM4=</Integrity>
->>>>>>> origin/master
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\New Microsoft Excel Worksheet.xlsx'))</OriginalItemSpec>

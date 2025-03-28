@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {}
+    "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {}
   },
   "projects": {
-    "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
+    "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj",
         "projectName": "GCM.Common",
-        "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Common\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
