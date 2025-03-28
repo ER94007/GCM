@@ -8793,7 +8793,15 @@
       "PackagePath": "staticwebassets\\uploads\\std.xlsx"
     },
     {
+<<<<<<< HEAD
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\uploads\\stu.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\stu.xlsx"
+    },
+    {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\uploads\\student.xlsx",
+=======
       "Id": "D:\\GCM\\Inward\\wwwroot\\uploads\\student.xlsx",
+>>>>>>> origin/master
       "PackagePath": "staticwebassets\\uploads\\student.xlsx"
     },
     {

@@ -26358,11 +26358,22 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4c3gxref2h"},{"Name":"integrity","Value":"sha256-5CHnm2RCEc4Vj5X7PX6wUvDsuFTOlyC3KuKpFhFWQM4="},{"Name":"label","Value":"_content/GCM/uploads/New Microsoft Excel Worksheet.xlsx"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9451"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u00225CHnm2RCEc4Vj5X7PX6wUvDsuFTOlyC3KuKpFhFWQM4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 17:34:24 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/GCM/uploads/New Microsoft Excel Worksheet.0ob31of7el.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\New Microsoft Excel Worksheet.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0ob31of7el"},{"Name":"integrity","Value":"sha256-MPGccAtnZL2jNafv68UxeaJVWLCty0LRQ8mV6Gjqed4="},{"Name":"label","Value":"_content/GCM/uploads/New Microsoft Excel Worksheet.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9455"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022MPGccAtnZL2jNafv68UxeaJVWLCty0LRQ8mV6Gjqed4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 18:03:10 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GCM/uploads/New Microsoft Excel Worksheet.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\New Microsoft Excel Worksheet.xlsx'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
+<<<<<<< HEAD
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-MPGccAtnZL2jNafv68UxeaJVWLCty0LRQ8mV6Gjqed4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9455"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022MPGccAtnZL2jNafv68UxeaJVWLCty0LRQ8mV6Gjqed4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 18:03:10 GMT"}]]]></ResponseHeaders>
+=======
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5CHnm2RCEc4Vj5X7PX6wUvDsuFTOlyC3KuKpFhFWQM4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9451"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u00225CHnm2RCEc4Vj5X7PX6wUvDsuFTOlyC3KuKpFhFWQM4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 17:34:24 GMT"}]]]></ResponseHeaders>
+>>>>>>> origin/master
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GCM/uploads/std.4ptmglhh37.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\std.xlsx'))</AssetFile>
@@ -26375,6 +26386,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2BMrBg7IS8B86C7DjRQmY/EmuMxB9F1VRY1NKCuFZoE="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9419"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u00222BMrBg7IS8B86C7DjRQmY/EmuMxB9F1VRY1NKCuFZoE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 17:34:24 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/GCM/uploads/stu.6v2qaael47.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\stu.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6v2qaael47"},{"Name":"integrity","Value":"sha256-AmPbFFZAFRImMyK697SofFfT1bvet1RWSZtQLhOV9Hw="},{"Name":"label","Value":"_content/GCM/uploads/stu.xlsx"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"9439"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022AmPbFFZAFRImMyK697SofFfT1bvet1RWSZtQLhOV9Hw=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 21:08:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/GCM/uploads/stu.xlsx">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\stu.xlsx'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-AmPbFFZAFRImMyK697SofFfT1bvet1RWSZtQLhOV9Hw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9439"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u0022AmPbFFZAFRImMyK697SofFfT1bvet1RWSZtQLhOV9Hw=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 21:08:54 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GCM/uploads/student.h0efspv2p8.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\student.xlsx'))</AssetFile>
