@@ -62,6 +62,8 @@ namespace GCM.Controllers
             return RedirectToAction("ViewStudents", "Inward");
         }
 
+
+
         private List<Student> GetStudentsFromExcel(string filePath)
         {
             var students = new List<Student>();
@@ -168,6 +170,12 @@ namespace GCM.Controllers
                     using (var package = new ExcelPackage(stream))
                     {
                         var worksheet = package.Workbook.Worksheets[0]; // Get the first sheet
+
+                        if (worksheet?.Dimension == null)
+                        {
+                            return Json(new { success = false, message = "The uploaded file is empty or has no data." });
+                        }
+
                         var rowCount = worksheet.Dimension.Rows;
                         var colCount = worksheet.Dimension.Columns;
 
@@ -431,6 +439,15 @@ namespace GCM.Controllers
             return dataTable;
         }
 
+        [HttpGet]
+        public IActionResult DownloadExcel()
+        {
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "files", "ExcelDemo.xlsx");
+            var fileBytes = System.IO.File.ReadAllBytes(filePath);
+            var fileName = "DemoData.xlsx";
+
+            return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+        }
 
     }
 }

@@ -25,15 +25,36 @@ namespace Inward.Controllers
         }
         public async Task<IActionResult> Index(string? studentid)
         {
+
+           
+
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             Student student = new Student();
+
+            
+            int stdid = 0;
+            if (!string.IsNullOrEmpty(studentid))
+            {
+                try
+                {
+                    // Decode the URL-encoded string before decryption
+                    string decryptedId = EncryptionHelper.Decrypt(Uri.UnescapeDataString(studentid));
+                    stdid = int.Parse(decryptedId);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error decrypting student ID: " + ex.Message);
+                    return BadRequest("Invalid student ID.");
+                }
+            }
+
             if (userIdClaim == null)
             {
                 return RedirectToAction("Login", "Login");
             }
             if (studentid != null)
             {
-                student = await _userLoginService.GetStudentByid(Convert.ToInt64(studentid));
+                student = await _userLoginService.GetStudentByid(Convert.ToInt64(stdid));
             }
             ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             ViewBag.CategoryList = _userLoginService.BindCategory().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList(); ;
