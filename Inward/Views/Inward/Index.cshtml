@@ -2,34 +2,36 @@
 
 	var msg = TempData["SaveStatus"] as string;
 	long studentid = 0;
+	var varShow = 0;
 	if (Model.studentid != 0)
 	{
 		studentid = Model.studentid;
+		varShow = 1;
 	}
 }
 @model Inward.Entity.Student
 
 <style>
 	.green-radio {
-		width: 20px;
-		height: 20px;
-		border: 2px solid green;
-		background-color: green;
+	width: 20px;
+	height: 20px;
+	border: 2px solid green;
+	background-color: green;
 	}
 
-		.green-radio:checked {
-			background-color: darkgreen;
-			border-color: darkgreen;
-		}
+	.green-radio:checked {
+	background-color: darkgreen;
+	border-color: darkgreen;
+	}
 
-		.green-radio:focus {
-			outline: none;
-		}
+	.green-radio:focus {
+	outline: none;
+	}
 
-		/* Optional: Change text color for green radio */
-		.green-radio + label {
-			color: green;
-		}
+	/* Optional: Change text color for green radio */
+	.green-radio + label {
+	color: green;
+	}
 </style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -42,8 +44,17 @@
 		<div style="margin-top: 20px;"></div>
 		<div>
 			<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio"> 1. Add by Form
-			<input type="radio" name="formType" value="form2" id="form2" class="green-radio"> 2. Upload Excel
+			@if (varShow == 0)
+			{
+				<span>
+					<input type="radio" name="formType" value="form2" id="form2" class="green-radio"> 2. Upload Excel
+				</span>
+			}
 		</div>
+
+	
+
+
 
 		<div style="margin-top: 20px;"></div>
 		<form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
@@ -143,10 +154,10 @@
 					<i class="fas fa-list mr-1"></i>
 					Go to List
 				</a>
-				<button type="button" id="btnUploadExcel" onclick="AddStudents()" class="btn btn-success">
+				@* <button type="button" id="btnUploadExcel" onclick="AddStudents()" class="btn btn-success">
 					<i class="fas fa-upload mr-1"></i>
 					Upload Excel
-				</button>
+				</button> *@
 
 
 
@@ -155,13 +166,20 @@
 		</form>
 
 		<form asp-action="Upload" asp-controller="Student" method="post" id="AddStudents" enctype="multipart/form-data">
-			<div class="form-group">
+			@* <div class="form-group">
 				<label for="file">Choose Excel File</label>
 				<input type="file" name="file" class="form-control" />
+			</div> *@
+			<div class="form-group">
+				<label for="file">Choose Excel File</label>
+				<input type="file" name="file" class="form-control" accept=".xls,.xlsx" required />
+				<span class="text-danger">@Html.ValidationMessage("file")</span>
 			</div>
 
+
 			<div style="margin-top: 20px;"></div>
-			<button id="showDataBtn" class="btn btn-primary">Show Data</button>
+			<button id="showDataBtn" class="btn btn-primary" style="margin-right: 904px;">Show Data</button>
+			<a asp-controller="Student" asp-action="DownloadExcel" class="btn btn-primary">Download Excel Demo</a>
 			<div style="margin-top: 20px;"></div>
 
 			<div id="showdatadiv">
@@ -207,7 +225,7 @@
 				</div>
 
 				<div style="margin-top: 20px;"></div>
-				<button type="button" id="uploadButton" class="btn btn-primary">Upload</button>
+				<button type="button" id="uploadButton" class="btn btn-primary">Save Data</button>
 			</div>
 		</form>
 
@@ -290,6 +308,17 @@
 				$('#showDataBtn').click(function (e) {
 		$("#showdatadiv").show();
 		e.preventDefault();
+
+		var fileInput = $('input[type="file"][name="file"]')[0];
+	var file = fileInput.files[0];
+
+	// If no file is selected, hide the div and show an error message
+	if (!file) {
+		$("#showdatadiv").hide();
+		alert("Please choose an Excel file before proceeding.");
+		return;
+	}
+
 		var fileInput = $('input[type="file"][name="file"]')[0];
 		var file = fileInput.files[0];
 
@@ -309,7 +338,14 @@
 				if (response.success === false) {
 					// Hide table headers if there are duplicates
 					$('#InwardList thead').hide();
+					$('#uploadButton').hide();
 
+					 if (response.message) {
+					let errorRow = `<tr>
+										<td colspan="8" class="text-center text-danger"><strong>${response.message}</strong></td>
+									</tr>`;
+					$('#InwardList tbody').append(errorRow);
+				}
 					// Display duplicates inside the table
 					if (response.duplicates) {
 						let row = `<tr>

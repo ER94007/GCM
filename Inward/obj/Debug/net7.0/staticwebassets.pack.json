@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\GCM.bz919fz3ot.bundle.scp.css"
     },
     {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Files\\ExcelDemo.xlsx",
+      "PackagePath": "staticwebassets\\Files\\ExcelDemo.xlsx"
+    },
+    {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Images\\AdminLTELogo.png",
       "PackagePath": "staticwebassets\\Images\\AdminLTELogo.png"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Images\\bg2.jpg",
       "PackagePath": "staticwebassets\\Images\\bg2.jpg"
+    },
+    {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Images\\college_logo_Coloured.png",
+      "PackagePath": "staticwebassets\\Images\\college_logo_Coloured.png"
     },
     {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Images\\user2-160x160.jpg",
@@ -8497,6 +8505,10 @@
       "PackagePath": "staticwebassets\\css\\bootstrap-datepicker.min.css"
     },
     {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\css\\datatables.min.css",
+      "PackagePath": "staticwebassets\\css\\datatables.min.css"
+    },
+    {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\css\\select2.css",
       "PackagePath": "staticwebassets\\css\\select2.css"
     },
@@ -8523,6 +8535,10 @@
     {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\js\\bootstrap-datepicker.min.js",
       "PackagePath": "staticwebassets\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\js\\datatables.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.min.js"
     },
     {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\js\\exporting.js",
