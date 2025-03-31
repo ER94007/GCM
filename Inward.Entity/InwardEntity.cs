@@ -22,8 +22,9 @@ namespace Inward.Entity
         public string? enrolmentno { get; set; }
         public string? applicationno { get; set; }
         public string? userid { get; set; }
+        public List<Student>? Studentslist { get; set; }
         //public IFileForm studentfile { get; set; }
-    
+
     }
     public class InwardEntity
     {
