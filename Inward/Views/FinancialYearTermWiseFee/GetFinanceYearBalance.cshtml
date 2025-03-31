@@ -1,0 +1,92 @@
+﻿@{
+    var msg = TempData["SaveStatus"] as string;
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+@model IEnumerable<GCM.Entity.FinanceBalanceEntity>
+
+<div class="content-wrapper">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Finance List</h3>
+                        </div>
+                        <div class="card-body">
+                            <table id="InwardList" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Sr.</th>
+                                        <th>Financial Year</th>
+                                        <th>Subhead</th>
+                                        <th>Amount</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.FinancialYearBalanceId</td>
+                                            <td>@item.financialYear</td>
+                                            <td>@item.subheadname</td>
+                                            <td>@item.amount</td>
+                                            <td><a asp-action="UpdateFinanceBalanceById" asp-controller="FinancialYearTermWiseFee" asp-route-FinancialYearBalanceId="@item.FinancialYearBalanceId">Update</a></td>
+                                             <td><a onclick="deleteFinanceBalance(@item.FinancialYearBalanceId)">Delete</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("AddFinanceYearBalance", "FinancialYearTermWiseFee")" class="btn btn-secondary">
+                            <i class="fas fa-list mr-1"></i>
+                            Go to Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.7/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.js"></script>
+<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+<script>
+    function deleteFinanceBalance(FinancialYearBalanceId) {
+        if (confirm("Are you sure you want to delete this Data?")) {
+            $.ajax({
+                url: '/FinancialYearTermWiseFee/DeleteFinanceBalance',  // Adjust the URL based on your controller
+                type: 'POST',
+                data: { FinancialYearBalanceId: FinancialYearBalanceId },
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        location.reload(); // Reload the page to update the list
+                    } else {
+                        alert("Error: " + response.message);
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while deleting the student.");
+                }
+            });
+        }
+    }
+    $(document).ready(function () {
+            var msg = '@msg';
+                if (msg != null && msg != '') {
+                    ShowDynamicSwalAlert("", msg);
+                }
+            });
+</script>

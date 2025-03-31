@@ -24,6 +24,82 @@ namespace GCM.Repository
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
 
+        public async Task<ResponseMessage> DeleteFinanceBalance(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearBalanceId", id);
+
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.DeleteBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearBalanceId", fn.FinancialYearBalanceId);
+                    queryParameters.Add("@FinancialYearId", fn.FinancialYearId);
+                    queryParameters.Add("@SubheadId", fn.SubHeadId);
+                    queryParameters.Add("@amount", fn.amount);
+
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.UpdateFinanceBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<FinanceBalanceEntity> GetBalanceDataById(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearBalanceId", id);
+                    var res = await conn.QueryFirstOrDefaultAsync<FinanceBalanceEntity>(StoreProcedures.GetBalanceDataById, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<IEnumerable<FinanceBalanceEntity>> GetFinanceBalanceData()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<FinanceBalanceEntity>(StoreProcedures.GetFinanceBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft)
         {
             try

@@ -131,5 +131,51 @@ namespace GCM.Controllers
             }
             return RedirectToAction("AddFinanceYearBalance");
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetFinanceYearBalance()
+        {
+            var fin = await _ifinancialYearTermWiseFee.GetFinanceBalanceData();
+            return View(fin);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateFinanceBalanceById(string FinancialYearBalanceId)
+        {
+            ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            var fn = await _ifinancialYearTermWiseFee.GetBalanceDataById(Convert.ToInt64(FinancialYearBalanceId));
+            return View(fn);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateFinanceBalanceById(FinanceBalanceEntity fn)
+        {
+            var result = await _ifinancialYearTermWiseFee.UpdateFinanceBalance(fn);
+            if (result.Msg == "DATA UPDATED")
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+            }
+            else
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+            }
+            return RedirectToAction("GetFinanceYearBalance");
+        }
+
+        public async Task<IActionResult> DeleteFinanceBalance(string FinancialYearBalanceId)
+        {
+            var result = await _ifinancialYearTermWiseFee.DeleteFinanceBalance(Convert.ToInt64(FinancialYearBalanceId));
+            if (result.Id > 0)
+            {
+                return Json(new { success = true, message = "Student deleted successfully." });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Failed to delete the student." });
+            }
+        }
+
     }
 }

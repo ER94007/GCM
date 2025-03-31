@@ -11,6 +11,10 @@ namespace GCM.Services.Abstraction
 {
     public interface IFinancialYearTermWiseFeeService
     {
+        Task<ResponseMessage> DeleteFinanceBalance(long id);
+        Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn);
+        Task<FinanceBalanceEntity> GetBalanceDataById(long id);
+        Task<IEnumerable<FinanceBalanceEntity>> GetFinanceBalanceData();
         Task<ResponseMessage> DeleteFinanceYearTerm(long id);
         Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft);
         Task<ResponseMessage> UpdateFinanceData(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity);

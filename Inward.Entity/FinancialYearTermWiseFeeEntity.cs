@@ -35,6 +35,8 @@ namespace GCM.Entity
     {
         public long FinancialYearBalanceId { get; set; }
         public long FinancialYearId { get; set; }
+        public string financialYear { get; set; }
+        public string subheadname { get; set; }
         public long SubHeadId { get; set; }
         public decimal amount { get; set; }
         public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();

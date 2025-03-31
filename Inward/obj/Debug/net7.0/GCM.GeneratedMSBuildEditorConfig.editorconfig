@@ -28,8 +28,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2lhbFllYXJUZXJtRmVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinanceYearBalance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEZpbmFuY2VZZWFyQmFsYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinancialTermData.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEZpbmFuY2lhbFRlcm1EYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateFinanceBalanceById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFVwZGF0ZUZpbmFuY2VCYWxhbmNlQnlJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateFinancialById.cshtml]
