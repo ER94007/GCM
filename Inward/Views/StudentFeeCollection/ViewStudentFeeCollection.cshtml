@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GCM.Entity.StudentFeeCollection>
+
+@{
+	ViewData["Title"] = "ViewStudentFeeCollection";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
+<link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
+
+<div class="content-wrapper">
+	<section class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">List of Students</h3>
+						</div>
+						<div class="card-body">
+							<table id="InwardList" class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Sr.</th>
+										<th>Student</th>
+										<th>Financial Year</th>
+										<th>Term</th>
+										<th>Reciept No</th>
+										<th>Fee Mode</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+									{
+										<tr>
+											<td>@item.Index</td> @* Serial number instead of studentid *@
+											<td>@item.Data.Name</td>
+											<td>@item.Data.FinancialYear</td>
+											<td>@item.Data.TermName</td>
+											<td>@item.Data.RecieptNo</td>
+											<td>@item.Data.FeeModeDescription</td>
+										</tr>
+									}
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="text-center mt-3">
+						<a href="@Url.Action("AddStudentFeeCollection", "StudentFeeCollection")" class="btn btn-secondary">
+							<i class="fas fa-list mr-1"></i>
+							Go to Form
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

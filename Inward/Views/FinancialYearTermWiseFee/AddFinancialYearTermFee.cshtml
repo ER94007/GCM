@@ -6,7 +6,6 @@
 @{
 	var msg = TempData["SaveStatus"] as string;
 }
-<
 
 <!-- jQuery Library -->
 
@@ -33,8 +32,7 @@
 									<div class="col-md-6">
 										<div class="form-horizontal form-bordered">
 											<div class="form-group row">
-													<label class="control-label col-md-3">Finance Year:</label>
-												
+												<label class="control-label col-md-3">Finance Year:</label>
 												<div class="col-md-9 control-form">
 													<select asp-for="FinancialYearId" class="form-control select2"  asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
 														<option class="bi-option" value="">---Select Year---</option>
@@ -47,9 +45,7 @@
 									<div class="col-md-6">
 										<div class="form-horizontal form-bordered">
 											<div class="form-group row">
-
 												<label class="control-label col-md-3">Term:</label>
-												
 												<div class="col-md-9 control-form">
 													<select multiple="multiple" asp-for="TermId" class="form-control select2 .select2-selection--multiple" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))" onchange="bindterm(this)" >
 														
@@ -165,10 +161,10 @@
 				<td>
 					<select name="financeLists[${rowIndex}].SubHeadId" class="form-control subhead-select" select2>
 						<option value="">---Select Subhead---</option>
-	@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
-	{
+				@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+					{
 												<option value="@subhead.Value">@subhead.Text</option>
-	}
+					}
 					</select>
 				</td>
 				<td>
@@ -180,10 +176,10 @@
 				<td>
 					<button type="button" class="btn btn-danger btn-remove">Remove</button>
 				</td>
-			`;
-			dynamicTable.appendChild(newRow);
-			rowIndex++; // Increment rowIndex for the next row
-			updateDropdowns();
+			`		;
+				dynamicTable.appendChild(newRow);
+				rowIndex++; // Increment rowIndex for the next row
+				updateDropdowns();
 
 		});
 

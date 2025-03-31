@@ -59,6 +59,9 @@ builder.Services.AddControllersWithViews()
     services.AddScoped<IStudentService, StudentService>();
     services.AddScoped<IStudent, StudentRepo>();
 
+    services.AddScoped<IStudentFeeCollectionService, StudentFeeCollectionService>();
+    services.AddScoped<IStudentFeeCollectionRepo, StudentFeeCollectionRepo>();
+
     var app = builder.Build();
 
     if (!app.Environment.IsDevelopment())
