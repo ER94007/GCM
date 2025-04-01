@@ -1,0 +1,13 @@
+C:\Users\Admin\Desktop\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.deps.json
+C:\Users\Admin\Desktop\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.dll
+C:\Users\Admin\Desktop\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.pdb
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.AssemblyInfo.cs
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.sourcelink.json
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.dll
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\refint\GCM.Common.dll
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.pdb
+C:\Users\Admin\Desktop\GCM\Inward.Common\obj\Debug\net8.0\ref\GCM.Common.dll
