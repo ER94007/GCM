@@ -20,6 +20,14 @@ namespace GCM.Services
         {
             _financialYearTermWiseFeeRepo = financialYearTermWiseFeeRepo ?? throw new ArgumentNullException(nameof(financialYearTermWiseFeeRepo));
         }
+        public async Task<IEnumerable<ExpenseEntity>> GetExpenseData()
+        {
+            return await _financialYearTermWiseFeeRepo.GetExpenseData();
+        }
+        public async Task<ResponseMessage> AddExpense(ExpenseEntity ep)
+        {
+            return await _financialYearTermWiseFeeRepo.AddExpense(ep);
+        }
         public async Task<ResponseMessage> DeleteFinanceBalance(long id)
         {
             return await _financialYearTermWiseFeeRepo.DeleteFinanceBalance(id);

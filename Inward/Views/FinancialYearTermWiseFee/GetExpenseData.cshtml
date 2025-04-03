@@ -1,0 +1,46 @@
+﻿@model IEnumerable<GCM.Entity.ExpenseEntity>;
+@{
+	ViewBag.Title = "Expense";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var msg = TempData["SaveStatus"] as string;
+}
+<div class="content-wrapper">
+	<section class="content">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Expense List</h3>
+						</div>
+						<div class="card-body">
+							<table id="InwardList" class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th>Sr.</th>
+										<th>Financial Year</th>
+										<th>Sub Head</th>
+										<th>Date Of Expense</th>
+										<th>Expense Amount</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach (var item in Model)
+									{
+										<tr>
+											<td>@item.ExpenseMasterId</td>
+											<td>@item.FinancialYear</td>
+											<td>@item.SubHeadName</td>
+											<td>@item.DateofExpense</td>
+											<td>@item.amount</td>
+										</tr>
+									}
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

@@ -1,4 +1,5 @@
-﻿using Inward.Entity;
+﻿using GCM.Entity;
+using Inward.Entity;
 using Inward.Repository.Abstraction;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,6 +18,22 @@ namespace Inward.Services
         public LoginService(ILoginRepo userLoginRepo)
         {
             _LoginRepo = userLoginRepo ?? throw new ArgumentNullException(nameof(userLoginRepo));
+        }
+        public async Task<ResponseMessage> DeleteSubhead(long id)
+        {
+            return await _LoginRepo.DeleteSubhead(id);
+        }
+        public async Task<SubHeadEntity> GetSubheadById(long id)
+        {
+            return await _LoginRepo.GetSubheadById(id);
+        }
+        public async Task<IEnumerable<SubHeadEntity>> GetSubHeadList()
+        {
+            return await _LoginRepo.GetSubHeadList();
+        }
+        public async Task<ResponseMessage> AddUpdateSubhead(SubHeadEntity subHead)
+        {
+            return await _LoginRepo.AddUpdateSubhead(subHead);
         }
         public  async Task<ResponseMessage> DeleteStudent(long studentid)
         {

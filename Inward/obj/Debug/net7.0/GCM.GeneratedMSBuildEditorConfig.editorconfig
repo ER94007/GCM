@@ -20,12 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 7.0
 build_property.EnableCodeStyleSeverity = 
 
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/AddExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEV4cGVuc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinanceYearBalance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2VZZWFyQmFsYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinancialYearTermFee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2lhbFllYXJUZXJtRmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GCM/Inward/Views/FinancialYearTermWiseFee/GetExpenseData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEV4cGVuc2VEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinanceYearBalance.cshtml]
@@ -58,6 +66,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/GCM/Inward/Views/Inward/GetInwardList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEdldElud2FyZExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GCM/Inward/Views/Inward/GetSubHeadList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEdldFN1YkhlYWRMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GCM/Inward/Views/Inward/Index.cshtml]

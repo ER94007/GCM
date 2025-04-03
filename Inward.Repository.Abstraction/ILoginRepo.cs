@@ -1,4 +1,5 @@
-﻿using Inward.Entity;
+﻿using GCM.Entity;
+using Inward.Entity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace Inward.Repository.Abstraction
 {
     public interface ILoginRepo : IBaseRepository<BaseDataTableEntity>
     {
+        Task<ResponseMessage> DeleteSubhead(long id);
+        Task<SubHeadEntity> GetSubheadById(long id);
+        Task<IEnumerable<SubHeadEntity>> GetSubHeadList();
+        Task<ResponseMessage> AddUpdateSubhead(SubHeadEntity subHead);
         Task<ResponseMessage> DeleteStudent(long studentid);
         Task<Student> GetStudentByid(long studentid);
         Task<IEnumerable<Student>> GetStudentList();

@@ -50,6 +50,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a asp-controller="Inward" asp-action="AddSubHead" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>SubHead</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a asp-controller="FinancialYearTermWiseFee" asp-action="AddFinancialYearTermFee" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p >Term wise Fee Entry</p>
@@ -58,13 +64,13 @@
                     <li class="nav-item">
                         <a asp-controller="FinancialYearTermWiseFee" asp-action="AddFinanceYearBalance" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
-                            <p >Financial Balance </p>
+                            <p>Opening Balance Entry</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="Inward" asp-action="Index" class="nav-link">
+                        <a asp-controller="FinancialYearTermWiseFee" asp-action="AddExpense" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>Opening Balance Entry</p>
+                            <p>Expense Spent </p>
                         </a>
                     </li>
                     <li class="nav-item">

@@ -23,6 +23,43 @@ namespace GCM.Repository
         {
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
+        public async Task<IEnumerable<ExpenseEntity>> GetExpenseData()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<ExpenseEntity>(StoreProcedures.GetExpenseData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseMessage> AddExpense(ExpenseEntity ep)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearId", ep.FinancialYearId);
+                    queryParameters.Add("@SubHeadId", ep.SubHeadId);
+                    queryParameters.Add("@amount", ep.amount);
+                    queryParameters.Add("@Remarks", ep.Remarks);
+                    queryParameters.Add("@ChequeNo", ep.ChequeNo);
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddExpense, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public async Task<ResponseMessage> DeleteFinanceBalance(long id)
         {

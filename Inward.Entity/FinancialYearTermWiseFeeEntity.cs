@@ -48,4 +48,17 @@ namespace GCM.Entity
         public long SubHeadId { get; set; }
         public decimal amount { get; set; }
     }
+
+    public class ExpenseEntity
+    {
+        public string DateofExpense { get; set; }
+        public string FinancialYear { get; set; }
+        public string SubHeadName { get; set; }
+        public long ExpenseMasterId { get; set; }
+        public long FinancialYearId { get; set; }
+        public long SubHeadId { get; set; }
+        public decimal amount { get; set; }
+        public string Remarks { get; set; }
+        public string ChequeNo { get; set; }
+    }
 }

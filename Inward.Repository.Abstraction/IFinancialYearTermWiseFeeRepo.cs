@@ -12,6 +12,8 @@ namespace GCM.Repository.Abstraction
 {
     public interface IFinancialYearTermWiseFeeRepo  : IBaseRepository<BaseDataTableEntity>
     {
+        Task<IEnumerable<ExpenseEntity>> GetExpenseData();
+        Task<ResponseMessage> AddExpense(ExpenseEntity ep);
         Task<ResponseMessage> DeleteFinanceBalance(long id);
         Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn);
         Task<FinanceBalanceEntity> GetBalanceDataById(long id);
