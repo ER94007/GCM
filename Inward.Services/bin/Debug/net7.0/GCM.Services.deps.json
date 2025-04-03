@@ -1418,10 +1418,7 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "GCM.Common.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GCM.Common.dll": {}
         }
       },
       "GCM.Entity/1.0.0": {
@@ -1430,10 +1427,7 @@
           "Microsoft.AspNetCore.Http": "2.3.0"
         },
         "runtime": {
-          "GCM.Entity.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GCM.Entity.dll": {}
         }
       },
       "GCM.Repository.Abstraction/1.0.0": {
@@ -1447,10 +1441,7 @@
           "System.Data.SqlClient": "4.8.6"
         },
         "runtime": {
-          "GCM.Repository.Abstraction.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GCM.Repository.Abstraction.dll": {}
         }
       },
       "GCM.Services.Abstraction/1.0.0": {
@@ -1463,10 +1454,7 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "GCM.Services.Abstraction.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "GCM.Services.Abstraction.dll": {}
         }
       }
     }

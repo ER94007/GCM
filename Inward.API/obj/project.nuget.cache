@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CbpV3v92i5U=",
+  "dgSpecHash": "HhJxM+lnWbY=",
   "success": true,
   "projectFilePath": "D:\\GCM\\Inward.API\\GCM.API.csproj",
   "expectedPackageFiles": [
@@ -13,5 +13,12 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\GCM\\Inward.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

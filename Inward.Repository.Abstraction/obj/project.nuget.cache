@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BLWFboAjHnw=",
+  "dgSpecHash": "nZRxFDTH8gY=",
   "success": true,
   "projectFilePath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
   "expectedPackageFiles": [
@@ -144,5 +144,12 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file D:\\GCM\\Inward.Repository.Abstraction\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -25480,13 +25480,21 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GCM.bz919fz3ot.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY="}]]]></EndpointProperties>
+<<<<<<< HEAD
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 17:13:53 GMT"}]]]></ResponseHeaders>
+=======
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 10:27:22 GMT"}]]]></ResponseHeaders>
+>>>>>>> origin/master
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GCM/GCM.bz919fz3ot.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GCM.bz919fz3ot.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bz919fz3ot"},{"Name":"integrity","Value":"sha256-OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY="},{"Name":"label","Value":"_content/GCM/GCM.bundle.scp.css"}]]]></EndpointProperties>
+<<<<<<< HEAD
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 17:13:53 GMT"}]]]></ResponseHeaders>
+=======
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1121"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022OeLSgAKCA5eUChQbXwQh9Mozd/2/L7vJ7LIiM20JZLY=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 10:27:22 GMT"}]]]></ResponseHeaders>
+>>>>>>> origin/master
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GCM/Images/accessdenied.d54dhkm6ll.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\accessdenied.jpg'))</AssetFile>

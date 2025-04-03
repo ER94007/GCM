@@ -43,6 +43,9 @@ namespace Inward.Entity
         public static string GetLastInwardNo = "GetLastInwardNo";
         public static string GetInwardList = "GetInwardList";
         public static string AddStudentExcel = "AddStudentExcel";
+        public static string GetFeeDetails = "GetStudentFeeDetails";
+        public static string AddStudentFeeCollection = "AddStudentFeeCollection";
+        public static string GetStudentFeeCollection = "GetStudentFeeCollectionDetails ";
 
     }
 }

@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\GCM\\",
   "Documents": [
     {
@@ -33,6 +34,13 @@
     {
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\financialyeartermwisefee\\updatefinancebalancebyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\updatefinancebalancebyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\gcm.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\gcm.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+>>>>>>> origin/master
     }
   ],
   "DocumentGroupContainers": [
@@ -41,14 +49,20 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
+<<<<<<< HEAD
           "DockedHeight": 283,
           "SelectedChildIndex": 2,
+=======
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+>>>>>>> origin/master
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ViewStudents.cshtml",
@@ -170,6 +184,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+=======
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GCM",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\GCM.csproj",
+              "RelativeDocumentMoniker": "Inward\\GCM.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\GCM.csproj",
+              "RelativeToolTip": "Inward\\GCM.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-01T07:25:04.375Z",
+              "EditorCaption": ""
+>>>>>>> origin/master
             }
           ]
         }
