@@ -1,4 +1,5 @@
-﻿using Inward.Entity;
+﻿using GCM.Entity;
+using Inward.Entity;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,10 @@ namespace Inward.Services.Abstraction
 {
     public interface ILoginService
     {
+        Task<ResponseMessage> DeleteSubhead(long id);
+        Task<SubHeadEntity> GetSubheadById(long subheadid);
+        Task<IEnumerable<SubHeadEntity>> GetSubHeadList();
+        Task<ResponseMessage> AddUpdateSubhead(SubHeadEntity subHead);
         Task<UserMaster> AuthenticateUser(UserMaster userMaster);
         Task<FarmerEntity> GetFarmerDetailsById(string farmerId);
         Task<InwardEntity> GetInwardsById(string InwardId);
