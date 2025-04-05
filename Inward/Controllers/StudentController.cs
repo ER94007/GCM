@@ -200,7 +200,7 @@ namespace GCM.Controllers
                                 categoryname = worksheet.Cells[row, headers["categoryname"]].Text,
                                 enrolmentno = worksheet.Cells[row, headers["enrolmentno"]].Text,
                                 applicationno = worksheet.Cells[row, headers["applicationno"]].Text,
-                                userid = worksheet.Cells[row, headers["userid"]].Text
+                                //userid = worksheet.Cells[row, headers["userid"]].Text
                             };
 
                             // Check if any required field is empty
