@@ -9,7 +9,7 @@ namespace GCM.Entity
     public class SubHeadEntity
     {
         public long subheadid {  get; set; }
-        public long headid { get; set; }
+        public string subheadtype { get; set; }
         public string subheadname { get; set; }
 
     }

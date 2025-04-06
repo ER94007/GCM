@@ -1,14 +1,14 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "EPPlus.Interfaces/8.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.1/EPPlus.Interfaces.dll": {}
+          "lib/net8.0/EPPlus.Interfaces.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/EPPlus.Interfaces.dll": {}
+          "lib/net8.0/EPPlus.Interfaces.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -6655,7 +6655,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "EPPlus.Interfaces >= 8.0.0",
       "Microsoft.AspNetCore.Mvc.ViewFeatures >= 2.2.0",
       "Newtonsoft.Json >= 13.0.3"
@@ -6683,15 +6683,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -6708,8 +6708,8 @@
       "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "EPPlus.Interfaces": {
             "target": "Package",
@@ -6740,7 +6740,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

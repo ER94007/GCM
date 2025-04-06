@@ -23,9 +23,7 @@
 
     <style>
         /* Custom Styles for Smaller Sidebar and Content */
-        .main-sidebar {
-            width: 200px; /* Adjust the width as needed */
-        }
+        
 
         .content-wrapper {
             margin-left: 200px; /* Adjust the margin as needed */
@@ -52,21 +50,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a asp-controller="Inward" asp-action="AddSubHead" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>SubHead</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a asp-controller="FinancialYearTermWiseFee" asp-action="AddFinancialYearTermFee" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p >Term wise Fee Entry</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="FinancialYearTermWiseFee" asp-action="AddFinancialYearTermFee" class="nav-link">
+                        <a asp-controller="FinancialYearTermWiseFee" asp-action="AddFinanceYearBalance" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>Opening Balance Entry</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a asp-controller="StudentFeeCollection" asp-action="AddStudentFeeCollection" class="nav-link">
+                        <a asp-controller="FinancialYearTermWiseFee" asp-action="AddExpense" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
-                            <p>Student Fee Collection</p>
+                            <p>Expense Spent </p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -84,6 +88,7 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        
     </div>
 
   

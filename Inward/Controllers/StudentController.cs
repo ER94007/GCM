@@ -94,7 +94,7 @@ namespace GCM.Controllers
                         categoryname = worksheet.Cells[row, headers["categoryname"]].Text,
                         enrolmentno = worksheet.Cells[row, headers["enrolmentno"]].Text,
                         applicationno = worksheet.Cells[row, headers["applicationno"]].Text,
-                        userid = worksheet.Cells[row, headers["userid"]].Text
+                        //userid = worksheet.Cells[row, headers["userid"]].Text
                     };
                     students.Add(student);
                 }
@@ -118,7 +118,7 @@ namespace GCM.Controllers
            //ataTable.Columns.Add("categoryname", typeof(string));
             dataTable.Columns.Add("enrolmentno", typeof(string));   
             dataTable.Columns.Add("applicationno", typeof(string));
-            dataTable.Columns.Add("userid", typeof(string));
+            //dataTable.Columns.Add("userid", typeof(string));
             // Add other columns based on your Student properties if necessary
 
             // Loop through the list of students and add rows to the DataTable
@@ -133,7 +133,7 @@ namespace GCM.Controllers
                // row["categoryname"] = student.categoryname;
                 row["enrolmentno"] = student.enrolmentno;
                 row["applicationno"] = student.applicationno;
-                row["userid"] = student.userid;
+                //row["userid"] = student.userid;
                 // Add other properties as needed
                 dataTable.Rows.Add(row);
             }

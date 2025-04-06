@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using GCM.Entity;
 using Inward.Entity;
 using Inward.Repository.Abstraction;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -21,7 +22,79 @@ namespace Inward.Repository
         {
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
+        public async Task<ResponseMessage> DeleteSubhead(long subheadid)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@SubheadId", subheadid);
+                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.DeleteSubhead, queryParameters, commandType: CommandType.StoredProcedure);
 
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<SubHeadEntity> GetSubheadById(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@SubheadId", id);
+                    var res = await conn.QueryFirstOrDefaultAsync<SubHeadEntity>(StoreProcedures.GetSubheadById, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<IEnumerable<SubHeadEntity>> GetSubHeadList()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<SubHeadEntity>(StoreProcedures.GetSubheadList, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<ResponseMessage> AddUpdateSubhead(SubHeadEntity sh)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@SubHeadName", sh.subheadname);
+                    queryParameters.Add("@SubHeadType", sh.subheadtype);
+                    queryParameters.Add("@SubHeadId", sh.subheadid);
+                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateSubhead, queryParameters, commandType: CommandType.StoredProcedure);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public async Task<Student> GetStudentByid(long studentid)
         {
             try

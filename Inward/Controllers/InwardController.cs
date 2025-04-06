@@ -114,12 +114,37 @@ namespace Inward.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> AddSubHead()
+        public async Task<IActionResult> AddSubHead(string? subheadid)
         {
             SubHeadEntity sh = new SubHeadEntity();
+            if (subheadid != null)
+            {
+                 sh = await _userLoginService.GetSubheadById(Convert.ToInt64(subheadid));
+            }
+            
             return View(sh);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> AddSubHead(SubHeadEntity sh)
+        {
+            var result = await _userLoginService.AddUpdateSubhead(sh);
+            if (result.Id > 0)
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+            }
+            else
+            {
+                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+            }
+                return RedirectToAction("AddSubHead");
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetSubHeadList()
+        {
+            var lst = await _userLoginService.GetSubHeadList();
+            return View(lst);
+        }
         [HttpGet]
         public async Task<IActionResult> GetFarmerDetailsById(string farmerId)
         {
@@ -127,6 +152,18 @@ namespace Inward.Controllers
             FarmerEntity farmerDetails = await _userLoginService.GetFarmerDetailsById(farmerId);
 
             return Json(new { contactNo = farmerDetails.Contact_No, panCardNo = farmerDetails.Pan_Card_No });
+        }
+        public async Task<IActionResult> DeleteSubhead(string subheadid)
+        {
+            var result = _userLoginService.DeleteSubhead(Convert.ToInt64(subheadid));
+            if (result.Id > 0)
+            {
+                return Json(new { success = true, message = "Subhead deleted successfully." });
+            }
+            else
+            {
+                return Json(new { success = false, message = "Failed to delete the subhead." });
+            }
         }
 
         [HttpGet]

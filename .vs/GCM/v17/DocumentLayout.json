@@ -1,12 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GCAS_GIT\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|c:\\users\\admin\\desktop\\gcm\\gcm.reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|solutionrelative:gcm.reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\studentfeecollection\\addstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\studentfeecollection\\addstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -29,6 +30,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\financialyeartermwisefee\\addfinancialyeartermfee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\addfinancialyeartermfee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|c:\\users\\admin\\desktop\\gcm\\gcm.reports\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|solutionrelative:gcm.reports\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|c:\\users\\admin\\desktop\\gcm\\inward.repository.abstraction\\ifinancialyeartermwisefeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|solutionrelative:inward.repository.abstraction\\ifinancialyeartermwisefeerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> origin/master
     }
   ],
   "DocumentGroupContainers": [
@@ -38,9 +47,10 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+<<<<<<< HEAD
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "AddFinancialYearTermFee.cshtml",
@@ -124,15 +134,14 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+=======
+>>>>>>> origin/master
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "StudentFeeCollectionRepo.cs",
               "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository\\StudentFeeCollectionRepo.cs",
@@ -142,6 +151,43 @@
               "ViewState": "AgIAAE0AAAAAAAAAAAAwwIcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T17:38:49.888Z"
+=======
+              "DocumentIndex": 0,
+              "Title": "Report1.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Report1.rdlc",
+              "RelativeDocumentMoniker": "GCM.Reports\\Report1.rdlc",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Report1.rdlc [Design]",
+              "RelativeToolTip": "GCM.Reports\\Report1.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2025-04-06T05:08:55.257Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
+              "RelativeDocumentMoniker": "GCM.Reports\\Class1.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
+              "RelativeToolTip": "GCM.Reports\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T05:08:24.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IFinancialYearTermWiseFeeRepo.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
+              "RelativeDocumentMoniker": "Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
+              "RelativeToolTip": "Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAawA8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T04:56:08.663Z",
+              "EditorCaption": ""
+>>>>>>> origin/master
             }
           ]
         }
