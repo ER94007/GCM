@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GCM\\Inward.Services\\GCM.Services.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj": {}
   },
   "projects": {
-    "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
         "projectName": "GCM.Common",
-        "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Common\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -79,24 +79,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj",
         "projectName": "GCM.Entity",
-        "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Entity\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,6 +105,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,8 +123,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -154,24 +154,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
         "projectName": "GCM.Repository.Abstraction",
-        "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Repository.Abstraction\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -180,17 +180,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
               },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj"
               }
             }
           }
@@ -204,8 +205,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -248,24 +248,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
         "projectName": "GCM.Services.Abstraction",
-        "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Services.Abstraction\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -274,20 +274,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
               },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj"
               },
-              "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
               }
             }
           }
@@ -301,8 +302,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -337,24 +337,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GCM\\Inward.Services\\GCM.Services.csproj": {
+    "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Services\\GCM.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj",
         "projectName": "GCM.Services",
-        "projectPath": "D:\\GCM\\Inward.Services\\GCM.Services.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Services\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -363,23 +363,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
               },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj"
               },
-              "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
               },
-              "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
+              "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
               }
             }
           }
@@ -393,8 +394,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -429,7 +429,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

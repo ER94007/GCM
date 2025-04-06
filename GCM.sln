@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM", "Inward\GCM.csproj", "{1D8CA4FA-08A8-4189-A90F-ECE43D087802}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM", "Inward\GCM.csproj", "{1D8CA4FA-08A8-4189-A90F-ECE43D087802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.API", "Inward.API\GCM.API.csproj", "{D4164729-16FA-441A-9498-FCF3F75F072C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.API", "Inward.API\GCM.API.csproj", "{D4164729-16FA-441A-9498-FCF3F75F072C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Common", "Inward.Common\GCM.Common.csproj", "{5D9760B8-C91A-4A90-A42D-90F33BA0EBF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Common", "Inward.Common\GCM.Common.csproj", "{5D9760B8-C91A-4A90-A42D-90F33BA0EBF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Entity", "Inward.Entity\GCM.Entity.csproj", "{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Entity", "Inward.Entity\GCM.Entity.csproj", "{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Repository", "Inward.Repository\GCM.Repository.csproj", "{483B3FF2-AB95-455D-AD05-3FA6C941E11A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Repository", "Inward.Repository\GCM.Repository.csproj", "{483B3FF2-AB95-455D-AD05-3FA6C941E11A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Repository.Abstraction", "Inward.Repository.Abstraction\GCM.Repository.Abstraction.csproj", "{EAD94315-A0F1-490E-9266-968AB4100724}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Repository.Abstraction", "Inward.Repository.Abstraction\GCM.Repository.Abstraction.csproj", "{EAD94315-A0F1-490E-9266-968AB4100724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Services", "Inward.Services\GCM.Services.csproj", "{FDC7506B-D8C9-4582-B53C-054338060584}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Services", "Inward.Services\GCM.Services.csproj", "{FDC7506B-D8C9-4582-B53C-054338060584}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Services.Abstraction", "Inward.Services.Abstraction\GCM.Services.Abstraction.csproj", "{BC30560B-1F45-4A59-A5E9-BD743EEC924C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCM.Services.Abstraction", "Inward.Services.Abstraction\GCM.Services.Abstraction.csproj", "{BC30560B-1F45-4A59-A5E9-BD743EEC924C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCM.Reports", "GCM.Reports\GCM.Reports.csproj", "{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{BC30560B-1F45-4A59-A5E9-BD743EEC924C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC30560B-1F45-4A59-A5E9-BD743EEC924C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC30560B-1F45-4A59-A5E9-BD743EEC924C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
