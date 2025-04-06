@@ -41,7 +41,7 @@ namespace GCM.Controllers
             ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             return View(sft);
         }
-        
+
         // GET: StudentFeeCollectionController/Details/5
         public ActionResult Details(int id)
         {
@@ -113,12 +113,6 @@ namespace GCM.Controllers
             }
         }
 
-        // GET: StudentFeeCollectionController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: StudentFeeCollectionController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -136,13 +130,13 @@ namespace GCM.Controllers
 
 
         [HttpGet]
-        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId,int studentid)
+        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId, int studentid)
         {
-            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId,studentid);
+            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
 
             var result = fees.Select(f => new
             {
-                SubHeadId = f.SubHeadId,
+                subHeadId = f.SubHeadId,
                 subHeadName = f.subheadname,
                 amount = f.fees
             });
@@ -162,21 +156,37 @@ namespace GCM.Controllers
             try
             {
                 // Create a new entity instance
-
-                DataTable feeDetailsTable = new DataTable();
-                feeDetailsTable.Columns.Add("SubheadId", typeof(int));
-                feeDetailsTable.Columns.Add("Amount", typeof(decimal));
-
-                foreach (var feeDetail in FeeDetails)
+                if (model.FormType == "form1")
                 {
-                    feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
+
+                    foreach (var feeDetail in FeeDetails)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+                    model.feesdetails = feeDetailsTable;
+
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
                 }
+                else
+                {
+                 
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
 
-                // Assign DataTable to model
-                model.feesdetails = feeDetailsTable;
+                    foreach (var feeDetail in model.FeeDetailLists)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+                    model.feesdetails = feeDetailsTable;
 
-                // Ensure AddFeeCollection is asynchronous and awaited
-                var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+                }
 
                 return RedirectToAction("ViewStudentFeeCollection");
             }
@@ -187,5 +197,6 @@ namespace GCM.Controllers
                 return View("AddStudentFeeCollection", model);
             }
         }
+
     }
 }
