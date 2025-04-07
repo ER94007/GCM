@@ -50,9 +50,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.ReportingServices.ReportViewerControl.WebForms": {
+            "ReportViewerCore.NETCore": {
               "target": "Package",
-              "version": "[150.1652.0, )"
+              "version": "[15.1.26, )"
             }
           },
           "imports": [
