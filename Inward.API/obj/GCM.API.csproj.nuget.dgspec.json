@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GCM\\Inward.API\\GCM.API.csproj": {}
+    "D:\\GCAS_GIT\\Inward.API\\GCM.API.csproj": {}
   },
   "projects": {
-    "D:\\GCM\\Inward.API\\GCM.API.csproj": {
+    "D:\\GCAS_GIT\\Inward.API\\GCM.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.API\\GCM.API.csproj",
+        "projectUniqueName": "D:\\GCAS_GIT\\Inward.API\\GCM.API.csproj",
         "projectName": "GCM.API",
-        "projectPath": "D:\\GCM\\Inward.API\\GCM.API.csproj",
+        "projectPath": "D:\\GCAS_GIT\\Inward.API\\GCM.API.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.API\\obj\\",
+        "outputPath": "D:\\GCAS_GIT\\Inward.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,6 +57,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "ReportViewerCore.NETCore": {
+              "target": "Package",
+              "version": "[15.1.26, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

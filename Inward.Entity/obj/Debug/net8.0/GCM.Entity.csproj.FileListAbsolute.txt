@@ -11,3 +11,16 @@ C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Debug\net8.0\GCM.Entity.dll
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Debug\net8.0\refint\GCM.Entity.dll
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Debug\net8.0\GCM.Entity.pdb
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Debug\net8.0\ref\GCM.Entity.dll
+D:\GCAS_GIT\Inward.Entity\bin\Debug\net8.0\GCM.Entity.deps.json
+D:\GCAS_GIT\Inward.Entity\bin\Debug\net8.0\GCM.Entity.dll
+D:\GCAS_GIT\Inward.Entity\bin\Debug\net8.0\GCM.Entity.pdb
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.csproj.AssemblyReference.cache
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.AssemblyInfoInputs.cache
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.AssemblyInfo.cs
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.csproj.CoreCompileInputs.cache
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.sourcelink.json
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.dll
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\refint\GCM.Entity.dll
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\GCM.Entity.pdb
+D:\GCAS_GIT\Inward.Entity\obj\Debug\net8.0\ref\GCM.Entity.dll

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Reporting.NETCore;
 
 namespace GCM.Controllers
 {
@@ -41,7 +42,7 @@ namespace GCM.Controllers
             ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             return View(sft);
         }
-        
+
         // GET: StudentFeeCollectionController/Details/5
         public ActionResult Details(int id)
         {
@@ -113,12 +114,6 @@ namespace GCM.Controllers
             }
         }
 
-        // GET: StudentFeeCollectionController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: StudentFeeCollectionController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -136,13 +131,13 @@ namespace GCM.Controllers
 
 
         [HttpGet]
-        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId,int studentid)
+        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId, int studentid)
         {
-            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId,studentid);
+            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
 
             var result = fees.Select(f => new
             {
-                SubHeadId = f.SubHeadId,
+                subHeadId = f.SubHeadId,
                 subHeadName = f.subheadname,
                 amount = f.fees
             });
@@ -162,21 +157,37 @@ namespace GCM.Controllers
             try
             {
                 // Create a new entity instance
-
-                DataTable feeDetailsTable = new DataTable();
-                feeDetailsTable.Columns.Add("SubheadId", typeof(int));
-                feeDetailsTable.Columns.Add("Amount", typeof(decimal));
-
-                foreach (var feeDetail in FeeDetails)
+                if (model.FormType == "form1")
                 {
-                    feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
+
+                    foreach (var feeDetail in FeeDetails)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+                    model.feesdetails = feeDetailsTable;
+
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
                 }
+                else
+                {
+                 
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
 
-                // Assign DataTable to model
-                model.feesdetails = feeDetailsTable;
+                    foreach (var feeDetail in model.FeeDetailLists)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+                    model.feesdetails = feeDetailsTable;
 
-                // Ensure AddFeeCollection is asynchronous and awaited
-                var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+                }
 
                 return RedirectToAction("ViewStudentFeeCollection");
             }
@@ -186,6 +197,22 @@ namespace GCM.Controllers
                 ModelState.AddModelError("", "An error occurred while processing your request.");
                 return View("AddStudentFeeCollection", model);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ExportStudentReport()
+        {
+            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+            report.ReportPath = path;
+
+            report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
+
+            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+            return File(result, "application/pdf", "StudentReport.pdf");
         }
     }
 }

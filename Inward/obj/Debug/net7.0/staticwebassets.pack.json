@@ -8802,6 +8802,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+<<<<<<< HEAD
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GCM.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+=======
       "Id": "D:\\GCM\\Inward\\wwwroot\\uploads\\New Microsoft Excel Worksheet.xlsx",
       "PackagePath": "staticwebassets\\uploads\\New Microsoft Excel Worksheet.xlsx"
     },
@@ -17639,6 +17643,7 @@
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\uploads\\students.xlsx",
 >>>>>>> origin/master
       "PackagePath": "staticwebassets\\uploads\\students.xlsx"
+>>>>>>> origin/master
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.GCM.Microsoft.AspNetCore.StaticWebAssets.props",
