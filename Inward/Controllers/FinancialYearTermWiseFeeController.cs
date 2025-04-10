@@ -143,6 +143,7 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateFinanceBalanceById(string FinancialYearBalanceId)
         {
+            Console.WriteLine(FinancialYearBalanceId);
             ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             var fn = await _ifinancialYearTermWiseFee.GetBalanceDataById(Convert.ToInt64(FinancialYearBalanceId));

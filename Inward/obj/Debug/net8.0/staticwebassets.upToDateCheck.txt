@@ -2119,7 +2119,10 @@ wwwroot\css\datatables.min.css
 wwwroot\css\select2.css
 wwwroot\css\site.css
 wwwroot\css\sweetalert.css
+<<<<<<< HEAD
+=======
 wwwroot\Dataset\dbStudentdetails.cs
+>>>>>>> origin/master
 wwwroot\favicon.ico
 wwwroot\Files\ExcelDemo.xlsx
 wwwroot\Images\accessdenied.jpg
@@ -2134,8 +2137,11 @@ wwwroot\js\Common.js
 wwwroot\js\datatables.min.js
 wwwroot\js\exporting.js
 wwwroot\js\highcharts.js
+<<<<<<< HEAD
+=======
 wwwroot\js\jquery.datatables.min.js
 wwwroot\js\jquery.tinymce.min.js
+>>>>>>> origin/master
 wwwroot\js\jquery.unobtrusive-ajax.js
 wwwroot\js\Select2.js
 wwwroot\js\site.js
@@ -2200,3 +2206,11 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+<<<<<<< HEAD
+wwwroot\uploads\New Microsoft Excel Worksheet.xlsx
+wwwroot\uploads\std.xlsx
+wwwroot\uploads\stu.xlsx
+wwwroot\uploads\student.xlsx
+wwwroot\uploads\students.xlsx
+=======
+>>>>>>> origin/master
