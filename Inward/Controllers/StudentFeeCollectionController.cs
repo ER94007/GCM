@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Reporting.NETCore;
 
 namespace GCM.Controllers
 {
@@ -187,5 +188,24 @@ namespace GCM.Controllers
                 return View("AddStudentFeeCollection", model);
             }
         }
+<<<<<<< HEAD
+=======
+
+        [HttpGet]
+        public async Task<IActionResult> ExportStudentReport()
+        {
+            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+            report.ReportPath = path;
+
+            report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
+
+            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+            return File(result, "application/pdf", "StudentReport.pdf");
+        }
+>>>>>>> 8712b37b76fdae67b870a81bf5b5b9003e7c1bec
     }
 }

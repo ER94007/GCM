@@ -1,14 +1,11 @@
-﻿using Inward.Common;
-using Inward.Entity;
-using System.Security.Claims;
+﻿using Inward.Entity;
 using Inward.Services.Abstraction;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using GCM.Services.Abstraction;
-using GCM.Repository.Abstraction;
-using System.Text.Json;
 using OfficeOpenXml;
 using System.Data;
+using System.Text;
+using Microsoft.Reporting.NETCore;
 
 namespace GCM.Controllers
 {
@@ -449,5 +446,43 @@ namespace GCM.Controllers
             return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> ViewStudents()
+        {
+            var students = await _userLoginService.GetStudentList();
+
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "Reports", "StudentReport.rdlc");
+            report.ReportPath = path;
+
+            report.DataSources.Add(new ReportDataSource("dbStudentdetails", students));
+
+            string mimeType, encoding, fileNameExtension;
+            string[] streams;
+            Warning[] warnings;
+
+            var renderedBytes = report.Render("HTML5", null, out mimeType, out encoding, out fileNameExtension, out streams, out warnings);
+            ViewBag.ReportHtml = Encoding.UTF8.GetString(renderedBytes);
+
+            return View(students);
+        }
+
+        // Export PDF
+        [HttpGet]
+        public async Task<IActionResult> ExportStudentReport()
+        {
+            var students = await _userLoginService.GetStudentList();
+
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentReport.rdlc");
+            report.ReportPath = path;
+
+            report.DataSources.Add(new ReportDataSource("dbStudentdetails", students));
+
+            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+            return File(result, "application/pdf", "StudentReport.pdf");
+        }
     }
 }

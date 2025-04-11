@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Inward.Entity.Student>
-
-
+@{
+	
+}
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
@@ -63,6 +64,11 @@
 						</div>
 					</div>
 					<div class="text-center mt-3">
+
+							<a href="@Url.Action("ExportStudentReport", "Student")" class="btn btn-secondary">
+							<i class="fas fa-list mr-1"></i>
+							Download Report
+							</a>
 						<a href="@Url.Action("Index", "Inward")" class="btn btn-secondary">
 							<i class="fas fa-list mr-1"></i>
 							Go to Form
@@ -73,13 +79,14 @@
 		</div>
 	</section>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-
+@* 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.7/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.js"></script> *@
 <script src="~/assets/dist/js/sweetalert.js"></script>
 
 <script>
