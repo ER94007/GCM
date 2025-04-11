@@ -42,7 +42,7 @@ namespace GCM.Controllers
             ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             return View(sft);
         }
-        
+
         // GET: StudentFeeCollectionController/Details/5
         public ActionResult Details(int id)
         {
@@ -137,9 +137,9 @@ namespace GCM.Controllers
 
 
         [HttpGet]
-        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId,int studentid)
+        public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId, int studentid)
         {
-            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId,studentid);
+            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
 
             var result = fees.Select(f => new
             {
@@ -188,8 +188,7 @@ namespace GCM.Controllers
                 return View("AddStudentFeeCollection", model);
             }
         }
-<<<<<<< HEAD
-=======
+
 
         [HttpGet]
         public async Task<IActionResult> ExportStudentReport()
@@ -206,6 +205,6 @@ namespace GCM.Controllers
 
             return File(result, "application/pdf", "StudentReport.pdf");
         }
->>>>>>> 8712b37b76fdae67b870a81bf5b5b9003e7c1bec
+
     }
 }
