@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|c:\\users\\admin\\desktop\\gcm\\gcm.reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|solutionrelative:gcm.reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\inward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\wwwroot\\reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\reports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|c:\\users\\admin\\desktop\\gcm\\gcm.reports\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,31 +51,93 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Report1.rdlc [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Report1.rdlc",
-              "RelativeDocumentMoniker": "GCM.Reports\\Report1.rdlc",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Report1.rdlc [Design]",
-              "RelativeToolTip": "GCM.Reports\\Report1.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-04-06T05:08:55.257Z",
-              "EditorCaption": " [Design]"
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAgwH4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T04:39:56.658Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
-              "RelativeDocumentMoniker": "GCM.Reports\\Class1.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
-              "RelativeToolTip": "GCM.Reports\\Class1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T05:08:24.819Z",
+              "Title": "ViewStudents.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T04:38:30.078Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\Index.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\Index.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Inward\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-07T06:43:02.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InwardController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\InwardController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAABkAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T06:42:49.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T06:42:40.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Report1.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\Report1.rdlc",
+              "RelativeDocumentMoniker": "Inward\\wwwroot\\Reports\\Report1.rdlc",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\Report1.rdlc [Design]",
+              "RelativeToolTip": "Inward\\wwwroot\\Reports\\Report1.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2025-04-07T06:40:24.247Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
+              "RelativeDocumentMoniker": "GCM.Reports\\Class1.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
+              "RelativeToolTip": "GCM.Reports\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T05:08:24.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "IFinancialYearTermWiseFeeRepo.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
               "RelativeDocumentMoniker": "Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
@@ -63,8 +145,7 @@
               "RelativeToolTip": "Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAawA8AAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T04:56:08.663Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T04:56:08.663Z"
             }
           ]
         }
