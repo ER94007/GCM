@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,21 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentFeeCollectionController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "ViewState": "AQIAAL4AAAAAAAAAAIAwwNIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T05:31:55.745Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -79,7 +70,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Login\\Login.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwBoAAACZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T05:42:11.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StudentFeeCollectionController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentFeeCollectionController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\StudentFeeCollectionController.cs",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAuwCkAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T05:31:55.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AddSubHead.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\AddSubHead.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Inward\\AddSubHead.cshtml",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddFinanceYearBalance.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\AddFinanceYearBalance.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\AddFinanceYearBalance.cshtml",
@@ -105,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "GetFinancialTermData.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\GetFinancialTermData.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\GetFinancialTermData.cshtml",
@@ -118,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
@@ -131,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ViewStudents.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\ViewStudents.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Inward\\ViewStudents.cshtml",
@@ -144,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\Index.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Inward\\Index.cshtml",
@@ -157,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "InwardController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
               "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
@@ -169,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Inward\\Controllers\\HomeController.cs",
@@ -181,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\Class1.cs",
               "RelativeDocumentMoniker": "GCM.Reports\\Class1.cs",
@@ -193,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "IFinancialYearTermWiseFeeRepo.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
               "RelativeDocumentMoniker": "Inward.Repository.Abstraction\\IFinancialYearTermWiseFeeRepo.cs",
