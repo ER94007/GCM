@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCM.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb3f7ab4a368ebb14f104641cd8e2bc6514a7228")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27e55bd6153ca06f8977b424ab1bc8394854ae94")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCM.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCM.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

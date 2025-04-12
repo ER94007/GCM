@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\GCM.bz919fz3ot.bundle.scp.css"
     },
     {
+      "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\StudentInfo.Designer.cs",
+      "PackagePath": "staticwebassets\\Dataset\\StudentInfo.Designer.cs"
+    },
+    {
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dbStudentdetails.cs",
       "PackagePath": "staticwebassets\\Dataset\\dbStudentdetails.cs"
     },

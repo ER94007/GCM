@@ -25,6 +25,7 @@
 										<th>Term</th>
 										<th>Reciept No</th>
 										<th>Fee Mode</th>
+										<th>Download Report</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -37,6 +38,12 @@
 											<td>@item.Data.TermName</td>
 											<td>@item.Data.RecieptNo</td>
 											<td>@item.Data.FeeModeDescription</td>
+											<td>
+												<a asp-action="ExportStudentFeeCollectionReport" asp-controller="StudentFeeCollection"
+												   asp-route-studentid="@item.Data.StudentId.ToString()">
+													Download Report
+												</a>
+											</td>
 										</tr>
 									}
 								</tbody>

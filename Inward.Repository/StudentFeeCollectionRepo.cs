@@ -175,5 +175,23 @@ namespace GCM.Repository
                 throw;
             }
         }
+        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@studentid", studentid);
+                    var res = await conn.QueryAsync<StudentFeeCollection>(StoreProcedures.GetReport_studentFeeMaster, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

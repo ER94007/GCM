@@ -2120,6 +2120,7 @@ wwwroot\css\select2.css
 wwwroot\css\site.css
 wwwroot\css\sweetalert.css
 wwwroot\Dataset\dbStudentdetails.cs
+wwwroot\Dataset\StudentInfo.Designer.cs
 wwwroot\favicon.ico
 wwwroot\Files\ExcelDemo.xlsx
 wwwroot\Images\accessdenied.jpg

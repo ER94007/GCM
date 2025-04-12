@@ -27,6 +27,13 @@ namespace GCM.Entity
         public string TermName { get; set; }
         public string RecieptNo { get; set; }
         public string FeeModeDescription { get; set; }
+        public string name { get; set; }
+        public string GovernmentFee { get; set; }
+        public long GovAmount { get; set; }
+        public string PrivateFee { get; set; }
+        public string PrivAmount { get; set; }
+        public string GovernmentTotal { get; set; }
+
         public List<FeeDetail1> FeeDetailLists { get; set; } = new List<FeeDetail1>();
     }
 
