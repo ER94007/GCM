@@ -35200,8 +35200,6 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\lib\jquery\LICENSE.txt))</OriginalItemSpec>
     </StaticWebAsset>
-<<<<<<< HEAD
-=======
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\New Microsoft Excel Worksheet.xlsx))">
       <SourceType>Package</SourceType>
       <SourceId>GCM</SourceId>
@@ -35282,6 +35280,5 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\students.xlsx))</OriginalItemSpec>
     </StaticWebAsset>
->>>>>>> origin/master
   </ItemGroup>
 </Project>

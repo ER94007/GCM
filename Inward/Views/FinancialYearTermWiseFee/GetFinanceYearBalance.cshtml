@@ -18,15 +18,15 @@
                             <h3 class="card-title">Finance List</h3>
                         </div>
                         <div class="card-body">
-                            <table id="InwardList" class="table table-bordered table-striped">
+                            <table id="InwardList" class="table table-bordered table-striped datatable">
                                 <thead>
                                     <tr>
                                         <th>Sr.</th>
                                         <th>Financial Year</th>
                                         <th>Subhead</th>
                                         <th>Amount</th>
-                                        <th>Update</th>
-                                        <th>Delete</th>
+                                       @*  <th>Update</th>
+                                        <th>Delete</th> *@
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -38,8 +38,16 @@
                                             <td>@item.financialYear</td>
                                             <td>@item.subheadname</td>
                                             <td>@item.amount</td>
-                                            <td><a asp-action="UpdateFinanceBalanceById" asp-controller="FinancialYearTermWiseFee" asp-route-FinancialYearBalanceId="@item.FinancialYearBalanceId">Update</a></td>
-                                             <td><a onclick="deleteFinanceBalance(@item.FinancialYearBalanceId)">Delete</a></td>
+                                            @* <td>
+                                                <a asp-action="UpdateFinanceBalanceById" asp-controller="FinancialYearTermWiseFee" asp-route-FinancialYearBalanceId="@item.FinancialYearBalanceId">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a onclick="deleteFinanceBalance(@item.FinancialYearBalanceId)">
+                                                    <i class="fas fa-trash-alt text-danger"></i>
+                                                </a>
+                                            </td> *@
                                         </tr>
                                     }
                                 </tbody>

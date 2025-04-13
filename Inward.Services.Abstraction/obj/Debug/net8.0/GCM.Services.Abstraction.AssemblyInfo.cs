@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCM.Services.Abstraction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4643357e4b8b3b2159428a2b8290dc80d52ddf24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b3000facfd32ed05ad7146d76379f500b0dcd88b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCM.Services.Abstraction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCM.Services.Abstraction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -26408,8 +26408,6 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1641"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022WtKlDye/qV68IA2W1tHFTyXyc/HjQvQKBpIK1CEulFM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 17 Mar 2025 15:02:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-<<<<<<< HEAD
-=======
     <StaticWebAssetEndpoint Include="_content/GCM/uploads/New Microsoft Excel Worksheet.0ob31of7el.xlsx">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\New Microsoft Excel Worksheet.xlsx'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -26470,6 +26468,5 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-2xBmQCIvbfjqbOCmkCkSwx1ajc2FG6pMw85WOqX4TL4="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"9543"},{"Name":"Content-Type","Value":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},{"Name":"ETag","Value":"\u00222xBmQCIvbfjqbOCmkCkSwx1ajc2FG6pMw85WOqX4TL4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 17:34:24 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
->>>>>>> origin/master
   </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@
 							<h3 class="card-title">Subhead List</h3>
 						</div>
 						<div class="card-body">
-							<table id="InwardList" class="table table-bordered table-striped">
+							<table id="InwardList" class="table table-bordered table-striped datatable">
 								<thead>
 									<tr>
 										<th>Sr.</th>
@@ -31,8 +31,16 @@
 											<td>@item.subheadid</td>
 											<td>@item.subheadname</td>
 											<td>@item.subheadtype</td>
-											<td><a asp-controller="Inward" asp-action="AddSubHead" asp-route-subheadid="@item.subheadid">Update</a></td>
-											<td><a onclick="deleteSubhead(@item.subheadid)">Delete</a></td>
+											<td>
+												<a asp-controller="Inward" asp-action="AddSubHead" asp-route-subheadid="@item.subheadid">
+													<i class="fas fa-edit"></i>
+												</a>
+											</td>
+											<td>
+												<a onclick="deleteSubhead(@item.subheadid)">
+													<i class="fas fa-trash-alt text-danger"></i>
+												</a>
+											</td>
 										</tr>
 									}
 								</tbody>

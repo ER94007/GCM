@@ -2,10 +2,6 @@
 	ViewData["Title"] = "AddStudentFeeCollection";
 }
 @model GCM.Entity.StudentFeeCollection;
-@using Newtonsoft.Json
-@{
-	var subheadListJson = JsonConvert.SerializeObject(ViewBag.SubheadList);
-}
 <link href="~/css/select2.css" rel="stylesheet" />
 <script src="~/js/select2.js"></script>
 
@@ -110,13 +106,14 @@
 							<thead class="">
 								<tr>
 									<th>Subhead</th>
-									<th>Fee Amount</th>
+									<th>Male Fee</th>
+									<th>Female Fee</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>
-										<select name="FeeDetailLists[0].SubHeadId" class="form-control subhead-select">
+										<select name="financeLists[0].SubHeadId" class="form-control subhead-select">
 											<option value="">---Select Subhead---</option>
 											@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
 											{
@@ -125,20 +122,16 @@
 										</select>
 									</td>
 									<td>
-										<input name="FeeDetailLists[0].Amount" id="feerow1" type="number" class="form-control" placeholder="Enter Fee">
+										<input name="financeLists[0].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
+									</td>
+									<td>
+										<input name="financeLists[0].femalefee" type="number" class="form-control" placeholder="Enter Female Fee">
 									</td>
 									<td>
 										<button type="button" class="btn btn-danger btn-remove">Remove</button>
 									</td>
 								</tr>
 							</tbody>
-							<tfoot>
-							    <tr>
-							        <td><strong>Total</strong></td>
-							        <td id="dynamicTotalAmount"><strong>0.00</strong></td>
-							        <td></td>
-							    </tr>
-							</tfoot>
 
 						</table>
 					</div>
@@ -162,8 +155,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 @section Scripts {
 	<script>
-		const subheadList = @Html.Raw(subheadListJson);
-
 				$(document).ready(function () {
 			$("#showcontent").hide();
 
@@ -205,15 +196,9 @@
 			if ($("#form2").is(":checked")) {
 				$("#feesDetailsManually").show();
 				$("#feesDetailsAuto").hide();
-
-				$("#feesTable tbody").empty(); // Clear all rows
-				$("#totalAmount").text("0.00"); // Reset the total amount display
-				$("#hiddenTotalAmount").val("0.00"); // Reset hidden field
 			} else {
 				$("#feesDetailsManually").hide();
 				$("#feesDetailsAuto").show();
-				$("#dynamicTable tbody").empty(); // Clear all manual rows
-				addInitialRow();
 			}
 			});
 		});
@@ -260,7 +245,7 @@
 			fees.forEach(function (fee) {
 				var row = `<tr>
 					<td>${fee.subHeadName}  <!-- Show SubHeadName -->
-						<input type="hidden" name="FeeDetails[${rowIndex}].subheadid" value="${fee.subHeadId}">  <!-- Post SubHeadId -->
+						<input type="hidden" name="FeeDetails[${rowIndex}].SubHeadId" value="${fee.subHeadId}">  <!-- Post SubHeadId -->
 					</td>
 					<td>${parseFloat(fee.amount).toFixed(2)}  <!-- Show Fee Amount -->
 						<input type="hidden" name="FeeDetails[${rowIndex}].Amount" value="${fee.amount}">  <!-- Post Amount -->
@@ -277,77 +262,65 @@
 
 
 
-		document.addEventListener('DOMContentLoaded', function () {
+
+
+			document.addEventListener('DOMContentLoaded', function () {
 			const addRowBtn = document.getElementById('addRowBtn');
 			const dynamicTable = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
+
+			// Initialize rowIndex based on the number of existing rows in the table
 			let rowIndex = dynamicTable.rows.length;
 
-			const createRow = (index) => {
-				let options = '<option value="">---Select Subhead---</option>';
-				subheadList.forEach(item => {
-					options += `<option value="${item.Value}">${item.Text}</option>`;
-				});
-
-				return `
-					<tr>
-						<td>
-							   <select name="FeeDetailLists[${index}].subheadid" class="form-control subhead-select">
-								${options}
-							</select>
-						</td>
-						<td>
-							   <input name="FeeDetailLists[${index}].Amount" type="number" class="form-control fee-amount" placeholder="Enter Fee">
-						</td>
-						<td>
-							<button type="button" class="btn btn-danger btn-remove">Remove</button>
-						</td>
-					</tr>`;
-			};
-
+			// Add Row Functionality
 			addRowBtn.addEventListener('click', () => {
-				const newRowHtml = createRow(rowIndex);
-				const tempDiv = document.createElement('tbody');
-				tempDiv.innerHTML = newRowHtml;
-				dynamicTable.appendChild(tempDiv.firstElementChild);
-				rowIndex++;
-				updateDropdowns();
-				calculateTotal();
+				const newRow = document.createElement('tr');
+				newRow.innerHTML = `
+					<td>
+						<select name="financeLists[${rowIndex}].SubHeadId" class="form-control subhead-select" select2>
+							<option value="">---Select Subhead---</option>
+		@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
+		{
+															<option value="@subhead.Value">@subhead.Text</option>
+		}
+						</select>
+					</td>
+					<td>
+						<input name="financeLists[${rowIndex}].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
+					</td>
+					<td>
+						<input name="financeLists[${rowIndex}].femalefee" type="number" class="form-control" placeholder="Enter Female Fee">
+					</td>
+					<td>
+						<button type="button" class="btn btn-danger btn-remove">Remove</button>
+					</td>
+				`		;
+					dynamicTable.appendChild(newRow);
+					rowIndex++; // Increment rowIndex for the next row
+					updateDropdowns();
+
 			});
 
+			// Remove Row Functionality
 			dynamicTable.addEventListener('click', (event) => {
 				if (event.target.classList.contains('btn-remove')) {
 					const row = event.target.closest('tr');
 					const rows = dynamicTable.getElementsByTagName('tr');
 					if (rows.length > 1) {
+
 						row.remove();
 						updateDropdowns();
-						calculateTotal();
 					} else {
 						alert('At least one row must be present!');
 					}
 				}
 			});
 
-			dynamicTable.addEventListener('input', (event) => {
-				if (event.target.classList.contains('fee-amount')) {
-					calculateTotal();
+			// Update Dropdown Options
+			dynamicTable.addEventListener('change', (event) => {
+				if (event.target.classList.contains('subhead-select')) {
+					updateDropdowns();
 				}
 			});
-
-			function calculateTotal() {
-				const feeInputs = document.querySelectorAll('.fee-amount');
-				let total = 0;
-
-				feeInputs.forEach(input => {
-					const value = parseFloat(input.value);
-					if (!isNaN(value)) {
-						total += value;
-					}
-				});
-
-				document.getElementById('dynamicTotalAmount').innerHTML = `<strong>${total.toFixed(2)}</strong>`;
-				document.getElementById('hiddenTotalAmount').value = total.toFixed(2);
-			}
 
 			function updateDropdowns() {
 				const allSelects = document.querySelectorAll('.subhead-select');
