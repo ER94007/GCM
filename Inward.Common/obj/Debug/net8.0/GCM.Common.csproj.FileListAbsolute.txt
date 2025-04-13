@@ -24,16 +24,3 @@ D:\GCAS_GIT\Inward.Common\obj\Debug\net8.0\GCM.Common.dll
 D:\GCAS_GIT\Inward.Common\obj\Debug\net8.0\refint\GCM.Common.dll
 D:\GCAS_GIT\Inward.Common\obj\Debug\net8.0\GCM.Common.pdb
 D:\GCAS_GIT\Inward.Common\obj\Debug\net8.0\ref\GCM.Common.dll
-D:\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.deps.json
-D:\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.dll
-D:\GCM\Inward.Common\bin\Debug\net8.0\GCM.Common.pdb
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.csproj.AssemblyReference.cache
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.GeneratedMSBuildEditorConfig.editorconfig
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.AssemblyInfoInputs.cache
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.AssemblyInfo.cs
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.csproj.CoreCompileInputs.cache
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.sourcelink.json
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.dll
-D:\GCM\Inward.Common\obj\Debug\net8.0\refint\GCM.Common.dll
-D:\GCM\Inward.Common\obj\Debug\net8.0\GCM.Common.pdb
-D:\GCM\Inward.Common\obj\Debug\net8.0\ref\GCM.Common.dll
