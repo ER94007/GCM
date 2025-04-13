@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h3pojRGC0nE=",
+  "dgSpecHash": "tUX4AA1kiIc=",
   "success": true,
-  "projectFilePath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj",
+  "projectFilePath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\epplus.interfaces\\8.0.0\\epplus.interfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
@@ -146,12 +146,5 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2025.04.04.23.31.17/vulnerability.base.json' timed out because no data was received for 60000ms."
-    }
-  ]
+  "logs": []
 }

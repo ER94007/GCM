@@ -8794,11 +8794,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectUniqueName": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "projectName": "GCM.Services.Abstraction",
-      "projectPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
+      "projectPath": "D:\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\obj\\",
+      "outputPath": "D:\\GCM\\Inward.Services.Abstraction\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8819,14 +8819,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "D:\\GCAS_GIT\\Inward.Common\\GCM.Common.csproj"
+            "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
+              "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
             },
-            "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "D:\\GCAS_GIT\\Inward.Entity\\GCM.Entity.csproj"
+            "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+              "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
             },
-            "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+            "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+              "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
             }
           }
         }
@@ -8883,13 +8883,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2025.04.04.23.31.17/vulnerability.base.json' timed out because no data was received for 60000ms."
-    }
-  ]
+  }
 }
