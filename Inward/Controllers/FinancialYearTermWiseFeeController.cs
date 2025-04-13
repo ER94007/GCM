@@ -209,5 +209,11 @@ namespace GCM.Controllers
             return View(ep);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ParameterForm()
+        {
+            return View();
+        }
+
     }
 }

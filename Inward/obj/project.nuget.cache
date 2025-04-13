@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "lCTeP9L/1nI=",
+  "success": true,
+  "projectFilePath": "D:\\GCM\\Inward\\GCM.csproj",
+=======
   "dgSpecHash": "fVO0ls+ae/A=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\GCM.csproj",
+>>>>>>> origin/master
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\boldreports.aspnet.core\\8.1.6\\boldreports.aspnet.core.8.1.6.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",

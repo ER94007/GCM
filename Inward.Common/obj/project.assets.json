@@ -8088,11 +8088,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+      "projectName": "GCM.Common",
+      "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "D:\\GCM\\Inward.Common\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
       "projectName": "GCM.Common",
       "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\obj\\",
+>>>>>>> origin/master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

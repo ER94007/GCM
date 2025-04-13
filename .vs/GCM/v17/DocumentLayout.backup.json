@@ -1,12 +1,44 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GCAS_GIT\\",
+  "WorkspaceRootPath": "D:\\GCM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\controllers\\financialyeartermwisefeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\financialyeartermwisefeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|d:\\gcm\\inward.entity\\parameterentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\parameterentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\financialyeartermwisefee\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\financialyeartermwisefee\\addexpense.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\addexpense.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|d:\\gcm\\inward.entity\\subheadentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\subheadentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcm\\inward\\views\\financialyeartermwisefee\\updatefinancebalancebyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\updatefinancebalancebyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\reports\\studentreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\reports\\studentreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
     },
@@ -119,18 +151,21 @@
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\studentfeecollection\\addstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\studentfeecollection\\addstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
 >>>>>>> 8712b37b76fdae67b870a81bf5b5b9003e7c1bec
+>>>>>>> origin/master
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "DockedHeight": 314,
+          "SelectedChildIndex": 1,
           "Children": [
             {
+<<<<<<< HEAD
+=======
               "$type": "Document",
 <<<<<<< HEAD
               "DocumentIndex": 6,
@@ -289,10 +324,13 @@
               "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+>>>>>>> origin/master
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+<<<<<<< HEAD
+=======
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
 >>>>>>> 8712b37b76fdae67b870a81bf5b5b9003e7c1bec
@@ -310,34 +348,50 @@
               "EditorCaption": " [Design]"
             },
             {
+>>>>>>> origin/master
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ViewStudents.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAEMAAAAWAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T09:03:42.086Z",
+              "WhenOpened": "2025-04-10T14:37:43.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAMUBAAAAAAAAAAAIwNcBAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ParameterEntity.cs",
+              "DocumentMoniker": "D:\\GCM\\Inward.Entity\\ParameterEntity.cs",
+              "RelativeDocumentMoniker": "Inward.Entity\\ParameterEntity.cs",
+              "ToolTip": "D:\\GCM\\Inward.Entity\\ParameterEntity.cs",
+              "RelativeToolTip": "Inward.Entity\\ParameterEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
 <<<<<<< HEAD
+              "WhenOpened": "2025-04-10T14:16:49.9Z",
+=======
+<<<<<<< HEAD
               "WhenOpened": "2025-03-31T17:56:36.834Z",
+>>>>>>> origin/master
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 3,
+              "Title": "ParameterForm.cshtml",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
+              "ToolTip": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
+              "RelativeToolTip": "Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T14:14:32.292Z",
+=======
               "DocumentIndex": 11,
               "Title": "StoreProcedures.cs",
               "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Entity\\StoreProcedures.cs",
@@ -347,10 +401,106 @@
               "ViewState": "AgIAABEAAAAAAAAAAAAnwCkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T08:35:06.605Z",
+>>>>>>> origin/master
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 1,
+              "Title": "FinancialYearTermWiseFeeController.cs",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
+              "ToolTip": "D:\\GCM\\Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAAAQwNYAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T05:09:23.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SubHeadEntity.cs",
+              "DocumentMoniker": "D:\\GCM\\Inward.Entity\\SubHeadEntity.cs",
+              "RelativeDocumentMoniker": "Inward.Entity\\SubHeadEntity.cs",
+              "ToolTip": "D:\\GCM\\Inward.Entity\\SubHeadEntity.cs",
+              "RelativeToolTip": "Inward.Entity\\SubHeadEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:42:37.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InwardController.cs",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Controllers\\InwardController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
+              "ToolTip": "D:\\GCM\\Inward\\Controllers\\InwardController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\InwardController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAAwIAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:35:10.825Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddExpense.cshtml",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\AddExpense.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\AddExpense.cshtml",
+              "ToolTip": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\AddExpense.cshtml",
+              "RelativeToolTip": "Inward\\Views\\FinancialYearTermWiseFee\\AddExpense.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T16:36:34.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ViewStudents.cshtml",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "ToolTip": "D:\\GCM\\Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Inward\\ViewStudents.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-03T17:46:38.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UpdateFinanceBalanceById.cshtml",
+              "DocumentMoniker": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\UpdateFinanceBalanceById.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\UpdateFinanceBalanceById.cshtml",
+              "ToolTip": "D:\\GCM\\Inward\\Views\\FinancialYearTermWiseFee\\UpdateFinanceBalanceById.cshtml",
+              "RelativeToolTip": "Inward\\Views\\FinancialYearTermWiseFee\\UpdateFinanceBalanceById.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACwAAAB6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T16:15:52.023Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 80,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+=======
               "DocumentIndex": 12,
               "Title": "FinancialYearTermWiseFeeRepo.cs",
               "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository\\FinancialYearTermWiseFeeRepo.cs",
@@ -426,6 +576,7 @@
 =======
               "WhenOpened": "2025-04-06T08:43:12.934Z"
 >>>>>>> 8712b37b76fdae67b870a81bf5b5b9003e7c1bec
+>>>>>>> origin/master
             }
           ]
         }

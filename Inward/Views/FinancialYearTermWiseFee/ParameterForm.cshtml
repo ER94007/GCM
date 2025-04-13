@@ -1,0 +1,36 @@
+﻿@model GCM.Entity.ParameterEntity;
+<section class="content">
+	<div class="content-wrapper">
+		<div class="container-fluid">
+			<div class="row mt-2">
+				<div class="card card2">
+					<div class="card-header">
+						<h3 class="card-title">Parameter</h3>
+					</div>
+					<div class="card-body p-2">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-horizontal form-bordered">
+									<div class="form-group row">
+										<label class="control-label col-md-3">Finance Year:</label>
+										<div class="col-md-9 control-form">
+											<select  class="form-control select2" >
+												<option class="bi-option" value="">---Select Report---</option>
+												<option class="bi-option" value="">StudentWise Head Report</option>
+												<option class="bi-option" value="">---Select Year---</option>
+												<option class="bi-option" value="">---Select Year---</option>
+												<option class="bi-option" value="">---Select Year---</option>
+											</select>
+											<span asp-validation-for="FinancialYearId" class="text-danger"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
