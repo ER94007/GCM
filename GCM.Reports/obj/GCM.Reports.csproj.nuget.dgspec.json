@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GCAS_GIT\\GCM.Reports\\GCM.Reports.csproj": {}
+    "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj": {}
   },
   "projects": {
-    "D:\\GCAS_GIT\\GCM.Reports\\GCM.Reports.csproj": {
+    "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GCAS_GIT\\GCM.Reports\\GCM.Reports.csproj",
+        "projectUniqueName": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
         "projectName": "GCM.Reports",
-        "projectPath": "D:\\GCAS_GIT\\GCM.Reports\\GCM.Reports.csproj",
+        "projectPath": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCAS_GIT\\GCM.Reports\\obj\\",
+        "outputPath": "D:\\GCM\\GCM.Reports\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

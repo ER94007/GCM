@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "89LCa0Kti2Y=",
+  "dgSpecHash": "fZKpMnZLXdI=",
   "success": true,
-  "projectFilePath": "D:\\GCAS_GIT\\GCM.Reports\\GCM.Reports.csproj",
+  "projectFilePath": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.codeanalysis.common\\4.8.0\\microsoft.codeanalysis.common.4.8.0.nupkg.sha512",
@@ -22,12 +22,5 @@
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.servicemodel.http\\8.1.0\\system.servicemodel.http.8.1.0.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\system.servicemodel.primitives\\8.1.0\\system.servicemodel.primitives.8.1.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2025.04.04.23.31.17/vulnerability.base.json' timed out because no data was received for 60000ms."
-    }
-  ]
+  "logs": []
 }
