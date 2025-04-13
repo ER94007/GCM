@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "pUpLEVV4ES4=",
-  "success": true,
-  "projectFilePath": "D:\\GCM\\Inward.API\\GCM.API.csproj",
-=======
   "dgSpecHash": "dR1lYMfMhp0=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\GCM.API.csproj",
->>>>>>> origin/master
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\epplus.interfaces\\8.0.0\\epplus.interfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",

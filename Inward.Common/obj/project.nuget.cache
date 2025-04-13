@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "tUX4AA1kiIc=",
-  "success": true,
-  "projectFilePath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
-=======
   "dgSpecHash": "sUnzDmlmubM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
->>>>>>> origin/master
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\epplus.interfaces\\8.0.0\\epplus.interfaces.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
