@@ -104,6 +104,23 @@ namespace Inward.Controllers
             return RedirectToAction("Index", "Inward");
 
         }
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            // Sign out the user from the authentication scheme
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
+            // Clear the session
+            HttpContext.Session.Clear();
+
+            // Delete relevant cookies (AuthToken, ProjectLevel, etc.)
+            Response.Cookies.Delete("AuthToken");
+            Response.Cookies.Delete("ProjectLevel");
+
+            // Redirect to Login view
+            return RedirectToAction("Login", "Login");
+        }
+
         private string GenerateJSONWebToken()
         {
             var jwtKey = _config["Jwt:Key"];
