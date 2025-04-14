@@ -8867,19 +8867,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\GCM\\Inward.Repository\\GCM.Repository.csproj",
-      "projectName": "GCM.Repository",
-      "projectPath": "D:\\GCM\\Inward.Repository\\GCM.Repository.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\GCM\\Inward.Repository\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\GCM.Repository.csproj",
       "projectName": "GCM.Repository",
       "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\GCM.Repository.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\obj\\",
->>>>>>> origin/master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8901,16 +8893,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
-            },
-            "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
-            },
-            "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
-=======
             "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
               "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
             },
@@ -8919,7 +8901,6 @@
             },
             "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
               "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
->>>>>>> origin/master
             }
           }
         }

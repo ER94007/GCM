@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {}
-  },
-  "projects": {
-    "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
-        "projectName": "GCM.Common",
-        "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Common\\obj\\",
-=======
     "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\obj\\",
->>>>>>> origin/master
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -101,16 +87,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
-        "projectName": "GCM.Entity",
-        "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Entity\\obj\\",
-=======
     "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -119,7 +95,6 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\obj\\",
->>>>>>> origin/master
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -191,16 +166,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
-        "projectName": "GCM.Repository.Abstraction",
-        "projectPath": "D:\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.Repository.Abstraction\\obj\\",
-=======
     "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -209,7 +174,6 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\obj\\",
->>>>>>> origin/master
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -231,19 +195,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-<<<<<<< HEAD
-              "D:\\GCM\\Inward.Common\\GCM.Common.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Common\\GCM.Common.csproj"
-              },
-              "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-                "projectPath": "D:\\GCM\\Inward.Entity\\GCM.Entity.csproj"
-=======
               "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
               },
               "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
                 "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj"
->>>>>>> origin/master
               }
             }
           }
