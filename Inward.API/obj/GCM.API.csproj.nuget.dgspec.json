@@ -1,19 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
-    "D:\\GCM\\Inward.API\\GCM.API.csproj": {}
-  },
-  "projects": {
-    "D:\\GCM\\Inward.API\\GCM.API.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\GCM\\Inward.API\\GCM.API.csproj",
-        "projectName": "GCM.API",
-        "projectPath": "D:\\GCM\\Inward.API\\GCM.API.csproj",
-        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\GCM\\Inward.API\\obj\\",
-=======
     "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\GCM.API.csproj": {}
   },
   "projects": {
@@ -25,7 +12,6 @@
         "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\GCM.API.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\obj\\",
->>>>>>> origin/master
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

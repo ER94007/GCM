@@ -2127,19 +2127,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\GCM\\Inward.API\\GCM.API.csproj",
-      "projectName": "GCM.API",
-      "projectPath": "D:\\GCM\\Inward.API\\GCM.API.csproj",
-      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\GCM\\Inward.API\\obj\\",
-=======
       "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\GCM.API.csproj",
       "projectName": "GCM.API",
       "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\GCM.API.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\obj\\",
->>>>>>> origin/master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2217,5 +2209,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Admin\\Desktop\\GCM\\Inward.API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
