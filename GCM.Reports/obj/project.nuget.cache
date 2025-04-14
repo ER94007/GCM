@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "fZKpMnZLXdI=",
+  "success": true,
+  "projectFilePath": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
+=======
   "dgSpecHash": "2UBxvWhjT0Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\GCM.Reports.csproj",
+>>>>>>> origin/master
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.codeanalysis.common\\4.8.0\\microsoft.codeanalysis.common.4.8.0.nupkg.sha512",

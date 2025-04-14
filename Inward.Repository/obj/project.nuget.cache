@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "OeCIprAZqTs=",
+  "success": true,
+  "projectFilePath": "D:\\GCM\\Inward.Repository\\GCM.Repository.csproj",
+=======
   "dgSpecHash": "Tt+DvTL18GA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\GCM.Repository.csproj",
+>>>>>>> origin/master
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\epplus.interfaces\\8.0.0\\epplus.interfaces.8.0.0.nupkg.sha512",

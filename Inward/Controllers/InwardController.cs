@@ -90,8 +90,16 @@ namespace Inward.Controllers
         [HttpGet]
         public async Task<IActionResult> ViewStudents()
         {
-            var students = await _userLoginService.GetStudentList();
-            return View(students);
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                    var students = await _userLoginService.GetStudentList();
+                return View(students);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         [HttpPost]
@@ -101,14 +109,22 @@ namespace Inward.Controllers
         }
         public async Task<IActionResult> DeleteStudent(long studentid)
         {
-            var result = _userLoginService.DeleteStudent(studentid);
-            if(result.Id > 0)
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                return Json(new { success = true, message = "Student deleted successfully." });
+                    var result = _userLoginService.DeleteStudent(studentid);
+                if(result.Id > 0)
+                {
+                    return Json(new { success = true, message = "Student deleted successfully." });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Failed to delete the student." });
+                }
+
             }
             else
             {
-                return Json(new { success = false, message = "Failed to delete the student." });
+                return RedirectToAction("Login", "Login");
             }
         }
 
@@ -116,34 +132,58 @@ namespace Inward.Controllers
 
         public async Task<IActionResult> AddSubHead(string? subheadid)
         {
-            SubHeadEntity sh = new SubHeadEntity();
-            if (subheadid != null)
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                 sh = await _userLoginService.GetSubheadById(Convert.ToInt64(subheadid));
-            }
+                    SubHeadEntity sh = new SubHeadEntity();
+                if (subheadid != null)
+                {
+                     sh = await _userLoginService.GetSubheadById(Convert.ToInt64(subheadid));
+                }
             
-            return View(sh);
+                return View(sh);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> AddSubHead(SubHeadEntity sh)
         {
-            var result = await _userLoginService.AddUpdateSubhead(sh);
-            if (result.Id > 0)
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                    var result = await _userLoginService.AddUpdateSubhead(sh);
+                if (result.Id > 0)
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                }
+                else
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+                }
+                    return RedirectToAction("AddSubHead");
+
             }
             else
             {
-                TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+                return RedirectToAction("Login", "Login");
             }
-                return RedirectToAction("AddSubHead");
         }
         [HttpGet]
         public async Task<IActionResult> GetSubHeadList()
         {
-            var lst = await _userLoginService.GetSubHeadList();
-            return View(lst);
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                    var lst = await _userLoginService.GetSubHeadList();
+                return View(lst);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
         [HttpGet]
         public async Task<IActionResult> GetFarmerDetailsById(string farmerId)
@@ -155,14 +195,22 @@ namespace Inward.Controllers
         }
         public async Task<IActionResult> DeleteSubhead(string subheadid)
         {
-            var result = _userLoginService.DeleteSubhead(Convert.ToInt64(subheadid));
-            if (result.Id > 0)
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                return Json(new { success = true, message = "Subhead deleted successfully." });
+                    var result = _userLoginService.DeleteSubhead(Convert.ToInt64(subheadid));
+                if (result.Id > 0)
+                {
+                    return Json(new { success = true, message = "Subhead deleted successfully." });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Failed to delete the subhead." });
+                }
+
             }
             else
             {
-                return Json(new { success = false, message = "Failed to delete the subhead." });
+                return RedirectToAction("Login", "Login");
             }
         }
 

@@ -1648,11 +1648,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
+      "projectName": "GCM.Reports",
+      "projectPath": "D:\\GCM\\GCM.Reports\\GCM.Reports.csproj",
+      "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+      "outputPath": "D:\\GCM\\GCM.Reports\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\GCM.Reports.csproj",
       "projectName": "GCM.Reports",
       "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\GCM.Reports.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\GCM.Reports\\obj\\",
+>>>>>>> origin/master
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
