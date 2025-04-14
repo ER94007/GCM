@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Security.Claims;
 using GCM.Entity;
 using GCM.Repository;
 using GCM.Services.Abstraction;
@@ -30,17 +31,33 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<IActionResult> ViewStudentFeeCollection()
         {
-            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
-            return View(studentsFeeCollection);
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                    var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+                return View(studentsFeeCollection);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
         // GET: StudentFeeCollectionController
         public ActionResult AddStudentFeeCollection()
         {
-            StudentFeeCollection sft = new StudentFeeCollection();
-            ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-            ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-            ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-            return View(sft);
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                    StudentFeeCollection sft = new StudentFeeCollection();
+                ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                return View(sft);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
         // GET: StudentFeeCollectionController/Details/5
@@ -52,27 +69,35 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<IActionResult> GetStudentDetails(string number)
         {
-            if (string.IsNullOrWhiteSpace(number))
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                return Json(new { success = false, message = "Student number is required." });
-            }
+                    if (string.IsNullOrWhiteSpace(number))
+                {
+                    return Json(new { success = false, message = "Student number is required." });
+                }
 
-            var students = await _studentFeeCollectionService.GetStudentList();
+                var students = await _studentFeeCollectionService.GetStudentList();
 
-            if (students == null || !students.Any())
-            {
-                return Json(new { success = false, message = "No students found." });
-            }
+                if (students == null || !students.Any())
+                {
+                    return Json(new { success = false, message = "No students found." });
+                }
 
-            var student = students.FirstOrDefault(s => s.applicationno == number);
+                var student = students.FirstOrDefault(s => s.applicationno == number);
 
-            if (student != null)
-            {
-                return Json(new { success = true, student });
+                if (student != null)
+                {
+                    return Json(new { success = true, student });
+                }
+                else
+                {
+                    return Json(new { success = false, message = "Student not found." });
+                }
+
             }
             else
             {
-                return Json(new { success = false, message = "Student not found." });
+                return RedirectToAction("Login", "Login");
             }
         }
 
@@ -139,53 +164,69 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<JsonResult> GetFeesDetails(int termId, int financialYearId, int studentid)
         {
-            var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
-
-            var result = fees.Select(f => new
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                SubHeadId = f.SubHeadId,
-                subHeadName = f.subheadname,
-                amount = f.fees
-            });
+                    var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
 
-            return Json(new { success = result.Any(), fees = result });
+                var result = fees.Select(f => new
+                {
+                    SubHeadId = f.SubHeadId,
+                    subHeadName = f.subheadname,
+                    amount = f.fees
+                });
+
+                return Json(new { success = result.Any(), fees = result });
+
+            }
+            else
+            {
+                return Json(new { success = false, message = "User not authenticated." });
+            }
         }
 
         [HttpPost]
         public async Task<IActionResult> AddStudentFeeCollection(StudentFeeCollection model, List<FeeDetail> FeeDetails, decimal TotalFees)
         {
-            if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                ModelState.AddModelError("", "Invalid data. Please fill all required fields.");
-                return View("AddStudentFeeCollection", model); // Return the same view with validation errors
-            }
-
-            try
-            {
-                // Create a new entity instance
-
-                DataTable feeDetailsTable = new DataTable();
-                feeDetailsTable.Columns.Add("SubheadId", typeof(int));
-                feeDetailsTable.Columns.Add("Amount", typeof(decimal));
-
-                foreach (var feeDetail in FeeDetails)
+                    if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
                 {
-                    feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    ModelState.AddModelError("", "Invalid data. Please fill all required fields.");
+                    return View("AddStudentFeeCollection", model); // Return the same view with validation errors
                 }
 
-                // Assign DataTable to model
-                model.feesdetails = feeDetailsTable;
+                try
+                {
+                    // Create a new entity instance
 
-                // Ensure AddFeeCollection is asynchronous and awaited
-                var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
 
-                return RedirectToAction("ViewStudentFeeCollection");
+                    foreach (var feeDetail in FeeDetails)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+
+                    // Assign DataTable to model
+                    model.feesdetails = feeDetailsTable;
+
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+
+                    return RedirectToAction("ViewStudentFeeCollection");
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception
+                    ModelState.AddModelError("", "An error occurred while processing your request.");
+                    return View("AddStudentFeeCollection", model);
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                // Handle exception
-                ModelState.AddModelError("", "An error occurred while processing your request.");
-                return View("AddStudentFeeCollection", model);
+                return RedirectToAction("Login", "Login");
             }
         }
 
@@ -193,17 +234,24 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<IActionResult> ExportStudentReport()
         {
-            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null) { 
+                    var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
 
-            var report = new LocalReport();
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
-            report.ReportPath = path;
+                var report = new LocalReport();
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+                report.ReportPath = path;
 
-            report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
+                report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
 
-            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+                var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
 
-            return File(result, "application/pdf", "StudentReport.pdf");
+                return File(result, "application/pdf", "StudentReport.pdf");
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
         }
 
     }
