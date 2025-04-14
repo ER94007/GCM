@@ -33,7 +33,7 @@ namespace GCM.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+                var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
                 return View(studentsFeeCollection);
 
             }
@@ -47,7 +47,7 @@ namespace GCM.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    StudentFeeCollection sft = new StudentFeeCollection();
+                StudentFeeCollection sft = new StudentFeeCollection();
                 ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
                 ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
                 ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
@@ -71,7 +71,7 @@ namespace GCM.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    if (string.IsNullOrWhiteSpace(number))
+                if (string.IsNullOrWhiteSpace(number))
                 {
                     return Json(new { success = false, message = "Student number is required." });
                 }
@@ -166,7 +166,7 @@ namespace GCM.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
+                var fees = await _studentFeeCollectionService.FeeDetails(termId, financialYearId, studentid);
 
                 var result = fees.Select(f => new
                 {
@@ -189,7 +189,7 @@ namespace GCM.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
+                if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
                 {
                     ModelState.AddModelError("", "Invalid data. Please fill all required fields.");
                     return View("AddStudentFeeCollection", model); // Return the same view with validation errors
@@ -218,6 +218,20 @@ namespace GCM.Controllers
                 }
                 catch (Exception ex)
                 {
+
+                    DataTable feeDetailsTable = new DataTable();
+                    feeDetailsTable.Columns.Add("SubheadId", typeof(int));
+                    feeDetailsTable.Columns.Add("Amount", typeof(decimal));
+
+                    foreach (var feeDetail in model.FeeDetailLists)
+                    {
+                        feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+                    }
+                    model.feesdetails = feeDetailsTable;
+
+                    // Ensure AddFeeCollection is asynchronous and awaited
+                    var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
+
                     // Handle exception
                     ModelState.AddModelError("", "An error occurred while processing your request.");
                     return View("AddStudentFeeCollection", model);
@@ -231,28 +245,63 @@ namespace GCM.Controllers
         }
 
 
+        //[HttpGet]
+        //public async Task<IActionResult> ExportStudentFeeCollectionReport1(string? studentid)
+        //{
+
+        //    long stdid = 0;
+        //    stdid = Convert.ToInt64(studentid);
+        //    var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid);
+        //    if (User.FindFirst(ClaimTypes.NameIdentifier) != null) { 
+        //            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+
+        //        var report = new LocalReport();
+        //        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+        //        report.ReportPath = path;
+
+        //    report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
+        //        report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
+
+        //        var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+        //    return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
+        //}
+
         [HttpGet]
-        public async Task<IActionResult> ExportStudentReport()
+        public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid)
         {
-            if (User.FindFirst(ClaimTypes.NameIdentifier) != null) { 
-                    var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
+            long stdid = 0;
+            stdid = Convert.ToInt64(studentid);
 
-                var report = new LocalReport();
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
-                report.ReportPath = path;
+            // Fetch the report data
+            var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid);
 
-                report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
+            // Calculate the total GovAmount
+            var totalGovAmount = studentsFeeCollection.Sum(x => x.GovAmount);
 
-                var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
-
-                return File(result, "application/pdf", "StudentReport.pdf");
-
-            }
-            else
+            foreach (var item in studentsFeeCollection)
             {
-                return RedirectToAction("Login", "Login");
+                item.GovernmentTotal = Convert.ToString(totalGovAmount); // Add this property in your model if not already
             }
-        }
 
+            // Create the local report
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+            report.ReportPath = path;
+
+            // Add the data source
+            report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
+
+            // Set the parameter for total GovAmount
+            report.SetParameters(new ReportParameter("TotalGovAmount", totalGovAmount.ToString("F2")));
+
+            // Render the report as PDF
+            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+            return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
+
+        }
+            
     }
 }
+

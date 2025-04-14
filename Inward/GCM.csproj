@@ -5,6 +5,11 @@
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xsc" />
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xsd" />
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xss" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection.cs" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection.Designer.cs" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection.xsc" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection.xsd" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection.xss" />
     <Content Remove="wwwroot\Dataset\StudentInfo.cs" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsc" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsd" />
@@ -19,6 +24,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="wwwroot\Dataset\studentfeecollection.cs" />
+    <Compile Include="wwwroot\Dataset\studentfeecollection.Designer.cs">
+      <DependentUpon>studentfeecollection.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="wwwroot\Dataset\StudentInfo.cs" />
   </ItemGroup>
 
@@ -30,6 +41,13 @@
       <Generator>MSDataSetGenerator</Generator>
     </None>
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
+    <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
+    <None Include="wwwroot\Dataset\studentfeecollection.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>studentfeecollection.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+    <None Include="wwwroot\Dataset\studentfeecollection.xss" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsd">
       <SubType>Designer</SubType>

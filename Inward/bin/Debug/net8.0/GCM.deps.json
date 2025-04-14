@@ -2931,7 +2931,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Common.dll": {}
+          "GCM.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Entity/1.0.0": {
@@ -2941,7 +2944,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Entity.dll": {}
+          "GCM.Entity.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Repository/1.0.0": {
@@ -2958,7 +2964,10 @@
           "System.Data.SqlClient": "4.8.6"
         },
         "runtime": {
-          "GCM.Repository.dll": {}
+          "GCM.Repository.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Repository.Abstraction/1.0.0": {
@@ -2973,7 +2982,10 @@
           "System.Data.SqlClient": "4.8.6"
         },
         "runtime": {
-          "GCM.Repository.Abstraction.dll": {}
+          "GCM.Repository.Abstraction.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Services/1.0.0": {
@@ -2988,7 +3000,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Services.dll": {}
+          "GCM.Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Services.Abstraction/1.0.0": {
@@ -3002,7 +3017,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Services.Abstraction.dll": {}
+          "GCM.Services.Abstraction.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

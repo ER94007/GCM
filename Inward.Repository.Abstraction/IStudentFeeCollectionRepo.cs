@@ -19,5 +19,6 @@ namespace GCM.Repository.Abstraction
         Task<IEnumerable<StudentFeeCollection>> FeeDetails(int termId, int financialYearId, int studentid);
         Task<ResponseMessage> AddFeeCollection(StudentFeeCollection model,decimal fees);
         Task<IEnumerable<StudentFeeCollection>> GetStudentFeeCollectionList();
+        Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid);
     }
 }
