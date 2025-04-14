@@ -11,3 +11,16 @@ D:\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.dll
 D:\GCM\GCM.Reports\obj\Debug\net8.0\refint\GCM.Reports.dll
 D:\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.pdb
 D:\GCM\GCM.Reports\obj\Debug\net8.0\ref\GCM.Reports.dll
+C:\Users\Admin\Desktop\GCM\GCM.Reports\bin\Debug\net8.0\GCM.Reports.deps.json
+C:\Users\Admin\Desktop\GCM\GCM.Reports\bin\Debug\net8.0\GCM.Reports.dll
+C:\Users\Admin\Desktop\GCM\GCM.Reports\bin\Debug\net8.0\GCM.Reports.pdb
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.AssemblyInfo.cs
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.sourcelink.json
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.dll
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\refint\GCM.Reports.dll
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\GCM.Reports.pdb
+C:\Users\Admin\Desktop\GCM\GCM.Reports\obj\Debug\net8.0\ref\GCM.Reports.dll
