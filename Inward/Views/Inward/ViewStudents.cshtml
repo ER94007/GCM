@@ -16,7 +16,7 @@
 							<h3 class="card-title">List of Students</h3>
 						</div>
 						<div class="card-body">
-							<table id="InwardList" class="table table-bordered table-striped">
+							<table id="InwardList" class="table table-bordered table-striped datatable">
 								<thead>
 									<tr>
 										<th>Sr.</th>
@@ -47,11 +47,16 @@
 											<td>
 												<a asp-action="Index" asp-controller="Inward"
 												   asp-route-studentid="@Uri.EscapeDataString(EncryptionHelper.Encrypt(item.studentid.ToString()))">
-													Update
+													<i class="fas fa-edit"></i>
+
 												</a>
 											</td>
 
-											<td><a onclick="deleteStudent(@item.studentid)">Delete</a></td>
+											<td>
+												<a onclick="deleteStudent(@item.studentid)">
+													<i class="fas fa-trash-alt text-danger"></i>
+												</a>
+											</td>
 										</tr>
 									}
 								</tbody>

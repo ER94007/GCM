@@ -27,6 +27,7 @@ namespace GCM.Entity
         public string TermName { get; set; }
         public string RecieptNo { get; set; }
         public string FeeModeDescription { get; set; }
+<<<<<<< HEAD
         public string name { get; set; }
         public string GovernmentFee { get; set; }
         public long GovAmount { get; set; }
@@ -35,6 +36,8 @@ namespace GCM.Entity
         public string GovernmentTotal { get; set; }
 
         public List<FeeDetail1> FeeDetailLists { get; set; } = new List<FeeDetail1>();
+=======
+>>>>>>> origin/master
     }
 
        public class StudentFeeDetail
@@ -51,9 +54,5 @@ namespace GCM.Entity
         public string SubHeadName { get; set; }
         public decimal Amount { get; set; }
     }
-    public class FeeDetail1
-    {
-        public long subheadid { get; set; }
-        public decimal Amount { get; set; }
-    }
+
 }
