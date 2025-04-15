@@ -293,6 +293,14 @@ namespace GCM.wwwroot.Dataset {
             
             private global::System.Data.DataColumn columnGovernmentTotal;
             
+            private global::System.Data.DataColumn columnEnrolmentNo1;
+            
+            private global::System.Data.DataColumn columnApplicationNo1;
+            
+            private global::System.Data.DataColumn columnTermName;
+            
+            private global::System.Data.DataColumn columnRecieptNo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public studentfeecollectionDataTable() {
@@ -384,6 +392,38 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn EnrolmentNo1Column {
+                get {
+                    return this.columnEnrolmentNo1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ApplicationNo1Column {
+                get {
+                    return this.columnApplicationNo1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TermNameColumn {
+                get {
+                    return this.columnTermName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RecieptNoColumn {
+                get {
+                    return this.columnRecieptNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -419,7 +459,7 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal) {
+            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo1, string ApplicationNo1, string TermName, string RecieptNo) {
                 studentfeecollectionRow rowstudentfeecollectionRow = ((studentfeecollectionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         no,
@@ -428,7 +468,11 @@ namespace GCM.wwwroot.Dataset {
                         PrivateFee,
                         PrivAmount,
                         name,
-                        GovernmentTotal};
+                        GovernmentTotal,
+                        EnrolmentNo1,
+                        ApplicationNo1,
+                        TermName,
+                        RecieptNo};
                 rowstudentfeecollectionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentfeecollectionRow);
                 return rowstudentfeecollectionRow;
@@ -458,6 +502,10 @@ namespace GCM.wwwroot.Dataset {
                 this.columnPrivAmount = base.Columns["PrivAmount"];
                 this.columnname = base.Columns["name"];
                 this.columnGovernmentTotal = base.Columns["GovernmentTotal"];
+                this.columnEnrolmentNo1 = base.Columns["EnrolmentNo1"];
+                this.columnApplicationNo1 = base.Columns["ApplicationNo1"];
+                this.columnTermName = base.Columns["TermName"];
+                this.columnRecieptNo = base.Columns["RecieptNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,6 +525,14 @@ namespace GCM.wwwroot.Dataset {
                 base.Columns.Add(this.columnname);
                 this.columnGovernmentTotal = new global::System.Data.DataColumn("GovernmentTotal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGovernmentTotal);
+                this.columnEnrolmentNo1 = new global::System.Data.DataColumn("EnrolmentNo1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnrolmentNo1);
+                this.columnApplicationNo1 = new global::System.Data.DataColumn("ApplicationNo1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplicationNo1);
+                this.columnTermName = new global::System.Data.DataColumn("TermName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTermName);
+                this.columnRecieptNo = new global::System.Data.DataColumn("RecieptNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecieptNo);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_studentfeecollection");
                 this.ExtendedProperties.Add("Generator_UserTableName", "studentfeecollection");
             }
@@ -734,6 +790,70 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string EnrolmentNo1 {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudentfeecollection.EnrolmentNo1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EnrolmentNo1\' in table \'studentfeecollection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudentfeecollection.EnrolmentNo1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ApplicationNo1 {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudentfeecollection.ApplicationNo1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApplicationNo1\' in table \'studentfeecollection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudentfeecollection.ApplicationNo1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string TermName {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudentfeecollection.TermNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TermName\' in table \'studentfeecollection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudentfeecollection.TermNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RecieptNo {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudentfeecollection.RecieptNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RecieptNo\' in table \'studentfeecollection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudentfeecollection.RecieptNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsnoNull() {
                 return this.IsNull(this.tablestudentfeecollection.noColumn);
             }
@@ -814,6 +934,54 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetGovernmentTotalNull() {
                 this[this.tablestudentfeecollection.GovernmentTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsEnrolmentNo1Null() {
+                return this.IsNull(this.tablestudentfeecollection.EnrolmentNo1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetEnrolmentNo1Null() {
+                this[this.tablestudentfeecollection.EnrolmentNo1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsApplicationNo1Null() {
+                return this.IsNull(this.tablestudentfeecollection.ApplicationNo1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetApplicationNo1Null() {
+                this[this.tablestudentfeecollection.ApplicationNo1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTermNameNull() {
+                return this.IsNull(this.tablestudentfeecollection.TermNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTermNameNull() {
+                this[this.tablestudentfeecollection.TermNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRecieptNoNull() {
+                return this.IsNull(this.tablestudentfeecollection.RecieptNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRecieptNoNull() {
+                this[this.tablestudentfeecollection.RecieptNoColumn] = global::System.Convert.DBNull;
             }
         }
         
