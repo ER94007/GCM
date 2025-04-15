@@ -33,6 +33,9 @@ namespace GCM.Entity
         public string PrivateFee { get; set; }
         public long PrivAmount { get; set; }
         public string GovernmentTotal { get; set; }
+        public string EnrolmentNo1 { get; set; }
+        public string ApplicationNo1 { get; set; }
+        public string CreatedDate { get; set; }
 
         public List<FeeDetail> FeeDetailLists { get; set; } = new List<FeeDetail>();
     }
