@@ -54,7 +54,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label for="subheadid">Subhead</label>
-											<select asp-for="SubHeadId" class="form-control subhead-select" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
+											<select asp-for="SubHeadId" class="form-control subhead-select" asp-items="@(new SelectList(ViewBag.SubheadList, "Value", "Text"))">
 												<option value="">---Select Subhead---</option>											
 											</select>
 										</div>

@@ -345,7 +345,7 @@
             </TablixRowHierarchy>
             <DataSetName>studentfeecollection</DataSetName>
             <Height>1.2cm</Height>
-            <Width>16.95188cm</Width>
+            <Width>16.95187cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -479,14 +479,14 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.75694in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>9.6in</Width>
+      <Width>6.94028in</Width>
       <Page>
         <PageHeader>
           <Height>2.87753cm</Height>
@@ -677,10 +677,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
