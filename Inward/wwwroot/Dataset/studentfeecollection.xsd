@@ -25,7 +25,8 @@
               <xs:element name="EnrolmentNo1" msprop:Generator_ColumnPropNameInTable="EnrolmentNo1Column" msprop:Generator_ColumnPropNameInRow="EnrolmentNo1" msprop:Generator_UserColumnName="EnrolmentNo1" msprop:Generator_ColumnVarNameInTable="columnEnrolmentNo1" type="xs:string" minOccurs="0" />
               <xs:element name="ApplicationNo1" msprop:Generator_ColumnPropNameInTable="ApplicationNo1Column" msprop:Generator_ColumnPropNameInRow="ApplicationNo1" msprop:Generator_UserColumnName="ApplicationNo1" msprop:Generator_ColumnVarNameInTable="columnApplicationNo1" type="xs:string" minOccurs="0" />
               <xs:element name="TermName" msprop:Generator_ColumnPropNameInTable="TermNameColumn" msprop:Generator_ColumnPropNameInRow="TermName" msprop:Generator_UserColumnName="TermName" msprop:Generator_ColumnVarNameInTable="columnTermName" type="xs:string" minOccurs="0" />
-              <xs:element name="RecieptNo" msprop:Generator_ColumnPropNameInRow="RecieptNo" msprop:Generator_ColumnPropNameInTable="RecieptNoColumn" msprop:Generator_ColumnVarNameInTable="columnRecieptNo" msprop:Generator_UserColumnName="RecieptNo" type="xs:string" minOccurs="0" />
+              <xs:element name="RecieptNo" msprop:Generator_UserColumnName="RecieptNo" msprop:Generator_ColumnPropNameInTable="RecieptNoColumn" msprop:Generator_ColumnPropNameInRow="RecieptNo" msprop:Generator_ColumnVarNameInTable="columnRecieptNo" type="xs:string" minOccurs="0" />
+              <xs:element name="CreatedDate" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" msprop:Generator_UserColumnName="CreatedDate" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
