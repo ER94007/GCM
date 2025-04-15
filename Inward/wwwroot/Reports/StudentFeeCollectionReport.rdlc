@@ -533,7 +533,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Student Name:</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -545,7 +547,7 @@
             <Top>0.17639cm</Top>
             <Left>0.26246cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>2.8175cm</Width>
             <ZIndex>5</ZIndex>
             <Style>
               <Border>
@@ -573,9 +575,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox25</rd:DefaultName>
             <Top>0.17639cm</Top>
-            <Left>3.10303cm</Left>
+            <Left>3.56164cm</Left>
             <Height>0.6cm</Height>
-            <Width>6.71939cm</Width>
+            <Width>6.26078cm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -595,7 +597,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Term Name:</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -607,7 +611,7 @@
             <Top>0.95278cm</Top>
             <Left>0.26246cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
+            <Width>2.8175cm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -635,9 +639,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox25</rd:DefaultName>
             <Top>0.95278cm</Top>
-            <Left>3.10303cm</Left>
+            <Left>3.56164cm</Left>
             <Height>0.6cm</Height>
-            <Width>6.71939cm</Width>
+            <Width>6.26078cm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -657,7 +661,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Application No:</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -719,7 +725,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Enrolment No:</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style>
@@ -945,7 +953,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Reciept No: </Value>
-                      <Style />
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                     <TextRun>
                       <Value>=Fields!RecieptNo.Value</Value>
@@ -959,7 +969,7 @@
               <Top>1.37118cm</Top>
               <Left>12.81148cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.92875cm</Width>
+              <Width>4.24625cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>
@@ -978,7 +988,13 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Date: </Value>
+                      <Value>Date:</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -989,7 +1005,7 @@
               <Top>1.88948cm</Top>
               <Left>12.81148cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.92875cm</Width>
+              <Width>4.24625cm</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
@@ -1021,7 +1037,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Clerk</Value>
-                      <Style />
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
@@ -1057,7 +1075,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>Principle</Value>
-                      <Style />
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
