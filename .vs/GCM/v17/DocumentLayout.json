@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,28 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Login\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Login\\Login.cshtml",
-              "ViewState": "AQIAAF4AAAAAAAAAAAAgwHAAAACJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T09:24:30.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
@@ -60,11 +39,16 @@
               "ViewState": "AQIAALUAAAAAAAAAAADwv9MAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-16T09:17:13.71Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AddSubHead.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\AddSubHead.cshtml",
               "RelativeDocumentMoniker": "Inward\\Views\\Inward\\AddSubHead.cshtml",
@@ -77,7 +61,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "StudentFeeCollection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\StudentFeeCollection.cs",
               "RelativeDocumentMoniker": "Inward.Entity\\StudentFeeCollection.cs",
@@ -90,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "StudentFeeCollectionController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
               "RelativeDocumentMoniker": "Inward\\Controllers\\StudentFeeCollectionController.cs",
