@@ -38,6 +38,10 @@
 					<input type="text" id="searchNumber" asp-for="StudentId" class="form-control" placeholder="Enter Student Number" />
 					<div style="margin-top: 20px;"></div>
 					<button id="searchBtn" class="btn btn-primary mt-2">Search</button>
+					<a href="@Url.Action("ViewStudentFeeCollection", "StudentFeeCollection")" class="btn btn-secondary mt-2">
+						<i class="fas fa-list mr-1"></i>
+						Go to List
+					</a>
 				</div>
 
 				<div id="studentDetails" class="mt-3" style="display: none;">
@@ -144,10 +148,7 @@
 					</div>
 					<div class="card-footer text-center">
 						<button type="submit" class="btn btn-success">Submit</button>
-						<a href="@Url.Action("GetFinancialTermData", "FinancialYearTermWiseFee")" class="btn btn-secondary">
-							<i class="fas fa-list mr-1"></i>
-							Go to List
-						</a>
+						
 					</div>
 				</div>
 			</form>
