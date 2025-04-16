@@ -3,6 +3,7 @@ using System.Security.Claims;
 using GCM.Entity;
 using GCM.Repository;
 using GCM.Services.Abstraction;
+using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Http;
@@ -219,20 +220,29 @@ namespace GCM.Controllers
 					if (regResponse.Id == 1)
 					{
 						// Success, return JSON with the success flag
-						return Json(new { success = true, message = "Data Save successfully." });
-					}
+						//return Json(new { success = true, message = "Data Save successfully." });
+						var msg = "Data Save successfully.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+
+                    }
 					if (regResponse.Id == -1)
 					{
 						// Success, return JSON with the success flag
-						return Json(new { success = true, message = "Record Already Exists" });
-					}
-					else
+						//return Json(new { success = true, message = "Record Already Exists" });
+                        var msg = "Record Already Exists.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+
+                    }
+                    else
 					{
 						// Failure, return JSON with the failure flag
-						return Json(new { success = false, message = "Error while adding students." });
-					}
+						//return Json(new { success = false, message = "Error while adding students." });
+                        var msg = "Error while adding students.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
 
-				}
+                    }
+					return RedirectToAction("ViewStudentFeeCollection", "StudentFeeCollection");   
+                }
 				catch (Exception ex)
 				{
 
