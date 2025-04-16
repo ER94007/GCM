@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAALUAAAAAAAAAAADwv9MAAAAAAAAA",
+              "ViewState": "AQIAALUAAAAAAAAAAADwv8oAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-16T09:17:13.71Z",
               "IsPinned": true,
@@ -56,8 +56,7 @@
               "RelativeToolTip": "Inward\\Views\\Inward\\AddSubHead.cshtml",
               "ViewState": "AQIAACMAAAAAAAAAAADwv0EAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T09:03:04.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T09:03:04.992Z"
             },
             {
               "$type": "Document",
@@ -69,8 +68,7 @@
               "RelativeToolTip": "Inward.Entity\\StudentFeeCollection.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAuwCMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T06:12:25.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T06:12:25.983Z"
             },
             {
               "$type": "Document",
@@ -82,8 +80,7 @@
               "RelativeToolTip": "Inward\\Controllers\\StudentFeeCollectionController.cs",
               "ViewState": "AQIAACwBAAAAAAAAAAAwwEABAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T02:11:11.747Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T02:11:11.747Z"
             }
           ]
         }
