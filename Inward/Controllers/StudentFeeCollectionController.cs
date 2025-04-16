@@ -214,7 +214,23 @@ namespace GCM.Controllers
                     // Ensure AddFeeCollection is asynchronous and awaited
                     var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
 
-                    return RedirectToAction("ViewStudentFeeCollection");
+					// Return a success or failure response as JSON
+					if (regResponse.Id == 1)
+					{
+						// Success, return JSON with the success flag
+						return Json(new { success = true, message = "Data Save successfully." });
+					}
+					if (regResponse.Id == -1)
+					{
+						// Success, return JSON with the success flag
+						return Json(new { success = true, message = "Record Already Exists" });
+					}
+					else 
+					{
+						// Failure, return JSON with the failure flag
+						return Json(new { success = false, message = "Error while adding students." });
+					}
+
                 }
                 catch (Exception ex)
                 {
