@@ -20,20 +20,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="wwwroot\Dataset\dbStudentdetails.cs" />
     <Compile Include="wwwroot\Dataset\dbStudentdetails.Designer.cs">
       <DependentUpon>dbStudentdetails.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="wwwroot\Dataset\studentfeecollection.cs" />
+    <Compile Include="wwwroot\Dataset\studentfeecollection.Designer.cs" />
     <Compile Include="wwwroot\Dataset\StudentInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="StudentFeeCollectionReport.rdlc">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Compile Include="wwwroot\Dataset\StudentInfo.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StudentInfo.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +45,7 @@
     </None>
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
+    <None Include="wwwroot\Dataset\studentfeecollection.xsd" />
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsd">
@@ -93,6 +94,9 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+    <None Include="wwwroot\Reports\StudentFeeCollectionReport.rdlc" />
+    <None Include="wwwroot\Reports\StudentFeeCollectionReport1.rdlc" />
+    <None Include="wwwroot\Reports\StudentReport.rdlc" />
     <Page Include="wwwroot\Reports\StudentReport.rdlc" />
   </ItemGroup>
 
@@ -138,6 +142,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>StudentInfo.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Reports\StudentFeeCollectionReport.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Reports\StudentFeeCollectionReport1.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 

@@ -1,7 +1,6 @@
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\GCM.exe
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\appsettings.json
-C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\StudentFeeCollectionReport.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\GCM.dll
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\GCM.deps.json
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\PubTmp\Out\GCM.runtimeconfig.json

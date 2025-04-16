@@ -293,9 +293,9 @@ namespace GCM.wwwroot.Dataset {
             
             private global::System.Data.DataColumn columnGovernmentTotal;
             
-            private global::System.Data.DataColumn columnEnrolmentNo1;
+            private global::System.Data.DataColumn columnEnrolmentNo;
             
-            private global::System.Data.DataColumn columnApplicationNo1;
+            private global::System.Data.DataColumn columnApplicationNo;
             
             private global::System.Data.DataColumn columnTermName;
             
@@ -394,17 +394,17 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn EnrolmentNo1Column {
+            public global::System.Data.DataColumn EnrolmentNoColumn {
                 get {
-                    return this.columnEnrolmentNo1;
+                    return this.columnEnrolmentNo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ApplicationNo1Column {
+            public global::System.Data.DataColumn ApplicationNoColumn {
                 get {
-                    return this.columnApplicationNo1;
+                    return this.columnApplicationNo;
                 }
             }
             
@@ -469,7 +469,7 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo1, string ApplicationNo1, string TermName, string RecieptNo, string CreatedDate) {
+            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo, string ApplicationNo, string TermName, string RecieptNo, string CreatedDate) {
                 studentfeecollectionRow rowstudentfeecollectionRow = ((studentfeecollectionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         no,
@@ -479,8 +479,8 @@ namespace GCM.wwwroot.Dataset {
                         PrivAmount,
                         name,
                         GovernmentTotal,
-                        EnrolmentNo1,
-                        ApplicationNo1,
+                        EnrolmentNo,
+                        ApplicationNo,
                         TermName,
                         RecieptNo,
                         CreatedDate};
@@ -513,8 +513,8 @@ namespace GCM.wwwroot.Dataset {
                 this.columnPrivAmount = base.Columns["PrivAmount"];
                 this.columnname = base.Columns["name"];
                 this.columnGovernmentTotal = base.Columns["GovernmentTotal"];
-                this.columnEnrolmentNo1 = base.Columns["EnrolmentNo1"];
-                this.columnApplicationNo1 = base.Columns["ApplicationNo1"];
+                this.columnEnrolmentNo = base.Columns["EnrolmentNo"];
+                this.columnApplicationNo = base.Columns["ApplicationNo"];
                 this.columnTermName = base.Columns["TermName"];
                 this.columnRecieptNo = base.Columns["RecieptNo"];
                 this.columnCreatedDate = base.Columns["CreatedDate"];
@@ -537,10 +537,10 @@ namespace GCM.wwwroot.Dataset {
                 base.Columns.Add(this.columnname);
                 this.columnGovernmentTotal = new global::System.Data.DataColumn("GovernmentTotal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGovernmentTotal);
-                this.columnEnrolmentNo1 = new global::System.Data.DataColumn("EnrolmentNo1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEnrolmentNo1);
-                this.columnApplicationNo1 = new global::System.Data.DataColumn("ApplicationNo1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnApplicationNo1);
+                this.columnEnrolmentNo = new global::System.Data.DataColumn("EnrolmentNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEnrolmentNo);
+                this.columnApplicationNo = new global::System.Data.DataColumn("ApplicationNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnApplicationNo);
                 this.columnTermName = new global::System.Data.DataColumn("TermName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTermName);
                 this.columnRecieptNo = new global::System.Data.DataColumn("RecieptNo", typeof(string), null, global::System.Data.MappingType.Element);
@@ -804,33 +804,33 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string EnrolmentNo1 {
+            public string EnrolmentNo {
                 get {
                     try {
-                        return ((string)(this[this.tablestudentfeecollection.EnrolmentNo1Column]));
+                        return ((string)(this[this.tablestudentfeecollection.EnrolmentNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EnrolmentNo1\' in table \'studentfeecollection\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EnrolmentNo\' in table \'studentfeecollection\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablestudentfeecollection.EnrolmentNo1Column] = value;
+                    this[this.tablestudentfeecollection.EnrolmentNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ApplicationNo1 {
+            public string ApplicationNo {
                 get {
                     try {
-                        return ((string)(this[this.tablestudentfeecollection.ApplicationNo1Column]));
+                        return ((string)(this[this.tablestudentfeecollection.ApplicationNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ApplicationNo1\' in table \'studentfeecollection\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ApplicationNo\' in table \'studentfeecollection\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablestudentfeecollection.ApplicationNo1Column] = value;
+                    this[this.tablestudentfeecollection.ApplicationNoColumn] = value;
                 }
             }
             
@@ -968,26 +968,26 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsEnrolmentNo1Null() {
-                return this.IsNull(this.tablestudentfeecollection.EnrolmentNo1Column);
+            public bool IsEnrolmentNoNull() {
+                return this.IsNull(this.tablestudentfeecollection.EnrolmentNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetEnrolmentNo1Null() {
-                this[this.tablestudentfeecollection.EnrolmentNo1Column] = global::System.Convert.DBNull;
+            public void SetEnrolmentNoNull() {
+                this[this.tablestudentfeecollection.EnrolmentNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsApplicationNo1Null() {
-                return this.IsNull(this.tablestudentfeecollection.ApplicationNo1Column);
+            public bool IsApplicationNoNull() {
+                return this.IsNull(this.tablestudentfeecollection.ApplicationNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetApplicationNo1Null() {
-                this[this.tablestudentfeecollection.ApplicationNo1Column] = global::System.Convert.DBNull;
+            public void SetApplicationNoNull() {
+                this[this.tablestudentfeecollection.ApplicationNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
