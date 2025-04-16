@@ -2,6 +2,8 @@
 
 @{
 	ViewData["Title"] = "ViewStudentFeeCollection";
+	var msg = TempData["SaveStatus"] as string;
+	//
 }
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css">
 <link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
@@ -13,7 +15,7 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h3 class="card-title">List of Students</h3>
+							<h3 class="card-title">Student Term Wise Fee Collection List</h3>
 						</div>
 						<div class="card-body">
 							<table id="InwardList" class="table table-bordered table-striped">
@@ -61,3 +63,24 @@
 		</div>
 	</section>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Make sure jQuery is loaded first -->
+<script src="path/to/select2.min.js"></script>
+
+<!-- AdminLTE JS -->
+<script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+		var msg = '@msg';
+		if (msg != null && msg != '') {
+			ShowDynamicSwalAlert("", msg);
+		}
+	});
+</script>

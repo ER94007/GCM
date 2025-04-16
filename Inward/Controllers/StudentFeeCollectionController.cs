@@ -3,6 +3,7 @@ using System.Security.Claims;
 using GCM.Entity;
 using GCM.Repository;
 using GCM.Services.Abstraction;
+using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Http;
@@ -219,20 +220,29 @@ namespace GCM.Controllers
 					if (regResponse.Id == 1)
 					{
 						// Success, return JSON with the success flag
-						return Json(new { success = true, message = "Data Save successfully." });
-					}
+						//return Json(new { success = true, message = "Data Save successfully." });
+						var msg = "Data Save successfully.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+
+                    }
 					if (regResponse.Id == -1)
 					{
 						// Success, return JSON with the success flag
-						return Json(new { success = true, message = "Record Already Exists" });
-					}
-					else
+						//return Json(new { success = true, message = "Record Already Exists" });
+                        var msg = "Record Already Exists.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+
+                    }
+                    else
 					{
 						// Failure, return JSON with the failure flag
-						return Json(new { success = false, message = "Error while adding students." });
-					}
+						//return Json(new { success = false, message = "Error while adding students." });
+                        var msg = "Error while adding students.";
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
 
-				}
+                    }
+					return RedirectToAction("ViewStudentFeeCollection", "StudentFeeCollection");   
+                }
 				catch (Exception ex)
 				{
 
@@ -261,28 +271,6 @@ namespace GCM.Controllers
 			}
 		}
 
-
-		//[HttpGet]
-		//public async Task<IActionResult> ExportStudentFeeCollectionReport1(string? studentid)
-		//{
-
-		//    long stdid = 0;
-		//    stdid = Convert.ToInt64(studentid);
-		//    var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid);
-		//    if (User.FindFirst(ClaimTypes.NameIdentifier) != null) { 
-		//            var studentsFeeCollection = await _studentFeeCollectionService.GetStudentFeeCollectionList();
-
-		//        var report = new LocalReport();
-		//        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
-		//        report.ReportPath = path;
-
-		//    report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
-		//        report.DataSources.Add(new ReportDataSource("dbStudentdetails", studentsFeeCollection));
-
-		//        var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
-
-		//    return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
-		//}
 
 		[HttpGet]
 		public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid)
