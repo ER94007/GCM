@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\login.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="wwwroot\Dataset\dbStudentdetails.cs" />
     <Compile Include="wwwroot\Dataset\dbStudentdetails.Designer.cs">
       <DependentUpon>dbStudentdetails.xsd</DependentUpon>

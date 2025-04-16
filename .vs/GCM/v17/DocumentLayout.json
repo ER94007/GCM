@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\inward\\addsubhead.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\addsubhead.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|c:\\users\\admin\\desktop\\gcm\\inward.entity\\studentfeecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\studentfeecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,12 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,14 +36,31 @@
               "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAgwEUAAAAAAAAA",
+              "ViewState": "AQIAALUAAAAAAAAAAADwv8oAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-16T08:45:35.507Z",
+              "WhenOpened": "2025-04-16T09:17:13.71Z",
+              "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "AddSubHead.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\AddSubHead.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\AddSubHead.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Inward\\AddSubHead.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Inward\\AddSubHead.cshtml",
+              "ViewState": "AQIAACMAAAAAAAAAAADwv0EAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T09:03:04.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "StudentFeeCollection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\StudentFeeCollection.cs",
               "RelativeDocumentMoniker": "Inward.Entity\\StudentFeeCollection.cs",
@@ -51,12 +68,11 @@
               "RelativeToolTip": "Inward.Entity\\StudentFeeCollection.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAuwCMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T06:12:25.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T06:12:25.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StudentFeeCollectionController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentFeeCollectionController.cs",
               "RelativeDocumentMoniker": "Inward\\Controllers\\StudentFeeCollectionController.cs",

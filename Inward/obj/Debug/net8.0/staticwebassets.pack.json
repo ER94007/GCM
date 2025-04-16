@@ -8533,6 +8533,10 @@
       "PackagePath": "staticwebassets\\css\\datatables.min.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\css\\select2.css",
       "PackagePath": "staticwebassets\\css\\select2.css"
     },
