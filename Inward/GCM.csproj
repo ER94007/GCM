@@ -6,16 +6,17 @@
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xsd" />
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xss" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.cs" />
-    <Content Remove="wwwroot\Dataset\studentfeecollection.Designer.cs" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xsc" />
-    <Content Remove="wwwroot\Dataset\studentfeecollection.xsd" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xss" />
     <Content Remove="wwwroot\Dataset\StudentInfo.cs" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsc" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsd" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xss" />
-    <Content Remove="wwwroot\Reports\StudentFeeCollectionReport.rdlc" />
     <Content Remove="wwwroot\Reports\StudentReport.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="StudentFeeCollectionReport.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,12 +26,14 @@
       <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="wwwroot\Dataset\studentfeecollection.cs" />
-    <Compile Include="wwwroot\Dataset\studentfeecollection.Designer.cs">
-      <DependentUpon>studentfeecollection.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="wwwroot\Dataset\StudentInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="StudentFeeCollectionReport.rdlc">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -42,11 +45,6 @@
     </None>
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
-    <None Include="wwwroot\Dataset\studentfeecollection.xsd">
-      <SubType>Designer</SubType>
-      <LastGenOutput>studentfeecollection.Designer.cs</LastGenOutput>
-      <Generator>MSDataSetGenerator</Generator>
-    </None>
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsd">
@@ -95,7 +93,6 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
-    <None Include="wwwroot\Reports\StudentFeeCollectionReport.rdlc" />
     <Page Include="wwwroot\Reports\StudentReport.rdlc" />
   </ItemGroup>
 
@@ -127,6 +124,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\Dataset\studentfeecollection.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>studentfeecollection.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Dataset\studentfeecollection.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>studentfeecollection.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </Content>
     <Content Update="wwwroot\Dataset\StudentInfo.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

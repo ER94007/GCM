@@ -6,6 +6,7 @@ using GCM.Services.Abstraction;
 using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -286,7 +287,12 @@ namespace GCM.Controllers
         [HttpGet]
         public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid)
         {
-            long stdid = 0;
+
+			
+				
+
+
+				long stdid = 0;
             stdid = Convert.ToInt64(studentid);
 
             // Fetch the report data
@@ -302,8 +308,10 @@ namespace GCM.Controllers
 
             // Create the local report
             var report = new LocalReport();
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
-            report.ReportPath = path;
+            var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+			System.IO.File.WriteAllText("reportPath.txt", path);
+
+			report.ReportPath = path;
 
             // Add the data source
             report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
@@ -316,7 +324,10 @@ namespace GCM.Controllers
 
             return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
 
-        }
+			
+			
+
+		}
             
     }
 }
