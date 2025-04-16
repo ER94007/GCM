@@ -2,6 +2,14 @@
 {
 }
 
+namespace GCM.Dataset
+{
+}
+
+namespace GCM.wwwroot.Dataset
+{
+}
+
 namespace GCM.wwwroot.Dataset
 {
 }

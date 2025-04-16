@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2xsjCO40UuacwM6PUWxqWnEGuaYjwyZmgVFVxWWth1Y=",
+  "Hash": "Ur0qE9E5pLqJyOCIqMKcIisPOHdZE+xwPC9iBRCxzFY=",
   "Source": "GCM",
   "BasePath": "_content/GCM",
   "Mode": "Default",
@@ -41964,9 +41964,28 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
+      "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Reports\\StudentFeeCollectionReport.rdlc"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport1.rdlc",
+      "SourceId": "GCM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\",
+      "BasePath": "_content/GCM",
+      "RelativePath": "Reports/StudentFeeCollectionReport1.rdlc",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Reports\\StudentFeeCollectionReport1.rdlc"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\uploads\\New Microsoft Excel Worksheet.xlsx",

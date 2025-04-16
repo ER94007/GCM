@@ -1,1 +1,1 @@
-C:\Users\Admin\Desktop\GCM\Inward\StudentFeeCollectionReport.rdlc
+C:\Users\Admin\Desktop\GCM\Inward\Reports\StudentFeeCollectionReport1.rdlc

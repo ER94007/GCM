@@ -45,12 +45,12 @@
           <DataField>GovernmentTotal</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="EnrolmentNo1">
-          <DataField>EnrolmentNo1</DataField>
+        <Field Name="EnrolmentNo">
+          <DataField>EnrolmentNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ApplicationNo1">
-          <DataField>ApplicationNo1</DataField>
+        <Field Name="ApplicationNo">
+          <DataField>ApplicationNo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TermName">
@@ -698,7 +698,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!ApplicationNo1.Value</Value>
+                    <Value>=Fields!ApplicationNo.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -762,7 +762,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!EnrolmentNo1.Value</Value>
+                    <Value>=Fields!EnrolmentNo.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -792,8 +792,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>GrandTotal</Label>
-                    <Value>=Sum(Fields!GovAmount.Value + Fields!PrivAmount.Value, "studentfeecollection")</Value>
+                    <Value />
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -1470,7 +1469,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!ApplicationNo1.Value</Value>
+                    <Value>=Fields!ApplicationNo.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1534,7 +1533,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!EnrolmentNo1.Value</Value>
+                    <Value>=Fields!EnrolmentNo.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1564,8 +1563,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Label>GrandTotal</Label>
-                    <Value>=Sum(Fields!GovAmount.Value + Fields!PrivAmount.Value, "studentfeecollection")</Value>
+                    <Value />
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>

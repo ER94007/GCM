@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\Reports\\StudentFeeCollectionReport.rdlc"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport1.rdlc",
+      "PackagePath": "staticwebassets\\Reports\\StudentFeeCollectionReport1.rdlc"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\assets\\assets\\css.zip",
       "PackagePath": "staticwebassets\\assets\\assets\\css.zip"
     },
