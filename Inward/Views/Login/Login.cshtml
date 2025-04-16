@@ -9,112 +9,138 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	
     <title>GCM | Log in</title>
-    <!-- Google Font: Source Sans Pro -->
     <link href="~/assets/dist/css/adminlte.min.css" rel="stylesheet" />
     <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
-    @* <link href="~/assets/dist/css/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" /> *@
     <link href="~/assets/dist/css/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/login.css" rel="stylesheet" />
+
+    <style>
+        /* Add margin to body to avoid it being stuck at the top */
+        body {
+            margin-top: 20px; /* Adjust as needed */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 40px; /* Adjusted margin for better spacing */
+        }
+
+        /* Input fields styling */
+        .form-control {
+            border-radius: 10px; /* Rounded corners */
+            padding: 12px 15px; /* Adequate padding */
+            font-size: 16px; /* Larger font size */
+            border: 1px solid #ccc; /* Light border */
+            box-shadow: none;
+            transition: border-color 0.3s ease-in-out;
+            position: relative;
+        }
+
+            .form-control:focus {
+                border-color: #007bff; /* Focus color */
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow effect */
+            }
+
+            .form-control::after {
+                content: '';
+                font-size: 20px;
+                position: absolute;
+                right: 15px; /* Position the emoji at the end */
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+        /* Username field emoji */
+        #UserName.form-control::after {
+            content: '🔑'; /* Key emoji */
+        }
+
+        /* Password field emoji */
+        #Password.form-control::after {
+            content: '🔒'; /* Lock emoji */
+        }
+
+        .text-center img {
+            margin-bottom: 20px; /* Adjust space below logo */
+        }
+
+        .btn {
+            background-color: #007bff; /* Blue color for the button */
+            color: white;
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px 20px; /* Adequate padding */
+            font-size: 18px; /* Larger font size */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+            .btn:hover {
+                background-color: #0056b3; /* Darker blue on hover */
+            }
+
+        /* Adding spacing to the bottom of the page */
+        .card {
+            padding: 20px;
+        }
+
+        /* Error message styling */
+        .text-danger {
+            font-size: 14px; /* Slightly smaller font size for error messages */
+        }
+    </style>
 </head>
-<body class="hold-transition login-page">
-    <div class="login-page bg-white">
-        <div class="container-fluid h-auto-small p-0">
-            <div class="row m-0">
-                <div class="col-md-8 px-0">
-                    <div class="d-flex justify-content-center align-items-center log_bg" style="min-height: 100vh; --darkreader-inline-bgcolor: initial;">
-                        <div class="d-flex justify-content-center align-items-center flex-column">
-                            <img src="~/images/college_logo_coloured.png" class="w-50" />
-                           @*  <img src="~/images/bg2.jpg" class="w-50" /> *@
+<body class="hold-transition login-page" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                
+                <div class="card my-5">
+
+                    <form asp-action="Login" asp-controller="Login" >
+
+                        <div class="text-center">
+                            <img src="~/images/college_logo_coloured.png" style="width:40%!important" />
                         </div>
-                    </div>
+
+                        <div class="mb-3">
+                            <input asp-for="UserName" type="text" class="form-control" id="UserName" placeholder="Enter your username">
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Enter your Password">
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-color px-5 mb-5 w-100">Sign In</button>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="col-md-4 shadow h-100 d-flex justify-content-center align-items-center">
-                    <div class="login-box rounded d-flex align-items-center flex-column justify-content-between m-auto pt-4 log_bg" style="min-height: 100vh; --darkreader-inline-bgcolor: initial;">
-                        <!-- /.login-logo -->
-                        <div>&nbsp;</div>
-                        <!--<div class="login-logo">
-                            <a href="index.html"><b>Lo</b>go</a>
-                        </div>-->
-                        <!-- /.login-logo -->
-                        @* <img src="assets/img/logo.png" class="mb-3" width="250"> *@
-                        <div class="card border-0 shadow">
-                            <div class="card-body p-4 border-0">
-                                <div class="text-center">
-                                    @*                                     <img src="~/images/.png" class="w-25 m-auto" />
-                                    *@
-                                </div>
-                                <div class="card-body login-card-body">
-                                    <form asp-action="Login" asp-controller="Login">
-                                        @* <div class="pt-2"> *@
-                                        <div>
-                                            User Name
-                                            <div class="input-group my-3">
-                                                <input asp-for="UserName" type="text" class="form-control">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-user"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <span asp-validation-for="UserName" class="text-danger"></span>
-                                        </div>
-
-                                        <div>
-                                            Password
-                                            <div class="input-group my-3">
-                                                <input asp-for="Password" type="password" class="form-control">
-                                                <div class="input-group-append">
-                                                    <div class="input-group-text">
-                                                        <span class="fa fa-key"></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <span asp-validation-for="Password" class="text-danger"></span>
-                                        </div>
-
-                                        <div class="row">
-                                            <!-- /.col -->
-                                            <div class="col-4">
-                                                <button type="submit" class="btn btn-primary btn-block btn-center">Sign In</button>
-                                            </div>
-                                            <!-- /.col -->
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.login-card-body -->
-                    </div>
-                    <div>&nbsp;</div>
-                </div>
             </div>
         </div>
     </div>
 
-
-
-    <!-- /.login-box -->
     <script src="~/assets/plugins/jquery/jquery.min.js"></script>
     <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    @* <script src="~/assets/dist/js/common.js"></script> *@
     <script src="~/js/common.js"></script>
     <script src="~/assets/dist/js/sweetalert.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            debugger;
+            var msg = '@Html.Raw(@ViewBag.Message)';
+            if (msg != null && msg != '') {
+                ShowDynamicSwalAlert("", msg);
+            }
+        });
+
+        $("#UserName").change(function () {
+            $("#lblErrorMsg").text('');
+        });
+    </script>
 </body>
 </html>
-<script type="text/javascript">
-    $(document).ready(function () {
-        debugger;
-        var msg = '@Html.Raw(@ViewBag.Message)';
-        if (msg != null && msg != '') {
-            ShowDynamicSwalAlert("", msg);
-        }
-    });
-    $("#UserName").change(function () {
-        $("#lblErrorMsg").text('');
-    });
-</script>
-

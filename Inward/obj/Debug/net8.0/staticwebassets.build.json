@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ur0qE9E5pLqJyOCIqMKcIisPOHdZE+xwPC9iBRCxzFY=",
+  "Hash": "6DHM9SplToB5A1UMRKZ4JuIwOuWJ2cCsUXZgkA+WaRE=",
   "Source": "GCM",
   "BasePath": "_content/GCM",
   "Mode": "Default",
@@ -40295,6 +40295,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\datatables.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\css\\login.css",
+      "SourceId": "GCM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\",
+      "BasePath": "_content/GCM",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\css\\select2.css",
