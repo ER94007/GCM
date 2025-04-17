@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -34,19 +35,32 @@ namespace GCM.Entity
     public class FinanceBalanceEntity
     {
         public long FinancialYearBalanceId { get; set; }
-        public long FinancialYearId { get; set; }
+
+		[Required(ErrorMessage = "Please select a Finance Year.")]
+
+		public long? FinancialYearId { get; set; }
+
         public string financialYear { get; set; }
         public string subheadname { get; set; }
         public long SubHeadId { get; set; }
         public decimal amount { get; set; }
-        public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();
+        
+        [Required(ErrorMessage = "At least one balance row is required.")]
+
+		public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();
         public DataTable fdt { get; set; }
     }
 
     public class BalanceList
     {
-        public long SubHeadId { get; set; }
-        public decimal amount { get; set; }
+
+		[Required(ErrorMessage = "Please select a SubHead.")]
+
+		public long? SubHeadId { get; set; }
+
+		[Required(ErrorMessage = "Amount is required.")]
+		[Range(0.01, double.MaxValue, ErrorMessage = "Enter a valid amount.")]
+		public decimal? amount { get; set; }
     }
 
     public class ExpenseEntity

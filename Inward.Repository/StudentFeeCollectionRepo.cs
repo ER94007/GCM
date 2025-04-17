@@ -145,10 +145,15 @@ namespace GCM.Repository
                     queryParameters.Add("@TotalAmount", amount);
                     queryParameters.Add("@FeeMode", model.FormType);
                     queryParameters.Add("@CreatedBy", 1);
-                    queryParameters.Add("@FeeDetails", JsonConvert.SerializeObject(model.feesdetails));
-                    return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddStudentFeeCollection, queryParameters, commandType: CommandType.StoredProcedure);
+					var json = JsonConvert.SerializeObject(model.feesdetails);
 
-                }
+					Console.WriteLine(json); // or log it
+
+					queryParameters.Add("@FeeDetails", JsonConvert.SerializeObject(model.feesdetails));
+					var res = await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddStudentFeeCollection, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+
+				}
             }
             catch (Exception ex)
             {

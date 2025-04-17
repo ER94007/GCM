@@ -177,7 +177,7 @@ namespace GCM.Controllers
                 }
                 ft.fdt = dataTable;
                 var result = await _ifinancialYearTermWiseFee.AddFinanceYearBalance(ft);
-                if (result.Msg == "Data inserted successfully.")
+                if (result.Msg == "Record Saved successfully.")
                 {
                     TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
                 }
