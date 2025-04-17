@@ -50,7 +50,7 @@ namespace GCM.Entity
     }
     public class FeeDetail
     {
-        public long subheadid { get; set; }
+        public long SubheadId { get; set; }
         public string SubHeadName { get; set; }
         public decimal Amount { get; set; }
     }

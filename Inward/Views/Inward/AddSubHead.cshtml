@@ -1,5 +1,4 @@
-﻿
-@model GCM.Entity.SubHeadEntity;
+﻿@model GCM.Entity.SubHeadEntity
 @{
 	ViewBag.Title = "SubHead";
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,30 +9,26 @@
 		sid = Model.subheadid;
 	}
 }
+
 <script src="~/js/common.js"></script>
 <script src="~/assets/dist/js/sweetalert.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<!-- Include Select2 CSS -->
+<!-- Include Select2 CSS and JS -->
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-
-<!-- Include Select2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <section class="content">
 	<div class="content-wrapper">
-		<form method="post" action="AddSubHead">
+		<form asp-action="AddSubHead" method="post">
 			<input type="hidden" asp-for="subheadid" value="@sid" />
 			<div class="container-fluid">
 				<div class="row mb-3">
 					<div class="col-md-12">
-
 						<div class="card">
 							<div class="card-header">
 								<h3 class="card-title">Add Sub Head</h3>
@@ -52,14 +47,15 @@
 											<label class="control-label">SubHead Type</label>
 											<div class="form-control">
 												<div class="form-check form-check-inline">
-													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Govt" id="mandatory">
+													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Govt" id="mandatory" />
 													<label class="form-check-label" for="mandatory"><strong>Govt</strong></label>
 												</div>
 												<div class="form-check form-check-inline">
-													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Private" id="optional">
+													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Private" id="optional" />
 													<label class="form-check-label" for="optional"><strong>Private</strong></label>
 												</div>
 											</div>
+											<span asp-validation-for="subheadtype" class="text-danger"></span>
 										</div>
 									</div>
 								</div>
@@ -77,12 +73,17 @@
 		</form>
 	</div>
 </section>
-<script>
-	$(document).ready(function () {
 
-		var msg = '@msg';
-		if (msg != null && msg != '') {
-			ShowDynamicSwalAlert("", msg);
-		}
-	});
-</script>
+@section Scripts {
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			var msg = '@msg';
+			if (msg != null && msg != '') {
+				ShowDynamicSwalAlert("", msg);
+			}
+		});
+	</script>
+}
