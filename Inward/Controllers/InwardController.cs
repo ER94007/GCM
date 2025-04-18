@@ -154,12 +154,22 @@ namespace Inward.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    var result = await _userLoginService.AddUpdateSubhead(sh);
+                var result = await _userLoginService.AddUpdateSubhead(sh);
                 if (result.Id > 0)
                 {
                     TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
                 }
-                else
+                else if (result.Id==-1)
+                {
+					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+
+				}
+				else if (result.Id==-999)
+                {
+					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+
+				}
+				else
                 {
                     TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
                 }

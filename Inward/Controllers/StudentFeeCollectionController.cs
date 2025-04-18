@@ -193,8 +193,10 @@ namespace GCM.Controllers
 			{
 				if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
 				{
-					ModelState.AddModelError("", "Invalid data. Please fill all required fields.");
-					return View("AddStudentFeeCollection", model); // Return the same view with validation errors
+					var msg = "Invalid data. Please fill all required fields.";
+					TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+
+					return RedirectToAction("ViewStudentFeeCollection", "StudentFeeCollection");
 				}
 
 				try
@@ -207,7 +209,7 @@ namespace GCM.Controllers
 
 					foreach (var feeDetail in FeeDetails)
 					{
-						feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+						feeDetailsTable.Rows.Add(feeDetail.SubheadId, feeDetail.Amount);
 					}
 
 					// Assign DataTable to model
@@ -252,7 +254,7 @@ namespace GCM.Controllers
 
 					foreach (var feeDetail in model.FeeDetailLists)
 					{
-						feeDetailsTable.Rows.Add(feeDetail.subheadid, feeDetail.Amount);
+						feeDetailsTable.Rows.Add(feeDetail.SubheadId, feeDetail.Amount);
 					}
 					model.feesdetails = feeDetailsTable;
 
