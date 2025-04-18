@@ -3,6 +3,7 @@ using System.Security.Claims;
 using GCM.Entity;
 using GCM.Repository;
 using GCM.Services.Abstraction;
+using GCM.wwwroot.Dataset;
 using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Reporting.NETCore;
+using Microsoft.SqlServer.Server;
 
 namespace GCM.Controllers
 {
@@ -62,8 +64,25 @@ namespace GCM.Controllers
 			}
 		}
 
-		// GET: StudentFeeCollectionController/Details/5
-		public ActionResult Details(int id)
+
+        public ActionResult AddMannualStudentFeeCollection()
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                StudentFeeCollection sft = new StudentFeeCollection();
+                ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                return View(sft);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+        // GET: StudentFeeCollectionController/Details/5
+        public ActionResult Details(int id)
 		{
 			return View();
 		}
@@ -85,9 +104,12 @@ namespace GCM.Controllers
 					return Json(new { success = false, message = "No students found." });
 				}
 
-				var student = students.FirstOrDefault(s => s.applicationno == number);
+				//var student = students.FirstOrDefault(s => s.enrolmentno == number);
 
-				if (student != null)
+                var student = students.FirstOrDefault(s => s.enrolmentno == number || s.applicationno == number);
+
+
+                if (student != null)
 				{
 					return Json(new { success = true, student });
 				}
@@ -207,14 +229,27 @@ namespace GCM.Controllers
 					feeDetailsTable.Columns.Add("SubheadId", typeof(int));
 					feeDetailsTable.Columns.Add("Amount", typeof(decimal));
 
-					foreach (var feeDetail in FeeDetails)
+                    if (model.FeeDetaillistMannually.Count == 0)
+                    {
+                        foreach (var feeDetail in FeeDetails)
+                        {
+                            feeDetailsTable.Rows.Add(feeDetail.SubheadId, feeDetail.Amount);
+                        }
+                        model.FormType = "form1";
+                    }
+					else
 					{
-						feeDetailsTable.Rows.Add(feeDetail.SubheadId, feeDetail.Amount);
-					}
+                        foreach (var feeDetail in model.FeeDetaillistMannually)
+                        {
+                            feeDetailsTable.Rows.Add(feeDetail.SubHeadId, feeDetail.amount);
+                        }
+                        TotalFees =Convert.ToDecimal( model.FeeDetaillistMannually.Sum(f => f.amount));
+						model.FormType = "form2";
+                    }
+                    // Assign DataTable to model
+                    model.feesdetails = feeDetailsTable;
 
-					// Assign DataTable to model
-					model.feesdetails = feeDetailsTable;
-
+					
 					// Ensure AddFeeCollection is asynchronous and awaited
 					var regResponse = await _studentFeeCollectionService.AddFeeCollection(model, TotalFees);
 
@@ -227,7 +262,7 @@ namespace GCM.Controllers
                         TempData["SaveStatus"] = CommonMethods.ConcatString(msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
 
                     }
-					if (regResponse.Id == -1)
+					else if (regResponse.Id == -1)
 					{
 						// Success, return JSON with the success flag
 						//return Json(new { success = true, message = "Record Already Exists" });
@@ -274,16 +309,42 @@ namespace GCM.Controllers
 		}
 
 
-		[HttpGet]
+        //[HttpPost]
+        //public async Task<IActionResult> AddFinanceYearBalance(FinanceBalanceEntity ft,Decimal TotalFees)
+        //{
+        //    if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+        //    {
+        //        DataTable dataTable = new DataTable();
+        //        dataTable.Columns.Add("SubHeadId", typeof(long));
+        //        dataTable.Columns.Add("amount", typeof(decimal));
+
+        //        foreach (var data in ft.balanceLists)
+        //        {
+        //            dataTable.Rows.Add(data.SubHeadId, data.amount);
+        //        }
+        //        ft.fdt = dataTable;
+        //        var result = await _studentFeeCollectionService.AddFeeCollection(ft, TotalFees);
+        //        if (result.Msg == "Record Saved successfully.")
+        //        {
+        //            TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+        //        }
+        //        else
+        //        {
+        //            TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+        //        }
+        //        return RedirectToAction("AddFinanceYearBalance");
+        //    }
+        //    else
+        //    {
+        //        return RedirectToAction("Login", "Login");
+        //    }
+        //}
+
+        [HttpGet]
 		public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid)
 		{
-
-
-
 			try
 			{
-
-
 
 				long stdid = 0;
 				stdid = Convert.ToInt64(studentid);

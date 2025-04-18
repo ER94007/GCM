@@ -31,11 +31,13 @@
 		<div class="container-fluid">
 			<form method="post" asp-action="AddStudentFeeCollection">
 				<input type="hidden" name="TotalFees" id="hiddenTotalAmount">
+				<input asp-for="StudentId" id="hdnStudentID" type="hidden" />
+
 				@Html.AntiForgeryToken()
 				<div style="margin-top: 20px;"></div>
 				<div class="form-group">
 					<label for="searchNumber">Enter Student Number:</label>
-					<input type="text" id="searchNumber" asp-for="StudentId" class="form-control" placeholder="Enter Student Number" />
+					<input type="text" id="searchNumber"  class="form-control" placeholder="Enter Student Number" />
 					<div style="margin-top: 20px;"></div>
 					<button id="searchBtn" class="btn btn-primary mt-2">Search</button>
 					<a href="@Url.Action("ViewStudentFeeCollection", "StudentFeeCollection")" class="btn btn-secondary mt-2">
@@ -80,13 +82,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-10">
-						<label><strong>Select Addition Method:</strong></label><br>
-						<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio">
-						<label for="form1">1. Add Automatically</label>
-						<input type="radio" name="formType" value="form2" id="form2" class="green-radio">
-						<label for="form2">2. Add by Form</label>
-					</div>
+					
 					<div id="feesDetailsAuto" class="col-md-11">
 						<h5><strong>Fees Details</strong></h5>
 						<table class="table table-bordered" id="feesTable">
@@ -107,45 +103,7 @@
 							</tfoot>
 						</table>
 					</div>
-
-					<div id="feesDetailsManually" class="table-responsive mt-4">
-						<button type="button" class="btn btn-primary btn-add mb-2" id="addRowBtn">Add Row</button>
-						<table class="table table-bordered" id="dynamicTable">
-							<thead class="">
-								<tr>
-									<th>Subhead</th>
-									<th>Fee Amount</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<select name="FeeDetailLists[0].SubHeadId" class="form-control subhead-select">
-											<option value="">---Select Subhead---</option>
-											@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
-											{
-												<option value="@subhead.Value">@subhead.Text</option>
-											}
-										</select>
-									</td>
-									<td>
-										<input name="FeeDetailLists[0].Amount" id="feerow1" type="number" class="form-control" placeholder="Enter Fee">
-									</td>
-									<td>
-										<button type="button" class="btn btn-danger btn-remove">Remove</button>
-									</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td><strong>Total</strong></td>
-									<td id="dynamicTotalAmount"><strong>0.00</strong></td>
-									<td></td>
-								</tr>
-							</tfoot>
-
-						</table>
-					</div>
+					
 					<div class="card-footer text-center">
 						<button type="submit" class="btn btn-success">Submit</button>
 						
@@ -170,8 +128,6 @@
 
 			$("#searchBtn").click(function (e) {
 				e.preventDefault();
-
-
 				var studentNumber = $("#searchNumber").val().trim();
 				if (studentNumber === "") {
 					alert("Please enter a student number.");
@@ -187,6 +143,7 @@
 							$("#studentName").text(response.student.name);
 							$("#studentEmail").text(response.student.email);
 							$("#studentNumber").text(response.student.applicationno);
+							$("#hdnStudentID").val(response.student.studentid);
 							$("#studentDetails").show();
 							$("#showcontent").show();
 						} else {
@@ -200,22 +157,6 @@
 						$("#studentDetails").hide();
 					}
 				});
-			});
-			$("#feesDetailsManually").hide();
-				 $("input[name='formType']").change(function () {
-			if ($("#form2").is(":checked")) {
-				$("#feesDetailsManually").show();
-				$("#feesDetailsAuto").hide();
-
-				$("#feesTable tbody").empty(); // Clear all rows
-				$("#totalAmount").text("0.00"); // Reset the total amount display
-				$("#hiddenTotalAmount").val("0.00"); // Reset hidden field
-			} else {
-				$("#feesDetailsManually").hide();
-				$("#feesDetailsAuto").show();
-				$("#dynamicTable tbody").empty(); // Clear all manual rows
-				addInitialRow();
-			}
 			});
 		});
 
@@ -275,97 +216,6 @@
 			$("#totalAmount").text(totalAmount.toFixed(2)); // Update visible total
 			$("#hiddenTotalAmount").val(totalAmount.toFixed(2)); // Store in hidden field for submission
 		}
-
-
-
-		document.addEventListener('DOMContentLoaded', function () {
-			const addRowBtn = document.getElementById('addRowBtn');
-			const dynamicTable = document.getElementById('dynamicTable').getElementsByTagName('tbody')[0];
-			let rowIndex = dynamicTable.rows.length;
-
-			const createRow = (index) => {
-				let options = '<option value="">---Select Subhead---</option>';
-				subheadList.forEach(item => {
-					options += `<option value="${item.Value}">${item.Text}</option>`;
-				});
-
-				return `
-					<tr>
-						<td>
-							   <select name="FeeDetailLists[${index}].subheadid" class="form-control subhead-select">
-								${options}
-							</select>
-						</td>
-						<td>
-							   <input name="FeeDetailLists[${index}].Amount" type="number" class="form-control fee-amount" placeholder="Enter Fee">
-						</td>
-						<td>
-							<button type="button" class="btn btn-danger btn-remove">Remove</button>
-						</td>
-					</tr>`;
-			};
-
-			addRowBtn.addEventListener('click', () => {
-				const newRowHtml = createRow(rowIndex);
-				const tempDiv = document.createElement('tbody');
-				tempDiv.innerHTML = newRowHtml;
-				dynamicTable.appendChild(tempDiv.firstElementChild);
-				rowIndex++;
-				updateDropdowns();
-				calculateTotal();
-			});
-
-			dynamicTable.addEventListener('click', (event) => {
-				if (event.target.classList.contains('btn-remove')) {
-					const row = event.target.closest('tr');
-					const rows = dynamicTable.getElementsByTagName('tr');
-					if (rows.length > 1) {
-						row.remove();
-						updateDropdowns();
-						calculateTotal();
-					} else {
-						alert('At least one row must be present!');
-					}
-				}
-			});
-
-			dynamicTable.addEventListener('input', (event) => {
-				if (event.target.classList.contains('fee-amount')) {
-					calculateTotal();
-				}
-			});
-
-			function calculateTotal() {
-				const feeInputs = document.querySelectorAll('.fee-amount');
-				let total = 0;
-
-				feeInputs.forEach(input => {
-					const value = parseFloat(input.value);
-					if (!isNaN(value)) {
-						total += value;
-					}
-				});
-
-				document.getElementById('dynamicTotalAmount').innerHTML = `<strong>${total.toFixed(2)}</strong>`;
-				document.getElementById('hiddenTotalAmount').value = total.toFixed(2);
-			}
-
-			function updateDropdowns() {
-				const allSelects = document.querySelectorAll('.subhead-select');
-				const selectedValues = Array.from(allSelects).map(select => select.value);
-
-				allSelects.forEach(select => {
-					const currentValue = select.value;
-					const options = select.querySelectorAll('option');
-					options.forEach(option => {
-						if (option.value !== "" && selectedValues.includes(option.value) && option.value !== currentValue) {
-							option.style.display = 'none';
-						} else {
-							option.style.display = 'block';
-						}
-					});
-				});
-			}
-		});
+		
 	</script>
 }
