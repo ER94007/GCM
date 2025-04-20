@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -9,19 +10,15 @@ namespace GCM.Entity
 {
     public class StudentFeeCollection
     {
-        public long FinancialYearWiseTermWiseFeeDetailid { get; set; }
         public long FinancialYearId { get; set; }
         public long TermId { get; set; }
-        public string SelectedTermIds { get; set; }
         public long SubHeadId { get; set; }
-        public decimal malefee { get; set; }
-        public decimal femalefee { get; set; }
         public string subheadname { get; set; }
         public long subheadid { get; set; }
         public string fees { get; set; }
         public string StudentId { get; set; }
         public string FormType { get; set; }
-       public DataTable feesdetails { get; set; }
+        public DataTable feesdetails { get; set; }
         public string FinancialYear { get; set; }
         public string Name { get; set; }
         public string TermName { get; set; }
@@ -33,11 +30,26 @@ namespace GCM.Entity
         public string PrivateFee { get; set; }
         public long PrivAmount { get; set; }
         public string GovernmentTotal { get; set; }
-        public string EnrolmentNo { get; set; } 
+        public List<FeeDetail> FeeDetailLists { get; set; } = new List<FeeDetail>();
+        public string EnrolmentNo { get; set; }
         public string ApplicationNo { get; set; }
         public string CreatedDate { get; set; }
 
-        public List<FeeDetail> FeeDetailLists { get; set; } = new List<FeeDetail>();
+
+
+        [Required(ErrorMessage = "Please select a Finance Year.")]
+
+       // public long? FinancialYearId { get; set; }
+        //public long? TermId { get; set; }
+
+        public string financialYear { get; set; }
+        public decimal amount { get; set; }
+
+        [Required(ErrorMessage = "At least one balance row is required.")]
+
+        public List<FeeDetaillistMannually> FeeDetaillistMannually { get; set; } = new List<FeeDetaillistMannually>();
+        public DataTable fdt { get; set; }
+
     }
 
        public class StudentFeeDetail
@@ -55,4 +67,36 @@ namespace GCM.Entity
         public decimal Amount { get; set; }
     }
 
+    public class MannualStudentFeeCollection
+    {
+        public string StudentId { get; set; }
+        public long FinancialYearBalanceId { get; set; }
+
+        [Required(ErrorMessage = "Please select a Finance Year.")]
+
+        public long? FinancialYearId { get; set; }
+        public long? TermId { get; set; }
+
+        public string financialYear { get; set; }
+        public string subheadname { get; set; }
+        public long SubHeadId { get; set; }
+        public decimal amount { get; set; }
+
+        [Required(ErrorMessage = "At least one balance row is required.")]
+
+        public List<FeeDetaillistMannually> FeeDetaillistMannually { get; set; } = new List<FeeDetaillistMannually>();
+        public DataTable fdt { get; set; }
+    }
+
+    public class FeeDetaillistMannually
+    {
+
+        [Required(ErrorMessage = "Please select a SubHead.")]
+
+        public long? SubHeadId { get; set; }
+
+        [Required(ErrorMessage = "Amount is required.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Enter a valid amount.")]
+        public decimal? amount { get; set; }
+    }
 }
