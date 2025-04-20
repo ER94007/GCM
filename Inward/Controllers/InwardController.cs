@@ -207,14 +207,14 @@ namespace Inward.Controllers
         {
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
-                    var result = _userLoginService.DeleteSubhead(Convert.ToInt64(subheadid));
+                    var result = await _userLoginService.DeleteSubhead(Convert.ToInt64(subheadid));
                 if (result.Id > 0)
                 {
                     return Json(new { success = true, message = "Subhead deleted successfully." });
                 }
                 else
                 {
-                    return Json(new { success = false, message = "Failed to delete the subhead." });
+                    return Json(new { success = false, message = "This subhead contains dependencies." });
                 }
 
             }

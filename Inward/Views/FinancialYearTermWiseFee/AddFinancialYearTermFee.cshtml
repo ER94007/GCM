@@ -73,19 +73,22 @@
 										<tbody>
 											<tr>
 												<td>
-													<select name="financeLists[0].SubHeadId" class="form-control subhead-select">
+													<select name="financeLists[0].SubHeadId" class="form-control subhead-select" required>
 														<option value="">---Select Subhead---</option>
 														@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
 														{
 															<option value="@subhead.Value">@subhead.Text</option>
 														}
 													</select>
+													<span asp-validation-for="financeLists[0].SubHeadId" class="text-danger"></span>
 												</td>
 												<td>
-													<input name="financeLists[0].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
+													<input name="financeLists[0].malefee" type="number" class="form-control" placeholder="Enter Male Fee" required>
+													<span asp-validation-for="financeLists[0].malefee" class="text-danger"></span>
 												</td>
 												<td>
-													<input name="financeLists[0].femalefee" type="number" class="form-control" placeholder="Enter Female Fee">
+													<input name="financeLists[0].femalefee" type="number" class="form-control" placeholder="Enter Female Fee" required>
+													<span asp-validation-for="financeLists[0].femalefee" class="text-danger"></span>
 												</td>
 												<td>
 													<button type="button" class="btn btn-danger btn-remove">Remove</button>
@@ -100,7 +103,7 @@
 						</div>
 					</div>
 					<div class="card-footer text-center">
-						<button type="submit" class="btn btn-success">Submit</button>
+						<input type="submit" class="btn btn-success" value="Save">
 						<a href="@Url.Action("GetFinancialTermData", "FinancialYearTermWiseFee")" class="btn btn-secondary">
 							<i class="fas fa-list mr-1"></i>
 							Go to List
@@ -169,7 +172,7 @@
 			const newRow = document.createElement('tr');
 			newRow.innerHTML = `
 					<td>
-						<select name="financeLists[${rowIndex}].SubHeadId" class="form-control subhead-select" select2>
+						<select name="financeLists[${rowIndex}].SubHeadId" class="form-control subhead-select select2"  required>
 							<option value="">---Select Subhead---</option>
 	@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
 	{
@@ -178,10 +181,10 @@
 						</select>
 					</td>
 					<td>
-						<input name="financeLists[${rowIndex}].malefee" type="number" class="form-control" placeholder="Enter Male Fee">
+						<input name="financeLists[${rowIndex}].malefee" type="number" class="form-control" placeholder="Enter Male Fee" required>
 					</td>
 					<td>
-						<input name="financeLists[${rowIndex}].femalefee" type="number" class="form-control" placeholder="Enter Female Fee">
+						<input name="financeLists[${rowIndex}].femalefee" type="number" class="form-control" placeholder="Enter Female Fee" required>
 					</td>
 					<td>
 						<button type="button" class="btn btn-danger btn-remove">Remove</button>
