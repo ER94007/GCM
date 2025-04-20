@@ -18,7 +18,7 @@
               <Width>3.18792cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.02375cm</Width>
+              <Width>1.70625cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.02375cm</Width>
@@ -548,9 +548,10 @@
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <KeepTogether>true</KeepTogether>
         <DataSetName>dbStudentdetails</DataSetName>
-        <Top>0.6477cm</Top>
+        <Top>0.9652cm</Top>
+        <Left>0.3175cm</Left>
         <Height>1.2cm</Height>
-        <Width>17.85751cm</Width>
+        <Width>17.54001cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -566,7 +567,7 @@
       <BackgroundColor>White</BackgroundColor>
     </Style>
   </Body>
-  <Width>7.17401in</Width>
+  <Width>7.10457in</Width>
   <Page>
     <PageHeader>
       <Height>0.92055in</Height>
@@ -580,8 +581,10 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Student Information</Value>
-                  <Style />
+                  <Value>Student List</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style>
@@ -590,8 +593,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.1667cm</Top>
-          <Left>7.246cm</Left>
+          <Top>1.45542cm</Top>
+          <Left>6.57572cm</Left>
           <Height>0.6cm</Height>
           <Width>5.90783cm</Width>
           <Style>
@@ -607,11 +610,11 @@
         <Image Name="Image1">
           <Source>Embedded</Source>
           <Value>college_logo_Coloured</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.2667cm</Top>
-          <Left>3.39937cm</Left>
-          <Height>1.5cm</Height>
-          <Width>1.5cm</Width>
+          <Sizing>Fit</Sizing>
+          <Top>0.23156cm</Top>
+          <Left>0.24743cm</Left>
+          <Height>1.82386cm</Height>
+          <Width>1.62349cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -619,18 +622,16 @@
             </Border>
           </Style>
         </Image>
-        <Textbox Name="Textbox1">
+        <Textbox Name="Textbox14">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>GOVT.ARTS COLLEGE,BAYAD</Value>
+                  <Value>GOVERNMENT ARTS COLLEGE, BAYAD, DIST: ARAVALLI</Value>
                   <Style>
-                    <FontFamily>Arial Black</FontFamily>
                     <FontWeight>Bold</FontWeight>
-                    <TextDecoration>Underline</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -639,15 +640,17 @@
               </Style>
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Left>2.85276in</Left>
-          <Height>0.25in</Height>
-          <Width>2.24034in</Width>
+          <rd:DefaultName>Textbox13</rd:DefaultName>
+          <Top>0.23156cm</Top>
+          <Left>2.19159cm</Left>
+          <Height>0.75875cm</Height>
+          <Width>15.66592cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
+            <VerticalAlign>Middle</VerticalAlign>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
             <PaddingTop>2pt</PaddingTop>
@@ -659,11 +662,10 @@
         <Border>
           <Style>Solid</Style>
         </Border>
-        <BackgroundColor>LightGrey</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1in</Height>
+      <Height>0.01042in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
