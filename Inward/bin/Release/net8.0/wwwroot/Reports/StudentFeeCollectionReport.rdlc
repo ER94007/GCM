@@ -792,7 +792,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value />
+                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -1563,7 +1563,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value />
+                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -1576,7 +1576,7 @@
               </Paragraph>
             </Paragraphs>
             <Top>5.50981cm</Top>
-            <Left>24.41617cm</Left>
+            <Left>24.41616cm</Left>
             <Height>0.6cm</Height>
             <Width>2.44139cm</Width>
             <ZIndex>28</ZIndex>

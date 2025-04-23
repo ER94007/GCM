@@ -429,8 +429,25 @@ namespace Inward.Repository
                 throw ex;
             
             }
+
      
         }
+        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<StudentFeeDetailReport>(StoreProcedures.GetStudentFeeDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
     }
 }
