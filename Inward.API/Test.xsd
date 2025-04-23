@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Root element -->
+  <xs:element name="Report">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- Each row of the report -->
+        <xs:element name="StudentFeeDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <!-- Basic Information -->
+              <xs:element name="StudentId" type="xs:int"/>
+              <xs:element name="FeeRecieptNo" type="xs:string"/>
+              <xs:element name="StudentName" type="xs:string"/>
+              <xs:element name="Gender" type="xs:string"/>
+              <xs:element name="Semester" type="xs:string"/>
+              
+              <!-- SubHead Amounts - Dynamically generated columns -->
+              <!-- These elements are dynamically generated, one for each subhead -->
+              <xs:element name="SubHead" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SubHeadName" type="xs:string"/>
+                    <xs:element name="Amount" type="xs:decimal"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+
+              <!-- Total -->
+              <xs:element name="Total" type="xs:decimal"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

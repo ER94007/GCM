@@ -2,10 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <None Update="Dataset\FeeCollectionDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Dataset\dbStudentdetails.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Update="Dataset\studentfeecollection.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Dataset\Test.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="StudentFeeDetailsReport.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

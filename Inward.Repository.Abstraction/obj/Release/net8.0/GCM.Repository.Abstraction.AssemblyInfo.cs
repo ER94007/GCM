@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCM.Repository.Abstraction")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71c7b0a76e2065b92173ca110db2d539e4ee676a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c7b3a197b5263cd9c84a8405f3c42efb44f69c0")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCM.Repository.Abstraction")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCM.Repository.Abstraction")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
