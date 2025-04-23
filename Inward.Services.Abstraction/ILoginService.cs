@@ -29,7 +29,7 @@ namespace Inward.Services.Abstraction
         Task<List<SelectListItem>> BindCategory();
         Task<ResponseMessage> AddUpdateStudent(Student st);
         Task<IEnumerable<Student>> GetStudentList();
-        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport();
+        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId);
         Task<ResponseMessage> DeleteStudent(long studentid);
         Task<Student> GetStudentByid(long studentId);
 
