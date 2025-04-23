@@ -432,14 +432,17 @@ namespace Inward.Repository
 
      
         }
-        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport()
+        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId,int TermId)
         {
             try
             {
                 using (var conn = GetConnection())
                 {
                     var queryParameters = new DynamicParameters();
-                    var res = await conn.QueryAsync<StudentFeeDetailReport>(StoreProcedures.GetStudentFeeDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
+					queryParameters.Add("@YearId", YearId);
+					queryParameters.Add("@TermId", TermId);
+
+					var res = await conn.QueryAsync<StudentFeeDetailReport>(StoreProcedures.GetStudentFeeDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
             }

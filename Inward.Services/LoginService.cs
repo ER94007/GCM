@@ -99,9 +99,9 @@ namespace Inward.Services
         {
             return await _LoginRepo.FillUnit(gradeId);
         }
-        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport()
+        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId)
         {
-            return await _LoginRepo.GetStudentFeeDetailReport();
+            return await _LoginRepo.GetStudentFeeDetailReport(YearId,TermId);
         }
     }
 }

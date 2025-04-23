@@ -489,7 +489,7 @@ namespace GCM.Controllers
         [HttpGet]
 		public async Task<IActionResult> ExportStudentFeeDetailReport()
 		{
-			var students = await _userLoginService.GetStudentFeeDetailReport();
+			var students = await _userLoginService.GetStudentFeeDetailReport(1,1);
 
 			var report = new LocalReport();
 			var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentDetailReport.rdlc");
