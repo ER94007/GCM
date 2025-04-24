@@ -69,10 +69,15 @@ namespace GCM.Entity
         public string FinancialYear { get; set; }
         public string SubHeadName { get; set; }
         public long ExpenseMasterId { get; set; }
+        [Required(ErrorMessage = "Please select a Finance Year.")]
         public long FinancialYearId { get; set; }
+        [Required(ErrorMessage = "Please select a SubHead.")]
         public long SubHeadId { get; set; }
+        [Required(ErrorMessage = "Amount is required.")]
         public decimal amount { get; set; }
+        [Required(ErrorMessage = "Please Enter Remarks.")]
         public string Remarks { get; set; }
-        public string ChequeNo { get; set; }
+        [Required(ErrorMessage = "Please enter a Cheque Number.")]
+        public long ChequeNo { get; set; }
     }
 }

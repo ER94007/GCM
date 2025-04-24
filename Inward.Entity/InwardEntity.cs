@@ -12,6 +12,7 @@ namespace Inward.Entity
     public class Student
     {
         public long studentid { get; set; }
+        [Required]
         public string name { get; set; }
         public string mobileno { get; set; }
         public string email { get; set; }
