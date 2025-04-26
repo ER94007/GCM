@@ -20,13 +20,29 @@ namespace GCM.Services
         {
             _financialYearTermWiseFeeRepo = financialYearTermWiseFeeRepo ?? throw new ArgumentNullException(nameof(financialYearTermWiseFeeRepo));
         }
+        public async Task<IEnumerable<ChequeMaster>> GetChequeDate()
+        {
+            return await _financialYearTermWiseFeeRepo.GetChequeDate();
+        }
         public async Task<IEnumerable<ExpenseEntity>> GetExpenseData()
         {
             return await _financialYearTermWiseFeeRepo.GetExpenseData();
         }
+        public async Task<ResponseMessage> AddChequeNo(ChequeMaster ep)
+        {
+            return await _financialYearTermWiseFeeRepo.AddChequeNo(ep);
+        }
         public async Task<ResponseMessage> AddExpense(ExpenseEntity ep)
         {
             return await _financialYearTermWiseFeeRepo.AddExpense(ep);
+        }
+        public async Task<ResponseMessage> CheckExpenseForCheque(long id)
+        {
+            return await _financialYearTermWiseFeeRepo.CheckExpenseForCheque(id);
+        }
+        public async Task<ChequeMaster> GetChequeDateById(long id)
+        {
+            return await _financialYearTermWiseFeeRepo.GetChequeDateById(id);
         }
         public async Task<ResponseMessage> DeleteFinanceBalance(long id)
         {
@@ -43,6 +59,10 @@ namespace GCM.Services
         public async Task<IEnumerable<FinanceBalanceEntity>> GetFinanceBalanceData()
         {
             return await _financialYearTermWiseFeeRepo.GetFinanceBalanceData();
+        }
+        public async Task<ResponseMessage> UpdateCheque(ChequeMaster ft )
+        {
+            return await _financialYearTermWiseFeeRepo.UpdateCheque(ft);
         }
         public async Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft )
         {
@@ -79,6 +99,10 @@ namespace GCM.Services
         public async Task<List<SelectListItem>> BindSubhead()
         {
             return await _financialYearTermWiseFeeRepo.BindSubhead();
+        }
+        public async Task<List<SelectListItem>> BindCheques()
+        {
+            return await _financialYearTermWiseFeeRepo.BindCheques();
         }
     }
 }

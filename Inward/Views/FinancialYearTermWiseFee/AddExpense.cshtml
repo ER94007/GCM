@@ -74,7 +74,9 @@
 										<div class="form-group row">
 											<label class="control-label col-md-3">Cheque No:</label>
 											<div class="col-md-9 ">
-												<input type="text" asp-for="ChequeNo" class="form-control" />
+												<select asp-for="ChequeNo" class="form-control select2" asp-items="@(new SelectList(ViewBag.ChequeList, "Value", "Text"))">
+													<option class="bi-option" value="">---Select ChequeNo---</option>
+												</select>
 												<span asp-validation-for="ChequeNo" class="text-danger"></span>
 											</div>
 										</div>

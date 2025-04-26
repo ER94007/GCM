@@ -13,10 +13,15 @@ namespace GCM.Services.Abstraction
     {
         Task<IEnumerable<ExpenseEntity>> GetExpenseData();
         Task<ResponseMessage> AddExpense(ExpenseEntity ep);
+        Task<ResponseMessage> AddChequeNo(ChequeMaster ep);
         Task<ResponseMessage> DeleteFinanceBalance(long id);
+        Task<ChequeMaster> GetChequeDateById(long id);
+        Task<ResponseMessage> CheckExpenseForCheque(long id);
+        Task<ResponseMessage> UpdateCheque(ChequeMaster fn);
         Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn);
         Task<FinanceBalanceEntity> GetBalanceDataById(long id);
         Task<IEnumerable<FinanceBalanceEntity>> GetFinanceBalanceData();
+        Task<IEnumerable<ChequeMaster>> GetChequeDate();
         Task<ResponseMessage> DeleteFinanceYearTerm(long id);
         Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft);
         Task<ResponseMessage> UpdateFinanceData(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity);
@@ -26,5 +31,6 @@ namespace GCM.Services.Abstraction
         Task<List<SelectListItem>> BindYear();
         Task<List<SelectListItem>> BindTerm();
         Task<List<SelectListItem>> BindSubhead();
+        Task<List<SelectListItem>> BindCheques();
     }
 }

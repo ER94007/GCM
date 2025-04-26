@@ -23,6 +23,58 @@ namespace GCM.Repository
         {
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
+        public async Task<ResponseMessage> UpdateCheque(ChequeMaster ep)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@ChequeMasterID", ep.ChequeMasterID);
+                    queryParameters.Add("@chequeno", ep.chequeno);
+                    queryParameters.Add("@remarks", ep.remarks);
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.UpdateCheque, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<ResponseMessage> AddChequeNo(ChequeMaster ep)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@chequesdt", ep.dt.AsTableValuedParameter("gsm.ChequeNoListType"));
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddChequeNo, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<IEnumerable<ChequeMaster>> GetChequeDate()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<ChequeMaster>(StoreProcedures.GetChequeDate, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<IEnumerable<ExpenseEntity>> GetExpenseData()
         {
             try
@@ -61,6 +113,44 @@ namespace GCM.Repository
             }
         }
 
+        public async Task<ResponseMessage> CheckExpenseForCheque(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@ChequeMasterID", id);
+
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.CheckExpenseForCheque, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<ChequeMaster> GetChequeDateById(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@ChequeMasterId", id);
+
+                    var res = await conn.QueryFirstAsync<ChequeMaster>(StoreProcedures.GetChequeDateById, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public async Task<ResponseMessage> DeleteFinanceBalance(long id)
         {
             try
@@ -266,6 +356,28 @@ namespace GCM.Repository
                         Text = item.Text // Extract 'parametername'
                     }).ToList();
                     return termList;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<List<SelectListItem>> BindCheques()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindCheques, queryParameters, commandType: CommandType.StoredProcedure);
+                    var subheadList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return subheadList;
                 }
             }
             catch (Exception)
