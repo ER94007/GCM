@@ -72,16 +72,16 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.72389cm</Width>
+                  <Width>1.0007cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.37111cm</Width>
+                  <Width>1.12417cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.24764cm</Width>
+                  <Width>1.07125cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.15944cm</Width>
+                  <Width>1.00069cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -759,9 +759,9 @@
             </TablixRowHierarchy>
             <DataSetName>Report_studentsFeeMasterDetail_Rutvik</DataSetName>
             <Top>0.9525cm</Top>
-            <Left>0.76412cm</Left>
+            <Left>0.44662cm</Left>
             <Height>3.20492cm</Height>
-            <Width>9.45194cm</Width>
+            <Width>8.14666cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -776,7 +776,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>15.41635in</Width>
+      <Width>15.66635in</Width>
       <Page>
         <PageHeader>
           <Height>0.70139in</Height>
