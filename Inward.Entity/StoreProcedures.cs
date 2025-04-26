@@ -9,6 +9,12 @@ namespace Inward.Entity
     public class StoreProcedures
     {
         public static string AddUpdateStudent = "AddUpdateStudentDetail";
+        public static string UpdateCheque = "UpdateChequeById";
+        public static string BindCheques = "BindCheques";
+        public static string GetChequeDateById = "GetChequeDataById";
+        public static string CheckExpenseForCheque = "CheckExpenseForCheque";
+        public static string GetChequeDate = "GetChequeMaster";
+        public static string AddChequeNo = "AddChequeNo";
         public static string DeleteSubhead = "DeleteSubhead";
         public static string GetSubheadById = "GetSubHeadById";
         public static string GetSubheadList = "GetSubHead";
@@ -47,7 +53,6 @@ namespace Inward.Entity
         public static string AddStudentFeeCollection = "AddStudentFeeCollection";
         public static string GetStudentFeeCollection = "GetStudentFeeCollectionDetails ";
         public static string GetReport_studentFeeMaster = "Report_studentFeeMaster ";
-        public static string GetStudentFeeDetailReport = "Report_studentsFeeMasterDetail_Rutvik";
-
-    }
+        public static string GetStudentFeeDetailReport = "GetStudentFeeDetailReport";
+	}
 }

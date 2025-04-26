@@ -275,8 +275,10 @@ namespace GCM.Controllers
 			{
 				ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+				ViewBag.ChequeList = _ifinancialYearTermWiseFee.BindCheques().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                
 
-				return View();
+                return View();
 
 			}
 			else
@@ -322,6 +324,108 @@ namespace GCM.Controllers
 				return RedirectToAction("Login", "Login");
 			}
 		}
+		[HttpGet]
+		public async Task<IActionResult> AddChequeNo(string? chequeid)
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+			{ 
+				ChequeMaster chequeMaster = new ChequeMaster();
+                return View(chequeMaster);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+		[HttpPost]
+        public async Task<IActionResult> AddCheque(ChequeMaster cm)
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("chequeno", typeof(string));
+                foreach (var data in cm.chequenolist)
+                {
+                    dataTable.Rows.Add(data.chequeno);
+                }
+                cm.dt = dataTable;
+                var result = await _ifinancialYearTermWiseFee.AddChequeNo(cm);
+                if (result.Id > 0)
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                }
+                else
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+                }
+                return RedirectToAction("AddChequeNo");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
 
-	}
+		[HttpGet]
+		public async Task<IActionResult> GetChequeMaster()
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                var ep = await _ifinancialYearTermWiseFee.GetChequeDate();
+                return View(ep);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+           
+		}
+
+		public async Task<IActionResult> UpdateChequeById(string chequeid)
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                
+                    var result = await _ifinancialYearTermWiseFee.CheckExpenseForCheque(Convert.ToInt64(chequeid));
+                    if (result.Id > 0)
+                    {
+                        TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+                        return RedirectToAction("GetChequeMaster");
+                    }
+                    else
+                    {
+                        var ck = await _ifinancialYearTermWiseFee.GetChequeDateById(Convert.ToInt64(chequeid));
+                        return View(ck);
+                    }
+                
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+		[HttpPost]
+        public async Task<IActionResult> UpdateChequeById(ChequeMaster cm)
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                var result = await _ifinancialYearTermWiseFee.UpdateCheque(cm);
+                if (result.Id > 0)
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                }
+                else
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+                }
+                return RedirectToAction("GetChequeMaster");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+    }
 }
