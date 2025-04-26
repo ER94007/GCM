@@ -53,6 +53,6 @@ namespace Inward.Entity
         public static string AddStudentFeeCollection = "AddStudentFeeCollection";
         public static string GetStudentFeeCollection = "GetStudentFeeCollectionDetails ";
         public static string GetReport_studentFeeMaster = "Report_studentFeeMaster ";
-        public static string GetStudentFeeDetailReport = "GetStudentFeeDetailReport";
+        public static string GetStudentFeeDetailReport = "Report_studentsFeeMasterDetail_Rutvik";
 	}
 }
