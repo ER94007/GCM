@@ -6,6 +6,7 @@ using OfficeOpenXml;
 using System.Data;
 using System.Text;
 using Microsoft.Reporting.NETCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GCM.Controllers
 {
@@ -13,17 +14,19 @@ namespace GCM.Controllers
     {
         // GET: StudentController
         private readonly IStudentService _studentService;
+        private readonly IStudentFeeCollectionService _studentFeeCollectionService;
         private readonly ILoginService _userLoginService;
         private readonly IConfiguration _config;
         private readonly string _baseURL;
         private readonly string _Login;
         private readonly List<Student> _students = new List<Student>();
 
-        public StudentController(IStudentService studentService, ILoginService userLoginService, IConfiguration config)
+        public StudentController(IStudentService studentService, ILoginService userLoginService, IConfiguration config, IStudentFeeCollectionService feeCollectionService)
         {
             _studentService = studentService ?? throw new ArgumentNullException(nameof(studentService));
             _userLoginService = userLoginService ?? throw new ArgumentNullException(nameof(userLoginService));
             _config = config;
+            _studentFeeCollectionService = feeCollectionService ?? throw new ArgumentNullException(nameof(feeCollectionService));
         }
               
 
@@ -483,6 +486,24 @@ namespace GCM.Controllers
             var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
 
             return File(result, "application/pdf", "StudentReport.pdf");
+        }
+        [HttpGet]
+        public async Task<IActionResult> BindYear()
+        {
+            var yearlist = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            return Json(new { success = true, data = yearlist });
+        }
+        [HttpGet]
+        public async Task<IActionResult> BindStudents(string yearid)
+        {
+            var yearlist = _studentFeeCollectionService.BindStudents(Convert.ToInt64(yearid)).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            return Json(new { success = true, data = yearlist });
+        }
+        [HttpGet]
+        public async Task<IActionResult> BindTerm()
+        {
+            var yearlist = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            return Json(new { success = true, data = yearlist });
         }
     }
 }

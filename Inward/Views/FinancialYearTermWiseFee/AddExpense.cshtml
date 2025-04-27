@@ -50,10 +50,11 @@
 										<div class="form-group row">
 											<label class="control-label col-md-3">SubHead:</label>
 											<div class="col-md-9 control-form">
-												<select asp-for="SubHeadId" class="form-control select2" asp-items="@(new SelectList(ViewBag.SubheadList, "Value", "Text"))">
+												<select asp-for="SubHeadId" class="form-control select2" asp-items="@(new SelectList(ViewBag.SubheadList, "Value", "Text"))" onchange="getbalnce()">
 													<option class="bi-option" value="">---Select Subhead---</option>
 												</select>
 												<span asp-validation-for="SubHeadId" class="text-danger"></span>
+												<span id="availbalance" class="text-danger"></span>
 											</div>
 										</div>
 									</div>
@@ -110,11 +111,46 @@
 	</div>
 </section>
 <script>
-	$(document).ready(function () {
+	var availableBalance = 0; // global variable to hold balance
 
-			var msg = '@msg';
-			if (msg != null && msg != '') {
-				ShowDynamicSwalAlert("", msg);
+	$(document).ready(function () {
+		var msg = '@msg';
+		if (msg != null && msg != '') {
+			ShowDynamicSwalAlert("", msg);
+		}
+
+		// Listen for amount input change
+		$('#amount').on('input', function () {
+			validateAmount();
+		});
+	});
+
+	function getbalnce() {
+		var subheadid = $('#SubHeadId').val();
+		var finyearid = $('#FinancialYearId').val();
+		$.ajax({
+			url: '/FinancialYearTermWiseFee/GetBalance',
+			type: 'GET',
+			data: { subheadid: subheadid, finyearid: finyearid },
+			success: function (response) {
+				if (response.success) {
+					availableBalance = response.data; // store it globally
+					$('#availbalance').text("Available Balance: " + availableBalance);
+				} else {
+					alert("Error: " + response.message);
+				}
+			},
+			error: function () {
+				alert("An error occurred while fetching the balance.");
 			}
 		});
+	}
+
+	function validateAmount() {
+		var amount = parseFloat($('#amount').val());
+		if (amount > availableBalance) {
+			alert('Entered amount exceeds available balance!');
+			$('#amount').val(''); // clear input
+		}
+	}
 </script>

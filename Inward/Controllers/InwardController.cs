@@ -1,4 +1,5 @@
 ﻿using GCM.Entity;
+using GCM.Services.Abstraction;
 using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
@@ -14,14 +15,16 @@ namespace Inward.Controllers
     public class InwardController : Controller
     {
         private readonly ILoginService _userLoginService;
+        private readonly IFinancialYearTermWiseFeeService _ifinancialYearTermWiseFeeService;
         private readonly IConfiguration _config;
         private readonly string _baseURL;
         private readonly string _Login;
 
-        public InwardController(ILoginService userLoginService, IConfiguration config)
+        public InwardController(ILoginService userLoginService, IConfiguration config, IFinancialYearTermWiseFeeService financialYearTermWiseFeeService)
         {
             _userLoginService = userLoginService ?? throw new ArgumentNullException(nameof(userLoginService));
             _config = config;
+            _ifinancialYearTermWiseFeeService = financialYearTermWiseFeeService;
         }
         public async Task<IActionResult> Index(string? studentid)
         {
@@ -58,6 +61,7 @@ namespace Inward.Controllers
             }
             ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             ViewBag.CategoryList = _userLoginService.BindCategory().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList(); ;
+            ViewBag.YearList = _ifinancialYearTermWiseFeeService.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             //var FarmerName = _userLoginService.FillFarmer().Result
             //.Select(c => new SelectListItem() { Text = c.Farmer_Nm, Value = c.Farmer_Id.ToString() }).ToList();
             //    ViewBag.FarmerNames = FarmerName;

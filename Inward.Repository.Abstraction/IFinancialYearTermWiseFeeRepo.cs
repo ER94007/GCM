@@ -16,6 +16,7 @@ namespace GCM.Repository.Abstraction
         Task<IEnumerable<ChequeMaster>> GetChequeDate();
         Task<ResponseMessage> AddExpense(ExpenseEntity ep);
         Task<ResponseMessage> AddChequeNo(ChequeMaster ep);
+        Task<long> GetBalanceData(long id1, long id2);
         Task<ResponseMessage> CheckExpenseForCheque(long id);
         Task<ChequeMaster> GetChequeDateById(long id);
         Task<ResponseMessage> DeleteFinanceBalance(long id);

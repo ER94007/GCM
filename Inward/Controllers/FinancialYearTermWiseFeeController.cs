@@ -269,6 +269,20 @@ namespace GCM.Controllers
 		}
 
 		[HttpGet]
+		public async Task<IActionResult> GetBalance(string subheadid, string finyearid)
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                var result = await _ifinancialYearTermWiseFee.GetBalanceData(Convert.ToInt64(subheadid), Convert.ToInt64(finyearid));
+                return Json(new { data = result , success=true});
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        [HttpGet]
 		public async Task<IActionResult> AddExpense()
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
@@ -420,6 +434,18 @@ namespace GCM.Controllers
                     TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
                 }
                 return RedirectToAction("GetChequeMaster");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+		public async Task<IActionResult> ParameterForm()
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                return View();
             }
             else
             {

@@ -1,36 +1,168 @@
 ﻿@model GCM.Entity.ParameterEntity;
-<section class="content">
-	<div class="content-wrapper">
+<div class="content-wrapper">
+	<section class="content">
 		<div class="container-fluid">
-			<div class="row mt-2">
-				<div class="card card2">
-					<div class="card-header">
-						<h3 class="card-title">Parameter</h3>
-					</div>
-					<div class="card-body p-2">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-horizontal form-bordered">
-									<div class="form-group row">
-										<label class="control-label col-md-3">Finance Year:</label>
-										<div class="col-md-9 control-form">
-											<select  class="form-control select2" >
-												<option class="bi-option" value="">---Select Report---</option>
-												<option class="bi-option" value="">StudentWise Head Report</option>
-												<option class="bi-option" value="">---Select Year---</option>
-												<option class="bi-option" value="">---Select Year---</option>
-												<option class="bi-option" value="">---Select Year---</option>
-											</select>
-											<span asp-validation-for="FinancialYearId" class="text-danger"></span>
+			<div class="row">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header">
+							<h3 class="card-title">Parameter Form</h3>
+						</div>
+						<div class="card-body p-2">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">Finance Year:</label>
+											<div class="col-md-9 control-form">
+												<select class="form-control select2" id="reportSelect" onchange="selectReport()">
+													<option class="bi-option" value="">---Select Report---</option>
+													<option class="bi-option" value="1">Student Details</option>
+													<option class="bi-option" value="2">Student Fee Collection Report</option>
+													<option class="bi-option" value="">---Select Year---</option>
+													<option class="bi-option" value="">---Select Year---</option>
+												</select>
+
+											</div>
 										</div>
 									</div>
 								</div>
+								<div class="col-md-4">
+									<div id="yearSelection" style="margin-top: 10px; display: none;">
+										<label for="yearSelect">Select Year:</label>
+										<select class="form-control" id="yearSelect" onchange="BindStudent(this.value)">
+											<option value="">---Select Year---</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div id="studentSelection" style="margin-top: 10px; display: none;">
+										<label for="yearSelect">Select Student:</label>
+										<select class="form-control" id="studentSelect" >
+											<option value="">---Select Student---</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div id="termSelection" style="margin-top: 10px; display: none;">
+										<label for="yearSelect">Select Term:</label>
+										<select class="form-control" id="termSelect" onchange="callBtn()">
+											<option value="">---Select Term---</option>
+										</select>
+									</div>
+								</div>
 							</div>
-							
+							<div class="text-center" id="viewbtn"></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+	<script>
+		function selectReport(){
+			var selectedopt = $('#reportSelect').val();
+			if(selectedopt == "1"){
+				var list = '<a href="/Student/ExportStudentReport" class="btn btn-primary">View</a> ';
+				$('#viewbtn').html(list);
+				// window.location.href = '@Url.Action("ExportStudentReport", "Student")';
+			}
+			else if(selectedopt == "2"){
+				  $('#yearSelection').show();
+				  BindYear();
+				  
+			}
+			else{
+				alert("Please select a valid option.");
+			}
+		}
+
+		function BindYear(){
+				$.ajax({
+				url: '/Student/BindYear',
+				type: 'GET',
+				success: function (response) {
+					if (response.success) {
+						var yearDropdown = $('#yearSelect');
+						yearDropdown.empty(); // Clear previous options
+						yearDropdown.append('<option value="">---Select Year---</option>');
+
+						$.each(response.data, function (index, year) {
+							yearDropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
+				});
+				$('#studentSelection').show();
+				
+					} else {
+						alert("Error: " + response.message);
+					}
+				},
+				error: function () {
+					alert("An error occurred while deleting the student.");
+				}
+			});
+		}
+		function BindStudent(yearid){
+			$.ajax({
+			url: '/Student/BindStudents',
+			data:{yearid:yearid},
+			type: 'GET',
+			success: function (response) {
+				if (response.success) {
+					var studentdropdown = $('#studentSelect');
+						studentdropdown.empty(); // Clear previous options
+						studentdropdown.append('<option value="">---Select Student---</option>');
+
+						$.each(response.data, function (index, year) {
+							studentdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
+				});
+				$('#termSelection').show();
+				BindTerm();
+				} else {
+					alert("Error: " + response.message);
+				}
+			},
+			error: function () {
+				alert("An error occurred while deleting the student.");
+			}
+		});
+		}
+
+		function BindTerm(){
+			$.ajax({
+			url: '/Student/BindTerm',
+			type: 'GET',
+			success: function (response) {
+				if (response.success) {
+					var termdropdown = $('#termSelect');
+						termdropdown.empty(); // Clear previous options
+						termdropdown.append('<option value="">---Select Term---</option>');
+
+						$.each(response.data, function (index, year) {
+							termdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
+				});
+
+						
+				} else {
+					alert("Error: " + response.message);
+				}
+			},
+			error: function () {
+				alert("An error occurred while deleting the student.");
+			}
+		});
+		}
+
+
+		function callBtn(){
+			var yearid = $('#yearSelect').val();
+			var studentid = $('#studentSelect').val();
+			var termid = $('#termSelect').val();
+			   var url = '@Url.Action("ExportStudentFeeCollectionReport", "StudentFeeCollection")';
+						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid;
+
+						// Create the View button dynamically
+						var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';
+						$('#viewbtn').html(list);
+		}
+
+	</script>

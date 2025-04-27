@@ -15,6 +15,7 @@ namespace GCM.Services.Abstraction
         Task<ResponseMessage> AddExpense(ExpenseEntity ep);
         Task<ResponseMessage> AddChequeNo(ChequeMaster ep);
         Task<ResponseMessage> DeleteFinanceBalance(long id);
+        Task<long> GetBalanceData(long id1, long id2);
         Task<ChequeMaster> GetChequeDateById(long id);
         Task<ResponseMessage> CheckExpenseForCheque(long id);
         Task<ResponseMessage> UpdateCheque(ChequeMaster fn);
