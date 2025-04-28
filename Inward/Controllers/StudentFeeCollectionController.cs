@@ -341,7 +341,7 @@ namespace GCM.Controllers
         //}
 
         [HttpGet]
-		public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid)
+		public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid, string? yearid, string? termid)
 		{
 			try
 			{
@@ -350,7 +350,7 @@ namespace GCM.Controllers
 				stdid = Convert.ToInt64(studentid);
 
 				// Fetch the report data
-				var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid);
+				var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid, Convert.ToInt64(yearid), Convert.ToInt64(termid));
 
 				// Calculate the total GovAmount
 				var totalGovAmount = studentsFeeCollection.Sum(x => x.GovAmount);

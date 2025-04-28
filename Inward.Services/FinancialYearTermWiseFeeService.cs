@@ -36,6 +36,10 @@ namespace GCM.Services
         {
             return await _financialYearTermWiseFeeRepo.AddExpense(ep);
         }
+        public async Task<long> GetBalanceData(long id1,long id2)
+        {
+            return await _financialYearTermWiseFeeRepo.GetBalanceData(id1,id2);
+        }
         public async Task<ResponseMessage> CheckExpenseForCheque(long id)
         {
             return await _financialYearTermWiseFeeRepo.CheckExpenseForCheque(id);

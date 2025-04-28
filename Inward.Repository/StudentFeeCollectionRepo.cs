@@ -41,6 +41,29 @@ namespace GCM.Repository
             }
         }
 
+        public async Task<List<SelectListItem>> BindStudents(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialyearId", id);
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindStudents, queryParameters, commandType: CommandType.StoredProcedure);
+                    var termList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return termList;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public async Task<List<SelectListItem>> BindTerm()
         {
             try
@@ -180,7 +203,7 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid)
+        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3)
         {
             try
             {
@@ -188,6 +211,8 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@studentid", studentid);
+                    queryParameters.Add("@FinancialYearId", id2);
+                    queryParameters.Add("@TermId", id3);
                     var res = await conn.QueryAsync<StudentFeeCollection>(StoreProcedures.GetReport_studentFeeMaster, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }

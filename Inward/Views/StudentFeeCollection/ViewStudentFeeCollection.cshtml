@@ -42,7 +42,7 @@
 											<td>@item.Data.FeeModeDescription</td>
 											<td>
 												<a asp-action="ExportStudentFeeCollectionReport" asp-controller="StudentFeeCollection"
-												   asp-route-studentid="@item.Data.StudentId.ToString()">
+												   asp-route-studentid="@item.Data.StudentId.ToString()" asp-route-yearid="@item.Data.FinancialYearId.ToString()" asp-route-termid="@item.Data.TermId.ToString()">
 													Download Report
 												</a>
 											</td>

@@ -12,8 +12,11 @@ namespace Inward.Entity
     public class Student
     {
         public long studentid { get; set; }
+        [Required]
         public string name { get; set; }
+        public long FinancialYearId { get; set; }
         public string mobileno { get; set; }
+        public string FinancialYear { get; set; }
         public string email { get; set; }
         public long genderid { get; set; }
         public string? gendername { get; set; }

@@ -91,6 +91,24 @@ namespace GCM.Repository
                 throw;
             }
         }
+        public async Task<long> GetBalanceData(long id1, long id2)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@Subheadid", id1);
+                    queryParameters.Add("@FinancialYearId", id2);
+                    var res = await conn.QueryFirstAsync<long>(StoreProcedures.GetBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public async Task<ResponseMessage> AddExpense(ExpenseEntity ep)
         {
             try

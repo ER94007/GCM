@@ -23,6 +23,10 @@ namespace GCM.Services
         {
             return await _studentFeeCollectionRepo.GetStudentList();
         }
+        public async Task<List<SelectListItem>> BindStudents(long id)
+        {
+            return await _studentFeeCollectionRepo.BindStudents(id);
+        }
         public async Task<List<SelectListItem>> BindFinancialYear()
         {
             return await _studentFeeCollectionRepo.BindFinancialYear();
@@ -47,9 +51,9 @@ namespace GCM.Services
         {
             return await _studentFeeCollectionRepo.GetStudentFeeCollectionList();
         }
-        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid)
+        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3)
         {
-            return await _studentFeeCollectionRepo.GetReport_studentFeeMaster(studentid);
+            return await _studentFeeCollectionRepo.GetReport_studentFeeMaster(studentid,id2, id3);
         }
     }
 }

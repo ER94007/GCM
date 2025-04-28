@@ -8,16 +8,10 @@
     <Content Remove="wwwroot\Dataset\studentfeecollection.cs" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xsc" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xss" />
-    <Content Remove="wwwroot\Dataset\StudentFeeDetailsReport.Designer.cs" />
-    <Content Remove="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
-    <Content Remove="wwwroot\Dataset\StudentFeeDetailsReport.xsd" />
-    <Content Remove="wwwroot\Dataset\StudentFeeDetailsReport.xss" />
     <Content Remove="wwwroot\Dataset\StudentInfo.cs" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsc" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsd" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xss" />
-    <Content Remove="wwwroot\Reports\StudentDetailReport.rdlc" />
-    <Content Remove="wwwroot\Reports\StudentFeeDetail.rdlc" />
     <Content Remove="wwwroot\Reports\StudentReport.rdlc" />
   </ItemGroup>
 
@@ -38,11 +32,6 @@
     </Compile>
     <Compile Include="wwwroot\Dataset\studentfeecollection.cs" />
     <Compile Include="wwwroot\Dataset\studentfeecollection.Designer.cs" />
-    <Compile Include="wwwroot\Dataset\StudentFeeDetailsReport.Designer.cs">
-      <DependentUpon>StudentFeeDetailsReport.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="wwwroot\Dataset\StudentInfo.cs" />
     <Compile Include="wwwroot\Dataset\StudentInfo.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -62,13 +51,6 @@
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsd" />
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
-    <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
-    <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xsd">
-      <SubType>Designer</SubType>
-      <LastGenOutput>StudentFeeDetailsReport.Designer.cs</LastGenOutput>
-      <Generator>MSDataSetGenerator</Generator>
-    </None>
-    <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xss" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsd">
       <SubType>Designer</SubType>
@@ -116,8 +98,6 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
-    <None Include="wwwroot\Reports\StudentDetailReport.rdlc" />
-    <None Include="wwwroot\Reports\StudentFeeDetail.rdlc" />
     <None Include="wwwroot\Reports\StudentFeeCollectionReport.rdlc" />
     <None Include="wwwroot\Reports\StudentFeeCollectionReport1.rdlc" />
     <None Include="wwwroot\Reports\StudentReport.rdlc" />

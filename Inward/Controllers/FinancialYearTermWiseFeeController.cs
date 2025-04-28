@@ -269,6 +269,20 @@ namespace GCM.Controllers
 		}
 
 		[HttpGet]
+		public async Task<IActionResult> GetBalance(string subheadid, string finyearid)
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                var result = await _ifinancialYearTermWiseFee.GetBalanceData(Convert.ToInt64(subheadid), Convert.ToInt64(finyearid));
+                return Json(new { data = result , success=true});
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        [HttpGet]
 		public async Task<IActionResult> AddExpense()
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
@@ -427,5 +441,17 @@ namespace GCM.Controllers
             }
         }
 
-    }
+		public async Task<IActionResult> ParameterForm()
+		{
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+	}
 }

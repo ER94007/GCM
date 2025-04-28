@@ -13,11 +13,12 @@ namespace GCM.Services.Abstraction
     {
         Task<IEnumerable<Student>> GetStudentList();
         Task<List<SelectListItem>> BindFinancialYear();
+        Task<List<SelectListItem>> BindStudents(long id);
         Task<List<SelectListItem>> BindTerm();
         Task<List<SelectListItem>> BindSubhead();
         Task<IEnumerable<StudentFeeCollection>> FeeDetails(int termId, int financialYearId, int studentid);
         Task<ResponseMessage> AddFeeCollection(StudentFeeCollection model,decimal fees);
         Task<IEnumerable<StudentFeeCollection>> GetStudentFeeCollectionList();
-        Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid);
+        Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3);
     }
 }
