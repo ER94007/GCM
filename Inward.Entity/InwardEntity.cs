@@ -86,4 +86,19 @@ namespace Inward.Entity
         public string NetAmount { get; set; }
 
     }
+
+    public class StudentFeeDetailReport
+    {
+
+        public long StudentId { get; set; }
+        public string RecieptNo { get; set; }
+        public string StudentName { get; set; }
+        public string GenderName { get; set; }
+        public string TermName { get; set; }
+        public string SubHeadName { get; set; }
+        public Int64 Amount { get; set; }
+        public Int64 GovtTotal { get; set; }
+        public Int64 PrivateTotal { get; set; }
+    }
+ 
 }
