@@ -72,9 +72,9 @@
 								<div class="col-md-4">
 									<!-- Inward No -->
 									<div class="form-group">
-										<label for="name">Financial Year</label>
+										<label for="name">Academic Year</label>
 										<select asp-for="FinancialYearId" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
-											<option value="">---Select Financial Year---</option>
+											<option value="">---Select Academic Year---</option>
 										</select>
 										<span asp-validation-for="FinancialYearId" class="text-danger"></span>
 									</div>
