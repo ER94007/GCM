@@ -34,5 +34,6 @@ namespace GCM.Repository.Abstraction
         Task<List<SelectListItem>> BindTerm();
         Task<List<SelectListItem>> BindSubhead();
         Task<List<SelectListItem>> BindCheques();
+        Task<List<SelectListItem>> BindHeads();
     }
 }

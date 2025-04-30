@@ -108,5 +108,11 @@ namespace GCM.Services
         {
             return await _financialYearTermWiseFeeRepo.BindCheques();
         }
-    }
+		public async Task<List<SelectListItem>> BindHeads()
+		{
+			return await _financialYearTermWiseFeeRepo.BindHeads();
+		}
+
+		
+	}
 }

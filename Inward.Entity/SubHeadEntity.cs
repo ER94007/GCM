@@ -18,6 +18,11 @@ namespace GCM.Entity
         [Required(ErrorMessage = "SubHead Name is required")]
 
         public string subheadname { get; set; }
+        
+        [Required(ErrorMessage = "Please Select Head")]
+
+        public long HeadMasterId { get; set; }
+        public string? headname { get; set; }
 
     }
 }

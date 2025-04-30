@@ -448,6 +448,28 @@ namespace GCM.Repository
                 throw;
             }
         }
+		public async Task<List<SelectListItem>> BindHeads()
+		{
+			try
+			{
+				using (var conn = GetConnection())
+				{
+					var queryParameters = new DynamicParameters();
+					var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindHeads, queryParameters, commandType: CommandType.StoredProcedure);
+					var subheadList = res.Select(item => new SelectListItem
+					{
+						Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+						Text = item.Text // Extract 'parametername'
+					}).ToList();
+					return subheadList;
+				}
+			}
+			catch (Exception)
+			{
 
-    }
+				throw;
+			}
+		}
+
+	}
 }

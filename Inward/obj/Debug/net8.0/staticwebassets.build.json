@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6DHM9SplToB5A1UMRKZ4JuIwOuWJ2cCsUXZgkA+WaRE=",
+  "Hash": "R/ACssTevSq8DjKs9HlUimTgm6qu1iNwVHYfNov8uP4=",
   "Source": "GCM",
   "BasePath": "_content/GCM",
   "Mode": "Default",
@@ -40430,6 +40430,25 @@
       "OriginalItemSpec": "wwwroot\\Dataset\\studentfeecollection.xsd"
     },
     {
+      "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentFeeDetailsReport.xsd",
+      "SourceId": "GCM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\",
+      "BasePath": "_content/GCM",
+      "RelativePath": "Dataset/StudentFeeDetailsReport.xsd",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Dataset\\StudentFeeDetailsReport.xsd"
+    },
+    {
       "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentInfo.Designer.cs",
       "SourceId": "GCM",
       "SourceType": "Discovered",
@@ -41967,6 +41986,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentDetailReport.rdlc",
+      "SourceId": "GCM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\",
+      "BasePath": "_content/GCM",
+      "RelativePath": "Reports/StudentDetailReport.rdlc",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Reports\\StudentDetailReport.rdlc"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
