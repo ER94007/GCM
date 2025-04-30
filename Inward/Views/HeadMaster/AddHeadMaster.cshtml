@@ -1,12 +1,12 @@
-﻿@model GCM.Entity.SubHeadEntity
+﻿@model GCM.Entity.HeadMasterEntity
 @{
-	ViewBag.Title = "SubHead";
+	ViewBag.Title = "HeadMaster";
 	Layout = "~/Views/Shared/_Layout.cshtml";
 	var msg = TempData["SaveStatus"] as string;
 	long sid = 0;
-	if (Model.subheadid != 0)
+	if (Model.HeadMasterId != 0)
 	{
-		sid = Model.subheadid;
+		sid = Model.HeadMasterId;
 	}
 }
 
@@ -24,53 +24,49 @@
 
 <section class="content">
 	<div class="content-wrapper">
-		<form asp-action="AddSubHead" method="post">
-			<input type="hidden" asp-for="subheadid" value="@sid" />
+		<form asp-action="AddHead" method="post">
+			<input type="hidden" asp-for="HeadMasterId" value="@sid" />
 			<div class="container-fluid">
 				<div class="row mb-3">
 					<div class="col-md-12">
 						<div class="card">
 							<div class="card-header">
-								<h3 class="card-title">Add Sub Head</h3>
+								<h3 class="card-title">Add Head</h3>
 							</div>
 							<div class="card-body">
 								<div class="row">
+									
 									<div class="col-md-6 mb-3">
 										<div class="form-group">
 											<label class="control-label">Head Name</label>
-											<select asp-for="HeadMasterId" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.HeadList, "Value", "Text"))">
-												<option value="">---Select Head ---</option>
-											</select>
-											<span asp-validation-for="HeadMasterId" class="text-danger"></span>
+											<input type="text" asp-for="HeadName" class="form-control" />
+											<span asp-validation-for="HeadName" class="text-danger"></span>
 										</div>
 									</div>
 									<div class="col-md-6 mb-3">
 										<div class="form-group">
-											<label class="control-label">SubHead Name</label>
-											<input type="text" asp-for="subheadname" class="form-control" />
-											<span asp-validation-for="subheadname" class="text-danger"></span>
-										</div>
-									</div>
-									<div class="col-md-6 mb-3">
-										<div class="form-group">
-											<label class="control-label">SubHead Type</label>
-											<div class="form-control">
-												<div class="form-check form-check-inline">
-													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Govt" id="mandatory" />
-													<label class="form-check-label" for="mandatory"><strong>Govt</strong></label>
-												</div>
-												<div class="form-check form-check-inline">
-													<input type="radio" asp-for="subheadtype" class="form-check-input" value="Private" id="optional" />
-													<label class="form-check-label" for="optional"><strong>Private</strong></label>
-												</div>
+											<label class="control-label">Is Student Related?</label>
+
+											<div class="form-check">
+												<input type="checkbox" asp-for="IsStudentRelated" class="form-check-input" id="IsStudentRelated" />
 											</div>
-											<span asp-validation-for="subheadtype" class="text-danger"></span>
+											<span asp-validation-for="IsStudentRelated" class="text-danger"></span>
+										</div>
+									</div>
+									<div class="col-md-6 mb-3">
+										<div class="form-group">
+											<label class="control-label">Is Combined Head?</label>
+
+											<div class="form-check">
+												<input type="checkbox" asp-for="IsCombined" class="form-check-input" id="IsCombined" />
+											</div>
+											<span asp-validation-for="IsCombined" class="text-danger"></span>
 										</div>
 									</div>
 								</div>
 								<div class="text-center mt-4">
 									<button type="submit" class="btn btn-success px-4">Submit</button>
-									<a href="@Url.Action("GetSubHeadList", "Inward")" class="btn btn-secondary px-4">
+									<a href="@Url.Action("GetHeadList", "HeadMaster")" class="btn btn-secondary px-4">
 										<i class="fas fa-list mr-1"></i> Go to List
 									</a>
 								</div>

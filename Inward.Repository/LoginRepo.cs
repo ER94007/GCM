@@ -85,6 +85,7 @@ namespace Inward.Repository
                     queryParameters.Add("@SubHeadName", sh.subheadname);
                     queryParameters.Add("@SubHeadType", sh.subheadtype);
                     queryParameters.Add("@SubHeadId", sh.subheadid);
+                    queryParameters.Add("@HeadMasterId", sh.HeadMasterId);
                     return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateSubhead, queryParameters, commandType: CommandType.StoredProcedure);
 
                 }
@@ -453,5 +454,79 @@ namespace Inward.Repository
                 throw;
             }
         }
-    }
+		public async Task<IEnumerable<HeadMasterEntity>> GetHeadList()
+		{
+			try
+			{
+				using (var conn = GetConnection())
+				{
+					var queryParameters = new DynamicParameters();
+					var res = await conn.QueryAsync<HeadMasterEntity>(StoreProcedures.GetHeadList, queryParameters, commandType: CommandType.StoredProcedure);
+					return res;
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+		public async Task<ResponseMessage> Deletehead(long subheadid)
+		{
+			try
+			{
+				using (var conn = GetConnection())
+				{
+					var queryParameters = new DynamicParameters();
+					queryParameters.Add("@HeadMasterId", subheadid);
+					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.Deletehead, queryParameters, commandType: CommandType.StoredProcedure);
+
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+		public async Task<HeadMasterEntity> GetheadById(long id)
+		{
+			try
+			{
+				using (var conn = GetConnection())
+				{
+					var queryParameters = new DynamicParameters();
+					queryParameters.Add("@HeadMasterId", id);
+					var res = await conn.QueryFirstOrDefaultAsync<HeadMasterEntity>(StoreProcedures.GetheadById, queryParameters, commandType: CommandType.StoredProcedure);
+					return res;
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+		public async Task<ResponseMessage> AddUpdatehead(HeadMasterEntity sh)
+		{
+			try
+			{
+				using (var conn = GetConnection())
+				{
+					var queryParameters = new DynamicParameters();
+					queryParameters.Add("@HeadName", sh.HeadName);
+					queryParameters.Add("@HeadMasterId", sh.HeadMasterId);
+					queryParameters.Add("@IsStudentRelated", sh.IsStudentRelated);
+					queryParameters.Add("@IsCombined", sh.IsCombined);
+					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateHead, queryParameters, commandType: CommandType.StoredProcedure);
+
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+	}
 }

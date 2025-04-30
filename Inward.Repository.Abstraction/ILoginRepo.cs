@@ -35,7 +35,11 @@ namespace Inward.Repository.Abstraction
         Task<List<FarmerEntity>> FillUnit(string gradeid);
 
         Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId);
+		Task<IEnumerable<HeadMasterEntity>> GetHeadList();
 
+		Task<ResponseMessage> Deletehead(long id);
+		Task<HeadMasterEntity> GetheadById(long id);
+		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity Head);
 
-    }
+	}
 }

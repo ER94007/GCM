@@ -32,6 +32,11 @@ namespace Inward.Services.Abstraction
         Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId);
         Task<ResponseMessage> DeleteStudent(long studentid);
         Task<Student> GetStudentByid(long studentId);
+		Task<IEnumerable<HeadMasterEntity>> GetHeadList();
 
-    }
+		Task<ResponseMessage> Deletehead(long id);
+		Task<HeadMasterEntity> GetheadById(long HeadMasterId);
+		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity subHead);
+
+	}
 }

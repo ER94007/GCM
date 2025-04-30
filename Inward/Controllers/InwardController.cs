@@ -141,10 +141,12 @@ namespace Inward.Controllers
                     SubHeadEntity sh = new SubHeadEntity();
                 if (subheadid != null)
                 {
+
                      sh = await _userLoginService.GetSubheadById(Convert.ToInt64(subheadid));
                 }
-            
-                return View(sh);
+				ViewBag.HeadList = _ifinancialYearTermWiseFeeService.BindHeads().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+
+				return View(sh);
 
             }
             else

@@ -56,5 +56,12 @@ namespace Inward.Entity
         public static string GetStudentFeeCollection = "GetStudentFeeCollectionDetails ";
         public static string GetReport_studentFeeMaster = "Report_studentFeeMaster ";
         public static string GetStudentFeeDetailReport = "Report_studentsFeeMasterDetail_Rutvik";
+		public static string BindHeads = "BindHeads";
+		public static string GetHeadList = "GetHeadList";
+		public static string Deletehead = "Deletehead";
+		public static string GetheadById = "GetheadById";
+		public static string AddUpdateHead = "AddUpdateHead";
+
+
 	}
 }
