@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vM3p0OXQA7ryIIBzi0f961lVnpeuGtR1UAta8M91mNs=",
+  "Hash": "cPAoVSulTl8EZ7rBeSuaJyT4k3Se2BypTfHgumWlBnk=",
   "Source": "GCM",
   "BasePath": "_content/GCM",
   "Mode": "Default",
@@ -40425,7 +40425,7 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
+      "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Dataset\\studentfeecollection.xsd"
     },

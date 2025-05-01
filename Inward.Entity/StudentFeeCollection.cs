@@ -22,7 +22,7 @@ namespace GCM.Entity
         public string FinancialYear { get; set; }
         public string Name { get; set; }
         public string TermName { get; set; }
-        public string RecieptNo { get; set; }
+        public string RecieptNo { get; set; } 
         public string FeeModeDescription { get; set; }
         public string name { get; set; }
         public string GovernmentFee { get; set; }
