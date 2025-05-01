@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R/ACssTevSq8DjKs9HlUimTgm6qu1iNwVHYfNov8uP4=",
+  "Hash": "vM3p0OXQA7ryIIBzi0f961lVnpeuGtR1UAta8M91mNs=",
   "Source": "GCM",
   "BasePath": "_content/GCM",
   "Mode": "Default",
@@ -40447,6 +40447,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Dataset\\StudentFeeDetailsReport.xsd"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentFeeDetailsReport.xss",
+      "SourceId": "GCM",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\",
+      "BasePath": "_content/GCM",
+      "RelativePath": "Dataset/StudentFeeDetailsReport.xss",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Dataset\\StudentFeeDetailsReport.xss"
     },
     {
       "Identity": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentInfo.Designer.cs",
