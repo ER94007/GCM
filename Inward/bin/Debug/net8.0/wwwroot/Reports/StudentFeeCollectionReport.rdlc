@@ -1517,7 +1517,6 @@
             </Style>
           </Textbox>
           <Line Name="Line5">
-            <Top>0cm</Top>
             <Left>14.8075cm</Left>
             <Height>14.86499cm</Height>
             <Width>0cm</Width>
@@ -1832,6 +1831,10 @@
                     </TextRun>
                     <TextRun>
                       <Value>=Fields!CreatedDate.Value</Value>
+                      <Style />
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
                       <Style />
                     </TextRun>
                   </TextRuns>

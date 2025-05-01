@@ -343,48 +343,146 @@ namespace GCM.Controllers
         [HttpGet]
 		public async Task<IActionResult> ExportStudentFeeCollectionReport(string? studentid, string? yearid, string? termid,string? recieptno)
 		{
+			//try
+			//{
+
+			//	long stdid = 0;
+			//	stdid = Convert.ToInt64(studentid);
+
+			//	// Fetch the report data
+			//	var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid, Convert.ToInt64(yearid), Convert.ToInt64(termid), recieptno);
+
+
+			//	// Prepare error message with details
+			//	var errorMessage = $"[{DateTime.Now}]\nException Message: {studentsFeeCollection}\nStack Trace:\n";
+
+			//	// Define the path to the log file
+			//	var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+			//	if (!Directory.Exists(logPath))
+			//	{
+			//		Directory.CreateDirectory(logPath);
+			//	}
+
+			//	var logFile = Path.Combine(logPath, "ErrorLog.txt");
+
+			//	// Write the error to the log file
+			//	await System.IO.File.AppendAllTextAsync(logFile, errorMessage);
+
+
+
+			//	// Calculate the total GovAmount
+			//	var totalGovAmount = studentsFeeCollection.Sum(x => x.GovAmount);
+
+			//	foreach (var item in studentsFeeCollection)
+			//	{
+			//		item.GovernmentTotal = Convert.ToString(totalGovAmount); // Add this property in your model if not already
+			//	}
+
+			//	// Create the local report
+			//	var report = new LocalReport();
+			//	var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot","Reports", "StudentFeeCollectionReport.rdlc");
+
+
+
+			//	report.ReportPath = path;
+
+			//	// Add the data source
+			//	report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
+
+			//	// Set the parameter for total GovAmount
+			//	report.SetParameters(new ReportParameter("TotalGovAmount", totalGovAmount.ToString("F2")));
+
+			//	// Render the report as PDF
+			//	var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+			//	return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
+
+			//}
+			//catch (Exception ex)
+			//{
+			//	// Prepare error message with details
+			//	var errorMessage = $"[{DateTime.Now}]\nException Message: {ex.Message}\nStack Trace:\n{ex.StackTrace}\n";
+
+			//	// Define the path to the log file
+			//	var logPath = Path.Combine(Directory.GetCurrentDirectory(), "Logs");
+			//	if (!Directory.Exists(logPath))
+			//	{
+			//		Directory.CreateDirectory(logPath);
+			//	}
+
+			//	var logFile = Path.Combine(logPath, "ErrorLog.txt");
+
+			//	// Write the error to the log file
+			//	await System.IO.File.AppendAllTextAsync(logFile, errorMessage);
+
+			//	// Optionally, return a friendly error file or a plain text message
+			//	return File(System.Text.Encoding.UTF8.GetBytes("An error occurred while generating the report."), "application/pdf", "Error.pdf");
+
+
+			//}
 			try
 			{
-
-				long stdid = 0;
-				stdid = Convert.ToInt64(studentid);
+				long stdid = Convert.ToInt64(studentid);
 
 				// Fetch the report data
-				var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(stdid, Convert.ToInt64(yearid), Convert.ToInt64(termid), recieptno);
+				var studentsFeeCollection = await _studentFeeCollectionService.GetReport_studentFeeMaster(
+					stdid,
+					Convert.ToInt64(yearid),
+					Convert.ToInt64(termid),
+					recieptno
+				);
 
 				// Calculate the total GovAmount
 				var totalGovAmount = studentsFeeCollection.Sum(x => x.GovAmount);
 
 				foreach (var item in studentsFeeCollection)
 				{
-					item.GovernmentTotal = Convert.ToString(totalGovAmount); // Add this property in your model if not already
+					item.GovernmentTotal = Convert.ToString(totalGovAmount); // Ensure this property exists in the model
 				}
 
 				// Create the local report
 				var report = new LocalReport();
-				var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot","Reports", "StudentFeeCollectionReport.rdlc");
-				 
 
-
-				report.ReportPath = path;
+				// Use AppContext.BaseDirectory instead of Directory.GetCurrentDirectory()
+				var reportPath = Path.Combine(AppContext.BaseDirectory, "wwwroot", "Reports", "StudentFeeCollectionReport.rdlc");
+				report.ReportPath = reportPath;
 
 				// Add the data source
 				report.DataSources.Add(new ReportDataSource("studentfeecollection", studentsFeeCollection));
 
-				// Set the parameter for total GovAmount
+				// Set parameters
 				report.SetParameters(new ReportParameter("TotalGovAmount", totalGovAmount.ToString("F2")));
 
 				// Render the report as PDF
 				var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
 
 				return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
-
 			}
 			catch (Exception ex)
 			{
-				var result =ex.Message.ToString();
-				return File(result, "application/pdf", "StudentFeeCollectionReport.pdf");
+				try
+				{
+					string logFolder = Path.Combine(AppContext.BaseDirectory, "wwwroot", "Logs");
 
+					// Try to create the folder if it doesn't exist (may silently fail on shared hosting)
+					if (!Directory.Exists(logFolder))
+					{
+						Directory.CreateDirectory(logFolder);
+					}
+
+					string logPath = Path.Combine(logFolder, "ErrorLog.txt");
+
+					string errorMessage = $"[{DateTime.Now}]\nMessage: {ex.Message}\nStackTrace:\n{ex.StackTrace}\n\n";
+
+					await System.IO.File.AppendAllTextAsync(logPath, errorMessage);
+				}
+				catch
+				{
+					// Avoid nested exception if log folder is not writable
+				}
+
+				// Return a dummy PDF or friendly error message
+				return File(System.Text.Encoding.UTF8.GetBytes("Error generating report."), "application/pdf", "Error.pdf");
 			}
 
 
