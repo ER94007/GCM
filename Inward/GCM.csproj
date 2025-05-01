@@ -8,6 +8,7 @@
     <Content Remove="wwwroot\Dataset\studentfeecollection.cs" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xsc" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xss" />
+    <Content Remove="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
     <Content Remove="wwwroot\Dataset\StudentInfo.cs" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsc" />
     <Content Remove="wwwroot\Dataset\StudentInfo.xsd" />
@@ -21,6 +22,7 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\css\login.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,8 +51,8 @@
     </None>
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
-    <None Include="wwwroot\Dataset\studentfeecollection.xsd" />
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
+    <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsd">
       <SubType>Designer</SubType>

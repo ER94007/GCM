@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCM.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cd56033efaf004253521a33986194a6a19dd50ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad2518738d67d656b28bf2b881205adddd895eb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCM.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCM.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

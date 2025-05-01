@@ -203,7 +203,7 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3)
+        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3, string RecieptNo)
         {
             try
             {
@@ -213,6 +213,7 @@ namespace GCM.Repository
                     queryParameters.Add("@studentid", studentid);
                     queryParameters.Add("@FinancialYearId", id2);
                     queryParameters.Add("@TermId", id3);
+                    queryParameters.Add("@RecieptNo", RecieptNo);
                     var res = await conn.QueryAsync<StudentFeeCollection>(StoreProcedures.GetReport_studentFeeMaster, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }

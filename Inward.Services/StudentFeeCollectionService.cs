@@ -51,9 +51,9 @@ namespace GCM.Services
         {
             return await _studentFeeCollectionRepo.GetStudentFeeCollectionList();
         }
-        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3)
+        public async Task<IEnumerable<StudentFeeCollection>> GetReport_studentFeeMaster(long studentid, long id2, long id3, string RecieptNo)
         {
-            return await _studentFeeCollectionRepo.GetReport_studentFeeMaster(studentid,id2, id3);
+            return await _studentFeeCollectionRepo.GetReport_studentFeeMaster(studentid,id2, id3,RecieptNo);
         }
     }
 }

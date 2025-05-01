@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\GCM.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentFeeDetailsReport.xsd",
+      "PackagePath": "staticwebassets\\Dataset\\StudentFeeDetailsReport.xsd"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentFeeDetailsReport.xss",
+      "PackagePath": "staticwebassets\\Dataset\\StudentFeeDetailsReport.xss"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentInfo.Designer.cs",
       "PackagePath": "staticwebassets\\Dataset\\StudentInfo.Designer.cs"
     },
@@ -51,6 +59,10 @@
     {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Images\\user2-160x160.jpg",
       "PackagePath": "staticwebassets\\Images\\user2-160x160.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentDetailReport.rdlc",
+      "PackagePath": "staticwebassets\\Reports\\StudentDetailReport.rdlc"
     },
     {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
