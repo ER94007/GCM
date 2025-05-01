@@ -363,7 +363,7 @@ namespace GCM.Controllers
 				// Create the local report
 				var report = new LocalReport();
 				var path = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot","Reports", "StudentFeeCollectionReport.rdlc");
-
+				 
 
 
 				report.ReportPath = path;

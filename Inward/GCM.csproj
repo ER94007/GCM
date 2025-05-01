@@ -51,7 +51,6 @@
     </None>
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
-    <None Include="wwwroot\Dataset\studentfeecollection.xsd" />
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
     <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
     <None Include="wwwroot\Dataset\StudentInfo.xsc" />

@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Dataset\\StudentFeeDetailsReport.xsd"
     },
     {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentFeeDetailsReport.xss",
+      "PackagePath": "staticwebassets\\Dataset\\StudentFeeDetailsReport.xss"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\StudentInfo.Designer.cs",
       "PackagePath": "staticwebassets\\Dataset\\StudentInfo.Designer.cs"
     },
