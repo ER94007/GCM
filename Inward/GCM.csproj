@@ -5,6 +5,10 @@
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xsc" />
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xsd" />
     <Content Remove="wwwroot\Dataset\dbStudentdetails.xss" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection - Copy.cs" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection - Copy.Designer.cs" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection - Copy.xsc" />
+    <Content Remove="wwwroot\Dataset\studentfeecollection - Copy.xss" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.cs" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xsc" />
     <Content Remove="wwwroot\Dataset\studentfeecollection.xss" />
@@ -100,8 +104,6 @@
     <None Include="wwwroot\lib\jquery\dist\jquery.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
     <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
-    <None Include="wwwroot\Reports\StudentFeeCollectionReport.rdlc" />
-    <None Include="wwwroot\Reports\StudentFeeCollectionReport1.rdlc" />
     <None Include="wwwroot\Reports\StudentReport.rdlc" />
     <Page Include="wwwroot\Reports\StudentReport.rdlc" />
   </ItemGroup>
@@ -151,7 +153,7 @@
       <DependentUpon>StudentInfo.xsd</DependentUpon>
     </Content>
     <Content Update="wwwroot\Reports\StudentFeeCollectionReport.rdlc">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\Reports\StudentFeeCollectionReport1.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
