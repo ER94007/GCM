@@ -107,7 +107,7 @@ namespace Inward.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> FileUpload(FileStream studentfile)
+        public async Task<IActionResult> FileUpload(FileStream studentfile, string FinancialYearId)
         {
             return RedirectToAction("Index");
         }

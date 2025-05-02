@@ -35,6 +35,10 @@ namespace GCM.Services
         {
             return await _studentFeeCollectionRepo.BindTerm();
         }
+        public async Task<List<SelectListItem>> BindReciept(long id)
+        {
+            return await _studentFeeCollectionRepo.BindReciept(id);
+        }
         public async Task<List<SelectListItem>> BindSubhead()
         {
             return await _studentFeeCollectionRepo.BindSubhead();

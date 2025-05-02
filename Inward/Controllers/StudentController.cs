@@ -34,7 +34,7 @@ namespace GCM.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Upload(IFormFile file)
+        public async Task<IActionResult> Upload(IFormFile file, string FinancialYearId)
         {
             if (file != null && file.Length > 0)
             {
@@ -54,7 +54,7 @@ namespace GCM.Controllers
                 DataTable dataTable = ConvertStudentsToDataTable(students);
 
                 // Call the service to add students (pass the DataTable)
-                var regResponse = await _studentService.AddStudent(dataTable);
+                var regResponse = await _studentService.AddStudent(dataTable, Convert.ToInt64(FinancialYearId));
 
                 }
 
@@ -328,7 +328,7 @@ namespace GCM.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveStudents(List<Student> students)
+        public async Task<IActionResult> SaveStudents(List<Student> students, string yearid)
         {
             try
             {
@@ -336,7 +336,7 @@ namespace GCM.Controllers
                 var studentsDataTable = ConvertToDataTable(students);
 
                 // Call the AddStudent method and pass the DataTable
-                var regResponse = await _studentService.AddStudent(studentsDataTable);
+                var regResponse = await _studentService.AddStudent(studentsDataTable, Convert.ToInt64(yearid));
 
                 // Return a success or failure response as JSON
                 if (regResponse.Id == 1)
@@ -503,6 +503,12 @@ namespace GCM.Controllers
         public async Task<IActionResult> BindTerm()
         {
             var yearlist = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            return Json(new { success = true, data = yearlist });
+        }
+        [HttpGet]
+        public async Task<IActionResult> BindReciept(string studentid)
+        {
+            var yearlist = _studentFeeCollectionService.BindReciept(Convert.ToInt64(studentid)).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             return Json(new { success = true, data = yearlist });
         }
         [HttpGet]
