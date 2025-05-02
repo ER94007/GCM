@@ -38,7 +38,7 @@
 								<div class="col-md-4">
 									<div id="studentSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Student:</label>
-										<select class="form-control" id="studentSelect" >
+										<select class="form-control" id="studentSelect" onchange="BindTerm()">
 											<option value="">---Select Student---</option>
 										</select>
 									</div>
@@ -46,8 +46,16 @@
 								<div class="col-md-4">
 									<div id="termSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Term:</label>
-										<select class="form-control" id="termSelect" onchange="callBtn()">
+										<select class="form-control" id="termSelect" onchange="BindReciept()">
 											<option value="">---Select Term---</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div id="recieptSelection" style="margin-top: 10px; display: none;">
+										<label for="yearSelect">Select Reciept:</label>
+										<select class="form-control" id="recieptSelect" onchange="callBtn()">
+											<option value="">---Select Reciept---</option>
 										</select>
 									</div>
 								</div>
@@ -102,6 +110,7 @@
 			});
 		}
 		function BindStudent(yearid){
+			
 			$.ajax({
 			url: '/Student/BindStudents',
 			data:{yearid:yearid},
@@ -116,7 +125,7 @@
 							studentdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
 				$('#termSelection').show();
-				BindTerm();
+				
 				} else {
 					alert("Error: " + response.message);
 				}
@@ -141,7 +150,8 @@
 							termdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
 
-						
+					$('#recieptSelection').show();
+					
 				} else {
 					alert("Error: " + response.message);
 				}
@@ -151,14 +161,39 @@
 			}
 		});
 		}
+		function BindReciept(){
+			var studentid = $('#studentSelect').val();
+			$.ajax({
+			url: '/Student/BindReciept',
+			data:{studentid:studentid},
+			type: 'GET',
+			success: function (response) {
+				if (response.success) {
+					var recieptdropdown = $('#recieptSelect');
+						recieptdropdown.empty(); // Clear previous options
+						recieptdropdown.append('<option value="">---Select Reciept---</option>');
+						$.each(response.data, function (index, year) {
+							recieptdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
+				});
+				} else {
+					alert("Error: " + response.message);
+				}
+				$('#viewbtn').show();
+			},
+			error: function () {
+				alert("An error occurred while deleting the student.");
+			}
+		});
 
+		}
 
 		function callBtn(){
 			var yearid = $('#yearSelect').val();
 			var studentid = $('#studentSelect').val();
 			var termid = $('#termSelect').val();
+			var recieptno = $('#recieptSelect').val();
 			   var url = '@Url.Action("ExportStudentFeeCollectionReport", "StudentFeeCollection")';
-						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid;
+						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid + '&recieptno=' + recieptno;
 
 						// Create the View button dynamically
 						var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';

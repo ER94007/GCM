@@ -8,6 +8,11 @@
 		studentid = Model.studentid;
 		varShow = 1;
 	}
+	long finid = 0;
+	if (Model.FinancialYearId > 0)
+	{
+		finid = Model.FinancialYearId;
+	}
 }
 @model Inward.Entity.Student
 
@@ -41,6 +46,18 @@
 		<div class="card-header">
 			<h3 class="card-title">Add Student Information</h3>
 		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<!-- Inward No -->
+				<div class="form-group">
+					<label for="name">Academic Year</label>
+					<select value="@finid" id="yearid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text", finid))" onchange="bindacademicyear()" required>
+						<option value="">---Select Academic Year---</option>
+					</select>
+					<span asp-validation-for="FinancialYearId" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
 		<div style="margin-top: 20px;"></div>
 		<div>
 			<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio"> 1. Add by Form
@@ -57,8 +74,10 @@
 
 
 		<div style="margin-top: 20px;"></div>
-		<form asp-action="Index" asp-controller="Inward" method="post" id="fillDetailsForm">
+		<form  method="post" id="fillDetailsForm">
 			<input type="hidden" asp-for="studentid" value="@studentid" />
+			<input type="hidden" asp-for="FinancialYearId"  />
+			
 			<!-- Inward Information -->
 			<div class="row mb-3">
 				<div class="col-md-12">
@@ -69,16 +88,6 @@
 						</div>
 						<div class="card-body">
 							<div class="row">
-								<div class="col-md-4">
-									<!-- Inward No -->
-									<div class="form-group">
-										<label for="name">Academic Year</label>
-										<select asp-for="FinancialYearId" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
-											<option value="">---Select Academic Year---</option>
-										</select>
-										<span asp-validation-for="FinancialYearId" class="text-danger"></span>
-									</div>
-								</div>
 								<div class="col-md-4">
 									<!-- Inward No -->
 									<div class="form-group">
@@ -156,7 +165,7 @@
 			</div>
 
 			<div class="text-center mt-3">
-				<button type="submit" id="btnSave" class="btn btn-primary mr-1">
+				<button type="button"  id="btnSave" class="btn btn-primary mr-1">
 					<i class="fas fa-save mr-1"></i>
 					Save
 				</button>
@@ -176,6 +185,7 @@
 				<label for="file">Choose Excel File</label>
 				<input type="file" name="file" class="form-control" />
 			</div> *@
+			<input type="hidden" asp-for="FinancialYearId" />
 			<div class="form-group">
 				<label for="file">Choose Excel File</label>
 				<input type="file" name="file" class="form-control" accept=".xls,.xlsx" required />
@@ -252,6 +262,7 @@
 <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<form asp-action="FileUpload" enctype="multipart/form-data">
+			
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="uploadModalLabel">Upload Student Data</h5>
@@ -291,6 +302,23 @@
 <script src="~/assets/dist/js/sweetalert.js"></script>
 
 <script type="text/javascript">
+
+	$('#btnSave').click(function (e) {
+		// e.preventDefault();
+		var yearid = $('#yearid').val();
+		if(yearid == null || yearid == "") {
+			alert("Please select an academic year.");
+			e.preventDefault();
+			return;
+		}
+		else{
+			$('#fillDetailsForm').submit();
+		}
+	})
+	function bindacademicyear(){
+		var yearid = $('#yearid').val();
+		$('#FinancialYearId').val(yearid);
+	}
 	$(document).ready(function () {
 		debugger;
 		var msg = '@msg';
@@ -457,12 +485,16 @@
 			};
 			studentData.push(student);
 		});
-
+		var yearid = $('#yearid').val();
+		if(yearid == null || yearid == "") {
+			alert("Please select an academic year.");
+			return;
+		}
 		// Send the student data to the server for saving
 		$.ajax({
 			url: '@Url.Action("SaveStudents", "Student")',  // You will need to create this action in your controller
 			type: 'POST',
-			data: { students: studentData },
+			data: { students: studentData, yearid:yearid},
 			success: function (response) {
 				if (response.success) {
 					alert('Students saved successfully!');

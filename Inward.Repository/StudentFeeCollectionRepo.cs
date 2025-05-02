@@ -64,6 +64,29 @@ namespace GCM.Repository
                 throw;
             }
         }
+        public async Task<List<SelectListItem>> BindReciept(long id)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@Studentid", id);
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindReciept, queryParameters, commandType: CommandType.StoredProcedure);
+                    var termList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return termList;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public async Task<List<SelectListItem>> BindTerm()
         {
             try

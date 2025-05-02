@@ -44,7 +44,7 @@ namespace GCM.Repository
         //    }
         //}
 
-        public async Task<ResponseMessage> AddStudent(DataTable studentTable)
+        public async Task<ResponseMessage> AddStudent(DataTable studentTable, long yearid)
         {
             try
             {
@@ -54,6 +54,7 @@ namespace GCM.Repository
 
                     // Add the DataTable as a TVP parameter (SQL Server's table type)
                     queryParameters.Add("@Students", studentTable.AsTableValuedParameter("dbo.StudentTableType"));
+                    queryParameters.Add("@FinancialYearid", yearid);
 
                     // Define the output parameter for result (1 or 0)
                     queryParameters.Add("@ResultId", dbType: DbType.Int32, direction: ParameterDirection.Output);
