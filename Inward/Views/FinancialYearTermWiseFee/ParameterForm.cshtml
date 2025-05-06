@@ -19,6 +19,7 @@
 													<option class="bi-option" value="">---Select Report---</option>
 													<option class="bi-option" value="1">Student Details</option>
 													<option class="bi-option" value="2">Student Fee Collection Report</option>
+													<option class="bi-option" value="3">Student Fee Collection Detail Report</option>
 													<option class="bi-option" value="">---Select Year---</option>
 													<option class="bi-option" value="">---Select Year---</option>
 												</select>
@@ -38,7 +39,7 @@
 								<div class="col-md-4">
 									<div id="studentSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Student:</label>
-										<select class="form-control" id="studentSelect" onchange="BindTerm()">
+										<select class="form-control" id="studentSelect" >
 											<option value="">---Select Student---</option>
 										</select>
 									</div>
@@ -46,21 +47,29 @@
 								<div class="col-md-4">
 									<div id="termSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Term:</label>
-										<select class="form-control" id="termSelect" onchange="BindReciept()">
+										<select class="form-control" id="termSelect" onchange="callBtn()">
 											<option value="">---Select Term---</option>
 										</select>
 									</div>
 								</div>
+
 								<div class="col-md-4">
-									<div id="recieptSelection" style="margin-top: 10px; display: none;">
-										<label for="yearSelect">Select Reciept:</label>
-										<select class="form-control" id="recieptSelect" onchange="callBtn()">
-											<option value="">---Select Reciept---</option>
-										</select>
+									<div id="fromdateSelection" style="margin-top: 10px; display: none;">
+										<label for="fromdate">Select From Date:</label>
+										<input type="date" class="form-control" id="fromdate" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div id="todateSelection" style="margin-top: 10px; display: none;">
+										<label for="todate">Select To Date:</label>
+										<input type="date" class="form-control" id="todate" />
 									</div>
 								</div>
 							</div>
 							<div class="text-center" id="viewbtn"></div>
+							<div class="text-center" id="btnDetailReport" style="margin-top: 10px; display: none;">
+								<button class="btn btn-primary" onclick="exportReport()">View</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -78,6 +87,12 @@
 			else if(selectedopt == "2"){
 				  $('#yearSelection').show();
 				  BindYear();
+				  
+			}
+			else if(selectedopt == "3"){
+				  $('#fromdateSelection').show();
+				  $('#todateSelection').show();
+				  $('#btnDetailReport').show();
 				  
 			}
 			else{
@@ -110,7 +125,6 @@
 			});
 		}
 		function BindStudent(yearid){
-			
 			$.ajax({
 			url: '/Student/BindStudents',
 			data:{yearid:yearid},
@@ -125,7 +139,7 @@
 							studentdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
 				$('#termSelection').show();
-				
+				BindTerm();
 				} else {
 					alert("Error: " + response.message);
 				}
@@ -150,8 +164,7 @@
 							termdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
 
-					$('#recieptSelection').show();
-					
+						
 				} else {
 					alert("Error: " + response.message);
 				}
@@ -161,43 +174,36 @@
 			}
 		});
 		}
-		function BindReciept(){
-			var studentid = $('#studentSelect').val();
-			$.ajax({
-			url: '/Student/BindReciept',
-			data:{studentid:studentid},
-			type: 'GET',
-			success: function (response) {
-				if (response.success) {
-					var recieptdropdown = $('#recieptSelect');
-						recieptdropdown.empty(); // Clear previous options
-						recieptdropdown.append('<option value="">---Select Reciept---</option>');
-						$.each(response.data, function (index, year) {
-							recieptdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
-				});
-				} else {
-					alert("Error: " + response.message);
-				}
-				$('#viewbtn').show();
-			},
-			error: function () {
-				alert("An error occurred while deleting the student.");
-			}
-		});
 
-		}
 
 		function callBtn(){
+			alert(1);
 			var yearid = $('#yearSelect').val();
 			var studentid = $('#studentSelect').val();
 			var termid = $('#termSelect').val();
-			var recieptno = $('#recieptSelect').val();
 			   var url = '@Url.Action("ExportStudentFeeCollectionReport", "StudentFeeCollection")';
-						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid + '&recieptno=' + recieptno;
+						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid;
 
 						// Create the View button dynamically
 						var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';
 						$('#viewbtn').html(list);
+		}
+
+
+		function exportReport() {
+
+			const fromDate = document.getElementById('fromdate').value;
+			const toDate = document.getElementById('todate').value;
+
+			if (!fromDate || !toDate) {
+				alert("Please select both From Date and To Date.");
+				return;
+			}
+
+			const url = `/StudentFeeCollection/ExportFeeCollectionDetailReport?fromdate=${fromDate}&todate=${toDate}`;
+
+			// Opens the PDF in a new tab or triggers download depending on browser settings
+			window.open(url, '_blank');
 		}
 
 	</script>

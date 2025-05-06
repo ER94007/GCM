@@ -318,3 +318,6 @@ C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\refint\GCM.dll
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\GCM.pdb
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\GCM.genruntimeconfig.cache
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\ref\GCM.dll
+D:\GCAS_GIT\Inward\bin\Debug\net8.0\wwwroot\Dataset\studentfeecollection.xsd
+D:\GCAS_GIT\Inward\bin\Debug\net8.0\wwwroot\Reports\StudentFeeCollectionReport1.rdlc
+D:\GCAS_GIT\Inward\bin\Debug\net8.0\wwwroot\Reports\StudentFeeCollectionReport.rdlc

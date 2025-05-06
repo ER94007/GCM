@@ -62,7 +62,8 @@ namespace Inward.Entity
 		public static string Deletehead = "Deletehead";
 		public static string GetheadById = "GetheadById";
 		public static string AddUpdateHead = "AddUpdateHead";
+        public static string GetFeeCollectionDetailReport = "Report_studentsFeeCollectionDetail";
 
 
-	}
+    }
 }

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace GCM.Reports.Dataset {
+namespace GCM.wwwroot.Dataset {
     
     
     /// <summary>
@@ -283,11 +283,11 @@ namespace GCM.Reports.Dataset {
             
             private global::System.Data.DataColumn columnCreatedDate;
             
-            private global::System.Data.DataColumn columnFeeReceiptNo;
+            private global::System.Data.DataColumn columnRecieptNo;
             
             private global::System.Data.DataColumn columnCreatedBy;
             
-            private global::System.Data.DataColumn columnSubHead;
+            private global::System.Data.DataColumn columnSubHeadName;
             
             private global::System.Data.DataColumn columnAmount;
             
@@ -336,9 +336,9 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FeeReceiptNoColumn {
+            public global::System.Data.DataColumn RecieptNoColumn {
                 get {
-                    return this.columnFeeReceiptNo;
+                    return this.columnRecieptNo;
                 }
             }
             
@@ -352,9 +352,9 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SubHeadColumn {
+            public global::System.Data.DataColumn SubHeadNameColumn {
                 get {
-                    return this.columnSubHead;
+                    return this.columnSubHeadName;
                 }
             }
             
@@ -403,13 +403,13 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtFeeCollectionDetailRow AdddtFeeCollectionDetailRow(string CreatedDate, string FeeReceiptNo, string CreatedBy, string SubHead, string Amount) {
+            public dtFeeCollectionDetailRow AdddtFeeCollectionDetailRow(string CreatedDate, string RecieptNo, string CreatedBy, string SubHeadName, string Amount) {
                 dtFeeCollectionDetailRow rowdtFeeCollectionDetailRow = ((dtFeeCollectionDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CreatedDate,
-                        FeeReceiptNo,
+                        RecieptNo,
                         CreatedBy,
-                        SubHead,
+                        SubHeadName,
                         Amount};
                 rowdtFeeCollectionDetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtFeeCollectionDetailRow);
@@ -434,9 +434,9 @@ namespace GCM.Reports.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnCreatedDate = base.Columns["CreatedDate"];
-                this.columnFeeReceiptNo = base.Columns["FeeReceiptNo"];
+                this.columnRecieptNo = base.Columns["RecieptNo"];
                 this.columnCreatedBy = base.Columns["CreatedBy"];
-                this.columnSubHead = base.Columns["SubHead"];
+                this.columnSubHeadName = base.Columns["SubHeadName"];
                 this.columnAmount = base.Columns["Amount"];
             }
             
@@ -445,12 +445,12 @@ namespace GCM.Reports.Dataset {
             private void InitClass() {
                 this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedDate);
-                this.columnFeeReceiptNo = new global::System.Data.DataColumn("FeeReceiptNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFeeReceiptNo);
+                this.columnRecieptNo = new global::System.Data.DataColumn("RecieptNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRecieptNo);
                 this.columnCreatedBy = new global::System.Data.DataColumn("CreatedBy", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedBy);
-                this.columnSubHead = new global::System.Data.DataColumn("SubHead", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubHead);
+                this.columnSubHeadName = new global::System.Data.DataColumn("SubHeadName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubHeadName);
                 this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAmount);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_dtFeeCollectionDetail");
@@ -613,17 +613,17 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string FeeReceiptNo {
+            public string RecieptNo {
                 get {
                     try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.FeeReceiptNoColumn]));
+                        return ((string)(this[this.tabledtFeeCollectionDetail.RecieptNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FeeReceiptNo\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RecieptNo\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtFeeCollectionDetail.FeeReceiptNoColumn] = value;
+                    this[this.tabledtFeeCollectionDetail.RecieptNoColumn] = value;
                 }
             }
             
@@ -645,17 +645,17 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SubHead {
+            public string SubHeadName {
                 get {
                     try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.SubHeadColumn]));
+                        return ((string)(this[this.tabledtFeeCollectionDetail.SubHeadNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SubHead\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubHeadName\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtFeeCollectionDetail.SubHeadColumn] = value;
+                    this[this.tabledtFeeCollectionDetail.SubHeadNameColumn] = value;
                 }
             }
             
@@ -689,14 +689,14 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFeeReceiptNoNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.FeeReceiptNoColumn);
+            public bool IsRecieptNoNull() {
+                return this.IsNull(this.tabledtFeeCollectionDetail.RecieptNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFeeReceiptNoNull() {
-                this[this.tabledtFeeCollectionDetail.FeeReceiptNoColumn] = global::System.Convert.DBNull;
+            public void SetRecieptNoNull() {
+                this[this.tabledtFeeCollectionDetail.RecieptNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -713,14 +713,14 @@ namespace GCM.Reports.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSubHeadNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.SubHeadColumn);
+            public bool IsSubHeadNameNull() {
+                return this.IsNull(this.tabledtFeeCollectionDetail.SubHeadNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSubHeadNull() {
-                this[this.tabledtFeeCollectionDetail.SubHeadColumn] = global::System.Convert.DBNull;
+            public void SetSubHeadNameNull() {
+                this[this.tabledtFeeCollectionDetail.SubHeadNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

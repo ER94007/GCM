@@ -5,6 +5,12 @@
     <None Update="Dataset\dbStudentdetails.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="Dataset\.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Dataset\dtFeeCollectionDetails.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Update="Dataset\studentfeecollection.xsd">
       <SubType>Designer</SubType>
     </None>
