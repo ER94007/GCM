@@ -502,6 +502,7 @@ namespace GCM.Controllers
             var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
 
             return File(result, "application/pdf", "FeeCollectionDetailReport.pdf");
+
         }
     }
 }
