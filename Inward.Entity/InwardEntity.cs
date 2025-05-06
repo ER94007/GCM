@@ -100,5 +100,14 @@ namespace Inward.Entity
         public Int64 GovtTotal { get; set; }
         public Int64 PrivateTotal { get; set; }
     }
- 
+    public class FeeCollectionDetailReport
+    {
+
+        public string CreatedDate { get; set; }
+        public string RecieptNo { get; set; }
+        public string CreatedBy { get; set; }
+        public string SubHeadName { get; set; }
+        public Int64 Amount { get; set; }
+    }
+
 }

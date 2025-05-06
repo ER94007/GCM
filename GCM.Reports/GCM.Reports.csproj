@@ -20,6 +20,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>dbStudentdetails.xsd</DependentUpon>
     </Compile>
+    <Compile Update="Dataset\.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Dataset\dtFeeCollectionDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dtFeeCollectionDetails.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Dataset\studentfeecollection.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -31,6 +41,14 @@
     <None Update="Dataset\dbStudentdetails.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dbStudentdetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Dataset\.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Dataset\dtFeeCollectionDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtFeeCollectionDetails.Designer.cs</LastGenOutput>
     </None>
     <None Update="Dataset\studentfeecollection.xsd">
       <Generator>MSDataSetGenerator</Generator>

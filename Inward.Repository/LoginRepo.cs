@@ -528,5 +528,26 @@ namespace Inward.Repository
 				throw;
 			}
 		}
-	}
+
+        public async Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate, string todate)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@fromdate", fromdate);
+                    queryParameters.Add("@todate", todate);
+
+                    var res = await conn.QueryAsync<FeeCollectionDetailReport>(StoreProcedures.GetFeeCollectionDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
 }

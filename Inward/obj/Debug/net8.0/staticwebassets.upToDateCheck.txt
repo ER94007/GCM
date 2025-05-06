@@ -2116,10 +2116,15 @@ wwwroot\assets\plugins\uplot\uPlot.iife.min.js
 wwwroot\assets\plugins\uplot\uPlot.min.css
 wwwroot\css\bootstrap-datepicker.min.css
 wwwroot\css\datatables.min.css
+wwwroot\css\login.css
 wwwroot\css\select2.css
 wwwroot\css\site.css
 wwwroot\css\sweetalert.css
 wwwroot\Dataset\dbStudentdetails.cs
+wwwroot\Dataset\studentfeecollection.Designer.cs
+wwwroot\Dataset\studentfeecollection.xsd
+wwwroot\Dataset\StudentFeeDetailsReport.xsd
+wwwroot\Dataset\StudentFeeDetailsReport.xss
 wwwroot\Dataset\StudentInfo.Designer.cs
 wwwroot\favicon.ico
 wwwroot\Files\ExcelDemo.xlsx
@@ -2201,6 +2206,9 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\Reports\StudentDetailReport.rdlc
+wwwroot\Reports\StudentFeeCollectionReport.rdlc
+wwwroot\Reports\StudentFeeCollectionReport1.rdlc
 wwwroot\uploads\New Microsoft Excel Worksheet.xlsx
 wwwroot\uploads\std.xlsx
 wwwroot\uploads\stu.xlsx

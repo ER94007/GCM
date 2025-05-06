@@ -488,6 +488,21 @@ namespace GCM.Controllers
 
 		}
 
-	}
+        [HttpGet]
+        public async Task<IActionResult> ExportFeeCollectionDetailReport(string fromdate, string todate)
+        {
+            var feecollectiondetail = await _userLoginService.GetFeeCollectionDetailReport(fromdate,todate);
+
+            var report = new LocalReport();
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "FeeCollectionDetailReport.rdlc");
+            report.ReportPath = path;
+
+            report.DataSources.Add(new ReportDataSource("dtFeeCollectionDetail", feecollectiondetail));
+
+            var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+            return File(result, "application/pdf", "FeeCollectionDetailReport.pdf");
+        }
+    }
 }
 

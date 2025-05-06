@@ -19,6 +19,7 @@
 													<option class="bi-option" value="">---Select Report---</option>
 													<option class="bi-option" value="1">Student Details</option>
 													<option class="bi-option" value="2">Student Fee Collection Report</option>
+													<option class="bi-option" value="3">Student Fee Collection Detail Report</option>
 													<option class="bi-option" value="">---Select Year---</option>
 													<option class="bi-option" value="">---Select Year---</option>
 												</select>
@@ -51,8 +52,24 @@
 										</select>
 									</div>
 								</div>
+
+								<div class="col-md-4">
+									<div id="fromdateSelection" style="margin-top: 10px; display: none;">
+										<label for="fromdate">Select From Date:</label>
+										<input type="date" class="form-control" id="fromdate" />
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div id="todateSelection" style="margin-top: 10px; display: none;">
+										<label for="todate">Select To Date:</label>
+										<input type="date" class="form-control" id="todate" />
+									</div>
+								</div>
 							</div>
 							<div class="text-center" id="viewbtn"></div>
+							<div class="text-center" id="btnDetailReport" style="margin-top: 10px; display: none;">
+								<button class="btn btn-primary" onclick="exportReport()">View</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -70,6 +87,12 @@
 			else if(selectedopt == "2"){
 				  $('#yearSelection').show();
 				  BindYear();
+				  
+			}
+			else if(selectedopt == "3"){
+				  $('#fromdateSelection').show();
+				  $('#todateSelection').show();
+				  $('#btnDetailReport').show();
 				  
 			}
 			else{
@@ -154,6 +177,7 @@
 
 
 		function callBtn(){
+			alert(1);
 			var yearid = $('#yearSelect').val();
 			var studentid = $('#studentSelect').val();
 			var termid = $('#termSelect').val();
@@ -163,6 +187,23 @@
 						// Create the View button dynamically
 						var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';
 						$('#viewbtn').html(list);
+		}
+
+
+		function exportReport() {
+
+			const fromDate = document.getElementById('fromdate').value;
+			const toDate = document.getElementById('todate').value;
+
+			if (!fromDate || !toDate) {
+				alert("Please select both From Date and To Date.");
+				return;
+			}
+
+			const url = `/StudentFeeCollection/ExportFeeCollectionDetailReport?fromdate=${fromDate}&todate=${toDate}`;
+
+			// Opens the PDF in a new tab or triggers download depending on browser settings
+			window.open(url, '_blank');
 		}
 
 	</script>

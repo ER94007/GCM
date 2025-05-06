@@ -37,6 +37,7 @@ namespace Inward.Services.Abstraction
 		Task<ResponseMessage> Deletehead(long id);
 		Task<HeadMasterEntity> GetheadById(long HeadMasterId);
 		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity subHead);
+        Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate, string todate);
 
-	}
+    }
 }

@@ -40,6 +40,7 @@ namespace Inward.Repository.Abstraction
 		Task<ResponseMessage> Deletehead(long id);
 		Task<HeadMasterEntity> GetheadById(long id);
 		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity Head);
+        Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate,string todate);
 
 	}
 }
