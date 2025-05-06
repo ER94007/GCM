@@ -16,6 +16,7 @@ namespace GCM.Repository.Abstraction
         Task<List<SelectListItem>> BindFinancialYear();
         Task<List<SelectListItem>> BindStudents(long id);
         Task<List<SelectListItem>> BindTerm();
+        Task<List<SelectListItem>> BindReciept(long id);
         Task<List<SelectListItem>> BindSubhead();
         Task<IEnumerable<StudentFeeCollection>> FeeDetails(int termId, int financialYearId, int studentid);
         Task<ResponseMessage> AddFeeCollection(StudentFeeCollection model,decimal fees);

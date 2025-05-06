@@ -27,6 +27,7 @@
               <xs:element name="TermName" msprop:Generator_ColumnPropNameInTable="TermNameColumn" msprop:Generator_ColumnPropNameInRow="TermName" msprop:Generator_UserColumnName="TermName" msprop:Generator_ColumnVarNameInTable="columnTermName" type="xs:string" minOccurs="0" />
               <xs:element name="RecieptNo" msprop:Generator_ColumnPropNameInTable="RecieptNoColumn" msprop:Generator_ColumnPropNameInRow="RecieptNo" msprop:Generator_UserColumnName="RecieptNo" msprop:Generator_ColumnVarNameInTable="columnRecieptNo" type="xs:string" minOccurs="0" />
               <xs:element name="CreatedDate" msprop:Generator_ColumnPropNameInTable="CreatedDateColumn" msprop:Generator_ColumnPropNameInRow="CreatedDate" msprop:Generator_UserColumnName="CreatedDate" msprop:Generator_ColumnVarNameInTable="columnCreatedDate" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalAmount" msprop:Generator_ColumnPropNameInRow="TotalAmount" msprop:Generator_ColumnPropNameInTable="TotalAmountColumn" msprop:Generator_ColumnVarNameInTable="columnTotalAmount" msprop:Generator_UserColumnName="TotalAmount" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

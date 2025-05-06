@@ -21,7 +21,27 @@
       "PackagePath": "staticwebassets\\Dataset\\dbStudentdetails.cs"
     },
     {
+<<<<<<< HEAD
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\studentfeecollection.Designer.cs",
+=======
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.Designer.cs",
+      "PackagePath": "staticwebassets\\Dataset\\dtFeeCollectionDetail.Designer.cs"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsc",
+      "PackagePath": "staticwebassets\\Dataset\\dtFeeCollectionDetail.xsc"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsd",
+      "PackagePath": "staticwebassets\\Dataset\\dtFeeCollectionDetail.xsd"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xss",
+      "PackagePath": "staticwebassets\\Dataset\\dtFeeCollectionDetail.xss"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Dataset\\studentfeecollection.Designer.cs",
+>>>>>>> origin/master
       "PackagePath": "staticwebassets\\Dataset\\studentfeecollection.Designer.cs"
     },
     {
@@ -61,7 +81,15 @@
       "PackagePath": "staticwebassets\\Images\\user2-160x160.jpg"
     },
     {
+<<<<<<< HEAD
       "Id": "D:\\GCAS_GIT\\Inward\\wwwroot\\Reports\\StudentDetailReport.rdlc",
+=======
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\FeeCollectionDetailReport.rdlc",
+      "PackagePath": "staticwebassets\\Reports\\FeeCollectionDetailReport.rdlc"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentDetailReport.rdlc",
+>>>>>>> origin/master
       "PackagePath": "staticwebassets\\Reports\\StudentDetailReport.rdlc"
     },
     {

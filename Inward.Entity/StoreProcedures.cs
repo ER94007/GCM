@@ -34,6 +34,7 @@ namespace Inward.Entity
         public static string GetFinanceData = "GetFinanceData";
         public static string AddFinancialYearTermFee = "AddFinancialYearTermFee";
         public static string BindYear = "BindYear";
+        public static string BindReciept = "BindReciept";
         public static string BindTerm = "BindTerm";
         public static string BindSubhead = "BindSubhead";
         public static string DeleteStudent = "DeleteStudent";

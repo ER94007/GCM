@@ -17,9 +17,6 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <Content Update="wwwroot\Dataset\studentfeecollection.Designer.cs">
-      <SubType>Code</SubType>
-    </Content>
     <Content Update="wwwroot\Dataset\StudentInfo.Designer.cs">
       <SubType>Code</SubType>
     </Content>

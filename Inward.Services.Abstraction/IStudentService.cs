@@ -11,6 +11,6 @@ namespace GCM.Services.Abstraction
 {
     public interface IStudentService
     {
-        Task<ResponseMessage> AddStudent(DataTable studentTable);
+        Task<ResponseMessage> AddStudent(DataTable studentTable, long yearid);
     }
 }

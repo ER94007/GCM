@@ -25,11 +25,11 @@ namespace GCM.Entity
         public string RecieptNo { get; set; } 
         public string FeeModeDescription { get; set; }
         public string name { get; set; }
-        public string GovernmentFee { get; set; }
+        public string? GovernmentFee { get; set; }
         public long GovAmount { get; set; }
         public string PrivateFee { get; set; }
         public long PrivAmount { get; set; }
-        public string GovernmentTotal { get; set; }
+        public string? GovernmentTotal { get; set; }
         public List<FeeDetail> FeeDetailLists { get; set; } = new List<FeeDetail>();
         public string EnrolmentNo { get; set; }
         public string ApplicationNo { get; set; }
@@ -50,9 +50,11 @@ namespace GCM.Entity
         public List<FeeDetaillistMannually> FeeDetaillistMannually { get; set; } = new List<FeeDetaillistMannually>();
         public DataTable fdt { get; set; }
 
-    }
+		public string TotalAmount { get; set; }
 
-       public class StudentFeeDetail
+	}
+
+	public class StudentFeeDetail
     {
         public int Id { get; set; }
         public int StudentFeeCollectionId { get; set; }
