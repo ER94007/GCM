@@ -18,10 +18,9 @@
 												<select class="form-control select2" id="reportSelect" onchange="selectReport()">
 													<option class="bi-option" value="">---Select Report---</option>
 													<option class="bi-option" value="1">Student Details</option>
-													<option class="bi-option" value="2">Student Fee Collection Report</option>
-													<option class="bi-option" value="3">Student Fee Collection Detail Report</option>
-													<option class="bi-option" value="">---Select Year---</option>
-													<option class="bi-option" value="">---Select Year---</option>
+													<option class="bi-option" value="2">Student Fee Reciept Report</option>
+													<option class="bi-option" value="3">Student Fee Collection Report</option>
+													<option class="bi-option" value="4">Verticle Laser</option>
 												</select>
 
 											</div>
@@ -39,7 +38,7 @@
 								<div class="col-md-4">
 									<div id="studentSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Student:</label>
-										<select class="form-control" id="studentSelect" >
+										<select class="form-control" id="studentSelect">
 											<option value="">---Select Student---</option>
 										</select>
 									</div>
@@ -70,6 +69,10 @@
 							<div class="text-center" id="btnDetailReport" style="margin-top: 10px; display: none;">
 								<button class="btn btn-primary" onclick="exportReport()">View</button>
 							</div>
+
+							<div class="text-center" id="btnFeecollectionReport" style="margin-top: 10px; display: none;">
+								<button class="btn btn-primary" onclick="exportFeecollectionReport()">View</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -80,20 +83,55 @@
 		function selectReport(){
 			var selectedopt = $('#reportSelect').val();
 			if(selectedopt == "1"){
+				$('#viewbtn').show();
+				 $('#btnFeecollectionReport').hide();
+				 $('#yearSelection').hide();
+				  $('#studentSelection').hide();
+				  $('#termSelection').hide();
+				  $('#fromdateSelection').hide();
+				  $('#todateSelection').hide();
+				  $('#btnDetailReport').hide();
+
 				var list = '<a href="/Student/ExportStudentReport" class="btn btn-primary">View</a> ';
 				$('#viewbtn').html(list);
 				// window.location.href = '@Url.Action("ExportStudentReport", "Student")';
+
 			}
 			else if(selectedopt == "2"){
+				$('#viewbtn').show();
+				  $('#fromdateSelection').hide();
+				  $('#btnFeecollectionReport').hide();
+				  $('#todateSelection').hide();
+				  $('#btnDetailReport').hide();
 				  $('#yearSelection').show();
 				  BindYear();
-				  
+
 			}
 			else if(selectedopt == "3"){
+				$('#viewbtn').hide();
+				$('#studentSelection').hide();
+				$('#btnFeecollectionReport').show();
+				  $('#fromdateSelection').hide();
+				  $('#todateSelection').hide();
+				  $('#btnDetailReport').hide();
+				  $('#yearSelection').show();
+				  BindYear();
+				  $('#termSelection').show();
+				BindTerm();
+
+			}
+			else if(selectedopt == "4"){
+				$('#viewbtn').hide();
+				$('#btnFeecollectionReport').hide();
+				  $('#yearSelection').hide();
+				  $('#studentSelection').hide();
+				  $('#termSelection').hide();
 				  $('#fromdateSelection').show();
 				  $('#todateSelection').show();
 				  $('#btnDetailReport').show();
-				  
+
+
+
 			}
 			else{
 				alert("Please select a valid option.");
@@ -101,6 +139,7 @@
 		}
 
 		function BindYear(){
+			var selectedopt = $('#reportSelect').val();
 				$.ajax({
 				url: '/Student/BindYear',
 				type: 'GET',
@@ -113,8 +152,9 @@
 						$.each(response.data, function (index, year) {
 							yearDropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
-				$('#studentSelection').show();
-				
+				if(selectedopt==2){
+					$('#studentSelection').show();
+				}
 					} else {
 						alert("Error: " + response.message);
 					}
@@ -164,7 +204,7 @@
 							termdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
 				});
 
-						
+
 				} else {
 					alert("Error: " + response.message);
 				}
@@ -177,7 +217,6 @@
 
 
 		function callBtn(){
-			alert(1);
 			var yearid = $('#yearSelect').val();
 			var studentid = $('#studentSelect').val();
 			var termid = $('#termSelect').val();
@@ -201,6 +240,21 @@
 			}
 
 			const url = `/StudentFeeCollection/ExportFeeCollectionDetailReport?fromdate=${fromDate}&todate=${toDate}`;
+
+			// Opens the PDF in a new tab or triggers download depending on browser settings
+			window.open(url, '_blank');
+		}
+
+		function exportFeecollectionReport() {
+			const year = document.getElementById('yearSelect').value;
+			const term = document.getElementById('termSelect').value;
+
+			if (!year || !term) {
+				alert("Please select both year and term.");
+				return;
+			}
+
+			const url = `/Student/ExportStudentFeeDetailReport?YearId=${year}&TermId=${term}`;
 
 			// Opens the PDF in a new tab or triggers download depending on browser settings
 			window.open(url, '_blank');

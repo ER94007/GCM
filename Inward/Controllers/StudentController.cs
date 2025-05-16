@@ -512,9 +512,9 @@ namespace GCM.Controllers
             return Json(new { success = true, data = yearlist });
         }
         [HttpGet]
-        public async Task<IActionResult> ExportStudentFeeDetailReport()
+        public async Task<IActionResult> ExportStudentFeeDetailReport(int YearId, int TermId)
         {
-            var students = await _userLoginService.GetStudentFeeDetailReport(1, 1);
+            var students = await _userLoginService.GetStudentFeeDetailReport(YearId,TermId);
 
             var report = new LocalReport();
             var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentDetailReport.rdlc");
