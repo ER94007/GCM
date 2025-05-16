@@ -137,7 +137,7 @@
 					availableBalance = response.data; // store it globally
 					$('#availbalance').text("Available Balance: " + availableBalance);
 				} else {
-					alert("Error: " + response.message);
+					alert("Opening balance is not defined" );
 				}
 			},
 			error: function () {

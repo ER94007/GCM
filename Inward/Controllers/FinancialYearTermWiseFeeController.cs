@@ -274,7 +274,14 @@ namespace GCM.Controllers
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
                 var result = await _ifinancialYearTermWiseFee.GetBalanceData(Convert.ToInt64(subheadid), Convert.ToInt64(finyearid));
-                return Json(new { data = result , success=true});
+                if(result > 0)
+				{
+					return Json(new { data = result , success=true});
+				}
+				else
+				{
+                    return Json(new { data = result, success = false });
+                }
             }
             else
             {

@@ -1,138 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GCAS_GIT\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\dataset\\dtfeecollectiondetail.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\dataset\\dtfeecollectiondetail.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+      "AbsoluteMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|c:\\users\\admin\\desktop\\gcm\\inward.services\\financialyeartermwisefeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|solutionrelative:inward.services\\financialyeartermwisefeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\reports\\feecollectiondetailreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\reports\\feecollectiondetailreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\reports\\studentfeecollectionreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\reports\\studentfeecollectionreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\wwwroot\\reports\\studentfeecollectionreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\reports\\studentfeecollectionreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|c:\\users\\admin\\desktop\\gcm\\inward.entity\\studentfeecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\studentfeecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> origin/master
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\studentfeecollectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\dataset\\dtfeecollectiondetail.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\dataset\\dtfeecollectiondetail.xsc||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|d:\\gcas_git\\gcm.reports\\dataset\\dtfeecollectiondetails.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
-      "RelativeMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|solutionrelative:gcm.reports\\dataset\\dtfeecollectiondetails.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\wwwroot\\dataset\\dtfeecollectiondetail.xss||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\wwwroot\\dataset\\dtfeecollectiondetail.xss||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-=======
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> origin/master
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\financialyeartermwisefee\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\financialyeartermwisefee\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\studentfeecollection\\viewstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\studentfeecollection\\viewstudentfeecollection.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|d:\\gcas_git\\inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|solutionrelative:inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|d:\\gcas_git\\inward.entity\\inwardentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\inwardentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|d:\\gcas_git\\inward.entity\\storeprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CC3FCCF-63C8-435B-8F3D-D0A82AB7C895}|Inward.Entity\\GCM.Entity.csproj|solutionrelative:inward.entity\\storeprocedures.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{483B3FF2-AB95-455D-AD05-3FA6C941E11A}|Inward.Repository\\GCM.Repository.csproj|d:\\gcas_git\\inward.repository\\loginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{483B3FF2-AB95-455D-AD05-3FA6C941E11A}|Inward.Repository\\GCM.Repository.csproj|solutionrelative:inward.repository\\loginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|d:\\gcas_git\\inward.services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|solutionrelative:inward.services\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|d:\\gcas_git\\inward.repository.abstraction\\iloginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|solutionrelative:inward.repository.abstraction\\iloginrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\report\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\report\\parameterform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\inward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\headmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\headmastercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\headmaster\\getheadlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\headmaster\\getheadlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|d:\\gcas_git\\gcm.reports\\feecollectiondetailreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
-      "RelativeMoniker": "D:0:0:{A5F1B4C7-20B0-47FB-A1F3-38891CF15E1B}|GCM.Reports\\GCM.Reports.csproj|solutionrelative:gcm.reports\\feecollectiondetailreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{483B3FF2-AB95-455D-AD05-3FA6C941E11A}|Inward.Repository\\GCM.Repository.csproj|d:\\gcas_git\\inward.repository\\studentfeecollectionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{483B3FF2-AB95-455D-AD05-3FA6C941E11A}|Inward.Repository\\GCM.Repository.csproj|solutionrelative:inward.repository\\studentfeecollectionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|d:\\gcas_git\\inward.services.abstraction\\istudentfeecollectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|solutionrelative:inward.services.abstraction\\istudentfeecollectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|d:\\gcas_git\\inward.repository.abstraction\\istudentfeecollectionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAD94315-A0F1-490E-9266-968AB4100724}|Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj|solutionrelative:inward.repository.abstraction\\istudentfeecollectionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|d:\\gcas_git\\inward.services\\studentfeecollectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|solutionrelative:inward.services\\studentfeecollectionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\inward\\viewstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\735f2a5f94817d09f7cd01388d384701ef1afdf87556dd8b5ddbed1b9a7facad\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\financialyeartermwisefeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\financialyeartermwisefeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|d:\\gcas_git\\inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|c:\\users\\admin\\desktop\\gcm\\inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|solutionrelative:inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,17 +22,6 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 10,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-=======
           "SelectedChildIndex": 7,
           "Children": [
             {
@@ -166,7 +35,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
->>>>>>> origin/master
             },
             {
               "$type": "Bookmark",
@@ -174,534 +42,46 @@
             },
             {
               "$type": "Bookmark",
-<<<<<<< HEAD
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-=======
               "Name": "ST:133:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StudentFeeCollection.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\StudentFeeCollection.cs",
-              "RelativeDocumentMoniker": "Inward.Entity\\StudentFeeCollection.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\StudentFeeCollection.cs",
-              "RelativeToolTip": "Inward.Entity\\StudentFeeCollection.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAA7wDQAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T07:08:24.364Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\appsettings.json",
-              "RelativeDocumentMoniker": "Inward\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\appsettings.json",
-              "RelativeToolTip": "Inward\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAB+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-02T07:03:03.668Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StudentFeeCollectionReport.rdlc [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc [Design]",
-              "RelativeToolTip": "Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-05-02T06:58:27.111Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\StudentController.cs",
-              "ViewState": "AQIAANcBAAAAAAAAAAAIwOcBAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T05:15:25.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
->>>>>>> origin/master
-              "Title": "StudentFeeCollectionController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentFeeCollectionController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\StudentFeeCollectionController.cs",
-<<<<<<< HEAD
-              "ViewState": "AgIAAOMBAAAAAAAAAAAAAPsBAAAAAAAAAAAAAA==",
-=======
-              "ViewState": "AQIAAGEBAAAAAAAAAAAewHABAABuAAAA",
->>>>>>> origin/master
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:36:22.823Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 4,
-              "Title": "dtFeeCollectionDetail.xsc",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsc",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsc",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsc",
-              "RelativeToolTip": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsc",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001612|",
-              "WhenOpened": "2025-05-06T18:10:45.75Z",
-=======
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAAAF0AAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T13:35:47.911Z",
->>>>>>> origin/master
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 1,
-              "Title": "FeeCollectionDetailReport.rdlc [Design]",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\wwwroot\\Reports\\FeeCollectionDetailReport.rdlc",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Reports\\FeeCollectionDetailReport.rdlc",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\wwwroot\\Reports\\FeeCollectionDetailReport.rdlc [Design]",
-              "RelativeToolTip": "Inward\\wwwroot\\Reports\\FeeCollectionDetailReport.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-05-01T17:23:19.339Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dtFeeCollectionDetail.xsd",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsd",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsd",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsd",
-              "RelativeToolTip": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-05-06T15:42:15.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StudentFeeCollectionReport.rdlc [Design]",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc [Design]",
-              "RelativeToolTip": "Inward\\wwwroot\\Reports\\StudentFeeCollectionReport.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-05-06T18:18:58.027Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dtFeeCollectionDetails.xsd",
-              "DocumentMoniker": "D:\\GCAS_GIT\\GCM.Reports\\Dataset\\dtFeeCollectionDetails.xsd",
-              "RelativeDocumentMoniker": "GCM.Reports\\Dataset\\dtFeeCollectionDetails.xsd",
-              "ToolTip": "D:\\GCAS_GIT\\GCM.Reports\\Dataset\\dtFeeCollectionDetails.xsd",
-              "RelativeToolTip": "GCM.Reports\\Dataset\\dtFeeCollectionDetails.xsd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-05-06T18:12:16.471Z",
-=======
-              "DocumentIndex": 6,
-              "Title": "LoginRepo.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\LoginRepo.cs",
-              "RelativeDocumentMoniker": "Inward.Repository\\LoginRepo.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\LoginRepo.cs",
-              "RelativeToolTip": "Inward.Repository\\LoginRepo.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAWwFgAAAAUAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T12:08:12.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ILoginService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
-              "RelativeDocumentMoniker": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
-              "RelativeToolTip": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T12:06:39.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AddHeadMaster.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\HeadMaster\\AddHeadMaster.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\HeadMaster\\AddHeadMaster.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\HeadMaster\\AddHeadMaster.cshtml",
-              "RelativeToolTip": "Inward\\Views\\HeadMaster\\AddHeadMaster.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABoAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T12:05:50.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "InwardController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
               "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
               "RelativeToolTip": "Inward\\Controllers\\InwardController.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAYwL0AAAARAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAYwD8AAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T11:29:44.132Z",
->>>>>>> origin/master
+              "WhenOpened": "2025-05-16T06:03:05.333Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 6,
-              "Title": "dtFeeCollectionDetail.xss",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xss",
-              "RelativeDocumentMoniker": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xss",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xss",
-              "RelativeToolTip": "Inward\\wwwroot\\Dataset\\dtFeeCollectionDetail.xss",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANwSURBVDhPhZRPSytnFMafyUwqDQnEqMSKmXpjx7RIQhO4WhRisd1F10VcGcldtCIY0H4BQbsRP4Gu3DQKVtzUTcCQYFSqjVjQufHepBFM7sTgzCRjJzOZLoppJqn2B\u002B/iPec5z3l5/wH/w\u002BTkJF0ul78vl8sxURRLoijWmsZ7URQ3Y7FYAJqmEc0GjYRCodHZ2dnvLBbLRDqd7jg\u002BPv64UChQjRq32/2X2\u002B0Wurq63nIc9/OzhqFQ6KOpqakfent7566url91dXYhn89DLIs6XbfdDoIgoKhKZXR09FrXrZFAIGD0eDy92Wz2VaFQgM/rg8vlapYBAP64vETmbdYE4EtDc/KJXC5XK5VKtWpVQbHIIZ8voFQqged53eA4Dh\u002B4D\u002BB5HgDw7AoXFxclnuerQ0NDiEajYK9ZuFyfw9pu1enev3uHdDpdj\u002Bv2cHx8/NtwOPzj09zpdPZbrda\u002BVCqFjY0NqKoKijI2lkCSKpAkCU6nE2tra/oVdnd3f\u002BLz\u002Bb7Z39\u002BHoijIZrOgaRoejwe1Wg339/eN8v\u002BkZQ8FQcDu7i4ikQgikQgSiUSz5EVaDA0GA2w2GyiKgslkgtlsbpa8SIuh3W7HysoKBgYGEAgEEAwGmyUvQgHA8vLyT/39/Z85HA6aJEnYbDYYjUaYTCZYLBbIsoz5\u002BXnIsoxEIoFoNKozIUkSRuM/h0UBgN/v/5ogiNcsy4JlWQBAPp9HKpWCpmn1wpGREdA0XZ8DQHt7O2iahtfrLQO4JADg8PAweXJy8joej7cUAEC1WgXLslhaWoIsyzg4OKjnenp6HgcHB\u002B9pmr7KZDIRymw2WwwGgwEAvF4vwuEwAKBSqVRIkiTb2traisViPT42Nga/369omiZJkqTVarUcgMPz8/NfJiYmfqVisVjS4XB8mkwm610BYGFhYW54ePirYDD4RpcAoGnabw8PD3MzMzPlTCYjA6g8Pj7yAEC5XK4vtra2tLOzM6iqis3NTUxPTyOXy/3JMMwAy7LY3t6GIAjY29uDoijo6OgQV1dXfz86OqoKgqBrZgCA09NT3N7e4u7uDslkEqqq1gUcxyEej0OWZVxcXODm5gaFQkHb2dlpMcOTocPhAMMwYBgGfX19IIh/n7jZbK7nGIZBZ2dnY30LFACEw\u002BFnP1qPx0Osr6/rYs33sJG/AYSnjqm2fnOXAAAAAElFTkSuQmCC",
-              "WhenOpened": "2025-05-06T18:10:48.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
               "Title": "ILoginService.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\ILoginService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
               "RelativeDocumentMoniker": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\ILoginService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
               "RelativeToolTip": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAADwvycAAAAyAAAAAAAAAA==",
-=======
-              "DocumentIndex": 12,
-              "Title": "GetHeadList.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "RelativeToolTip": "Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAewFgAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T11:29:27.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HeadMasterController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HeadMasterController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\HeadMasterController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HeadMasterController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\HeadMasterController.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAA7wFQAAAAEAAAA",
->>>>>>> origin/master
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T15:40:05.253Z",
+              "WhenOpened": "2025-04-30T12:06:39.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ViewStudentFeeCollection.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\StudentFeeCollection\\ViewStudentFeeCollection.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\StudentFeeCollection\\ViewStudentFeeCollection.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\StudentFeeCollection\\ViewStudentFeeCollection.cshtml",
-              "RelativeToolTip": "Inward\\Views\\StudentFeeCollection\\ViewStudentFeeCollection.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAEIAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-01T03:53:14.186Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ParameterForm.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "RelativeToolTip": "Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "ViewState": "AgIAALEAAAAAAAAAAIAwwMAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-06T17:07:48.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 10,
-              "Title": "InwardEntity.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Entity\\InwardEntity.cs",
-              "RelativeDocumentMoniker": "Inward.Entity\\InwardEntity.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Entity\\InwardEntity.cs",
-              "RelativeToolTip": "Inward.Entity\\InwardEntity.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAArwG0AAAApAAAAAAAAAA==",
-=======
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "FinancialYearTermWiseFeeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\FinancialYearTermWiseFeeService.cs",
               "RelativeDocumentMoniker": "Inward.Services\\FinancialYearTermWiseFeeService.cs",
               "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\FinancialYearTermWiseFeeService.cs",
               "RelativeToolTip": "Inward.Services\\FinancialYearTermWiseFeeService.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAAAswHAAAAA3AAAA",
->>>>>>> origin/master
+              "ViewState": "AQIAAFAAAAAAAAAAAAAewGAAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T15:40:30.351Z",
+              "WhenOpened": "2025-04-30T07:39:54.682Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "StoreProcedures.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Entity\\StoreProcedures.cs",
-              "RelativeDocumentMoniker": "Inward.Entity\\StoreProcedures.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Entity\\StoreProcedures.cs",
-              "RelativeToolTip": "Inward.Entity\\StoreProcedures.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAIAwwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:39:25.072Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginRepo.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository\\LoginRepo.cs",
-              "RelativeDocumentMoniker": "Inward.Repository\\LoginRepo.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Repository\\LoginRepo.cs",
-              "RelativeToolTip": "Inward.Repository\\LoginRepo.cs",
-              "ViewState": "AgIAAPoBAAAAAAAAAAApwBMCAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:33:22.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LoginService.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Services\\LoginService.cs",
-              "RelativeDocumentMoniker": "Inward.Services\\LoginService.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Services\\LoginService.cs",
-              "RelativeToolTip": "Inward.Services\\LoginService.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAhwIAAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:53:36.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ILoginRepo.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\ILoginRepo.cs",
-              "RelativeDocumentMoniker": "Inward.Repository.Abstraction\\ILoginRepo.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\ILoginRepo.cs",
-              "RelativeToolTip": "Inward.Repository.Abstraction\\ILoginRepo.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwCkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T15:45:16.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ParameterForm.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\Report\\ParameterForm.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Report\\ParameterForm.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\Report\\ParameterForm.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Report\\ParameterForm.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-06T16:34:53.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "StudentController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\StudentController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\StudentController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\StudentController.cs",
-              "ViewState": "AgIAAO4BAAAAAAAAAAAgwPsBAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:48:16.687Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GetHeadList.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "RelativeToolTip": "Inward\\Views\\HeadMaster\\GetHeadList.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-01T16:32:28.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "HeadMasterController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\HeadMasterController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\HeadMasterController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\HeadMasterController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\HeadMasterController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwC8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T16:33:03.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\Index.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\Index.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\Index.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Inward\\Index.cshtml",
-              "ViewState": "AgIAAJgBAAAAAAAAAIAwwKUBAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-01T17:36:57.901Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "FeeCollectionDetailReport.rdlc [Design]",
-              "DocumentMoniker": "D:\\GCAS_GIT\\GCM.Reports\\FeeCollectionDetailReport.rdlc",
-              "RelativeDocumentMoniker": "GCM.Reports\\FeeCollectionDetailReport.rdlc",
-              "ToolTip": "D:\\GCAS_GIT\\GCM.Reports\\FeeCollectionDetailReport.rdlc [Design]",
-              "RelativeToolTip": "GCM.Reports\\FeeCollectionDetailReport.rdlc [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
-              "WhenOpened": "2025-05-01T16:31:04.937Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "StudentFeeCollectionRepo.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository\\StudentFeeCollectionRepo.cs",
-              "RelativeDocumentMoniker": "Inward.Repository\\StudentFeeCollectionRepo.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Repository\\StudentFeeCollectionRepo.cs",
-              "RelativeToolTip": "Inward.Repository\\StudentFeeCollectionRepo.cs",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAAANYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:38:43.414Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IStudentFeeCollectionService.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\IStudentFeeCollectionService.cs",
-              "RelativeDocumentMoniker": "Inward.Services.Abstraction\\IStudentFeeCollectionService.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Services.Abstraction\\IStudentFeeCollectionService.cs",
-              "RelativeToolTip": "Inward.Services.Abstraction\\IStudentFeeCollectionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T03:57:21.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "StudentFeeCollectionService.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Services\\StudentFeeCollectionService.cs",
-              "RelativeDocumentMoniker": "Inward.Services\\StudentFeeCollectionService.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Services\\StudentFeeCollectionService.cs",
-              "RelativeToolTip": "Inward.Services\\StudentFeeCollectionService.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAhwDMAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:35:28.6Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IStudentFeeCollectionRepo.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\IStudentFeeCollectionRepo.cs",
-              "RelativeDocumentMoniker": "Inward.Repository.Abstraction\\IStudentFeeCollectionRepo.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward.Repository.Abstraction\\IStudentFeeCollectionRepo.cs",
-              "RelativeToolTip": "Inward.Repository.Abstraction\\IStudentFeeCollectionRepo.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAvwBUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T03:51:46.374Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ViewStudents.cshtml",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "RelativeDocumentMoniker": "Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "RelativeToolTip": "Inward\\Views\\Inward\\ViewStudents.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T16:19:02.218Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ParameterForm.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\735f2a5f94817d09f7cd01388d384701ef1afdf87556dd8b5ddbed1b9a7facad\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\AppData\\Local\\SourceServer\\735f2a5f94817d09f7cd01388d384701ef1afdf87556dd8b5ddbed1b9a7facad\\Inward\\Views\\FinancialYearTermWiseFee\\ParameterForm.cshtml",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAYwJoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-29T14:24:59.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "FinancialYearTermWiseFeeController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\FinancialYearTermWiseFeeController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAvwEQBAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:23:47.771Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "InwardController.cs",
-              "DocumentMoniker": "D:\\GCAS_GIT\\Inward\\Controllers\\InwardController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
-              "ToolTip": "D:\\GCAS_GIT\\Inward\\Controllers\\InwardController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\InwardController.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAowIYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:22:59.203Z"
             }
           ]
         }
