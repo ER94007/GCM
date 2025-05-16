@@ -165,7 +165,7 @@
 			</div>
 
 			<div class="text-center mt-3">
-				<button type="button"  id="btnSave" class="btn btn-primary mr-1">
+				<button type="button" id="btnSave" class="btn btn-primary mr-1" onclick="validateacademicyear();">
 					<i class="fas fa-save mr-1"></i>
 					Save
 				</button>
@@ -303,18 +303,40 @@
 
 <script type="text/javascript">
 
-	$('#btnSave').click(function (e) {
-		// e.preventDefault();
+	// $('#btnSave').click(function (e) {
+	// 	// e.preventDefault();
+	// 	var yearid = $('#yearid').val();
+	// 	if(yearid == null || yearid == "") {
+	// 		alert("Please select an academic year.");
+	// 		e.preventDefault();
+	// 		return;
+	// 	}
+	// 	else{
+	// 		$('#fillDetailsForm').submit();
+	// 	}
+	// })
+	function validateacademicyear() {
+			validateacademicyear1();
+    var form = $('#fillDetailsForm');
+
+    // Trigger ASP.NET Core's built-in validation
+    if (form.valid()) {
+        form.submit();
+    }
+}
+	function validateacademicyear1(){
 		var yearid = $('#yearid').val();
 		if(yearid == null || yearid == "") {
 			alert("Please select an academic year.");
-			e.preventDefault();
-			return;
+			// e.preventDefault();
+			// return;
 		}
 		else{
 			$('#fillDetailsForm').submit();
 		}
-	})
+	}
+
+
 	function bindacademicyear(){
 		var yearid = $('#yearid').val();
 		$('#FinancialYearId').val(yearid);
@@ -513,3 +535,6 @@
 	});
 
 </script>
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
