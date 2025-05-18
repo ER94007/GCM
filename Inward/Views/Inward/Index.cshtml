@@ -57,8 +57,19 @@
 					<span asp-validation-for="FinancialYearId" class="text-danger"></span>
 				</div>
 			</div>
+		
+			<div class="col-md-4">
+				<!-- Inward No -->
+				<div class="form-group">
+					<label for="name">Semester</label>
+					<select id="semid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text", finid))" onchange="bindterm()" required>
+						<option value="">---Select Semester---</option>
+					</select>
+					<span asp-validation-for="termid" class="text-danger"></span>
+				</div>
+			</div>
 		</div>
-		<div style="margin-top: 20px;"></div>
+		<div style="margin-top: 20px;"></div>	
 		<div>
 			<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio"> 1. Add by Form
 			@if (varShow == 0)
@@ -77,6 +88,7 @@
 		<form  method="post" id="fillDetailsForm">
 			<input type="hidden" asp-for="studentid" value="@studentid" />
 			<input type="hidden" asp-for="FinancialYearId"  />
+			<input type="hidden" asp-for="termid"  />
 			
 			<!-- Inward Information -->
 			<div class="row mb-3">
@@ -140,6 +152,7 @@
 
 									</div>
 								</div>
+						
 								<div class="col-md-4">
 									<!-- Inward Date -->
 									<div class="form-group">
@@ -340,6 +353,10 @@
 	function bindacademicyear(){
 		var yearid = $('#yearid').val();
 		$('#FinancialYearId').val(yearid);
+	}
+	function bindterm(){
+				var semid = $('#semid').val();
+				$('#termid').val(semid);
 	}
 	$(document).ready(function () {
 		debugger;
