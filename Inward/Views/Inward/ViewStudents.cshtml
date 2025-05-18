@@ -26,6 +26,7 @@
 										<th>Email</th>
 										<th>Category</th>
 										<th>Gender</th>
+										<th>Semester</th>
 										<th>Application No</th>
 										<th>Enrollment No</th>
 										<th>Update</th>
@@ -43,6 +44,7 @@
 											<td>@item.email</td>
 											<td>@item.categoryname</td>
 											<td>@item.gendername</td>
+											<td>@item.termname</td>
 											<td>@item.applicationno</td>
 											<td>@item.enrolmentno</td>
 											@* <td><a asp-action="Index" asp-controller="Inward" asp-route-studentid="@Uri.EscapeDataString(EncryptionHelper.Encrypt(item.studentid.ToString()))>Update</a></td> *@

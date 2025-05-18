@@ -62,32 +62,8 @@ namespace Inward.Controllers
             ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             ViewBag.CategoryList = _userLoginService.BindCategory().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList(); ;
             ViewBag.YearList = _ifinancialYearTermWiseFeeService.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-            //var FarmerName = _userLoginService.FillFarmer().Result
-            //.Select(c => new SelectListItem() { Text = c.Farmer_Nm, Value = c.Farmer_Id.ToString() }).ToList();
-            //    ViewBag.FarmerNames = FarmerName;
-
-            //    var GradeName = _userLoginService.FillGrade().Result
-            //.Select(c => new SelectListItem() { Text = c.Grade_Name, Value = c.Grade_Id.ToString() }).ToList();
-            //    ViewBag.GradeNames = GradeName;
-
-
-            //    var UnitName = _userLoginService.FillUnit().Result
-            //.Select(c => new SelectListItem() { Text = c.Unit_Name, Value = c.Unit_Id.ToString() }).ToList();
-            //    ViewBag.UnitNames = UnitName;
-            //ViewBag.UnitNames = GetUnitDetailsByGrade(string.Empty);
-
-            //var InwardLastData = await _userLoginService.GetLastInwardNo();
-
-            //ViewBag.InwardNo = Convert.ToInt32(InwardLastData.InwardNo) + 1;
-
-            //if (InwardId != null)
-            //{
-            //    ViewBag.InwardId = InwardId;
-            //    var lstInward = await _userLoginService.GetInwardsById(InwardId);
-            //    var InwardMaster = lstInward;
-            //    return View(InwardMaster);
-
-            //}
+            ViewBag.TermList = _ifinancialYearTermWiseFeeService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            
             return View(student);
         }
 
@@ -266,11 +242,7 @@ namespace Inward.Controllers
                      
                  }
                  
-                        //  CommonUtils.WriteToLogFile("Model is valid - inside else to call database is  null", LogPath);
-                        //  TempData["Message"] = CommonUtils.ConcatString("Please Fill Atleast One Reservation Details", Convert.ToString((int)EnumLookup.ResponseMsgType.error), "||");
-                        //return RedirectToAction("Index", "Inward", new { InwardId = inwardEntity.InwardId.ToString() });                        //return RedirectToAction("Index", "Inward", new { InwardId = inwardEntity.InwardId.ToString() });
-                        //TempData["SaveStatus"] = CommonMethods.ConcatString(msg,
-                        //    Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
+                       
                         return RedirectToAction("Index", "Inward");   
 
             }
