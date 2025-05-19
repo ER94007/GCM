@@ -12,7 +12,8 @@ namespace GCM.Repository.Abstraction
 {
     public interface IStudentFeeCollectionRepo : IBaseRepository<BaseDataTableEntity>
     {
-        Task<IEnumerable<Student>> GetStudentList();
+        //Task<IEnumerable<Student>> GetStudentList();
+        Task<IEnumerable<Student>> GetStudentListbynumber(string number);
         Task<List<SelectListItem>> BindFinancialYear();
         Task<List<SelectListItem>> BindStudents(long id);
         Task<List<SelectListItem>> BindTerm();

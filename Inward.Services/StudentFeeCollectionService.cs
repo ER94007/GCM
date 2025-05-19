@@ -19,9 +19,13 @@ namespace GCM.Services
             _studentFeeCollectionRepo = studentFeeCollectionRepo ?? throw new ArgumentNullException(nameof(studentFeeCollectionRepo));
         }
 
-        public async Task<IEnumerable<Student>> GetStudentList()
+        //public async Task<IEnumerable<Student>> GetStudentList()
+        //{
+        //    return await _studentFeeCollectionRepo.GetStudentList();
+        //}
+        public async Task<IEnumerable<Student>> GetStudentListbynumber(string number)
         {
-            return await _studentFeeCollectionRepo.GetStudentList();
+            return await _studentFeeCollectionRepo.GetStudentListbynumber(number);
         }
         public async Task<List<SelectListItem>> BindStudents(long id)
         {

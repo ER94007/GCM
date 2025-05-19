@@ -111,11 +111,15 @@ namespace GCM.Controllers
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
 				var result = await _ifinancialYearTermWiseFee.UpdateFinanceData(ft);
-				if (result.Msg != null)
+				if (result.Msg == "-1")
 				{
-					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+					TempData["SaveStatus"] = CommonMethods.ConcatString("Fee Already Collected so you can not Update Record", Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
 				}
-				return RedirectToAction("GetFinancialTermData");
+				else if(result.Msg == "1")
+				{
+                    TempData["SaveStatus"] = CommonMethods.ConcatString("Data Updated Successfully", Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                }
+					return RedirectToAction("GetFinancialTermData");
 			}
 			else
 			{
@@ -131,11 +135,11 @@ namespace GCM.Controllers
 				var result = await _ifinancialYearTermWiseFee.DeleteFinanceYearTerm(Convert.ToInt64(FinancialYearWiseTermWiseFeeDetailid));
 				if (result.Id > 0)
 				{
-					return Json(new { success = true, message = "Student deleted successfully." });
+					return Json(new { success = true, message = "Record deleted successfully." });
 				}
 				else
 				{
-					return Json(new { success = false, message = "Failed to delete the student." });
+					return Json(new { success = false, message = "Fee Already Collected so you can not delete Record." });
 				}
 			}
 			else

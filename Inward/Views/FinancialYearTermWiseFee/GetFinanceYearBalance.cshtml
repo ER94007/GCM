@@ -24,20 +24,24 @@
                                         <th>Sr.</th>
                                         <th>Financial Year</th>
                                         <th>Subhead</th>
-                                        <th>Amount</th>
-                                       @*  <th>Update</th>
+                                        <th>Opening Balance</th>
+                                        <th>Updated Balance</th>
+                                        @*  <th>Update</th>
                                         <th>Delete</th> *@
                                     </tr>
                                 </thead>
                                 <tbody>
-									
+                                    @{
+                                        var index = 1;
+                                    }
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.FinancialYearBalanceId</td>
+                                            <td>@index</td>
                                             <td>@item.financialYear</td>
                                             <td>@item.subheadname</td>
                                             <td>@item.amount</td>
+                                            <td>@item.updatedbalance</td>
                                             @* <td>
                                                 <a asp-action="UpdateFinanceBalanceById" asp-controller="FinancialYearTermWiseFee" asp-route-FinancialYearBalanceId="@item.FinancialYearBalanceId">
                                                     <i class="fas fa-edit"></i>
@@ -49,6 +53,7 @@
                                                 </a>
                                             </td> *@
                                         </tr>
+                                        index++;
                                     }
                                 </tbody>
                             </table>

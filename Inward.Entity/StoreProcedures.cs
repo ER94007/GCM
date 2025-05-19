@@ -40,6 +40,7 @@ namespace Inward.Entity
         public static string DeleteStudent = "DeleteStudent";
         public static string GetStudentById = "GetStudentById";
         public static string GetStudents = "GetStudentList";
+        public static string GetStudentByNumber = "GetStudentListbynumber";
         public static string BindGender = "getgendermaster";
         public static string BindCategory = "getcategorymaster";
         public static string UserAuthenticationByCredentials = "UserAuthenticationByCredentials";

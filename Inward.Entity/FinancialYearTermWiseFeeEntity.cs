@@ -49,6 +49,7 @@ namespace GCM.Entity
 
 		public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();
         public DataTable fdt { get; set; }
+        public string updatedbalance { get; set; }
     }
 
     public class BalanceList

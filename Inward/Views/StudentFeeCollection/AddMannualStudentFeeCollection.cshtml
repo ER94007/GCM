@@ -19,7 +19,7 @@
 	<div class="content-wrapper">
 		<form asp-action="AddStudentFeeCollection" method="post">
 			<input type="hidden" name="TotalFees" id="hiddenTotalAmount">
-			<input type="hidden"  id="hdnStudentID" asp-for="StudentId">
+			<input type="hidden" id="hdnStudentID" asp-for="StudentId">
 			@Html.AntiForgeryToken()
 			<div style="margin-top: 20px;"></div>
 			<div class="form-group">
@@ -74,7 +74,7 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-body">
-									
+
 									<div class="table-responsive mt-4">
 										<button type="button" class="btn btn-primary btn-add mb-2" id="addRowBtn">Add Row</button>
 										<table class="table table-bordered" id="dynamicTable">
@@ -82,7 +82,7 @@
 												<tr>
 													<th>Subhead</th>
 													<th>Amount</th>
-													<th>Action</th>	
+													<th>Action</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -158,18 +158,19 @@
 					type: 'GET',
 					data: { number: studentNumber },
 					success: function (response) {
-						if (response.success) {
-							$("#studentName").text(response.student.name);
-							$("#studentEmail").text(response.student.email);
-							$("#studentNumber").text(response.student.applicationno);
-							$("#hdnStudentID").val(response.student.studentid);
-							$("#studentDetails").show();
-							$("#showcontent").show();
-						} else {
-							alert("Student not found.");
-							$("#studentDetails").hide();
-							$("#showcontent").hide();
-						}
+								if (response.success && response.student && response.student.length > 0) {
+									const student = response.student[0];
+									$("#studentName").text(student.name);
+									$("#studentEmail").text(student.email);
+									$("#studentNumber").text(student.applicationno);
+									$("#hdnStudentID").val(student.studentid);
+									$("#studentDetails").show();
+									$("#showcontent").show();
+								} else {
+									alert("Student not found.");
+									$("#studentDetails").hide();
+									$("#showcontent").hide();
+								}
 					},
 					error: function () {
 						alert("Error fetching student details.");
@@ -191,7 +192,7 @@
 							<option value="">---Select Subhead---</option>
 	@foreach (var subhead in ViewBag.SubheadList as List<SelectListItem>)
 	{
-											<option value="@subhead.Value">@subhead.Text</option>
+												<option value="@subhead.Value">@subhead.Text</option>
 	}
 						</select>
 						<span class="text-danger field-validation-valid" data-valmsg-for="FeeDetaillistMannually[${rowIndex}].SubHeadId" data-valmsg-replace="true"></span>
