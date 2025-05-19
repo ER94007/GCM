@@ -1,0 +1,83 @@
+﻿@model List<MenuViewModel>
+
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+	<a asp-controller="Home" asp-action="Index" class="brand-link">
+		<span class="brand-text font-weight-light">GCM</span>
+	</a>
+
+	<div class="sidebar">
+		<nav class="mt-2">
+			<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+
+				@foreach (var mainItem in Model)
+				{
+					<li class="nav-item has-treeview">
+						<a class="nav-link" href="#" id="menu_@mainItem.Id">
+							<i class="nav-icon fas fa-folder"></i> <!-- parent icon -->
+							<p>
+								@mainItem.Title
+								<i class="right fas fa-angle-left"></i> <!-- dropdown arrow -->
+							</p>
+						</a>
+
+						@if (mainItem.Children.Any())
+						{
+							<ul class="nav nav-treeview" aria-labelledby="menu_@mainItem.Id">
+								@foreach (var subItem in mainItem.Children)
+								{
+									<li>
+										<a class="nav-link" asp-controller="@subItem.Controller" asp-action="@subItem.Action">
+											<i class="far fa-circle nav-icon"></i> <!-- child icon -->
+											<p>@subItem.Title</p>
+										</a>
+									</li>
+								}
+							</ul>
+						}
+					</li>
+				}
+
+
+			</ul>
+		</nav>
+	</div>
+</aside>
+
+
+@* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid">
+		<ul class="navbar-nav">
+			@foreach (var mainItem in Model)
+			{
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle"
+					   href="#"
+					   id="menu_@mainItem.Id"
+					   role="button"
+					   data-bs-toggle="dropdown"
+					   aria-expanded="false">
+						@mainItem.Title
+					</a>
+
+					@if (mainItem.Children.Any())
+					{
+						<ul class="dropdown-menu" aria-labelledby="menu_@mainItem.Id">
+							@foreach (var subItem in mainItem.Children)
+							{
+								<li>
+									<a class="dropdown-item"
+									   asp-controller="@subItem.Controller"
+									   asp-action="@subItem.Action">
+										@subItem.Title
+									</a>
+								</li>
+							}
+						</ul>
+					}
+				</li>
+			}
+		</ul>
+	</div>
+</nav> *@

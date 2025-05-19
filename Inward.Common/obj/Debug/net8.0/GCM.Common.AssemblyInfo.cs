@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GCM.Common")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f03c1a6762e7bbbbf4aa78385ebe05768445dd97")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b57cf60b072b25e0afea05e8f81e4450abad029b")]
->>>>>>> origin/master
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05d5f77cf67097269224e3753143fd65707f8395")]
 [assembly: System.Reflection.AssemblyProductAttribute("GCM.Common")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GCM.Common")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

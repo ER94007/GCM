@@ -61,9 +61,9 @@
 			<div class="col-md-4">
 				<!-- Inward No -->
 				<div class="form-group">
-					<label for="name">Semester</label>
+					<label for="name">Enrolment Semester</label>
 					<select id="semid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text", finid))" onchange="bindterm()" required>
-						<option value="">---Select Semester---</option>
+						<option value="">---Select Enrolment Semester---</option>
 					</select>
 					<span asp-validation-for="termid" class="text-danger"></span>
 				</div>

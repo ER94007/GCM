@@ -1,0 +1,18 @@
+﻿@model List<GCM.ViewComponents.MenuNode>
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="#" class="brand-link">
+        <span class="brand-text font-weight-light">GCM</span>
+    </a>
+
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                @foreach (var node in Model)
+                {
+                    @Html.Partial("_MenuNode", node)
+                }
+            </ul>
+        </nav>
+    </div>
+</aside>

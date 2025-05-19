@@ -65,6 +65,10 @@
           <DataField>CreatedDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TotalAmount">
+          <DataField>TotalAmount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>studentfeecollection</rd:DataSetName>
@@ -732,7 +736,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
+                    <Value>=Fields!TotalAmount.Value</Value>
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -1456,7 +1460,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
+                    <Value>=Fields!TotalAmount.Value</Value>
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
