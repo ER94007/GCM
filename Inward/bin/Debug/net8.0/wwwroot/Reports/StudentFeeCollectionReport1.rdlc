@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="studentfeecollection">
       <Query>
         <DataSourceName>studentfeecollection</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -730,7 +730,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
+                    <Value />
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -791,7 +791,6 @@
             </Style>
           </Textbox>
           <Line Name="Line2">
-            <Top>0.3175cm</Top>
             <Left>13.44354cm</Left>
             <Height>14.86499cm</Height>
             <Width>0cm</Width>
@@ -1455,7 +1454,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=(Sum(Fields!GovAmount.Value, "studentfeecollection") + Sum(Fields!PrivAmount.Value, "studentfeecollection"))</Value>
+                    <Value />
                     <Style>
                       <Format>'₹'0.00;('₹'0.00)</Format>
                       <rd:FormatSymbolCulture>en-IN</rd:FormatSymbolCulture>
@@ -1516,7 +1515,6 @@
             </Style>
           </Textbox>
           <Line Name="Line5">
-            <Top>0.3175cm</Top>
             <Left>14.54504cm</Left>
             <Height>14.86499cm</Height>
             <Width>0cm</Width>
@@ -1528,7 +1526,7 @@
             </Style>
           </Line>
         </ReportItems>
-        <Height>5.97736in</Height>
+        <Height>5.85236in</Height>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1538,7 +1536,7 @@
           </BottomBorder>
         </Style>
       </Body>
-      <Width>10.92437in</Width>
+      <Width>11.0277in</Width>
       <Page>
         <PageHeader>
           <Height>3.47726cm</Height>
@@ -2151,9 +2149,9 @@
             </TopBorder>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>42cm</PageWidth>
-        <LeftMargin>0cm</LeftMargin>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
+        <LeftMargin>0.5cm</LeftMargin>
         <RightMargin>0.5cm</RightMargin>
         <TopMargin>0.5cm</TopMargin>
         <BottomMargin>0.5cm</BottomMargin>
@@ -2162,23 +2160,10 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="TotalGovAmount">
-      <DataType>Float</DataType>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
-      <CellDefinitions>
-        <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>TotalGovAmount</ParameterName>
-        </CellDefinition>
-      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>

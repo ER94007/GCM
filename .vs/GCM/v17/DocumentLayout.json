@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\GCM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|c:\\users\\admin\\desktop\\gcm\\inward.services\\financialyeartermwisefeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FDC7506B-D8C9-4582-B53C-054338060584}|Inward.Services\\GCM.Services.csproj|solutionrelative:inward.services\\financialyeartermwisefeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\viewcomponents\\menusidebarviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\viewcomponents\\menusidebarviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\inwardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\shared\\components\\menu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\components\\menu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|c:\\users\\admin\\desktop\\gcm\\inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC30560B-1F45-4A59-A5E9-BD743EEC924C}|Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj|solutionrelative:inward.services.abstraction\\iloginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|c:\\users\\admin\\desktop\\gcm\\inward\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D8CA4FA-08A8-4189-A90F-ECE43D087802}|Inward\\GCM.csproj|solutionrelative:inward\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,40 +51,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InwardController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
-              "RelativeDocumentMoniker": "Inward\\Controllers\\InwardController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\InwardController.cs",
-              "RelativeToolTip": "Inward\\Controllers\\InwardController.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAYwD8AAABJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T06:03:05.333Z",
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Shared\\Components\\Menu\\Default.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABoAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T13:56:11.293Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ILoginService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
-              "RelativeDocumentMoniker": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\ILoginService.cs",
-              "RelativeToolTip": "Inward.Services.Abstraction\\ILoginService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABAAAAA6AAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Inward\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAAAMgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-19T13:46:37.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Inward\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Inward\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAA3wC8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T12:06:39.513Z",
+              "WhenOpened": "2025-05-19T13:44:01.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FinancialYearTermWiseFeeService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\FinancialYearTermWiseFeeService.cs",
-              "RelativeDocumentMoniker": "Inward.Services\\FinancialYearTermWiseFeeService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\FinancialYearTermWiseFeeService.cs",
-              "RelativeToolTip": "Inward.Services\\FinancialYearTermWiseFeeService.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAewGAAAAA6AAAA",
+              "Title": "MenuSidebarViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\ViewComponents\\MenuSidebarViewComponent.cs",
+              "RelativeDocumentMoniker": "Inward\\ViewComponents\\MenuSidebarViewComponent.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\ViewComponents\\MenuSidebarViewComponent.cs",
+              "RelativeToolTip": "Inward\\ViewComponents\\MenuSidebarViewComponent.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAkwBIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T07:39:54.682Z",
+              "WhenOpened": "2025-05-19T13:01:03.408Z",
               "EditorCaption": ""
             }
           ]

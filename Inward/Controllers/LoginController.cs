@@ -101,7 +101,7 @@ namespace Inward.Controllers
                     }
                 }
             }
-            return RedirectToAction("Index", "Inward");
+            return RedirectToAction("Index", "Home");
 
         }
         [HttpGet]

@@ -128,5 +128,11 @@ namespace Inward.Services
         {
             return await _LoginRepo.GetFeeCollectionDetailReport(fromdate, todate);
         }
-    }
+
+		public async Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userId)
+        {
+			return await _LoginRepo.GetMenusByUserIdAsync(userId);
+
+		}
+	}
 }
