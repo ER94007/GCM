@@ -23,14 +23,15 @@ namespace GCM.Repository
             appConfig = config ?? throw new ArgumentNullException(nameof(config));
         }
 
-        public async Task<IEnumerable<Student>> GetStudentList()
+        public async Task<IEnumerable<Student>> GetStudentListbynumber(string number)
         {
             try
             {
                 using (var conn = GetConnection())
                 {
                     var queryParameters = new DynamicParameters();
-                    var res = await conn.QueryAsync<Student>(StoreProcedures.GetStudents, queryParameters, commandType: CommandType.StoredProcedure);
+                    queryParameters.Add("@number", number);
+                    var res = await conn.QueryAsync<Student>(StoreProcedures.GetStudentByNumber, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
             }

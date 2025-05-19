@@ -84,7 +84,7 @@
 
 					
 					<div id="feesDetailsAuto" class="col-md-11">
-						<h5><strong>Fees Details</strong></h5>
+						<h5 id="feesdetails"><strong>Fees Details</strong></h5>
 						<table class="table table-bordered" id="feesTable">
 							<thead>
 								<tr>
@@ -125,8 +125,10 @@
 
 				$(document).ready(function () {
 			$("#showcontent").hide();
+			$("#feesdetails").hide();
 
 			$("#searchBtn").click(function (e) {
+				$("#feesTable").hide();
 				e.preventDefault();
 				var studentNumber = $("#searchNumber").val().trim();
 				if (studentNumber === "") {
@@ -139,18 +141,20 @@
 					type: 'GET',
 					data: { number: studentNumber },
 					success: function (response) {
-						if (response.success) {
-							$("#studentName").text(response.student.name);
-							$("#studentEmail").text(response.student.email);
-							$("#studentNumber").text(response.student.applicationno);
-							$("#hdnStudentID").val(response.student.studentid);
-							$("#studentDetails").show();
-							$("#showcontent").show();
-						} else {
-							alert("Student not found.");
-							$("#studentDetails").hide();
-							$("#showcontent").hide();
-						}
+						if (response.success && response.student && response.student.length > 0) {
+									const student = response.student[0];
+									$("#studentName").text(student.name);
+									$("#studentEmail").text(student.email);
+									$("#studentNumber").text(student.applicationno);
+									$("#hdnStudentID").val(student.studentid);
+									$("#studentDetails").show();
+									$("#showcontent").show();
+								} else {
+									alert("Student not found.");
+									$("#studentDetails").hide();
+									$("#showcontent").hide();
+								}
+
 					},
 					error: function () {
 						alert("Error fetching student details.");
@@ -175,17 +179,37 @@
 				url: '@Url.Action("GetFeesDetails", "StudentFeeCollection")',
 				type: 'GET',
 				data: { termId: selectedTerm, financialYearId: financialYear, studentId: studentId },
-				success: function (response) {
-					  console.log("Response Data:", response);
-					if (response.success) {
-						debugger;
-						populateFeesTable(response.fees);
-					} else {
-						alert("No fee details found for the selected term.");
-						$("#feesTable tbody").empty();
-						$("#totalAmount").text("0.00");
-					}
-				},
+
+					success: function (response) {
+
+						if (response.success) {
+							const fees = response.fees;
+
+							// Check if there is only one fee and all values are zero/empty
+							if (
+								fees.length === 1 &&
+								(!fees[0].subHeadName || fees[0].subHeadName.trim() === "") &&
+								(!fees[0].subHeadId || fees[0].subHeadId == 0) &&
+								(!fees[0].amount || parseFloat(fees[0].amount) === 0)
+							) {
+								alert("No fee details found for the selected term.");
+								$("#feesTable").hide();
+								$("#feesTable tbody").empty();
+								$("#totalAmount").text("0.00");
+								$("#hiddenTotalAmount").val("0.00");
+							} else {
+								$("#feesTable").show(); // Show table if valid data
+								populateFeesTable(fees);
+							}
+						} else {
+							alert("No fee details found for the selected term.");
+							$("#feesTable").hide();
+							$("#feesTable tbody").empty();
+							$("#totalAmount").text("0.00");
+							$("#hiddenTotalAmount").val("0.00");
+						}
+					},
+
 				error: function () {
 					alert("Error fetching fee details.");
 				}

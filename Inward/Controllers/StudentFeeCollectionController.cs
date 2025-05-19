@@ -102,17 +102,7 @@ namespace GCM.Controllers
 					return Json(new { success = false, message = "Student number is required." });
 				}
 
-				var students = await _studentFeeCollectionService.GetStudentList();
-
-				if (students == null || !students.Any())
-				{
-					return Json(new { success = false, message = "No students found." });
-				}
-
-				//var student = students.FirstOrDefault(s => s.enrolmentno == number);
-
-                var student = students.FirstOrDefault(s => s.enrolmentno == number || s.applicationno == number);
-
+				var student = await _studentFeeCollectionService.GetStudentListbynumber(number);
 
                 if (student != null)
 				{
