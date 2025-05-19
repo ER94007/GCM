@@ -25,6 +25,8 @@ namespace Inward.Entity
         public string? enrolmentno { get; set; }
         public string? applicationno { get; set; }
         public string? userid { get; set; }
+        public long termid { get; set; }
+        public string? termname { get; set; }
         public List<Student>? Studentslist { get; set; }
         //public IFileForm studentfile { get; set; }
 
