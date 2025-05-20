@@ -168,7 +168,7 @@
 		$("#TermId").change(function () {
 			var selectedTerm = $(this).val();
 			var financialYear = $("#FinancialYearId").val();
-			var studentId = $("#searchNumber").val(); // Assuming student ID is stored in this field
+			var studentId = $("#hdnStudentID").val(); // Assuming student ID is stored in this field
 
 			if (!selectedTerm || !financialYear || !studentId) {
 				alert("Please select Financial Year, Term, and ensure student details are available.");

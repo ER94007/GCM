@@ -7,6 +7,7 @@ using System.Data;
 using System.Text;
 using Microsoft.Reporting.NETCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using GCM.Entity;
 
 namespace GCM.Controllers
 {
@@ -274,15 +275,15 @@ namespace GCM.Controllers
                                 existingApplicationNos.Add(student.applicationno);
                             }
 
-                            if (existingEnrolmentNos.Contains(student.enrolmentno))
-                            {
-                                // Add duplicate enrolment number to the list
-                                duplicateEnrolmentNos.Add(student.enrolmentno);
-                            }
-                            else
-                            {
-                                existingEnrolmentNos.Add(student.enrolmentno);
-                            }
+                            //if (existingEnrolmentNos.Contains(student.enrolmentno))
+                            //{
+                            //    // Add duplicate enrolment number to the list
+                            //    duplicateEnrolmentNos.Add(student.enrolmentno);
+                            //}
+                            //else
+                            //{
+                            //    existingEnrolmentNos.Add(student.enrolmentno);
+                            //}
 
                             // Add the student to the list (if no duplicates and no missing fields)
                             students.Add(student);
@@ -327,37 +328,31 @@ namespace GCM.Controllers
             return BadRequest("No file uploaded.");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> SaveStudents(List<Student> students, string yearid)
-        {
-            try
-            {
-                // Convert List<Student> to DataTable
-                var studentsDataTable = ConvertToDataTable(students);
+		[HttpPost]
+		public async Task<IActionResult> SaveStudents([FromBody] StudentUploadModel model)
+		{
+			try
+			{
+				if (model.Students == null || model.Students.Count == 0)
+					return Json(new { success = false, message = "No student data received." });
 
-                // Call the AddStudent method and pass the DataTable
-                var regResponse = await _studentService.AddStudent(studentsDataTable, Convert.ToInt64(yearid));
+				var studentsDataTable = ConvertToDataTable(model.Students);
+				var regResponse = await _studentService.AddStudent(studentsDataTable, Convert.ToInt64(model.YearId));
 
-                // Return a success or failure response as JSON
-                if (regResponse.Id == 1)
-                {
-                    // Success, return JSON with the success flag
-                    return Json(new { success = true, message = "Students added successfully." });
-                }
-                else
-                {
-                    // Failure, return JSON with the failure flag
-                    return Json(new { success = false, message = "Error while adding students." });
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions and return error message
-                return Json(new { success = false, message = "An error occurred: " + ex.Message });
-            }
-        }
+				return Json(new
+				{
+					success = regResponse.Id == 1,
+					message = regResponse.Id == 1 ? "Students added successfully." : "Error while adding students."
+				});
+			}
+			catch (Exception ex)
+			{
+				return Json(new { success = false, message = "An error occurred: " + ex.Message });
+			}
+		}
 
-        public static DataTable ConvertToDataTable(List<Student> students)
+
+		public static DataTable ConvertToDataTable(List<Student> students)
         {
             var dataTable = new DataTable();
 

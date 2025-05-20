@@ -1,0 +1,163 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = GCM
+build_property.RootNamespace = GCM
+build_property.ProjectDir = C:\Users\Admin\Desktop\GCM\Inward\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\GCM\Inward
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/AddChequeNo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZENoZXF1ZU5vLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/AddExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEV4cGVuc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinanceYearBalance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2VZZWFyQmFsYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/AddFinancialYearTermFee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEFkZEZpbmFuY2lhbFllYXJUZXJtRmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/GetChequeMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldENoZXF1ZU1hc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/GetExpenseData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEV4cGVuc2VEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinanceYearBalance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEZpbmFuY2VZZWFyQmFsYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/GetFinancialTermData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXEdldEZpbmFuY2lhbFRlcm1EYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/ParameterForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFBhcmFtZXRlckZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateChequeById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFVwZGF0ZUNoZXF1ZUJ5SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateFinanceBalanceById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFVwZGF0ZUZpbmFuY2VCYWxhbmNlQnlJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/FinancialYearTermWiseFee/UpdateFinancialById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmluYW5jaWFsWWVhclRlcm1XaXNlRmVlXFVwZGF0ZUZpbmFuY2lhbEJ5SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/HeadMaster/AddHeadMaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhZE1hc3RlclxBZGRIZWFkTWFzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/HeadMaster/GetHeadList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVhZE1hc3RlclxHZXRIZWFkTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Inward/AddSubHead.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEFkZFN1YkhlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Inward/GetInwardList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEdldElud2FyZExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Inward/GetSubHeadList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEdldFN1YkhlYWRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Inward/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Inward/ViewStudents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW53YXJkXFZpZXdTdHVkZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Report/ParameterForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XFBhcmFtZXRlckZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Shared/Components/Menu/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Shared/Components/Menu/SidebarTree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxTaWRlYmFyVHJlZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/StudentFeeCollection/AddMannualStudentFeeCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEZlZUNvbGxlY3Rpb25cQWRkTWFubnVhbFN0dWRlbnRGZWVDb2xsZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/StudentFeeCollection/AddStudentFeeCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEZlZUNvbGxlY3Rpb25cQWRkU3R1ZGVudEZlZUNvbGxlY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/StudentFeeCollection/ViewStudentFeeCollection.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudEZlZUNvbGxlY3Rpb25cVmlld1N0dWRlbnRGZWVDb2xsZWN0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Student/ViewStudents.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxWaWV3U3R1ZGVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/GCM/Inward/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-06ydyjxvtt
