@@ -34,6 +34,7 @@ namespace GCM.Entity
         public string EnrolmentNo { get; set; }
         public string ApplicationNo { get; set; }
         public string CreatedDate { get; set; }
+        public string UserId { get; set; }
 
 
 

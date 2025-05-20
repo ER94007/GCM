@@ -112,6 +112,7 @@ namespace Inward.Controllers
 
         public async Task<IActionResult> AddSubHead(string? subheadid)
         {
+
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
                     SubHeadEntity sh = new SubHeadEntity();
@@ -134,6 +135,8 @@ namespace Inward.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSubHead(SubHeadEntity sh)
         {
+            sh.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
                 var result = await _userLoginService.AddUpdateSubhead(sh);
