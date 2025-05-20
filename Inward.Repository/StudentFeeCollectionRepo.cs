@@ -191,7 +191,7 @@ namespace GCM.Repository
                     queryParameters.Add("@TermId", model.TermId);
                     queryParameters.Add("@TotalAmount", amount);
                     queryParameters.Add("@FeeMode", model.FormType);
-                    queryParameters.Add("@CreatedBy", 1);
+                    queryParameters.Add("@CreatedBy", model.UserId);
 					var json = JsonConvert.SerializeObject(model.feesdetails);
 
 					Console.WriteLine(json); // or log it

@@ -18,5 +18,6 @@ namespace GCM.Entity
 
 		public bool IsStudentRelated { get; set; }
 		public bool IsCombined { get; set; }
+		public string UserId{ get; set; }
 	}
 }

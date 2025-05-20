@@ -23,6 +23,7 @@ namespace GCM.Entity
 
         public long HeadMasterId { get; set; }
         public string? headname { get; set; }
+        public string UserId { get; set; }
 
     }
 }
