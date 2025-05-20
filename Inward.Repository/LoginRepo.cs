@@ -86,6 +86,7 @@ namespace Inward.Repository
 					queryParameters.Add("@SubHeadType", sh.subheadtype);
 					queryParameters.Add("@SubHeadId", sh.subheadid);
 					queryParameters.Add("@HeadMasterId", sh.HeadMasterId);
+					queryParameters.Add("@UserId", sh.UserId);
 					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateSubhead, queryParameters, commandType: CommandType.StoredProcedure);
 
 				}
@@ -212,6 +213,8 @@ namespace Inward.Repository
 					queryParameters.Add("@applicationno", st.applicationno);
 					queryParameters.Add("@enrollmentno", st.enrolmentno);
 					queryParameters.Add("@FinancialYearId", st.FinancialYearId);  
+					queryParameters.Add("@termid", st.termid);  
+					queryParameters.Add("@UserId", st.userid);  
 					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateStudent, queryParameters, commandType: CommandType.StoredProcedure);
 
 				}
@@ -534,6 +537,7 @@ namespace Inward.Repository
 					queryParameters.Add("@HeadMasterId", sh.HeadMasterId);
 					queryParameters.Add("@IsStudentRelated", sh.IsStudentRelated);
 					queryParameters.Add("@IsCombined", sh.IsCombined);
+					queryParameters.Add("@UserId", sh.UserId);
 					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateHead, queryParameters, commandType: CommandType.StoredProcedure);
 
 				}

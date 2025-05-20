@@ -81,7 +81,9 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _userLoginService.AddUpdatehead(sh);
+                sh.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                var result = await _userLoginService.AddUpdatehead(sh);
 				if (result.Id > 0)
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");

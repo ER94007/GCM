@@ -206,7 +206,9 @@ namespace GCM.Controllers
 		[HttpPost]
 		public async Task<IActionResult> AddStudentFeeCollection(StudentFeeCollection model, List<FeeDetail> FeeDetails, decimal TotalFees)
 		{
-			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            model.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
 				if (model == null || string.IsNullOrEmpty(model.StudentId) || model.FinancialYearId == 0 || model.TermId == 0)
 				{
