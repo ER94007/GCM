@@ -531,12 +531,17 @@
 				return;
 			}
 
+			let semid = $('#semid').val();
+			if (!semid) {
+				alert("Please select an Enrolment year.");
+				return;
+			}
 			// Send JSON
 			$.ajax({
 				url: '/Student/SaveStudents',
 				type: 'POST',
 				contentType: 'application/json',
-				data: JSON.stringify({ students: studentData, yearId: yearid }),
+				data: JSON.stringify({ students: studentData, yearId: yearid, semid: semid }),
 				success: function (response) {
 					if (response.success) {
 						alert('Students saved successfully!');

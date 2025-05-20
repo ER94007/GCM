@@ -8,6 +8,7 @@ using System.Text;
 using Microsoft.Reporting.NETCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using GCM.Entity;
+using System.Security.Claims;
 
 namespace GCM.Controllers
 {
@@ -33,35 +34,35 @@ namespace GCM.Controllers
 
                      
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Upload(IFormFile file, string FinancialYearId)
-        {
-            if (file != null && file.Length > 0)
-            {
-                // Define the file path to save the uploaded file
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", file.FileName);
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Upload(IFormFile file, string FinancialYearId)
+        //{
+        //    if (file != null && file.Length > 0)
+        //    {
+        //        // Define the file path to save the uploaded file
+        //        var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", file.FileName);
 
-                // Save the file to the specified path
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream); // Use async to ensure non-blocking
-                }
+        //        // Save the file to the specified path
+        //        using (var stream = new FileStream(filePath, FileMode.Create))
+        //        {
+        //            await file.CopyToAsync(stream); // Use async to ensure non-blocking
+        //        }
 
-                // Extract students from the Excel file (custom method)
-                var students = GetStudentsFromExcel(filePath);
+        //        // Extract students from the Excel file (custom method)
+        //        var students = GetStudentsFromExcel(filePath);
 
-                // Convert the list of students to a DataTable
-                DataTable dataTable = ConvertStudentsToDataTable(students);
+        //        // Convert the list of students to a DataTable
+        //        DataTable dataTable = ConvertStudentsToDataTable(students);
 
-                // Call the service to add students (pass the DataTable)
-                var regResponse = await _studentService.AddStudent(dataTable, Convert.ToInt64(FinancialYearId));
+        //        // Call the service to add students (pass the DataTable)
+        //        var regResponse = await _studentService.AddStudent(dataTable, Convert.ToInt64(FinancialYearId),);
 
-                }
+        //        }
 
-            // Redirect to the ViewStudents action to display the students
-            return RedirectToAction("ViewStudents", "Inward");
-        }
+        //    // Redirect to the ViewStudents action to display the students
+        //    return RedirectToAction("ViewStudents", "Inward");
+        //}
 
 
 
@@ -337,7 +338,9 @@ namespace GCM.Controllers
 					return Json(new { success = false, message = "No student data received." });
 
 				var studentsDataTable = ConvertToDataTable(model.Students);
-				var regResponse = await _studentService.AddStudent(studentsDataTable, Convert.ToInt64(model.YearId));
+				var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+				var regResponse = await _studentService.AddStudent(studentsDataTable, Convert.ToInt64(model.YearId),Convert.ToInt64(model.semid),Convert.ToInt64(userId));
 
 				return Json(new
 				{

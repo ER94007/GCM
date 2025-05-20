@@ -11,6 +11,6 @@ namespace GCM.Repository.Abstraction
 {
     public interface IStudent : IBaseRepository<BaseDataTableEntity>
     {
-        Task<ResponseMessage> AddStudent(DataTable studentTable, long yearid);
+        Task<ResponseMessage> AddStudent(DataTable studentTable, long yearid,long semid,long userid);
     }
 }

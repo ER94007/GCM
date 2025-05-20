@@ -19,10 +19,10 @@ namespace GCM.Services
         {
             _StudentRepo = studentRepo ?? throw new ArgumentNullException(nameof(studentRepo));
         }
-        public async Task<ResponseMessage> AddStudent(DataTable studentTable,long yearid)
+        public async Task<ResponseMessage> AddStudent(DataTable studentTable, long yearid, long semid, long userid)
         {
            // return await _StudentRepo.AddStudent(studentTable);
-            var result = await _StudentRepo.AddStudent(studentTable, yearid);
+            var result = await _StudentRepo.AddStudent(studentTable, yearid,semid,userid);
 
             // Return the result to the caller
             return result;
