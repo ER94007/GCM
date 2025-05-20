@@ -19,11 +19,11 @@ namespace GCM.Repository.Abstraction
         Task<long> GetBalanceData(long id1, long id2);
         Task<ResponseMessage> CheckExpenseForCheque(long id);
         Task<ChequeMaster> GetChequeDateById(long id);
-        Task<ResponseMessage> DeleteFinanceBalance(long id);
+        Task<ResponseMessage> DeleteFinanceBalance(long id, long id2, string name1, string name2);
         Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn);
         Task<FinanceBalanceEntity> GetBalanceDataById(long id);
         Task<IEnumerable<FinanceBalanceEntity>> GetFinanceBalanceData();
-        Task<ResponseMessage> DeleteFinanceYearTerm(long id);
+        Task<ResponseMessage> DeleteFinanceYearTerm(long id, long id2, string name1, string name2);
         Task<ResponseMessage> AddFinanceYearBalance(FinanceBalanceEntity ft);
         Task<ResponseMessage> UpdateCheque(ChequeMaster ft);
         Task<ResponseMessage> UpdateFinanceData(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity);

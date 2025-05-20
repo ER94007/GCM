@@ -48,9 +48,9 @@ namespace GCM.Services
         {
             return await _financialYearTermWiseFeeRepo.GetChequeDateById(id);
         }
-        public async Task<ResponseMessage> DeleteFinanceBalance(long id)
+        public async Task<ResponseMessage> DeleteFinanceBalance(long id, long id2, string name1, string name2)
         {
-            return await _financialYearTermWiseFeeRepo.DeleteFinanceBalance(id);
+            return await _financialYearTermWiseFeeRepo.DeleteFinanceBalance(id, id2, name1, name2);
         }
         public async Task<ResponseMessage> UpdateFinanceBalance(FinanceBalanceEntity fn)
         {
@@ -72,9 +72,9 @@ namespace GCM.Services
         {
             return await _financialYearTermWiseFeeRepo.AddFinanceYearBalance(ft);
         }
-        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id)
+        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id, long id2, string name1, string name2)
         {
-            return await _financialYearTermWiseFeeRepo.DeleteFinanceYearTerm(id);
+            return await _financialYearTermWiseFeeRepo.DeleteFinanceYearTerm(id, id2, name1, name2);
         }
         public async Task<ResponseMessage> UpdateFinanceData(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity)
         {
