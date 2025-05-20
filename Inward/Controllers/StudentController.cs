@@ -330,10 +330,10 @@ namespace GCM.Controllers
         }
 
 		[HttpPost]
-		public async Task<IActionResult> SaveStudents([FromBody] StudentUploadModel model)
+		public async Task<IActionResult> SaveStudents([FromBody] StudentUploadModel model) 
 		{
 			try
-			{
+			{ 
 				if (model.Students == null || model.Students.Count == 0)
 					return Json(new { success = false, message = "No student data received." });
 
