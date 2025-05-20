@@ -21,6 +21,10 @@ namespace GCM.Entity
         public string termname { get; set; }
         public string subheadname { get; set; }
         public DataTable dt { get; set; }
+        public long userid { get; set; } 
+        public string hostname { get; set; } = System.Environment.MachineName;
+        public string ipaddress { get; set; } = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+        public string transactionid { get; set; } = new Guid().ToString();
         public List<FinanceList> financeLists { get; set; } = new List<FinanceList>();
     }
     public class FinanceList
@@ -50,6 +54,10 @@ namespace GCM.Entity
 		public List<BalanceList> balanceLists { get; set; } = new List<BalanceList>();
         public DataTable fdt { get; set; }
         public string updatedbalance { get; set; }
+        public long userid { get; set; }
+        public string hostname { get; set; } = System.Environment.MachineName;
+        public string ipaddress { get; set; } = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+        public string transactionid { get; set; } = new Guid().ToString();
     }
 
     public class BalanceList
@@ -66,6 +74,7 @@ namespace GCM.Entity
 
     public class ExpenseEntity
     {
+        public string ExpenseType { get; set; }
         public string DateofExpense { get; set; }
         public string FinancialYear { get; set; }
         public string SubHeadName { get; set; }
@@ -80,5 +89,9 @@ namespace GCM.Entity
         public string Remarks { get; set; }
         [Required(ErrorMessage = "Please enter a Cheque Number.")]
         public long ChequeNo { get; set; }
+        public long userid { get; set; }
+        public string hostname { get; set; } = System.Environment.MachineName;
+        public string ipaddress { get; set; } = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+        public string transactionid { get; set; } = new Guid().ToString();
     }
 }

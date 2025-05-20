@@ -7,6 +7,7 @@ using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
 
 namespace GCM.Controllers
 {
@@ -58,7 +59,8 @@ namespace GCM.Controllers
 					}
 				}
 				ft.dt = dataTable;
-				var result = _ifinancialYearTermWiseFee.AddFinancialYearTermFee(ft);
+				ft.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = _ifinancialYearTermWiseFee.AddFinancialYearTermFee(ft);
 				if (result.Result.Msg == "Data inserted successfully.")
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
@@ -110,7 +112,8 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _ifinancialYearTermWiseFee.UpdateFinanceData(ft);
+				ft.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = await _ifinancialYearTermWiseFee.UpdateFinanceData(ft);
 				if (result.Msg == "-1")
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString("Fee Already Collected so you can not Update Record", Convert.ToString((int)CommonMethods.ResponseMsgType.error), "||");
@@ -132,7 +135,10 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _ifinancialYearTermWiseFee.DeleteFinanceYearTerm(Convert.ToInt64(FinancialYearWiseTermWiseFeeDetailid));
+				long userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+				var hostname = System.Environment.MachineName;
+				var ipaddress = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+                var result = await _ifinancialYearTermWiseFee.DeleteFinanceYearTerm(Convert.ToInt64(FinancialYearWiseTermWiseFeeDetailid), userid, hostname, ipaddress);
 				if (result.Id > 0)
 				{
 					return Json(new { success = true, message = "Record deleted successfully." });
@@ -180,7 +186,8 @@ namespace GCM.Controllers
 					dataTable.Rows.Add(data.SubHeadId, data.amount);
 				}
 				ft.fdt = dataTable;
-				var result = await _ifinancialYearTermWiseFee.AddFinanceYearBalance(ft);
+				ft.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = await _ifinancialYearTermWiseFee.AddFinanceYearBalance(ft);
 				if (result.Msg == "Record Saved successfully.")
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
@@ -235,7 +242,8 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _ifinancialYearTermWiseFee.UpdateFinanceBalance(fn);
+                fn.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = await _ifinancialYearTermWiseFee.UpdateFinanceBalance(fn);
 				if (result.Msg == "DATA UPDATED")
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
@@ -256,7 +264,10 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _ifinancialYearTermWiseFee.DeleteFinanceBalance(Convert.ToInt64(FinancialYearBalanceId));
+                long userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var hostname = System.Environment.MachineName;
+                var ipaddress = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+                var result = await _ifinancialYearTermWiseFee.DeleteFinanceBalance(Convert.ToInt64(FinancialYearBalanceId), userid, hostname, ipaddress);
 				if (result.Id > 0)
 				{
 					return Json(new { success = true, message = "Student deleted successfully." });
@@ -278,7 +289,7 @@ namespace GCM.Controllers
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
                 var result = await _ifinancialYearTermWiseFee.GetBalanceData(Convert.ToInt64(subheadid), Convert.ToInt64(finyearid));
-                if(result > 0)
+                if(result >= 0)
 				{
 					return Json(new { data = result , success=true});
 				}
@@ -314,10 +325,11 @@ namespace GCM.Controllers
 
 		[HttpPost]
 		public async Task<IActionResult> AddExpense(ExpenseEntity ep)
-		{
-			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				var result = await _ifinancialYearTermWiseFee.AddExpense(ep);
+                ep.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = await _ifinancialYearTermWiseFee.AddExpense(ep);
 				if (result.Id > 0)
 				{
 					TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
@@ -374,6 +386,7 @@ namespace GCM.Controllers
                     dataTable.Rows.Add(data.chequeno);
                 }
                 cm.dt = dataTable;
+                cm.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
                 var result = await _ifinancialYearTermWiseFee.AddChequeNo(cm);
                 if (result.Id > 0)
                 {
@@ -435,6 +448,7 @@ namespace GCM.Controllers
 		{
             if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
             {
+                cm.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
                 var result = await _ifinancialYearTermWiseFee.UpdateCheque(cm);
                 if (result.Id > 0)
                 {

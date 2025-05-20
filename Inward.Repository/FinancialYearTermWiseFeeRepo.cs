@@ -33,6 +33,10 @@ namespace GCM.Repository
                     queryParameters.Add("@ChequeMasterID", ep.ChequeMasterID);
                     queryParameters.Add("@chequeno", ep.chequeno);
                     queryParameters.Add("@remarks", ep.remarks);
+                    queryParameters.Add("@Hostname", ep.hostname);
+                    queryParameters.Add("@Ipaddress", ep.ipaddress);
+                    queryParameters.Add("@TransactionId", ep.transactionid);
+                    queryParameters.Add("@UserId", ep.userid);
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.UpdateCheque, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -50,6 +54,10 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@chequesdt", ep.dt.AsTableValuedParameter("gsm.ChequeNoListType"));
+                    queryParameters.Add("@Hostname", ep.hostname);
+                    queryParameters.Add("@Ipaddress", ep.ipaddress);
+                    queryParameters.Add("@TransactionId", ep.transactionid);
+                    queryParameters.Add("@UserId", ep.userid);
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddChequeNo, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -120,7 +128,18 @@ namespace GCM.Repository
                     queryParameters.Add("@SubHeadId", ep.SubHeadId);
                     queryParameters.Add("@amount", ep.amount);
                     queryParameters.Add("@Remarks", ep.Remarks);
-                    queryParameters.Add("@ChequeNo", ep.ChequeNo);
+                    if (ep.ExpenseType == "Expense")
+                    {
+                        queryParameters.Add("@ChequeNo", ep.ChequeNo);
+                    }
+                    else
+                    {
+                        queryParameters.Add("@ChequeNo", 0);
+                    }
+                    queryParameters.Add("@Hostname", ep.hostname);
+                    queryParameters.Add("@Ipaddress", ep.ipaddress);
+                    queryParameters.Add("@TransactionId", ep.transactionid);
+                    queryParameters.Add("@UserId", ep.userid);
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddExpense, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -169,7 +188,7 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<ResponseMessage> DeleteFinanceBalance(long id)
+        public async Task<ResponseMessage> DeleteFinanceBalance(long id, long id2, string name1, string name2)
         {
             try
             {
@@ -177,7 +196,9 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@FinancialYearBalanceId", id);
-
+                    queryParameters.Add("@UserId", id2);
+                    queryParameters.Add("@Hostname", name1);
+                    queryParameters.Add("@Ipaddress", name2);
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.DeleteBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -199,7 +220,10 @@ namespace GCM.Repository
                     queryParameters.Add("@FinancialYearId", fn.FinancialYearId);
                     queryParameters.Add("@SubheadId", fn.SubHeadId);
                     queryParameters.Add("@amount", fn.amount);
-
+                    queryParameters.Add("@Hostname", fn.hostname);
+                    queryParameters.Add("@Ipaddress", fn.ipaddress);
+                    queryParameters.Add("@TransactionId", fn.transactionid);
+                    queryParameters.Add("@UserId", fn.userid);
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.UpdateFinanceBalanceData, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -253,6 +277,10 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@FinancialYearId", ft.FinancialYearId);
+                    queryParameters.Add("@Hostname", ft.hostname);
+                    queryParameters.Add("@Ipaddress", ft.ipaddress);
+                    queryParameters.Add("@TransactionId", ft.transactionid);
+                    queryParameters.Add("@UserId", ft.userid);
                     //queryParameters.Add("@TermId", financialYearTermWiseFeeEntity.TermId);
                     queryParameters.Add("@dt", ft.fdt.AsTableValuedParameter("gsm.SubHeadAmountBalance"));
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddFinanceBalance, queryParameters, commandType: CommandType.StoredProcedure);
@@ -264,7 +292,7 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id)
+        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id, long id2 , string name1, string name2)
         {
             try
             {
@@ -272,6 +300,9 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@FinancialYearWiseTermWiseFeeDetailid", id);
+                    queryParameters.Add("@UserId", id2);
+                    queryParameters.Add("@Hostname", name1);
+                    queryParameters.Add("@Ipaddress", name2);
                     
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.DeleteFinanceData, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
@@ -296,7 +327,11 @@ namespace GCM.Repository
                     queryParameters.Add("@SubHeadId", fn.SubHeadId);
                     queryParameters.Add("@MaleFee", fn.malefee);
                     queryParameters.Add("@FemaleFee", fn.femalefee);
-                    
+                    queryParameters.Add("@Hostname", fn.hostname);
+                    queryParameters.Add("@Ipaddress", fn.ipaddress);
+                    queryParameters.Add("@TransactionId", fn.transactionid);
+                    queryParameters.Add("@UserId", fn.userid);
+
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.UpdateFinanceData, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -349,6 +384,11 @@ namespace GCM.Repository
                 {
                     var queryParameters = new DynamicParameters();
                     queryParameters.Add("@FinancialYearId", financialYearTermWiseFeeEntity.FinancialYearId);
+                    queryParameters.Add("@Hostname", financialYearTermWiseFeeEntity.hostname);
+                    queryParameters.Add("@Ipaddress", financialYearTermWiseFeeEntity.ipaddress);
+                    queryParameters.Add("@TransactionId", financialYearTermWiseFeeEntity.transactionid);
+                    queryParameters.Add("@UserId", financialYearTermWiseFeeEntity.userid);
+
                     //queryParameters.Add("@TermId", financialYearTermWiseFeeEntity.TermId);
                     queryParameters.Add("@dt", financialYearTermWiseFeeEntity.dt.AsTableValuedParameter("dbo.FinancialYearTermWiseFeeType"));
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddFinancialYearTermFee, queryParameters, commandType: CommandType.StoredProcedure);

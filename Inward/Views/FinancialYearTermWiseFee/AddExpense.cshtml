@@ -1,5 +1,4 @@
-﻿
-@model GCM.Entity.ExpenseEntity;
+﻿@model GCM.Entity.ExpenseEntity;
 @{
 	ViewBag.Title = "Expense";
 	Layout = "~/Views/Shared/_Layout.cshtml";
@@ -29,6 +28,22 @@
 					<div class="card card2">
 						<div class="card-header">
 							<h3 class="card-title">Add Expense</h3>
+						</div>
+						<div class="card-body p-2">
+							<div class="form-group">
+								<label class="control-label">SubHead Type</label>
+								<div class="form-control">
+									<div class="form-check form-check-inline">
+										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Grant" checked />
+										<label class="form-check-label" for="Grant"><strong>Grant</strong></label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Expense" />
+										<label class="form-check-label" for="Expense"><strong>Expense</strong></label>
+									</div>
+								</div>
+								<span asp-validation-for="ExpenseType" class="text-danger"></span>
+							</div>
 						</div>
 						<div class="card-body p-2">
 							<div class="row">
@@ -70,7 +85,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-6 mt-2">
+								<div class="col-md-6 mt-2" id="chk">
 									<div class="form-horizontal form-bordered">
 										<div class="form-group row">
 											<label class="control-label col-md-3">Cheque No:</label>
@@ -88,7 +103,7 @@
 										<div class="form-group row">
 											<label class="control-label col-md-3">Remarks:</label>
 											<div class="col-md-9 ">
-												<textarea asp-for="Remarks" class="form-control" rows="4" cols="50" ></textarea>
+												<textarea asp-for="Remarks" class="form-control" rows="4" cols="50"></textarea>
 												<span asp-validation-for="Remarks" class="text-danger"></span>
 											</div>
 										</div>
@@ -114,14 +129,27 @@
 	var availableBalance = 0; // global variable to hold balance
 
 	$(document).ready(function () {
+		$('#chk').hide();
 		var msg = '@msg';
 		if (msg != null && msg != '') {
 			ShowDynamicSwalAlert("", msg);
 		}
 
-		// Listen for amount input change
+		$('input[name="ExpenseType"]').change(function () {
+			var selectedValue = $(this).val();
+
+			if (selectedValue === "Grant") {
+				$('#chk').hide(); // hide the target element
+			} else {
+				$('#chk').show(); // show it otherwise
+			}
+		});
+
 		$('#amount').on('input', function () {
-			validateAmount();
+			var expnstype = $('#ExpenseType').val();
+			if(expnstype === "Expense"){
+				validateAmount();
+			}
 		});
 	});
 
@@ -137,7 +165,8 @@
 					availableBalance = response.data; // store it globally
 					$('#availbalance').text("Available Balance: " + availableBalance);
 				} else {
-					alert("Opening balance is not defined" );
+					alert("Error: " + response.message);
+					
 				}
 			},
 			error: function () {

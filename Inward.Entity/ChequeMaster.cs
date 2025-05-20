@@ -17,6 +17,10 @@ namespace GCM.Entity
         public string chequeprefix { get; set; }
         public DataTable dt { get; set; }
         public List<chequenolist> chequenolist { get; set; }
+        public long userid { get; set; }
+        public string hostname { get; set; } = System.Environment.MachineName;
+        public string ipaddress { get; set; } = System.Net.Dns.GetHostAddresses(System.Net.Dns.GetHostName()).FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).ToString();
+        public string transactionid { get; set; } = new Guid().ToString();
     }
 
     public class chequenolist 
