@@ -211,7 +211,7 @@ namespace Inward.Repository
 					queryParameters.Add("@categoryid", st.categoryid);
 					queryParameters.Add("@applicationno", st.applicationno);
 					queryParameters.Add("@enrollmentno", st.enrolmentno);
-					queryParameters.Add("@FinancialYearId", st.FinancialYearId);
+					queryParameters.Add("@FinancialYearId", st.FinancialYearId);  
 					return await conn.QueryFirstOrDefaultAsync<ResponseMessage>(StoreProcedures.AddUpdateStudent, queryParameters, commandType: CommandType.StoredProcedure);
 
 				}

@@ -11,5 +11,6 @@ namespace GCM.Entity
 	{
 		public List<Student> Students { get; set; }
 		public string YearId { get; set; }
+		public string semid { get; set; }
 	}
 }
