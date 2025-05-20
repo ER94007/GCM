@@ -13,6 +13,7 @@ using GCM.Services;
 using GCM.Repository.Abstraction;
 using GCM.Repository;
 using OfficeOpenXml;
+using Microsoft.AspNetCore.Http.Features;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,18 @@ builder.Services.AddSession(options =>
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Adjust the timeout as per your requirements
 });
 
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+	options.Limits.MaxRequestBodySize = 104857600; // 100 MB
+});
+
+builder.Services.Configure<FormOptions>(options =>
+{
+	options.ValueLengthLimit = int.MaxValue;
+	options.MultipartBodyLengthLimit = long.MaxValue; // For file uploads
+	options.MemoryBufferThreshold = int.MaxValue;
+});
 
 // Register your services here
 //builder.Services.AddTransient<SessionManager>(); // Example registration

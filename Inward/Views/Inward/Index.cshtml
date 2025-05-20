@@ -509,44 +509,47 @@
 
 		$('#uploadButton').click(function (e) {
 		e.preventDefault();
-		
-		var studentData = [];
-		$('#InwardList tbody tr').each(function () {
-			var row = $(this);
-			var student = {
-				name: row.find('td:eq(1)').text(),
-				mobileno: row.find('td:eq(2)').text(),
-				email: row.find('td:eq(3)').text(),
-				categoryname: row.find('td:eq(4)').text(),
-				gendername: row.find('td:eq(5)').text(),
-				applicationno: row.find('td:eq(6)').text(),
-				enrolmentno: row.find('td:eq(7)').text(),
-			};
-			studentData.push(student);
-		});
-		var yearid = $('#yearid').val();
-		if(yearid == null || yearid == "") {
-			alert("Please select an academic year.");
-			return;
-		}
-		// Send the student data to the server for saving
-		$.ajax({
-			url: '@Url.Action("SaveStudents", "Student")',  // You will need to create this action in your controller
-			type: 'POST',
-			data: { students: studentData, yearid:yearid},
-			success: function (response) {
-				if (response.success) {
-					alert('Students saved successfully!');
-					
-				window.location.href = '@Url.Action("ViewStudents", "Inward")';
-				} else {
+
+			let studentData = [];
+			$('#InwardList tbody tr').each(function () {
+				let row = $(this);
+				let student = {
+					name: row.find('td:eq(1)').text().trim(),
+					mobileno: row.find('td:eq(2)').text().trim(),
+					email: row.find('td:eq(3)').text().trim(),
+					categoryname: row.find('td:eq(4)').text().trim(),
+					gendername: row.find('td:eq(5)').text().trim(),
+					applicationno: row.find('td:eq(6)').text().trim(),
+					enrolmentno: row.find('td:eq(7)').text().trim(),
+				};
+				studentData.push(student);
+			});
+
+			let yearid = $('#yearid').val();
+			if (!yearid) {
+				alert("Please select an academic year.");
+				return;
+			}
+
+			// Send JSON
+			$.ajax({
+				url: '/Student/SaveStudents',
+				type: 'POST',
+				contentType: 'application/json',
+				data: JSON.stringify({ students: studentData, yearId: yearid }),
+				success: function (response) {
+					if (response.success) {
+						alert('Students saved successfully!');
+						window.location.href = '/Inward/ViewStudents';
+					} else {
+						alert(response.message || 'Error saving students.');
+					}
+				},
+				error: function () {
 					alert('Error saving students.');
 				}
-			},
-			error: function () {
-				alert('Error saving students.');
-			}
-		});
+			});
+
 	});
 
 	});
