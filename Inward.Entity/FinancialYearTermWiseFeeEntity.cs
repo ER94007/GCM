@@ -75,7 +75,7 @@ namespace GCM.Entity
     public class ExpenseEntity
     {
         public string ExpenseType { get; set; }
-        public string DateofExpense { get; set; }
+        public DateTime DateofExpense { get; set; }
         public string FinancialYear { get; set; }
         public string SubHeadName { get; set; }
         public long ExpenseMasterId { get; set; }
