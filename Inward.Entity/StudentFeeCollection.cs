@@ -53,6 +53,8 @@ namespace GCM.Entity
 
 		public string TotalAmount { get; set; }
 
+        public string gender { get; set; }
+
 	}
 
 	public class StudentFeeDetail

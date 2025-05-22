@@ -69,8 +69,8 @@
           <DataField>TotalAmount</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Gender">
-          <DataField>Gender</DataField>
+        <Field Name="gender">
+          <DataField>gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -1512,7 +1512,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!Gender.Value</Value>
+                    <Value>=Fields!gender.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>
@@ -1640,7 +1640,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Fields!Gender.Value</Value>
+                    <Value>=Fields!gender.Value</Value>
                     <Style />
                   </TextRun>
                 </TextRuns>

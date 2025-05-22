@@ -1,4 +1,10 @@
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Dataset\dbStudentdetails.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Dataset\dtFeeCollectionDetail.xsd
 C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Dataset\studentfeecollection.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Dataset\StudentFeeDetailsReport.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Dataset\StudentInfo.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Reports\FeeCollectionDetailReport.rdlc
+C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Reports\StudentDetailReport.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Reports\StudentFeeCollectionReport1.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\wwwroot\Reports\StudentFeeCollectionReport.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Debug\net8.0\appsettings.Development.json

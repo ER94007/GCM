@@ -1,4 +1,10 @@
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\dbStudentdetails.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\dtFeeCollectionDetail.xsd
 C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\studentfeecollection.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\StudentFeeDetailsReport.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\StudentInfo.xsd
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\FeeCollectionDetailReport.rdlc
+C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\StudentDetailReport.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\StudentFeeCollectionReport1.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\StudentFeeCollectionReport.rdlc
 C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\appsettings.Development.json
@@ -318,9 +324,3 @@ C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\refint\GCM.dll
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\GCM.pdb
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\GCM.genruntimeconfig.cache
 C:\Users\Admin\Desktop\GCM\Inward\obj\Release\net8.0\ref\GCM.dll
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\dbStudentdetails.xsd
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\dtFeeCollectionDetail.xsd
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\StudentFeeDetailsReport.xsd
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Dataset\StudentInfo.xsd
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\FeeCollectionDetailReport.rdlc
-C:\Users\Admin\Desktop\GCM\Inward\bin\Release\net8.0\wwwroot\Reports\StudentDetailReport.rdlc
