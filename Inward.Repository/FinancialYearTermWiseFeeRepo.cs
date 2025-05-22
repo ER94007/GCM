@@ -128,6 +128,8 @@ namespace GCM.Repository
                     queryParameters.Add("@SubHeadId", ep.SubHeadId);
                     queryParameters.Add("@amount", ep.amount);
                     queryParameters.Add("@Remarks", ep.Remarks);
+                    queryParameters.Add("@ExpenseType", ep.ExpenseType);
+                    queryParameters.Add("@TransactionDate", ep.DateofExpense.ToString());
                     if (ep.ExpenseType == "Expense")
                     {
                         queryParameters.Add("@ChequeNo", ep.ChequeNo);

@@ -23,19 +23,26 @@
 										<th>Financial Year</th>
 										<th>Sub Head</th>
 										<th>Date Of Expense</th>
+										<th>Expense Type</th>
 										<th>Expense Amount</th>
 									</tr>
 								</thead>
 								<tbody>
+									@{
+										var index = 1;
+									}
 									@foreach (var item in Model)
 									{
+
 										<tr>
-											<td>@item.ExpenseMasterId</td>
+											<td>@index</td>
 											<td>@item.FinancialYear</td>
 											<td>@item.SubHeadName</td>
 											<td>@item.DateofExpense</td>
+											<td>@item.ExpenseType.ToString()</td>
 											<td>@item.amount</td>
 										</tr>
+										index++;
 									}
 								</tbody>
 							</table>
