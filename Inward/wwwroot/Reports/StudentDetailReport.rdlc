@@ -483,6 +483,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -805,6 +806,7 @@
                           <SortExpressions>
                             <SortExpression>
                               <Value>=Fields!RecieptNo.Value</Value>
+                              <Direction>Descending</Direction>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
