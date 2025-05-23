@@ -102,6 +102,7 @@ namespace Inward.Entity
         public Int64 GovtTotal { get; set; }
         public Int64 PrivateTotal { get; set; }
         public DateTime FeeDate { get; set; }
+        public int SubHeadOrder { get; set; }
     }
     public class FeeCollectionDetailReport
     {
