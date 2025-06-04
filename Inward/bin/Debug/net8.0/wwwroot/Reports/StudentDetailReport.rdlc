@@ -61,6 +61,18 @@
           <DataField>SubHeadOrder</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="RecieptNoOrderBy">
+          <DataField>RecieptNoOrderBy</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="RowTypeOrder">
+          <DataField>RowTypeOrder</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="FinancialYear">
+          <DataField>FinancialYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>StudentFeeDetailsReport</rd:DataSetName>
@@ -122,10 +134,10 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.71528in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.80556in</Width>
+                  <Width>1.57639in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.26389in</Width>
@@ -134,16 +146,16 @@
                   <Width>0.25694in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.57366in</Width>
+                  <Width>0.45in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.53894in</Width>
+                  <Width>0.5in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.51116in</Width>
+                  <Width>0.5in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.54588in</Width>
+                  <Width>0.5in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -321,7 +333,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!GovtTotal.Value</Value>
+                                  <Value>=Sum(Fields!GovtTotal.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -355,7 +367,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!PrivateTotal.Value</Value>
+                                  <Value>=Sum(Fields!PrivateTotal.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -389,7 +401,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Amount.Value</Value>
+                                  <Value>=Sum(Fields!Amount.Value)</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -772,7 +784,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1in</Size>
+                        <Size>0.78498in</Size>
                         <CellContents>
                           <Textbox Name="FeeDate2">
                             <CanGrow>true</CanGrow>
@@ -782,9 +794,7 @@
                                 <TextRuns>
                                   <TextRun>
                                     <Value>=Fields!FeeDate.Value</Value>
-                                    <Style>
-                                      <FontWeight>=IIF(IsNothing(Fields!RecieptNo.Value) OR Fields!RecieptNo.Value = "", "Normal", "Bold")</FontWeight>
-                                    </Style>
+                                    <Style />
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
@@ -815,7 +825,8 @@
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=IIF(IsNothing(Fields!RecieptNo.Value) OR Fields!RecieptNo.Value = "", 999, 1)</Value>
+                              <Value>=Fields!RecieptNoOrderBy.Value</Value>
+                              <Direction>Descending</Direction>
                             </SortExpression>
                           </SortExpressions>
                           <TablixMembers>
@@ -839,11 +850,13 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <KeepTogether>true</KeepTogether>
             <DataSetName>Report_studentsFeeMasterDetail_Rutvik</DataSetName>
             <Top>0.20139in</Top>
             <Left>0.16194in</Left>
             <Height>1.07639in</Height>
-            <Width>6.49603in</Width>
+            <Width>5.54748in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -858,7 +871,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>10.13714in</Width>
+      <Width>5.90592in</Width>
       <Page>
         <PageHeader>
           <Height>0.82861in</Height>
@@ -869,10 +882,10 @@
               <Source>Embedded</Source>
               <Value>college_logo_Coloured</Value>
               <Sizing>Fit</Sizing>
-              <Top>0.3175cm</Top>
-              <Left>0.44662cm</Left>
-              <Height>1.34083cm</Height>
-              <Width>1.53705cm</Width>
+              <Top>0.28222cm</Top>
+              <Left>0.13957cm</Left>
+              <Height>1.05861cm</Height>
+              <Width>1.21955cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -880,12 +893,13 @@
               </Style>
             </Image>
             <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>GOVERNMENT ARTS COLLEGE, BAYAD, DIST: ARAVALLI</Value>
+                      <Value>GOVERNMENT ARTS COLLEGE, BAYAD</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -898,10 +912,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>0.3175cm</Top>
-              <Left>2.29398cm</Left>
+              <Top>0.28222cm</Top>
+              <Left>1.7119cm</Left>
               <Height>0.75875cm</Height>
-              <Width>6.45071in</Width>
+              <Width>5.03544in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -931,11 +945,81 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.49316in</Top>
-              <Left>2.94419in</Left>
+              <Top>0.47928in</Top>
+              <Left>0.75248in</Left>
               <Height>0.25in</Height>
-              <Width>1.73611in</Width>
+              <Width>1.53333in</Width>
               <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Semester - </Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Fields!TermName.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.47928in</Top>
+              <Left>2.34136in</Left>
+              <Height>0.25in</Height>
+              <Width>0.89723in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!FinancialYear.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.47928in</Top>
+              <Left>3.36081in</Left>
+              <Height>0.25in</Height>
+              <Width>2.09862in</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -953,8 +1037,8 @@
             </Border>
           </Style>
         </PageHeader>
-        <PageHeight>11.69in</PageHeight>
-        <PageWidth>16.54in</PageWidth>
+        <PageHeight>8.5in</PageHeight>
+        <PageWidth>14in</PageWidth>
         <LeftMargin>0.5in</LeftMargin>
         <RightMargin>0.1in</RightMargin>
         <TopMargin>0.1in</TopMargin>

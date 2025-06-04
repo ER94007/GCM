@@ -393,7 +393,7 @@ namespace GCM.Controllers
 				}
 				else if (student.categoryname.ToLower() == "obc")
 				{
-					row["CategoryId"] = 3; // OBC Category
+					row["CategoryId"] = 2; // OBC Category
 				}
 				else if (student.categoryname.ToLower() == "ews")
 				{

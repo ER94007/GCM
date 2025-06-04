@@ -35,6 +35,8 @@
               <Mapping SourceColumn="FeeDate" DataSetColumn="FeeDate" />
               <Mapping SourceColumn="SubHeadOrder" DataSetColumn="SubHeadOrder" />
               <Mapping SourceColumn="RecieptNoOrderBy" DataSetColumn="RecieptNoOrderBy" />
+              <Mapping SourceColumn="RowTypeOrder" DataSetColumn="RowTypeOrder" />
+              <Mapping SourceColumn="FinancialYear" DataSetColumn="FinancialYear" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -83,8 +85,16 @@
               <xs:element name="GovtTotal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="GovtTotalColumn" msprop:Generator_ColumnPropNameInRow="GovtTotal" msprop:Generator_UserColumnName="GovtTotal" msprop:Generator_ColumnVarNameInTable="columnGovtTotal" type="xs:decimal" minOccurs="0" />
               <xs:element name="PrivateTotal" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PrivateTotalColumn" msprop:Generator_ColumnPropNameInRow="PrivateTotal" msprop:Generator_UserColumnName="PrivateTotal" msprop:Generator_ColumnVarNameInTable="columnPrivateTotal" type="xs:decimal" minOccurs="0" />
               <xs:element name="FeeDate" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="FeeDateColumn" msprop:Generator_ColumnPropNameInRow="FeeDate" msprop:Generator_UserColumnName="FeeDate" msprop:Generator_ColumnVarNameInTable="columnFeeDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="SubHeadOrder" msdata:ReadOnly="true" msprop:Generator_UserColumnName="SubHeadOrder" msprop:Generator_ColumnPropNameInTable="SubHeadOrderColumn" msprop:Generator_ColumnPropNameInRow="SubHeadOrder" msprop:Generator_ColumnVarNameInTable="columnSubHeadOrder" type="xs:int" minOccurs="0" />
-              <xs:element name="RecieptNoOrderBy" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="RecieptNoOrderBy" msprop:Generator_ColumnPropNameInTable="RecieptNoOrderByColumn" msprop:Generator_ColumnVarNameInTable="columnRecieptNoOrderBy" msprop:Generator_UserColumnName="RecieptNoOrderBy" type="xs:int" minOccurs="0" />
+              <xs:element name="SubHeadOrder" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="SubHeadOrderColumn" msprop:Generator_ColumnPropNameInRow="SubHeadOrder" msprop:Generator_UserColumnName="SubHeadOrder" msprop:Generator_ColumnVarNameInTable="columnSubHeadOrder" type="xs:int" minOccurs="0" />
+              <xs:element name="RecieptNoOrderBy" msdata:ReadOnly="true" msprop:Generator_UserColumnName="RecieptNoOrderBy" msprop:Generator_ColumnPropNameInTable="RecieptNoOrderByColumn" msprop:Generator_ColumnPropNameInRow="RecieptNoOrderBy" msprop:Generator_ColumnVarNameInTable="columnRecieptNoOrderBy" type="xs:int" minOccurs="0" />
+              <xs:element name="RowTypeOrder" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="RowTypeOrder" msprop:Generator_ColumnPropNameInTable="RowTypeOrderColumn" msprop:Generator_ColumnVarNameInTable="columnRowTypeOrder" msprop:Generator_UserColumnName="RowTypeOrder" type="xs:long" minOccurs="0" />
+              <xs:element name="FinancialYear" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="FinancialYear" msprop:Generator_ColumnPropNameInTable="FinancialYearColumn" msprop:Generator_ColumnVarNameInTable="columnFinancialYear" msprop:Generator_UserColumnName="FinancialYear" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
