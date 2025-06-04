@@ -103,6 +103,7 @@ namespace Inward.Entity
         public Int64 PrivateTotal { get; set; }
         public DateTime FeeDate { get; set; }
         public int SubHeadOrder { get; set; }
+        public string FinancialYear { get; set; }
     }
     public class FeeCollectionDetailReport
     {

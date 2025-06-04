@@ -871,7 +871,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>5.90592in</Width>
+      <Width>9.70943in</Width>
       <Page>
         <PageHeader>
           <Height>0.82861in</Height>
@@ -913,7 +913,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
               <Top>0.28222cm</Top>
-              <Left>1.7119cm</Left>
+              <Left>11.2369cm</Left>
               <Height>0.75875cm</Height>
               <Width>5.03544in</Width>
               <ZIndex>1</ZIndex>
@@ -935,7 +935,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fee Collection Report</Value>
+                      <Value>Fee Collection Report:</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -946,7 +946,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.47928in</Top>
-              <Left>0.75248in</Left>
+              <Left>4.75248in</Left>
               <Height>0.25in</Height>
               <Width>1.53333in</Width>
               <ZIndex>2</ZIndex>
@@ -984,7 +984,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.47928in</Top>
-              <Left>2.34136in</Left>
+              <Left>6.34136in</Left>
               <Height>0.25in</Height>
               <Width>0.89723in</Width>
               <ZIndex>3</ZIndex>
@@ -1016,9 +1016,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.47928in</Top>
-              <Left>3.36081in</Left>
+              <Left>7.61081in</Left>
               <Height>0.25in</Height>
-              <Width>2.09862in</Width>
+              <Width>1.84861in</Width>
               <ZIndex>4</ZIndex>
               <Style>
                 <Border>
