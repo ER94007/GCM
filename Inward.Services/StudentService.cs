@@ -27,6 +27,14 @@ namespace GCM.Services
             // Return the result to the caller
             return result;
         }
+        public async Task<ResponseMessage> UpdateEnrollment(DataTable updatestudentTable,long userid)
+        {
+           // return await _StudentRepo.AddStudent(studentTable);
+            var result = await _StudentRepo.UpdateEnrollment(updatestudentTable, userid);
+
+            // Return the result to the caller
+            return result;
+        }
         
     }
 }

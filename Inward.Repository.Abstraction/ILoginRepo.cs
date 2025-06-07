@@ -42,6 +42,7 @@ namespace Inward.Repository.Abstraction
 		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity Head);
         Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate,string todate);
 		Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userid);
+		Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId);
 
 	}
 }

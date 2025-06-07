@@ -38,6 +38,6 @@ namespace Inward.Services.Abstraction
 		Task<ResponseMessage> AddUpdatehead(HeadMasterEntity subHead);
         Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate, string todate);
 		Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userId);
-
-	}
+        Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId);
+    }
 }
