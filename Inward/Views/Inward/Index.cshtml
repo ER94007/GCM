@@ -13,33 +13,51 @@
 	{
 		finid = Model.FinancialYearId;
 	}
+
+	@if (TempData["SuccessMessage"] != null)
+	{
+		<div class="alert alert-success">
+			@TempData["SuccessMessage"]
+		</div>
+	}
+	@if (TempData["ErrorMessage"] != null)
+	{
+		<div class="alert alert-danger">
+			@TempData["ErrorMessage"]
+		</div>
+	}
+
 }
 @model Inward.Entity.Student
 
 <style>
 	.green-radio {
-	width: 20px;
-	height: 20px;
-	border: 2px solid green;
-	background-color: green;
+		width: 20px;
+		height: 20px;
+		border: 2px solid green;
+		background-color: green;
 	}
 
-	.green-radio:checked {
-	background-color: darkgreen;
-	border-color: darkgreen;
-	}
+		.green-radio:checked {
+			background-color: darkgreen;
+			border-color: darkgreen;
+		}
 
-	.green-radio:focus {
-	outline: none;
-	}
+		.green-radio:focus {
+			outline: none;
+		}
 
-	/* Optional: Change text color for green radio */
-	.green-radio + label {
-	color: green;
-	}
+		/* Optional: Change text color for green radio */
+		.green-radio + label {
+			color: green;
+		}
 </style>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
+	<!-- Hidden elements to store TempData -->
+	<span id="tempSuccess" data-message="@TempData["SuccessMessage"]" style="display:none;"></span>
+	<span id="tempError" data-message="@TempData["ErrorMessage"]" style="display:none;"></span>
+
 	<!-- Main content -->
 	@* <div class="content"> *@
 	<div class="container-fluid">
@@ -57,7 +75,7 @@
 					<span asp-validation-for="FinancialYearId" class="text-danger"></span>
 				</div>
 			</div>
-		
+
 			<div class="col-md-4">
 				<!-- Inward No -->
 				<div class="form-group">
@@ -69,7 +87,7 @@
 				</div>
 			</div>
 		</div>
-		<div style="margin-top: 20px;"></div>	
+		<div style="margin-top: 20px;"></div>
 		<div>
 			<input type="radio" name="formType" value="form1" id="form1" checked class="green-radio"> 1. Add by Form
 			@if (varShow == 0)
@@ -78,18 +96,21 @@
 					<input type="radio" name="formType" value="form2" id="form2" class="green-radio"> 2. Upload Excel
 				</span>
 			}
+			<span>
+				<input type="radio" name="formType" value="form2" id="form3" class="green-radio"> 2. Update Student Enrollment
+			</span>
 		</div>
 
-	
+
 
 
 
 		<div style="margin-top: 20px;"></div>
-		<form  method="post" id="fillDetailsForm">
+		<form method="post" id="fillDetailsForm">
 			<input type="hidden" asp-for="studentid" value="@studentid" />
-			<input type="hidden" asp-for="FinancialYearId"  />
-			<input type="hidden" asp-for="termid"  />
-			
+			<input type="hidden" asp-for="FinancialYearId" />
+			<input type="hidden" asp-for="termid" />
+
 			<!-- Inward Information -->
 			<div class="row mb-3">
 				<div class="col-md-12">
@@ -152,7 +173,7 @@
 
 									</div>
 								</div>
-						
+
 								<div class="col-md-4">
 									<!-- Inward Date -->
 									<div class="form-group">
@@ -207,14 +228,14 @@
 
 
 			<div style="margin-top: 20px;">
-				<button id="showDataBtn" class="btn btn-primary mr-1" >Show Data</button>
+				<button id="showDataBtn" class="btn btn-primary mr-1">Show Data</button>
 				<a href="@Url.Action("ViewStudents", "Inward")" class="btn btn-secondary" style="margin-right: 824px;">
 					<i class="fas fa-list mr-1"></i>
 					Go to List
 				</a>
 				<a asp-controller="Student" asp-action="DownloadExcel" class="btn btn-primary">Download Excel Demo</a>
 			</div>
-			
+
 			<div style="margin-top: 20px;"></div>
 
 			<div id="showdatadiv">
@@ -265,6 +286,20 @@
 		</form>
 
 
+		<form asp-action="Upload" asp-controller="Student" method="post" id="UpdateStudent" enctype="multipart/form-data">
+			<a href="#" onclick="return validateAcademicYearAndSemester();" class="btn btn-primary">Download Student Excel</a>
+
+			<div class="form-group">
+				<label for="excelFile">Upload Student Excel</label>
+				<input type="file" name="excelFile" id="excelFile" class="form-control" accept=".xlsx, .xls" />
+			</div>
+
+			<button type="submit" class="btn btn-success">Update </button>
+
+
+		</form>
+
+
 	</div>
 	@* </div> *@
 </div>
@@ -275,7 +310,7 @@
 <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<form asp-action="FileUpload" enctype="multipart/form-data">
-			
+
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="uploadModalLabel">Upload Student Data</h5>
@@ -316,248 +351,294 @@
 
 <script type="text/javascript">
 
-	// $('#btnSave').click(function (e) {
-	// 	// e.preventDefault();
-	// 	var yearid = $('#yearid').val();
-	// 	if(yearid == null || yearid == "") {
-	// 		alert("Please select an academic year.");
-	// 		e.preventDefault();
-	// 		return;
-	// 	}
-	// 	else{
-	// 		$('#fillDetailsForm').submit();
-	// 	}
-	// })
-	function validateacademicyear() {
-			validateacademicyear1();
-    var form = $('#fillDetailsForm');
+		// $('#btnSave').click(function (e) {
+		// 	// e.preventDefault();
+		// 	var yearid = $('#yearid').val();
+		// 	if(yearid == null || yearid == "") {
+		// 		alert("Please select an academic year.");
+		// 		e.preventDefault();
+		// 		return;
+		// 	}
+		// 	else{
+		// 		$('#fillDetailsForm').submit();
+		// 	}
+		// })
+		function validateacademicyear() {
+				validateacademicyear1();
+		var form = $('#fillDetailsForm');
 
-    // Trigger ASP.NET Core's built-in validation
-    if (form.valid()) {
-        form.submit();
-    }
-}
-	function validateacademicyear1(){
-		var yearid = $('#yearid').val();
-		if(yearid == null || yearid == "") {
-			alert("Please select an academic year.");
-			// e.preventDefault();
-			// return;
-		}
-		else{
-			$('#fillDetailsForm').submit();
+		// Trigger ASP.NET Core's built-in validation
+		if (form.valid()) {
+			form.submit();
 		}
 	}
+		function validateacademicyear1(){
+			var yearid = $('#yearid').val();
+			if(yearid == null || yearid == "") {
+				alert("Please select an academic year.");
+				// e.preventDefault();
+				// return;
+			}
+			else{
+				$('#fillDetailsForm').submit();
+			}
+		}
 
-
-	function bindacademicyear(){
-		var yearid = $('#yearid').val();
-		$('#FinancialYearId').val(yearid);
-	}
-	function bindterm(){
+		function validateAcademicYearAndSemester() {
+				var yearid = $('#yearid').val();
 				var semid = $('#semid').val();
-				$('#termid').val(semid);
-	}
-	$(document).ready(function () {
-		debugger;
-		var msg = '@msg';
-		if (msg != null && msg != '') {
-			ShowDynamicSwalAlert("", msg);
+				var messages = [];
+
+				if (!yearid) {
+					messages.push("Please select an academic year.");
+				}
+
+				if (!semid) {
+					messages.push("Please select a semester.");
+				}
+
+				if (messages.length > 0) {
+					alert(messages.join('\n'));
+					return false; // Prevent navigation
+				}
+
+				// Redirect manually if both are valid
+				window.location.href = '/Student/DownloadExcelForUpdateStudent?YearId=' + yearid + '&TermId=' + semid;
+			return false;
 		}
-		$("#showdatadiv").hide();
-		$("#fillDetailsForm").show();
-		$("#AddStudents").hide();
-		$("input[name='formType']").change(function () {
-			if ($("#form1").is(":checked")) {
-				$("#fillDetailsForm").show();
-				$("#AddStudents").hide();
-			} else {
-				$("#fillDetailsForm").hide();
-				$("#AddStudents").show();
+
+
+
+		function bindacademicyear(){
+			var yearid = $('#yearid').val();
+			$('#FinancialYearId').val(yearid);
+		}
+		function bindterm(){
+					var semid = $('#semid').val();
+					$('#termid').val(semid);
+		}
+		$(document).ready(function () {
+			var successMsg = $('#tempSuccess').data('message');
+			var errorMsg = $('#tempError').data('message');
+
+			if (successMsg) {
+				alert(successMsg); // Or use a toast here
 			}
-		});
 
-		// Trigger Modal on Upload Excel Button Click
-		$('#btnUploadExcel').click(function () {
-			$('#uploadModal').modal('show');
-		});
+			if (errorMsg) {
+				alert(errorMsg); // Or use a toast here
+			}
 
-
-
-				$('#showDataBtn').click(function (e) {
-		$("#showdatadiv").show();
-		e.preventDefault();
-
-		var fileInput = $('input[type="file"][name="file"]')[0];
-	var file = fileInput.files[0];
-
-	// If no file is selected, hide the div and show an error message
-	if (!file) {
-		$("#showdatadiv").hide();
-		alert("Please choose an Excel file before proceeding.");
-		return;
-	}
-
-		var fileInput = $('input[type="file"][name="file"]')[0];
-		var file = fileInput.files[0];
-
-		var formData = new FormData();
-		formData.append('file', file);
-		debugger;
-				$.ajax({
-			url: '@Url.Action("show", "Student")',
-			type: 'POST',
-			data: formData,
-			contentType: false,
-			processData: false,
-			success: function (response) {
-				// Clear the table first
-				$('#InwardList tbody').empty();
-
-				if (response.success === false) {
-					// Hide table headers if there are duplicates
-					$('#InwardList thead').hide();
-					$('#uploadButton').hide();
-
-					 if (response.message) {
-					let errorRow = `<tr>
-										<td colspan="8" class="text-center text-danger"><strong>${response.message}</strong></td>
-									</tr>`;
-					$('#InwardList tbody').append(errorRow);
+			var msg = '@msg';
+			if (msg != null && msg != '') {
+				ShowDynamicSwalAlert("", msg);
+			}
+			$("#showdatadiv").hide();
+			$("#fillDetailsForm").show();
+			$("#AddStudents").hide();
+			$("#UpdateStudent").hide();
+			$("input[name='formType']").change(function () {
+				if ($("#form1").is(":checked")) {
+					$("#fillDetailsForm").show();
+					$("#AddStudents").hide();
+					$("#UpdateStudent").hide();
 				}
-					// Display duplicates inside the table
-					if (response.duplicates) {
-						let row = `<tr>
-									<td colspan="8" class="text-center text-danger"><strong>Duplicate Data Found:</strong></td>
-								   </tr>`;
-						$('#InwardList tbody').append(row);
+					else if($("#form3").is(":checked"))
+				{
 
-						// Show duplicate Emails
-						if (response.duplicates.emails.length > 0) {
-							let emailRow = `<tr>
-											 <td colspan="8" class="text-center text-warning">Duplicate Emails: ${response.duplicates.emails.join(', ')}</td>
-											</tr>`;
-							$('#InwardList tbody').append(emailRow);
-						}
-
-						// Show duplicate Application Numbers
-						if (response.duplicates.applicationnos.length > 0) {
-							let appNoRow = `<tr>
-											 <td colspan="8" class="text-center text-warning">Duplicate Application Numbers: ${response.duplicates.applicationnos.join(', ')}</td>
-											</tr>`;
-							$('#InwardList tbody').append(appNoRow);
-						}
-
-						// Show duplicate Enrolment Numbers
-						if (response.duplicates.enrolmentnos.length > 0) {
-							let enrolmentNoRow = `<tr>
-												 <td colspan="8" class="text-center text-warning">Duplicate Enrolment Numbers: ${response.duplicates.enrolmentnos.join(', ')}</td>
-												</tr>`;
-							$('#InwardList tbody').append(enrolmentNoRow);
-						}
-					}
-
-					// Display gender and category validation errors
-					if (response.errors) {
-						if (response.errors.genderErrors.length > 0) {
-							let genderErrorRow = `<tr>
-													<td colspan="8" class="text-center text-danger">Invalid Gender: ${response.errors.genderErrors.join(', ')}</td>
-												   </tr>`;
-							$('#InwardList tbody').append(genderErrorRow);
-						}
-
-						if (response.errors.categoryErrors.length > 0) {
-							let categoryErrorRow = `<tr>
-													  <td colspan="8" class="text-center text-danger">Invalid Category: ${response.errors.categoryErrors.join(', ')}</td>
-													 </tr>`;
-							$('#InwardList tbody').append(categoryErrorRow);
-						}
-					}
-
-					// Display missing field errors
-					if (response.errors && response.errors.missingFields.length > 0) {
-						let missingFieldRow = `<tr>
-												 <td colspan="8" class="text-center text-danger">Missing Fields: ${response.errors.missingFields.join(', ')}</td>
-												</tr>`;
-						$('#InwardList tbody').append(missingFieldRow);
-			}
-				} else {
-					// Show table headers and insert valid student data into the table
-					$('#InwardList thead').show();
-					$('#uploadButton').show();
-					response.students.forEach(function (student, index) {
-						var row = `<tr>
-									<td>${index + 1}</td>
-									<td>${student.name}</td>
-									<td>${student.mobileno}</td>
-									<td>${student.email}</td>
-									<td>${student.categoryname}</td>
-									<td>${student.gendername}</td>
-									<td>${student.applicationno}</td>
-									<td>${student.enrolmentno}</td>
-								   </tr>`;
-						$('#InwardList tbody').append(row);
-					});
+						$("#fillDetailsForm").hide();
+						$("#AddStudents").hide();
+						$("#UpdateStudent").show();
 				}
-			},
-			error: function () {
-				alert('Error uploading file.');
-			}
-		});
-
-	});
-
-		$('#uploadButton').click(function (e) {
-		e.preventDefault();
-
-			let studentData = [];
-			$('#InwardList tbody tr').each(function () {
-				let row = $(this);
-				let student = {
-					name: row.find('td:eq(1)').text().trim(),
-					mobileno: row.find('td:eq(2)').text().trim(),
-					email: row.find('td:eq(3)').text().trim(),
-					categoryname: row.find('td:eq(4)').text().trim(),
-					gendername: row.find('td:eq(5)').text().trim(),
-					applicationno: row.find('td:eq(6)').text().trim(),
-					enrolmentno: row.find('td:eq(7)').text().trim(),
-				};
-				studentData.push(student);
+				else
+				{
+					$("#fillDetailsForm").hide();
+					$("#AddStudents").show();
+					$("#UpdateStudent").hide();
+				}
 			});
 
-			let yearid = $('#yearid').val();
-			if (!yearid) {
-				alert("Please select an academic year.");
-				return;
-			}
+			// Trigger Modal on Upload Excel Button Click
+			$('#btnUploadExcel').click(function () {
+				$('#uploadModal').modal('show');
+			});
 
-			let semid = $('#semid').val();
-			if (!semid) {
-				alert("Please select an Enrolment year.");
-				return;
-			}
-			// Send JSON
-			$.ajax({
-				url: '/Student/SaveStudents',
+
+
+					$('#showDataBtn').click(function (e) {
+			$("#showdatadiv").show();
+			e.preventDefault();
+
+			var fileInput = $('input[type="file"][name="file"]')[0];
+		var file = fileInput.files[0];
+
+		// If no file is selected, hide the div and show an error message
+		if (!file) {
+			$("#showdatadiv").hide();
+			alert("Please choose an Excel file before proceeding.");
+			return;
+		}
+
+			var fileInput = $('input[type="file"][name="file"]')[0];
+			var file = fileInput.files[0];
+
+			var formData = new FormData();
+			formData.append('file', file);
+			debugger;
+					$.ajax({
+				url: '@Url.Action("show", "Student")',
 				type: 'POST',
-				contentType: 'application/json',
-				data: JSON.stringify({ students: studentData, yearId: yearid, semid: semid }),
+				data: formData,
+				contentType: false,
+				processData: false,
 				success: function (response) {
-					if (response.success) {
-						alert('Students saved successfully!');
-						window.location.href = '/Inward/ViewStudents';
+					// Clear the table first
+					$('#InwardList tbody').empty();
+
+					if (response.success === false) {
+						// Hide table headers if there are duplicates
+						$('#InwardList thead').hide();
+						$('#uploadButton').hide();
+
+						 if (response.message) {
+						let errorRow = `<tr>
+											<td colspan="8" class="text-center text-danger"><strong>${response.message}</strong></td>
+										</tr>`;
+						$('#InwardList tbody').append(errorRow);
+					}
+						// Display duplicates inside the table
+						if (response.duplicates) {
+							let row = `<tr>
+										<td colspan="8" class="text-center text-danger"><strong>Duplicate Data Found:</strong></td>
+									   </tr>`;
+							$('#InwardList tbody').append(row);
+
+							// Show duplicate Emails
+							if (response.duplicates.emails.length > 0) {
+								let emailRow = `<tr>
+												 <td colspan="8" class="text-center text-warning">Duplicate Emails: ${response.duplicates.emails.join(', ')}</td>
+												</tr>`;
+								$('#InwardList tbody').append(emailRow);
+							}
+
+							// Show duplicate Application Numbers
+							if (response.duplicates.applicationnos.length > 0) {
+								let appNoRow = `<tr>
+												 <td colspan="8" class="text-center text-warning">Duplicate Application Numbers: ${response.duplicates.applicationnos.join(', ')}</td>
+												</tr>`;
+								$('#InwardList tbody').append(appNoRow);
+							}
+
+							// Show duplicate Enrolment Numbers
+							if (response.duplicates.enrolmentnos.length > 0) {
+								let enrolmentNoRow = `<tr>
+													 <td colspan="8" class="text-center text-warning">Duplicate Enrolment Numbers: ${response.duplicates.enrolmentnos.join(', ')}</td>
+													</tr>`;
+								$('#InwardList tbody').append(enrolmentNoRow);
+							}
+						}
+
+						// Display gender and category validation errors
+						if (response.errors) {
+							if (response.errors.genderErrors.length > 0) {
+								let genderErrorRow = `<tr>
+														<td colspan="8" class="text-center text-danger">Invalid Gender: ${response.errors.genderErrors.join(', ')}</td>
+													   </tr>`;
+								$('#InwardList tbody').append(genderErrorRow);
+							}
+
+							if (response.errors.categoryErrors.length > 0) {
+								let categoryErrorRow = `<tr>
+														  <td colspan="8" class="text-center text-danger">Invalid Category: ${response.errors.categoryErrors.join(', ')}</td>
+														 </tr>`;
+								$('#InwardList tbody').append(categoryErrorRow);
+							}
+						}
+
+						// Display missing field errors
+						if (response.errors && response.errors.missingFields.length > 0) {
+							let missingFieldRow = `<tr>
+													 <td colspan="8" class="text-center text-danger">Missing Fields: ${response.errors.missingFields.join(', ')}</td>
+													</tr>`;
+							$('#InwardList tbody').append(missingFieldRow);
+				}
 					} else {
-						alert(response.message || 'Error saving students.');
+						// Show table headers and insert valid student data into the table
+						$('#InwardList thead').show();
+						$('#uploadButton').show();
+						response.students.forEach(function (student, index) {
+							var row = `<tr>
+										<td>${index + 1}</td>
+										<td>${student.name}</td>
+										<td>${student.mobileno}</td>
+										<td>${student.email}</td>
+										<td>${student.categoryname}</td>
+										<td>${student.gendername}</td>
+										<td>${student.applicationno}</td>
+										<td>${student.enrolmentno}</td>
+									   </tr>`;
+							$('#InwardList tbody').append(row);
+						});
 					}
 				},
 				error: function () {
-					alert('Error saving students.');
+					alert('Error uploading file.');
 				}
 			});
 
-	});
+		});
 
-	});
+			$('#uploadButton').click(function (e) {
+			e.preventDefault();
+
+				let studentData = [];
+				$('#InwardList tbody tr').each(function () {
+					let row = $(this);
+					let student = {
+						name: row.find('td:eq(1)').text().trim(),
+						mobileno: row.find('td:eq(2)').text().trim(),
+						email: row.find('td:eq(3)').text().trim(),
+						categoryname: row.find('td:eq(4)').text().trim(),
+						gendername: row.find('td:eq(5)').text().trim(),
+						applicationno: row.find('td:eq(6)').text().trim(),
+						enrolmentno: row.find('td:eq(7)').text().trim(),
+					};
+					studentData.push(student);
+				});
+
+				let yearid = $('#yearid').val();
+				if (!yearid) {
+					alert("Please select an academic year.");
+					return;
+				}
+
+				let semid = $('#semid').val();
+				if (!semid) {
+					alert("Please select an Enrolment year.");
+					return;
+				}
+				// Send JSON
+				$.ajax({
+					url: '/Student/SaveStudents',
+					type: 'POST',
+					contentType: 'application/json',
+					data: JSON.stringify({ students: studentData, yearId: yearid, semid: semid }),
+					success: function (response) {
+						if (response.success) {
+							alert('Students saved successfully!');
+							window.location.href = '/Inward/ViewStudents';
+						} else {
+							alert(response.message || 'Error saving students.');
+						}
+					},
+					error: function () {
+						alert('Error saving students.');
+					}
+				});
+
+		});
+
+		});
 
 </script>
 @section Scripts {

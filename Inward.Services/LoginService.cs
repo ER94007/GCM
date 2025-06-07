@@ -134,5 +134,9 @@ namespace Inward.Services
 			return await _LoginRepo.GetMenusByUserIdAsync(userId);
 
 		}
-	}
+        public async Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId)
+        {
+            return await _LoginRepo.GetStudentForUpdate(YearId, TermId);
+        }
+    }
 }

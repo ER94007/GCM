@@ -595,5 +595,26 @@ namespace Inward.Repository
 				throw;
 			}
 		}
-	}
+
+        public async Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@YearId", YearId);
+                    queryParameters.Add("@TermId", TermId);
+
+                    var res = await conn.QueryAsync<StudentUpdate>(StoreProcedures.GetStudentsByYearAndSemester, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
 }

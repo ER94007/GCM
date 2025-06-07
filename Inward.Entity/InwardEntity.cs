@@ -115,4 +115,11 @@ namespace Inward.Entity
         public Int64 Amount { get; set; }
     }
 
+    public class StudentUpdate
+    {
+        public long StudentId { get; set; }
+        public string StudentName { get; set; }
+        public string Enrollmentid { get; set; }
+        public string Email { get; set; }
+    }
 }

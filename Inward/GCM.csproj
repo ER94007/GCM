@@ -110,6 +110,7 @@
 
   <ItemGroup>
     <PackageReference Include="BoldReports.AspNet.Core" Version="8.1.6" />
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="EPPlus" Version="7.7.0" />
     <PackageReference Include="EPPlus.Interfaces" Version="8.0.0" />

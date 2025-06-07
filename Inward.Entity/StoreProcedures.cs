@@ -65,6 +65,7 @@ namespace Inward.Entity
 		public static string AddUpdateHead = "AddUpdateHead";
         public static string GetFeeCollectionDetailReport = "Report_studentsFeeCollectionDetail";
 		public static string GetMenusByUserId = "GetMenusByUserId";
+		public static string GetStudentsByYearAndSemester = "GetStudentsByYearAndSemester";
 
 
 	}

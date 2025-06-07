@@ -79,7 +79,40 @@ namespace GCM.Repository
                 throw new Exception("Error adding students", ex);
             }
         }
-            
+
+        public async Task<ResponseMessage> UpdateEnrollment (DataTable updatestudentTable, long userid)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+
+                    // Add the DataTable as a TVP parameter (SQL Server's table type)
+                    queryParameters.Add("@StudentUpdates", updatestudentTable.AsTableValuedParameter("StudentUpdateTableType"));
+                    queryParameters.Add("@UserId", userid);
+
+                    // Define the output parameter for result (1 or 0)
+                    queryParameters.Add("@ResultId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                    // Call the stored procedure
+                    await conn.ExecuteAsync("UpdateStudentEnrollmentNumbers", queryParameters, commandType: CommandType.StoredProcedure);
+
+                    // Map the result to ResponseMessage
+                    var result = new ResponseMessage
+                    {
+                        Id = queryParameters.Get<int>("@ResultId") // Get ResultId (1 for success, 0 for failure)
+                    };
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and rethrow it
+                throw new Exception("Error adding students", ex);
+            }
+        }
     }
 }
     
