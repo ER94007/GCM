@@ -34,11 +34,11 @@
 								<label class="control-label">SubHead Type</label>
 								<div class="form-control">
 									<div class="form-check form-check-inline">
-										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Grant" checked />
+										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Grant" id="grant" checked />
 										<label class="form-check-label" for="Grant"><strong>Grant</strong></label>
 									</div>
 									<div class="form-check form-check-inline">
-										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Expense" />
+										<input type="radio" asp-for="ExpenseType" class="form-check-input mt-2" value="Expense" id="expense"/>
 										<label class="form-check-label" for="Expense"><strong>Expense</strong></label>
 									</div>
 								</div>
@@ -156,12 +156,12 @@
 			}
 		});
 
-		$('#amount').on('input', function () {
-			var expnstype = $('#ExpenseType').val();
-			if(expnstype === "Expense"){
-				validateAmount();
-			}
-		});
+			$('#amount').on('input', function () {
+		var expnstype = $('input[name="ExpenseType"]:checked').val();
+		if (expnstype === "Expense") {
+			validateAmount();
+		}
+	});
 	});
 
 	function getbalnce() {
@@ -188,9 +188,14 @@
 
 	function validateAmount() {
 		var amount = parseFloat($('#amount').val());
-		if (amount > availableBalance) {
+		if(availableBalance < 1){
+			alert('No Balance in this head');
+			$('#amount').val('');
+		}
+		else if (amount > availableBalance) {
 			alert('Entered amount exceeds available balance!');
 			$('#amount').val(''); // clear input
 		}
+
 	}
 </script>
