@@ -11,3 +11,16 @@ C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.dll
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Release\net8.0\refint\GCM.Entity.dll
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.pdb
 C:\Users\Admin\Desktop\GCM\Inward.Entity\obj\Release\net8.0\ref\GCM.Entity.dll
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\bin\Release\net8.0\GCM.Entity.deps.json
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\bin\Release\net8.0\GCM.Entity.dll
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\bin\Release\net8.0\GCM.Entity.pdb
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.csproj.AssemblyReference.cache
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.AssemblyInfoInputs.cache
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.AssemblyInfo.cs
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.csproj.CoreCompileInputs.cache
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.sourcelink.json
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.dll
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\refint\GCM.Entity.dll
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\GCM.Entity.pdb
+C:\Users\yaxp2\source\repos\GCM\Inward.Entity\obj\Release\net8.0\ref\GCM.Entity.dll

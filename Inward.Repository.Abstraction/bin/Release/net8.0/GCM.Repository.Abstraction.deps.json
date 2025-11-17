@@ -1715,7 +1715,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Common.dll": {}
+          "GCM.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "GCM.Entity/1.0.0": {
@@ -1725,7 +1728,10 @@
           "ReportViewerCore.NETCore": "15.1.26"
         },
         "runtime": {
-          "GCM.Entity.dll": {}
+          "GCM.Entity.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

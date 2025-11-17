@@ -18,6 +18,39 @@
           }
         }
       },
+      "ClosedXML/0.105.0": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML.Parser": "2.0.0",
+          "DocumentFormat.OpenXml": "[3.1.1, 4.0.0)",
+          "ExcelNumberFormat": "1.1.0",
+          "RBush.Signed": "4.0.0",
+          "SixLabors.Fonts": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ClosedXML.Parser/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Dapper/2.1.28": {
         "type": "package",
         "compile": {
@@ -27,6 +60,38 @@
         },
         "runtime": {
           "lib/net7.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.1.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
             "related": ".xml"
           }
         }
@@ -72,6 +137,19 @@
         },
         "runtime": {
           "lib/net8.0/EPPlus.System.Drawing.dll": {}
+        }
+      },
+      "ExcelNumberFormat/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -2721,6 +2799,19 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {}
         }
       },
+      "RBush.Signed/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ReportViewerCore.NETCore/15.1.26": {
         "type": "package",
         "dependencies": {
@@ -2947,6 +3038,19 @@
           "runtimes/win-x86/native/sni.dll": {
             "assetType": "native",
             "rid": "win-x86"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -4826,6 +4930,40 @@
         "lib/net9.0/BoldReports.AspNet.Core.xml"
       ]
     },
+    "ClosedXML/0.105.0": {
+      "sha512": "U0hAdnYyPvF7TqHMFloxrS7pmozab79tFFF4c/bgPtqeelUs7ILpUd3r3c7C0a/DXsUZb3k1n4Pf7Q2LMyMQOg==",
+      "type": "package",
+      "path": "closedxml/0.105.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.0.105.0.nupkg.sha512",
+        "closedxml.nuspec",
+        "lib/netstandard2.0/ClosedXML.dll",
+        "lib/netstandard2.0/ClosedXML.pdb",
+        "lib/netstandard2.0/ClosedXML.xml",
+        "lib/netstandard2.1/ClosedXML.dll",
+        "lib/netstandard2.1/ClosedXML.pdb",
+        "lib/netstandard2.1/ClosedXML.xml",
+        "nuget-logo.png"
+      ]
+    },
+    "ClosedXML.Parser/2.0.0": {
+      "sha512": "ngTqjYreDYNytG1W5d3ewHsw0ukmmrgV7EKnS4/40rXoYZGt07jrBvo+N+GxT49rcageUMUiprV0jYT4nwVBHQ==",
+      "type": "package",
+      "path": "closedxml.parser/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "closedxml.parser.2.0.0.nupkg.sha512",
+        "closedxml.parser.nuspec",
+        "lib/netstandard2.0/ClosedXML.Parser.dll",
+        "lib/netstandard2.0/ClosedXML.Parser.xml",
+        "lib/netstandard2.1/ClosedXML.Parser.dll",
+        "lib/netstandard2.1/ClosedXML.Parser.xml"
+      ]
+    },
     "Dapper/2.1.28": {
       "sha512": "ha49pzOEDmCPkMxwfPSR/wxa/6RD3r42TESIgpzpi7FXq/gNVUuJVEO+wtUzntNRhtmq3BKCl0s0aAlSZLkBUA==",
       "type": "package",
@@ -4845,6 +4983,54 @@
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml",
         "readme.md"
+      ]
+    },
+    "DocumentFormat.OpenXml/3.1.1": {
+      "sha512": "2z9QBzeTLNNKWM9SaOSDMegfQk/7hDuElOsmF77pKZMkFRP/GHA/W/4yOAQD9kn15N/FsFxHn3QVYkatuZghiA==",
+      "type": "package",
+      "path": "documentformat.openxml/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.3.1.1.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
+    "DocumentFormat.OpenXml.Framework/3.1.1": {
+      "sha512": "6APEp/ElZV58S/4v8mf4Ke3ONEDORs64MqdD64Z7wWpcHANB9oovQsGIwtqjnKihulOj7T0a6IxHIHOfMqKOng==",
+      "type": "package",
+      "path": "documentformat.openxml.framework/3.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.framework.3.1.1.nupkg.sha512",
+        "documentformat.openxml.framework.nuspec",
+        "icon.png",
+        "lib/net35/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net35/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net40/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net40/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net46/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net46/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.xml"
       ]
     },
     "EPPlus/7.7.0": {
@@ -4912,6 +5098,24 @@
         "lib/netstandard2.1/EPPlus.System.Drawing.dll",
         "license.md",
         "readme.md"
+      ]
+    },
+    "ExcelNumberFormat/1.1.0": {
+      "sha512": "R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
+      "type": "package",
+      "path": "excelnumberformat/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelnumberformat.1.1.0.nupkg.sha512",
+        "excelnumberformat.nuspec",
+        "icon.png",
+        "lib/net20/ExcelNumberFormat.dll",
+        "lib/net20/ExcelNumberFormat.xml",
+        "lib/netstandard1.0/ExcelNumberFormat.dll",
+        "lib/netstandard1.0/ExcelNumberFormat.xml",
+        "lib/netstandard2.0/ExcelNumberFormat.dll",
+        "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
     "Humanizer/2.14.1": {
@@ -8931,6 +9135,24 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "RBush.Signed/4.0.0": {
+      "sha512": "aP5KQxL5RnFNGW1f0euYVBfCatkLw5iEzMRJcXKq8LWWP4Cp3+qoSq1tDDL2vvJ2rM0ychmVMa2VaEKLS6uX4w==",
+      "type": "package",
+      "path": "rbush.signed/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net47/RBush.dll",
+        "lib/net47/RBush.xml",
+        "lib/net8.0/RBush.dll",
+        "lib/net8.0/RBush.xml",
+        "lib/netstandard2.0/RBush.dll",
+        "lib/netstandard2.0/RBush.xml",
+        "rbush.signed.4.0.0.nupkg.sha512",
+        "rbush.signed.nuspec",
+        "readme.md"
+      ]
+    },
     "ReportViewerCore.NETCore/15.1.26": {
       "sha512": "++dE5lildQKId9/jAc8DLRAPpQEzpNGsuVNCZmOIMr1mlEew3LXeRS/+Fz70BtA7cUsI2dCMbt34Xuzi7Ka4Pg==",
       "type": "package",
@@ -9237,6 +9459,24 @@
         "runtimes/win-x86/native/sni.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "SixLabors.Fonts/1.0.0": {
+      "sha512": "LFQsCZlV0xlUyXAOMUo5kkSl+8zAQXXbbdwWchtk0B4o7zotZhQsQOcJUELGHdfPfm/xDAsz6hONAuV25bJaAg==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+        "lib/netcoreapp3.1/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "lib/netstandard2.1/SixLabors.Fonts.dll",
+        "lib/netstandard2.1/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0.nupkg.sha512",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -13556,6 +13796,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BoldReports.AspNet.Core >= 8.1.6",
+      "ClosedXML >= 0.105.0",
       "Dapper >= 2.1.28",
       "EPPlus >= 7.7.0",
       "EPPlus.Interfaces >= 8.0.0",
@@ -13575,23 +13816,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\yaxp2\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\GCM.csproj",
+      "projectUniqueName": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward\\GCM.csproj",
       "projectName": "GCM",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\GCM.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward\\obj\\",
+      "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward\\GCM.csproj",
+      "packagesPath": "C:\\Users\\yaxp2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yaxp2\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -13600,30 +13841,29 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Common\\GCM.Common.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Common\\GCM.Common.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Common\\GCM.Common.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Entity\\GCM.Entity.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Entity\\GCM.Entity.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Entity\\GCM.Entity.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Repository.Abstraction\\GCM.Repository.Abstraction.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\GCM.Repository.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Repository\\GCM.Repository.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Repository\\GCM.Repository.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Repository\\GCM.Repository.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Services.Abstraction\\GCM.Services.Abstraction.csproj"
             },
-            "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\GCM\\Inward.Services\\GCM.Services.csproj"
+            "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Services\\GCM.Services.csproj": {
+              "projectPath": "C:\\Users\\yaxp2\\source\\repos\\GCM\\Inward.Services\\GCM.Services.csproj"
             }
           }
         }
@@ -13637,7 +13877,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -13646,6 +13887,10 @@
           "BoldReports.AspNet.Core": {
             "target": "Package",
             "version": "[8.1.6, )"
+          },
+          "ClosedXML": {
+            "target": "Package",
+            "version": "[0.105.0, )"
           },
           "Dapper": {
             "target": "Package",
@@ -13707,7 +13952,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

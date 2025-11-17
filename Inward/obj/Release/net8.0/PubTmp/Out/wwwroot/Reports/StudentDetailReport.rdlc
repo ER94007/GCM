@@ -65,6 +65,14 @@
           <DataField>RecieptNoOrderBy</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="RowTypeOrder">
+          <DataField>RowTypeOrder</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+        <Field Name="FinancialYear">
+          <DataField>FinancialYear</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>StudentFeeDetailsReport</rd:DataSetName>
@@ -863,7 +871,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>5.89408in</Width>
+      <Width>9.70943in</Width>
       <Page>
         <PageHeader>
           <Height>0.82861in</Height>
@@ -874,10 +882,10 @@
               <Source>Embedded</Source>
               <Value>college_logo_Coloured</Value>
               <Sizing>Fit</Sizing>
-              <Top>0.3175cm</Top>
-              <Left>0.44662cm</Left>
-              <Height>1.34083cm</Height>
-              <Width>1.53705cm</Width>
+              <Top>0.28222cm</Top>
+              <Left>0.13957cm</Left>
+              <Height>1.05861cm</Height>
+              <Width>1.21955cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -885,12 +893,13 @@
               </Style>
             </Image>
             <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>GOVERNMENT ARTS COLLEGE, BAYAD, DIST: ARAVALLI</Value>
+                      <Value>GOVERNMENT ARTS COLLEGE, BAYAD</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -903,10 +912,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox13</rd:DefaultName>
-              <Top>0.3175cm</Top>
-              <Left>2.29398cm</Left>
+              <Top>0.28222cm</Top>
+              <Left>11.2369cm</Left>
               <Height>0.75875cm</Height>
-              <Width>4.80628in</Width>
+              <Width>5.03544in</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -926,7 +935,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Fee Collection Report</Value>
+                      <Value>Fee Collection Report:</Value>
                       <Style>
                         <FontWeight>Bold</FontWeight>
                       </Style>
@@ -936,11 +945,81 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.49316in</Top>
-              <Left>2.94419in</Left>
+              <Top>0.47928in</Top>
+              <Left>4.75248in</Left>
               <Height>0.25in</Height>
-              <Width>1.73611in</Width>
+              <Width>1.53333in</Width>
               <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Semester - </Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Fields!TermName.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.47928in</Top>
+              <Left>6.34136in</Left>
+              <Height>0.25in</Height>
+              <Width>0.89723in</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!FinancialYear.Value</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.47928in</Top>
+              <Left>7.61081in</Left>
+              <Height>0.25in</Height>
+              <Width>1.84861in</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
