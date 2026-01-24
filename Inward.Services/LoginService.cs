@@ -138,5 +138,11 @@ namespace Inward.Services
         {
             return await _LoginRepo.GetStudentForUpdate(YearId, TermId);
         }
+    
+        public async Task<DataTable> GetFCREXCEL()
+        {
+            return await _LoginRepo.GetFCREXCEL();
+        }
+
     }
 }

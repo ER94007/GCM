@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -616,5 +618,30 @@ namespace Inward.Repository
                 throw;
             }
         }
+		        
+        public async Task<DataTable> GetFCREXCEL()
+        {
+            using (var conn = (DbConnection)GetConnection())
+            {
+                var dt = new DataTable();
+
+                if (conn.State != ConnectionState.Open)
+                    await conn.OpenAsync();
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = StoreProcedures.Report_studentsFeeMasterDetail_excel;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        dt.Load(reader);
+                    }
+                }
+
+                return dt;
+            }
+        }
+
     }
 }
