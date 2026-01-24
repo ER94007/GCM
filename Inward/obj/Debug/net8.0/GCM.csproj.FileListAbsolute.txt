@@ -654,3 +654,10 @@ C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\refint\GCM.dll
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\GCM.pdb
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\GCM.genruntimeconfig.cache
 C:\Users\Admin\Desktop\GCM\Inward\obj\Debug\net8.0\ref\GCM.dll
+D:\GCM\Inward\bin\Debug\net8.0\ClosedXML.dll
+D:\GCM\Inward\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\GCM\Inward\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\GCM\Inward\bin\Debug\net8.0\DocumentFormat.OpenXml.Framework.dll
+D:\GCM\Inward\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\GCM\Inward\bin\Debug\net8.0\RBush.dll
+D:\GCM\Inward\bin\Debug\net8.0\SixLabors.Fonts.dll

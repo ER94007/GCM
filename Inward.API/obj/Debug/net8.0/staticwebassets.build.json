@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "7z+o95y+L2wMAK9z3Bky5KDR8P7ImvMWYGUfFC98q80=",
+  "Hash": "o82ef/aDb/9LeOitE+/63yiKzPcnif6Mzjb+ZFLllig=",
   "Source": "GCM.API",
   "BasePath": "_content/GCM.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
