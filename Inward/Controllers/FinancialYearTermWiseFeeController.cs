@@ -550,10 +550,10 @@ namespace GCM.Controllers
                 // Fetch the report data
                 var studentsFeeCollection = await _ifinancialYearTermWiseFee.GetIncomeReport(stdid);
 
-                
+
 
                 // Create the local report
-                var report = new LocalReport();
+                git--versionvar report = new LocalReport();
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "IncomeReport.rdlc");
 
 
