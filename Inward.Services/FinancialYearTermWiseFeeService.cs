@@ -112,7 +112,17 @@ namespace GCM.Services
 		{
 			return await _financialYearTermWiseFeeRepo.BindHeads();
 		}
-
-		
-	}
+        public async Task<IEnumerable<ExpenseEntity>> GetIncomeData()
+        {
+            return await _financialYearTermWiseFeeRepo.GetIncomeData();
+        }
+        public async Task<ResponseMessage> AddIncome(ExpenseEntity ep)
+        {
+            return await _financialYearTermWiseFeeRepo.AddIncome(ep);
+        }
+        public async Task<IEnumerable<IncomeReport>> GetIncomeReport(long ExpenseMasterId)
+        {
+            return await _financialYearTermWiseFeeRepo.GetIncomeReport(ExpenseMasterId);
+        }
+    }
 }

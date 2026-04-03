@@ -294,7 +294,7 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id, long id2 , string name1, string name2)
+        public async Task<ResponseMessage> DeleteFinanceYearTerm(long id, long id2, string name1, string name2)
         {
             try
             {
@@ -305,7 +305,7 @@ namespace GCM.Repository
                     queryParameters.Add("@UserId", id2);
                     queryParameters.Add("@Hostname", name1);
                     queryParameters.Add("@Ipaddress", name2);
-                    
+
                     var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.DeleteFinanceData, queryParameters, commandType: CommandType.StoredProcedure);
                     return res;
                 }
@@ -490,28 +490,92 @@ namespace GCM.Repository
                 throw;
             }
         }
-		public async Task<List<SelectListItem>> BindHeads()
-		{
-			try
-			{
-				using (var conn = GetConnection())
-				{
-					var queryParameters = new DynamicParameters();
-					var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindHeads, queryParameters, commandType: CommandType.StoredProcedure);
-					var subheadList = res.Select(item => new SelectListItem
-					{
-						Value = Convert.ToString(item.Value),  // Extract 'parameterid'
-						Text = item.Text // Extract 'parametername'
-					}).ToList();
-					return subheadList;
-				}
-			}
-			catch (Exception)
-			{
+        public async Task<List<SelectListItem>> BindHeads()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindHeads, queryParameters, commandType: CommandType.StoredProcedure);
+                    var subheadList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return subheadList;
+                }
+            }
+            catch (Exception)
+            {
 
-				throw;
-			}
-		}
+                throw;
+            }
+        }
+        public async Task<IEnumerable<ExpenseEntity>> GetIncomeData()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<ExpenseEntity>(StoreProcedures.GetIncomeData, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-	}
+        public async Task<ResponseMessage> AddIncome(ExpenseEntity ep)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@FinancialYearId", ep.FinancialYearId);
+                    queryParameters.Add("@SubHeadId", ep.SubHeadId);
+                    queryParameters.Add("@amount", ep.amount);
+                    queryParameters.Add("@Remarks", ep.Remarks);
+                    queryParameters.Add("@TransactionDate", ep.DateofExpense);
+
+                    queryParameters.Add("@ChequeNo", 0);
+
+                    queryParameters.Add("@Hostname", ep.hostname);
+                    queryParameters.Add("@Ipaddress", ep.ipaddress);
+                    queryParameters.Add("@TransactionId", ep.transactionid);
+                    queryParameters.Add("@UserId", ep.userid);
+                    var res = await conn.QueryFirstAsync<ResponseMessage>(StoreProcedures.AddIncome, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public async Task<IEnumerable<IncomeReport>> GetIncomeReport(long ExpenseMasterId)
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@ExpenseMasterId", ExpenseMasterId);
+                   
+                    var res = await conn.QueryAsync<IncomeReport>(StoreProcedures.GetIncomeReport, queryParameters, commandType: CommandType.StoredProcedure);
+                    return res;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+    }
 }
