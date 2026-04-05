@@ -553,7 +553,7 @@ namespace GCM.Controllers
 
 
                 // Create the local report
-                git--versionvar report = new LocalReport();
+                var report = new LocalReport();
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "IncomeReport.rdlc");
 
 
