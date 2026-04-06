@@ -21,6 +21,7 @@
 													<option class="bi-option" value="2">Student Fee Reciept Report</option>
 													<option class="bi-option" value="3">Student Fee Collection Report(FCR)</option>
 													<option class="bi-option" value="4">Verticle Ledger</option>
+													<option class="bi-option" value="5">FCR Exel</option>
 												</select>
 
 											</div>
@@ -72,6 +73,9 @@
 
 							<div class="text-center" id="btnFeecollectionReport" style="margin-top: 10px; display: none;">
 								<button class="btn btn-primary" onclick="exportFeecollectionReport()">View</button>
+							</div>
+							<div class="text-center" id="btnFCREXL" style="margin-top: 10px; display: none;">
+								<button class="btn btn-primary" onclick="exportfcrexl()">Get Excel</button>
 							</div>
 						</div>
 					</div>
@@ -128,7 +132,18 @@
 				  $('#termSelection').hide();
 				  $('#fromdateSelection').show();
 				  $('#todateSelection').show();
-				  $('#btnDetailReport').show();
+				  $('#btnDetailReport').show();}
+			
+		  else if(selectedopt == "5"){
+				$('#viewbtn').hide();
+				$('#btnFeecollectionReport').hide();
+				  $('#yearSelection').hide();
+				  $('#studentSelection').hide();
+				  $('#termSelection').hide();
+				  $('#fromdateSelection').hide();
+				  $('#todateSelection').hide();
+				  $('#btnDetailReport').hide();
+				  $('#btnFCREXL').show();
 
 
 
@@ -255,6 +270,14 @@
 			}
 
 			const url = `/Student/ExportStudentFeeDetailReport?YearId=${year}&TermId=${term}`;
+
+			// Opens the PDF in a new tab or triggers download depending on browser settings
+			window.open(url, '_blank');
+		}
+		
+		function exportfcrexl() {
+			
+			const url = `/Student/DownloadFcrExcel`;
 
 			// Opens the PDF in a new tab or triggers download depending on browser settings
 			window.open(url, '_blank');

@@ -12,6 +12,10 @@ using System.Security.Claims;
 using ClosedXML.Excel;
 
 using System.IO;
+using System.Data.SqlClient;
+using NuGet.Protocol.Core.Types;
+using DocumentFormat.OpenXml.Bibliography;
+using System.Dynamic;
 
 
 namespace GCM.Controllers
@@ -640,6 +644,52 @@ namespace GCM.Controllers
             // Redirect to Index action in Inward controller
             return RedirectToAction("Index", "Inward");
         }
+        private static List<ExpandoObject> ToExpandoList(IEnumerable<dynamic> data)
+        {
+            var list = new List<ExpandoObject>();
+
+            foreach (var row in data)
+            {
+                var expando = new ExpandoObject();
+                var dict = (IDictionary<string, object>)expando;
+
+                foreach (var kv in (IDictionary<string, object>)row)
+                {
+                    dict[kv.Key] = kv.Value;
+                }
+
+                list.Add(expando);
+            }
+
+            return list;
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> DownloadFcrExcel()
+        {
+            DataTable dt = await _userLoginService.GetFCREXCEL();
+
+            using var workbook = new XLWorkbook();
+            var worksheet = workbook.Worksheets.Add("StudentFCR");
+
+            // 🔑 Perfect for dynamic columns
+            worksheet.Cell(1, 1).InsertTable(dt);
+
+            worksheet.Columns().AdjustToContents();
+            worksheet.SheetView.FreezeRows(1);
+
+            using var stream = new MemoryStream();
+            workbook.SaveAs(stream);
+            stream.Position = 0;
+
+            return File(
+                stream.ToArray(),
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                "StudentFeeCollection.xlsx"
+            );
+        }
+
 
     }
 }

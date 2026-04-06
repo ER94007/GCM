@@ -39,5 +39,7 @@ namespace Inward.Services.Abstraction
         Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate, string todate);
 		Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userId);
         Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId);
+        Task<DataTable> GetFCREXCEL();
+
     }
 }
