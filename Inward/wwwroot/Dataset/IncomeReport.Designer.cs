@@ -20,17 +20,17 @@ namespace GCM.wwwroot.Dataset {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dtFeeCollectionDetail")]
+    [global::System.Xml.Serialization.XmlRootAttribute("_IncomeReport")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dtFeeCollectionDetail : global::System.Data.DataSet {
+    public partial class _IncomeReport : global::System.Data.DataSet {
         
-        private dtFeeCollectionDetailDataTable tabledtFeeCollectionDetail;
+        private IncomeReportDataTable tableIncomeReport;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public dtFeeCollectionDetail() {
+        public _IncomeReport() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +43,7 @@ namespace GCM.wwwroot.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [System.ObsoleteAttribute("This API supports obsolete formatter-based serialization. It should not be called" +
             " or extended by application code.", DiagnosticId="SYSLIB0051")]
-        protected dtFeeCollectionDetail(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected _IncomeReport(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,8 +56,8 @@ namespace GCM.wwwroot.Dataset {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["dtFeeCollectionDetail"] != null)) {
-                    base.Tables.Add(new dtFeeCollectionDetailDataTable(ds.Tables["dtFeeCollectionDetail"]));
+                if ((ds.Tables["IncomeReport"] != null)) {
+                    base.Tables.Add(new IncomeReportDataTable(ds.Tables["IncomeReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -81,9 +81,9 @@ namespace GCM.wwwroot.Dataset {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtFeeCollectionDetailDataTable _dtFeeCollectionDetail {
+        public IncomeReportDataTable IncomeReport {
             get {
-                return this.tabledtFeeCollectionDetail;
+                return this.tableIncomeReport;
             }
         }
         
@@ -129,7 +129,7 @@ namespace GCM.wwwroot.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dtFeeCollectionDetail cln = ((dtFeeCollectionDetail)(base.Clone()));
+            _IncomeReport cln = ((_IncomeReport)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -154,8 +154,8 @@ namespace GCM.wwwroot.Dataset {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["dtFeeCollectionDetail"] != null)) {
-                    base.Tables.Add(new dtFeeCollectionDetailDataTable(ds.Tables["dtFeeCollectionDetail"]));
+                if ((ds.Tables["IncomeReport"] != null)) {
+                    base.Tables.Add(new IncomeReportDataTable(ds.Tables["IncomeReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -190,10 +190,10 @@ namespace GCM.wwwroot.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledtFeeCollectionDetail = ((dtFeeCollectionDetailDataTable)(base.Tables["dtFeeCollectionDetail"]));
+            this.tableIncomeReport = ((IncomeReportDataTable)(base.Tables["IncomeReport"]));
             if ((initTable == true)) {
-                if ((this.tabledtFeeCollectionDetail != null)) {
-                    this.tabledtFeeCollectionDetail.InitVars();
+                if ((this.tableIncomeReport != null)) {
+                    this.tableIncomeReport.InitVars();
                 }
             }
         }
@@ -201,18 +201,20 @@ namespace GCM.wwwroot.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dtFeeCollectionDetail";
+            this.DataSetName = "IncomeReport";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dtFeeCollectionDetail.xsd";
+            this.Namespace = "http://tempuri.org/studentfeecollection.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledtFeeCollectionDetail = new dtFeeCollectionDetailDataTable();
-            base.Tables.Add(this.tabledtFeeCollectionDetail);
+            this.tableIncomeReport = new IncomeReportDataTable();
+            base.Tables.Add(this.tableIncomeReport);
+            this.ExtendedProperties.Add("Generator_DataSetName", "_IncomeReport");
+            this.ExtendedProperties.Add("Generator_UserDSName", "IncomeReport");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        private bool ShouldSerialize_dtFeeCollectionDetail() {
+        private bool ShouldSerializeIncomeReport() {
             return false;
         }
         
@@ -227,7 +229,7 @@ namespace GCM.wwwroot.Dataset {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dtFeeCollectionDetail ds = new dtFeeCollectionDetail();
+            _IncomeReport ds = new _IncomeReport();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -272,29 +274,27 @@ namespace GCM.wwwroot.Dataset {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public delegate void dtFeeCollectionDetailRowChangeEventHandler(object sender, dtFeeCollectionDetailRowChangeEvent e);
+        public delegate void IncomeReportRowChangeEventHandler(object sender, IncomeReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtFeeCollectionDetailDataTable : global::System.Data.TypedTableBase<dtFeeCollectionDetailRow> {
+        public partial class IncomeReportDataTable : global::System.Data.TypedTableBase<IncomeReportRow> {
+            
+            private global::System.Data.DataColumn columnsubheadName;
+            
+            private global::System.Data.DataColumn columnrecieptNo;
             
             private global::System.Data.DataColumn columnCreatedDate;
             
-            private global::System.Data.DataColumn columnRecieptNo;
-            
-            private global::System.Data.DataColumn columnCreatedBy;
-            
-            private global::System.Data.DataColumn columnSubHeadName;
-            
-            private global::System.Data.DataColumn columnAmount;
+            private global::System.Data.DataColumn columnamount;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailDataTable() {
-                this.TableName = "dtFeeCollectionDetail";
+            public IncomeReportDataTable() {
+                this.TableName = "IncomeReport";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -302,7 +302,7 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            internal dtFeeCollectionDetailDataTable(global::System.Data.DataTable table) {
+            internal IncomeReportDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,9 +321,25 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [System.ObsoleteAttribute("This API supports obsolete formatter-based serialization. It should not be called" +
                 " or extended by application code.", DiagnosticId="SYSLIB0051")]
-            protected dtFeeCollectionDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected IncomeReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn subheadNameColumn {
+                get {
+                    return this.columnsubheadName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn recieptNoColumn {
+                get {
+                    return this.columnrecieptNo;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,33 +352,9 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn RecieptNoColumn {
+            public global::System.Data.DataColumn amountColumn {
                 get {
-                    return this.columnRecieptNo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn CreatedByColumn {
-                get {
-                    return this.columnCreatedBy;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn SubHeadNameColumn {
-                get {
-                    return this.columnSubHeadName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn AmountColumn {
-                get {
-                    return this.columnAmount;
+                    return this.columnamount;
                 }
             }
             
@@ -377,49 +369,48 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailRow this[int index] {
+            public IncomeReportRow this[int index] {
                 get {
-                    return ((dtFeeCollectionDetailRow)(this.Rows[index]));
+                    return ((IncomeReportRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public event dtFeeCollectionDetailRowChangeEventHandler dtFeeCollectionDetailRowChanging;
+            public event IncomeReportRowChangeEventHandler IncomeReportRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public event dtFeeCollectionDetailRowChangeEventHandler dtFeeCollectionDetailRowChanged;
+            public event IncomeReportRowChangeEventHandler IncomeReportRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public event dtFeeCollectionDetailRowChangeEventHandler dtFeeCollectionDetailRowDeleting;
+            public event IncomeReportRowChangeEventHandler IncomeReportRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public event dtFeeCollectionDetailRowChangeEventHandler dtFeeCollectionDetailRowDeleted;
+            public event IncomeReportRowChangeEventHandler IncomeReportRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void AdddtFeeCollectionDetailRow(dtFeeCollectionDetailRow row) {
+            public void AddIncomeReportRow(IncomeReportRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailRow AdddtFeeCollectionDetailRow(string CreatedDate, string RecieptNo, string CreatedBy, string SubHeadName, string Amount) {
-                dtFeeCollectionDetailRow rowdtFeeCollectionDetailRow = ((dtFeeCollectionDetailRow)(this.NewRow()));
+            public IncomeReportRow AddIncomeReportRow(string subheadName, string recieptNo, string CreatedDate, string amount) {
+                IncomeReportRow rowIncomeReportRow = ((IncomeReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        subheadName,
+                        recieptNo,
                         CreatedDate,
-                        RecieptNo,
-                        CreatedBy,
-                        SubHeadName,
-                        Amount};
-                rowdtFeeCollectionDetailRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtFeeCollectionDetailRow);
-                return rowdtFeeCollectionDetailRow;
+                        amount};
+                rowIncomeReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIncomeReportRow);
+                return rowIncomeReportRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                dtFeeCollectionDetailDataTable cln = ((dtFeeCollectionDetailDataTable)(base.Clone()));
+                IncomeReportDataTable cln = ((IncomeReportDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -427,60 +418,55 @@ namespace GCM.wwwroot.Dataset {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new dtFeeCollectionDetailDataTable();
+                return new IncomeReportDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             internal void InitVars() {
+                this.columnsubheadName = base.Columns["subheadName"];
+                this.columnrecieptNo = base.Columns["recieptNo"];
                 this.columnCreatedDate = base.Columns["CreatedDate"];
-                this.columnRecieptNo = base.Columns["RecieptNo"];
-                this.columnCreatedBy = base.Columns["CreatedBy"];
-                this.columnSubHeadName = base.Columns["SubHeadName"];
-                this.columnAmount = base.Columns["Amount"];
+                this.columnamount = base.Columns["amount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             private void InitClass() {
+                this.columnsubheadName = new global::System.Data.DataColumn("subheadName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubheadName);
+                this.columnrecieptNo = new global::System.Data.DataColumn("recieptNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrecieptNo);
                 this.columnCreatedDate = new global::System.Data.DataColumn("CreatedDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCreatedDate);
-                this.columnRecieptNo = new global::System.Data.DataColumn("RecieptNo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRecieptNo);
-                this.columnCreatedBy = new global::System.Data.DataColumn("CreatedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCreatedBy);
-                this.columnSubHeadName = new global::System.Data.DataColumn("SubHeadName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSubHeadName);
-                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAmount);
-                this.ExtendedProperties.Add("Generator_TablePropName", "_dtFeeCollectionDetail");
-                this.ExtendedProperties.Add("Generator_UserTableName", "dtFeeCollectionDetail");
+                this.columnamount = new global::System.Data.DataColumn("amount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamount);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailRow NewdtFeeCollectionDetailRow() {
-                return ((dtFeeCollectionDetailRow)(this.NewRow()));
+            public IncomeReportRow NewIncomeReportRow() {
+                return ((IncomeReportRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtFeeCollectionDetailRow(builder);
+                return new IncomeReportRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(dtFeeCollectionDetailRow);
+                return typeof(IncomeReportRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.dtFeeCollectionDetailRowChanged != null)) {
-                    this.dtFeeCollectionDetailRowChanged(this, new dtFeeCollectionDetailRowChangeEvent(((dtFeeCollectionDetailRow)(e.Row)), e.Action));
+                if ((this.IncomeReportRowChanged != null)) {
+                    this.IncomeReportRowChanged(this, new IncomeReportRowChangeEvent(((IncomeReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -488,8 +474,8 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.dtFeeCollectionDetailRowChanging != null)) {
-                    this.dtFeeCollectionDetailRowChanging(this, new dtFeeCollectionDetailRowChangeEvent(((dtFeeCollectionDetailRow)(e.Row)), e.Action));
+                if ((this.IncomeReportRowChanging != null)) {
+                    this.IncomeReportRowChanging(this, new IncomeReportRowChangeEvent(((IncomeReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -497,8 +483,8 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.dtFeeCollectionDetailRowDeleted != null)) {
-                    this.dtFeeCollectionDetailRowDeleted(this, new dtFeeCollectionDetailRowChangeEvent(((dtFeeCollectionDetailRow)(e.Row)), e.Action));
+                if ((this.IncomeReportRowDeleted != null)) {
+                    this.IncomeReportRowDeleted(this, new IncomeReportRowChangeEvent(((IncomeReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -506,14 +492,14 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.dtFeeCollectionDetailRowDeleting != null)) {
-                    this.dtFeeCollectionDetailRowDeleting(this, new dtFeeCollectionDetailRowChangeEvent(((dtFeeCollectionDetailRow)(e.Row)), e.Action));
+                if ((this.IncomeReportRowDeleting != null)) {
+                    this.IncomeReportRowDeleting(this, new IncomeReportRowChangeEvent(((IncomeReportRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void RemovedtFeeCollectionDetailRow(dtFeeCollectionDetailRow row) {
+            public void RemoveIncomeReportRow(IncomeReportRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -522,7 +508,7 @@ namespace GCM.wwwroot.Dataset {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dtFeeCollectionDetail ds = new dtFeeCollectionDetail();
+                _IncomeReport ds = new _IncomeReport();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -540,7 +526,7 @@ namespace GCM.wwwroot.Dataset {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtFeeCollectionDetailDataTable";
+                attribute2.FixedValue = "IncomeReportDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -584,15 +570,47 @@ namespace GCM.wwwroot.Dataset {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtFeeCollectionDetailRow : global::System.Data.DataRow {
+        public partial class IncomeReportRow : global::System.Data.DataRow {
             
-            private dtFeeCollectionDetailDataTable tabledtFeeCollectionDetail;
+            private IncomeReportDataTable tableIncomeReport;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            internal dtFeeCollectionDetailRow(global::System.Data.DataRowBuilder rb) : 
+            internal IncomeReportRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledtFeeCollectionDetail = ((dtFeeCollectionDetailDataTable)(this.Table));
+                this.tableIncomeReport = ((IncomeReportDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string subheadName {
+                get {
+                    try {
+                        return ((string)(this[this.tableIncomeReport.subheadNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'subheadName\' in table \'IncomeReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIncomeReport.subheadNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string recieptNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableIncomeReport.recieptNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'recieptNo\' in table \'IncomeReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIncomeReport.recieptNoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -600,139 +618,79 @@ namespace GCM.wwwroot.Dataset {
             public string CreatedDate {
                 get {
                     try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.CreatedDateColumn]));
+                        return ((string)(this[this.tableIncomeReport.CreatedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedDate\' in table \'IncomeReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtFeeCollectionDetail.CreatedDateColumn] = value;
+                    this[this.tableIncomeReport.CreatedDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string RecieptNo {
+            public string amount {
                 get {
                     try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.RecieptNoColumn]));
+                        return ((string)(this[this.tableIncomeReport.amountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RecieptNo\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'IncomeReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtFeeCollectionDetail.RecieptNoColumn] = value;
+                    this[this.tableIncomeReport.amountColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string CreatedBy {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.CreatedByColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CreatedBy\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFeeCollectionDetail.CreatedByColumn] = value;
-                }
+            public bool IssubheadNameNull() {
+                return this.IsNull(this.tableIncomeReport.subheadNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string SubHeadName {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.SubHeadNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SubHeadName\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFeeCollectionDetail.SubHeadNameColumn] = value;
-                }
+            public void SetsubheadNameNull() {
+                this[this.tableIncomeReport.subheadNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public string Amount {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtFeeCollectionDetail.AmountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Amount\' in table \'dtFeeCollectionDetail\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtFeeCollectionDetail.AmountColumn] = value;
-                }
+            public bool IsrecieptNoNull() {
+                return this.IsNull(this.tableIncomeReport.recieptNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetrecieptNoNull() {
+                this[this.tableIncomeReport.recieptNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsCreatedDateNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.CreatedDateColumn);
+                return this.IsNull(this.tableIncomeReport.CreatedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetCreatedDateNull() {
-                this[this.tabledtFeeCollectionDetail.CreatedDateColumn] = global::System.Convert.DBNull;
+                this[this.tableIncomeReport.CreatedDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsRecieptNoNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.RecieptNoColumn);
+            public bool IsamountNull() {
+                return this.IsNull(this.tableIncomeReport.amountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetRecieptNoNull() {
-                this[this.tabledtFeeCollectionDetail.RecieptNoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCreatedByNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.CreatedByColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCreatedByNull() {
-                this[this.tabledtFeeCollectionDetail.CreatedByColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsSubHeadNameNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.SubHeadNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetSubHeadNameNull() {
-                this[this.tabledtFeeCollectionDetail.SubHeadNameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsAmountNull() {
-                return this.IsNull(this.tabledtFeeCollectionDetail.AmountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetAmountNull() {
-                this[this.tabledtFeeCollectionDetail.AmountColumn] = global::System.Convert.DBNull;
+            public void SetamountNull() {
+                this[this.tableIncomeReport.amountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -740,22 +698,22 @@ namespace GCM.wwwroot.Dataset {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-        public class dtFeeCollectionDetailRowChangeEvent : global::System.EventArgs {
+        public class IncomeReportRowChangeEvent : global::System.EventArgs {
             
-            private dtFeeCollectionDetailRow eventRow;
+            private IncomeReportRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailRowChangeEvent(dtFeeCollectionDetailRow row, global::System.Data.DataRowAction action) {
+            public IncomeReportRowChangeEvent(IncomeReportRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public dtFeeCollectionDetailRow Row {
+            public IncomeReportRow Row {
                 get {
                     return this.eventRow;
                 }

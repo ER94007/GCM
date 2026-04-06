@@ -1,0 +1,174 @@
+﻿@model GCM.Entity.ExpenseEntity;
+@{
+	ViewBag.Title = "Income";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+	var msg = TempData["SaveStatus"] as string;
+}
+<script src="~/js/common.js"></script>
+<script src="~/assets/dist/js/sweetalert.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Include Select2 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<!-- Include Select2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<section class="content">
+	<div class="content-wrapper">
+		<form method="post" action="AddIncome">
+			<div class="container-fluid">
+				<div class="row mt-2">
+					<div class="card card2">
+						<div class="card-header">
+							<h3 class="card-title">Add Income</h3>
+						</div>
+						
+						<div class="card-body p-2">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">Finance Year:</label>
+											<div class="col-md-9 control-form">
+												<select asp-for="FinancialYearId" class="form-control select2" asp-items="@(new SelectList(ViewBag.YearList, "Value", "Text"))">
+													<option class="bi-option" value="">---Select Year---</option>
+												</select>
+												<span asp-validation-for="FinancialYearId" class="text-danger"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">SubHead:</label>
+											<div class="col-md-9 control-form">
+												<select asp-for="SubHeadId" class="form-control select2" asp-items="@(new SelectList(ViewBag.SubheadList, "Value", "Text"))" onchange="getbalnce()">
+													<option class="bi-option" value="">---Select Subhead---</option>
+												</select>
+												<span asp-validation-for="SubHeadId" class="text-danger"></span>
+												<span id="availbalance" class="text-danger"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 mt-2">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">Amount :</label>
+											<div class="col-md-9 ">
+												<input type="number" asp-for="amount" class="form-control" />
+												<span asp-validation-for="amount" class="text-danger"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 mt-2">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">Transaction Date:</label>
+											<div class="col-md-9 ">
+												<input type="date" asp-for="DateofExpense" class="form-control" />
+												<span asp-validation-for="DateofExpense" class="text-danger"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-md-12 mt-2">
+									<div class="form-horizontal form-bordered">
+										<div class="form-group row">
+											<label class="control-label col-md-3">Remarks:</label>
+											<div class="col-md-9 ">
+												<textarea asp-for="Remarks" class="form-control" rows="4" cols="50"></textarea>
+												<span asp-validation-for="Remarks" class="text-danger"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class=" text-center mt-2">
+								<button type="submit" class="btn btn-success">Submit</button>
+								<a href="@Url.Action("GetIncomeData", "FinancialYearTermWiseFee")" class="btn btn-secondary">
+									<i class="fas fa-list mr-1"></i>
+									Go to List
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</section>
+<script>
+	var availableBalance = 0; // global variable to hold balance
+
+	$(document).ready(function () {
+		$('#chk').hide();
+		var msg = '@msg';
+		if (msg != null && msg != '') {
+			ShowDynamicSwalAlert("", msg);
+		}
+
+		$('input[name="ExpenseType"]').change(function () {
+			var selectedValue = $(this).val();
+
+			if (selectedValue === "Grant") {
+				$('#chk').hide(); // hide the target element
+			} else {
+				$('#chk').show(); // show it otherwise
+			}
+		});
+
+			$('#amount').on('input', function () {
+		var expnstype = $('input[name="ExpenseType"]:checked').val();
+		if (expnstype === "Expense") {
+			validateAmount();
+		}
+	});
+	});
+
+	function getbalnce() {
+		var subheadid = $('#SubHeadId').val();
+		var finyearid = $('#FinancialYearId').val();
+		$.ajax({
+			url: '/FinancialYearTermWiseFee/GetBalance',
+			type: 'GET',
+			data: { subheadid: subheadid, finyearid: finyearid },
+			success: function (response) {
+				if (response.success) {
+					availableBalance = response.data; // store it globally
+					$('#availbalance').text("Available Balance: " + availableBalance);
+				} else {
+					alert("Error: " + response.message);
+
+				}
+			},
+			error: function () {
+				alert("An error occurred while fetching the balance.");
+			}
+		});
+	}
+
+	function validateAmount() {
+		var amount = parseFloat($('#amount').val());
+		if(availableBalance < 1){
+			alert('No Balance in this head');
+			$('#amount').val('');
+		}
+		else if (amount > availableBalance) {
+			alert('Entered amount exceeds available balance!');
+			$('#amount').val(''); // clear input
+		}
+
+	}
+</script>
