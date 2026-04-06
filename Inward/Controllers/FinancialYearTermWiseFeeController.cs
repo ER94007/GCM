@@ -1,13 +1,15 @@
-﻿using System.Data;
-using GCM.Entity;
+﻿using GCM.Entity;
+using GCM.Services;
 using GCM.Services.Abstraction;
-using System.Security.Claims;
 using Inward.Common;
 using Inward.Entity;
 using Inward.Services.Abstraction;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Reporting.NETCore;
 using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System.Data;
+using System.Security.Claims;
 
 namespace GCM.Controllers
 {
@@ -478,5 +480,111 @@ namespace GCM.Controllers
             }
         }
 
-	}
+
+        [HttpGet]
+        public async Task<IActionResult> AddIncome()
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.ChequeList = _ifinancialYearTermWiseFee.BindCheques().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+
+
+                return View();
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetIncomeData()
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                var ep = await _ifinancialYearTermWiseFee.GetIncomeData();
+                return View(ep);
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddIncome(ExpenseEntity ep)
+        {
+            if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
+            {
+                ep.userid = Convert.ToInt64(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+                var result = await _ifinancialYearTermWiseFee.AddIncome(ep);
+                if (result.Id > 0)
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.success), "||");
+                }
+                else
+                {
+                    TempData["SaveStatus"] = CommonMethods.ConcatString(result.Msg.ToString(), Convert.ToString((int)CommonMethods.ResponseMsgType.warning), "||");
+                }
+                return RedirectToAction("AddIncome");
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Login");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ExportIncomeReport(string? ExpenseMasterId)
+        {
+            try
+            {
+                long stdid = 0;
+                stdid = Convert.ToInt64(ExpenseMasterId);
+
+                // Fetch the report data
+                var studentsFeeCollection = await _ifinancialYearTermWiseFee.GetIncomeReport(stdid);
+
+
+
+                // Create the local report
+                var report = new LocalReport();
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "IncomeReport.rdlc");
+
+
+                report.ReportPath = path;
+
+                // Add the data source
+                report.DataSources.Add(new ReportDataSource("IncomeReport", studentsFeeCollection));
+
+
+
+                // Render the report as PDF
+                var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
+
+                return File(result, "application/pdf", "IncomeReport.pdf");
+            }
+            catch (Exception ex)
+            {
+                string errorMessage;
+                try
+                {
+                    errorMessage = $"Error: {ex.Message}\n" +
+                          $"Inner: {ex.InnerException?.Message}\n" +
+                          $"StackTrace: {ex.StackTrace}";
+                }
+                catch
+                {
+                    errorMessage = "Failed to write to log.";
+                }
+
+                return Content("An error occurred while generating the report.\n\n" + errorMessage, "text/plain");
+            }
+        }
+    }
 }

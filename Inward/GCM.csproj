@@ -31,6 +31,8 @@
 
   <ItemGroup>
     <Compile Include="wwwroot\Dataset\dbStudentdetails.cs" />
+    <Compile Include="wwwroot\Dataset\IncomeReport.cs" />
+    <Compile Include="wwwroot\Dataset\IncomeReport.Designer.cs" />
     <Compile Include="wwwroot\Dataset\studentfeecollection.cs" />
     <Compile Include="wwwroot\Dataset\studentfeecollection.Designer.cs" />
     <Compile Include="wwwroot\Dataset\StudentInfo.cs" />
@@ -46,6 +48,8 @@
     <None Include="wwwroot\Dataset\dbStudentdetails.xss" />
     <None Include="wwwroot\Dataset\dtFeeCollectionDetail.xsc" />
     <None Include="wwwroot\Dataset\dtFeeCollectionDetail.xss" />
+    <None Include="wwwroot\Dataset\IncomeReport.xsc" />
+    <None Include="wwwroot\Dataset\IncomeReport.xss" />
     <None Include="wwwroot\Dataset\studentfeecollection.xsc" />
     <None Include="wwwroot\Dataset\studentfeecollection.xss" />
     <None Include="wwwroot\Dataset\StudentFeeDetailsReport.xsc" />
@@ -140,6 +144,17 @@
       <Generator>MSDataSetGenerator</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\Dataset\IncomeReport.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IncomeReport.xsd</DependentUpon>
+    </Content>
+    <Content Update="wwwroot\Dataset\IncomeReport.xsd">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <LastGenOutput>IncomeReport.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </Content>
     <Content Update="wwwroot\Dataset\studentfeecollection.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -165,6 +180,9 @@
     </Content>
     <Content Update="wwwroot\Reports\StudentDetailReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\Reports\IncomeReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\Reports\StudentFeeCollectionReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

@@ -34,5 +34,12 @@ namespace GCM.Services.Abstraction
         Task<List<SelectListItem>> BindSubhead();
         Task<List<SelectListItem>> BindCheques();
         Task<List<SelectListItem>> BindHeads();
+
+        Task<IEnumerable<ExpenseEntity>> GetIncomeData();
+
+        Task<ResponseMessage> AddIncome(ExpenseEntity ep);
+
+        Task<IEnumerable<IncomeReport>> GetIncomeReport(long ExpenseMasterId);
+
     }
 }

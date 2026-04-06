@@ -67,7 +67,10 @@ namespace Inward.Entity
 		public static string GetMenusByUserId = "GetMenusByUserId";
 		public static string GetStudentsByYearAndSemester = "GetStudentsByYearAndSemester";
 		public static string Report_studentsFeeMasterDetail_excel = "Report_studentsFeeMasterDetail_excel";
+        public static string GetIncomeData = "GetIncomeData";
+        public static string AddIncome = "AddIncome";
+        public static string GetIncomeReport = "GetIncomeReport ";
 
 
-	}
+    }
 }
