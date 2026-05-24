@@ -48,6 +48,19 @@
 									<div class="col-md-6">
 										<div class="form-horizontal form-bordered">
 											<div class="form-group row">
+												<label class="control-label col-md-3">Program :</label>
+												<div class="col-md-9 control-form">
+													<select asp-for="ProgramId" class="form-control select2" asp-items="@(new SelectList(ViewBag.ProgramList, "Value", "Text"))">
+														<option class="bi-option" value="">---Select Year---</option>
+													</select>
+													<span asp-validation-for="ProgramId" class="text-danger"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-horizontal form-bordered">
+											<div class="form-group row">
 												<label class="control-label col-md-3">Term:</label>
 												<div class="col-md-9 control-form">
 													<select multiple="multiple" asp-for="TermId" class="form-control select2 .select2-selection--multiple" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text"))" onchange="bindterm(this)">
@@ -134,7 +147,31 @@
 
 
 <script>
-
+	$('#ProgramId').on('change',function(){
+		var programId = $(this).val();
+		if(programId){
+			$.ajax({ 
+				url: '@Url.Action("GetTermsByProgramId", "FinancialYearTermWiseFee")',
+				type: 'GET',
+				data: { programId: programId },
+				success: function (data) {
+					var termSelect = $('#TermId');
+					termSelect.empty(); // Clear existing options
+					$.each(data, function (index, term) {
+						termSelect.append($('<option>', {
+							value: term.value,
+							text: term.text
+						}));
+					});
+				},
+				error: function () {
+					alert('Error retrieving terms. Please try again.');
+				}
+			});
+		}else{
+			$('#TermId').empty(); // Clear terms if no program is selected
+		}
+	})
 
 
 	// $('#TermId').select2({

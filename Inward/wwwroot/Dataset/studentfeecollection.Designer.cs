@@ -41,6 +41,8 @@ namespace GCM.wwwroot.Dataset {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [System.ObsoleteAttribute("This API supports obsolete formatter-based serialization. It should not be called" +
+            " or extended by application code.", DiagnosticId="SYSLIB0051")]
         protected studentfeecollection(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
@@ -307,6 +309,8 @@ namespace GCM.wwwroot.Dataset {
             
             private global::System.Data.DataColumn columngender;
             
+            private global::System.Data.DataColumn columnProgramName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public studentfeecollectionDataTable() {
@@ -335,6 +339,8 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [System.ObsoleteAttribute("This API supports obsolete formatter-based serialization. It should not be called" +
+                " or extended by application code.", DiagnosticId="SYSLIB0051")]
             protected studentfeecollectionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
@@ -454,6 +460,14 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ProgramNameColumn {
+                get {
+                    return this.columnProgramName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +503,7 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo, string ApplicationNo, string TermName, string RecieptNo, string CreatedDate, string TotalAmount, string gender) {
+            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo, string ApplicationNo, string TermName, string RecieptNo, string CreatedDate, string TotalAmount, string gender, string ProgramName) {
                 studentfeecollectionRow rowstudentfeecollectionRow = ((studentfeecollectionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         no,
@@ -505,7 +519,8 @@ namespace GCM.wwwroot.Dataset {
                         RecieptNo,
                         CreatedDate,
                         TotalAmount,
-                        gender};
+                        gender,
+                        ProgramName};
                 rowstudentfeecollectionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentfeecollectionRow);
                 return rowstudentfeecollectionRow;
@@ -542,6 +557,7 @@ namespace GCM.wwwroot.Dataset {
                 this.columnCreatedDate = base.Columns["CreatedDate"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columngender = base.Columns["gender"];
+                this.columnProgramName = base.Columns["ProgramName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +591,8 @@ namespace GCM.wwwroot.Dataset {
                 base.Columns.Add(this.columnTotalAmount);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
+                this.columnProgramName = new global::System.Data.DataColumn("ProgramName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProgramName);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_studentfeecollection");
                 this.ExtendedProperties.Add("Generator_UserTableName", "studentfeecollection");
             }
@@ -944,6 +962,22 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ProgramName {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudentfeecollection.ProgramNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProgramName\' in table \'studentfeecollection\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudentfeecollection.ProgramNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsnoNull() {
                 return this.IsNull(this.tablestudentfeecollection.noColumn);
             }
@@ -1108,6 +1142,18 @@ namespace GCM.wwwroot.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetgenderNull() {
                 this[this.tablestudentfeecollection.genderColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsProgramNameNull() {
+                return this.IsNull(this.tablestudentfeecollection.ProgramNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetProgramNameNull() {
+                this[this.tablestudentfeecollection.ProgramNameColumn] = global::System.Convert.DBNull;
             }
         }
         

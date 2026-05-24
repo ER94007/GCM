@@ -73,10 +73,14 @@
           <DataField>gender</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="ProgramName">
+          <DataField>ProgramName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>studentfeecollection</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Admin\Desktop\GCM\Inward\wwwroot\Dataset\studentfeecollection.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\GCM\Inward\wwwroot\Dataset\studentfeecollection.xsd</rd:SchemaPath>
         <rd:TableName>studentfeecollection</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -1737,7 +1741,26 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>B.A. Semester - </Value>
+                      <Value>=Fields!ProgramName.Value</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Semester - </Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1752,9 +1775,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.56056cm</Top>
+              <Top>1.43059cm</Top>
               <Left>3.24414cm</Left>
-              <Height>0.67056cm</Height>
+              <Height>1.12917cm</Height>
               <Width>5.35454cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
@@ -1906,43 +1929,11 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox43</rd:DefaultName>
-              <Top>2.55976cm</Top>
+              <Top>2.70087cm</Top>
               <Left>3.99965cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>7</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-            <Textbox Name="Textbox44">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Student Copy</Value>
-                      <Style>
-                        <FontWeight>Bold</FontWeight>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox43</rd:DefaultName>
-              <Top>2.55976cm</Top>
-              <Left>18.41133cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>8</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1982,7 +1973,7 @@
               <Left>9.00148cm</Left>
               <Height>0.6cm</Height>
               <Width>4.24625cm</Width>
-              <ZIndex>9</ZIndex>
+              <ZIndex>8</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2018,7 +2009,7 @@
               <Left>23.44844cm</Left>
               <Height>0.6cm</Height>
               <Width>4.24625cm</Width>
-              <ZIndex>10</ZIndex>
+              <ZIndex>9</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2031,6 +2022,17 @@
             </Textbox>
             <Line Name="Line1">
               <Left>13.70634cm</Left>
+              <Height>3.47726cm</Height>
+              <Width>0cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Line Name="Line4">
+              <Left>14.8075cm</Left>
               <Height>3.47726cm</Height>
               <Width>0cm</Width>
               <ZIndex>11</ZIndex>
@@ -2047,7 +2049,26 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>B.A. Semester - </Value>
+                      <Value>=Fields!ProgramName.Value</Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Semester - </Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -2062,9 +2083,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.56056cm</Top>
-              <Left>17.65582cm</Left>
-              <Height>0.67056cm</Height>
+              <Top>1.2542cm</Top>
+              <Left>17.25309cm</Left>
+              <Height>1.12917cm</Height>
               <Width>5.35454cm</Width>
               <ZIndex>12</ZIndex>
               <Style>
@@ -2077,17 +2098,38 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Line Name="Line4">
-              <Left>14.8075cm</Left>
-              <Height>3.47726cm</Height>
-              <Width>0cm</Width>
+            <Textbox Name="Textbox44">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Student Copy</Value>
+                      <Style>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox43</rd:DefaultName>
+              <Top>2.52448cm</Top>
+              <Left>18.0086cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
               <ZIndex>13</ZIndex>
               <Style>
                 <Border>
-                  <Style>Solid</Style>
+                  <Style>None</Style>
                 </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
-            </Line>
+            </Textbox>
           </ReportItems>
           <Style>
             <Border>

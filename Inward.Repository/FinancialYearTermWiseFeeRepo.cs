@@ -402,13 +402,14 @@ namespace GCM.Repository
                 throw;
             }
         }
-        public async Task<List<SelectListItem>> BindTerm()
+        public async Task<List<SelectListItem>> BindTerm(long programid)
         {
             try
             {
                 using (var conn = GetConnection())
                 {
                     var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@ProgramId", programid);
                     var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindTerm, queryParameters, commandType: CommandType.StoredProcedure);
                     var termList = res.Select(item => new SelectListItem
                     {
@@ -460,6 +461,28 @@ namespace GCM.Repository
                         Text = item.Text // Extract 'parametername'
                     }).ToList();
                     return subheadList;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public async Task<List<SelectListItem>> BindProgram()
+        {
+            try
+            {
+                using (var conn = GetConnection())
+                {
+                    var queryParameters = new DynamicParameters();
+                    var res = await conn.QueryAsync<dynamic>(StoreProcedures.BindProgram, queryParameters, commandType: CommandType.StoredProcedure);
+                    var yearList = res.Select(item => new SelectListItem
+                    {
+                        Value = Convert.ToString(item.Value),  // Extract 'parameterid'
+                        Text = item.Text // Extract 'parametername'
+                    }).ToList();
+                    return yearList;
                 }
             }
             catch (Exception)

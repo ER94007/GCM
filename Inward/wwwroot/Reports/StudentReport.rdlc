@@ -569,7 +569,7 @@
   <Width>7.17401in</Width>
   <Page>
     <PageHeader>
-      <Height>0.92055in</Height>
+      <Height>1.03694in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -590,7 +590,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.1667cm</Top>
+          <Top>0.635cm</Top>
           <Left>7.246cm</Left>
           <Height>0.6cm</Height>
           <Width>5.90783cm</Width>
@@ -644,6 +644,70 @@
           <Height>0.25in</Height>
           <Width>2.24034in</Width>
           <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Academic Year : </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Fields!academicyear.Value</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.55566in</Top>
+          <Left>1.97055in</Left>
+          <Height>0.25in</Height>
+          <Width>2.15972in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox4">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Fields!programname.Value</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox4</rd:DefaultName>
+          <Top>0.55566in</Top>
+          <Left>4.31201in</Left>
+          <Height>0.25in</Height>
+          <Width>2.02778in</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -726,14 +790,22 @@
           <DataField>applicationno</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="enrollmentno">
-          <DataField>enrollmentno</DataField>
+        <Field Name="enrolmentno">
+          <DataField>enrolmentno</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="programname">
+          <DataField>programname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="academicyear">
+          <DataField>academicyear</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dbStudentdetails</rd:DataSetName>
-        <rd:SchemaPath>D:\GCAS_GIT\Inward\wwwroot\Dataset\dbStudentdetails.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\GCM\Inward\wwwroot\Dataset\dbStudentdetails.xsd</rd:SchemaPath>
         <rd:TableName>dbStudentdetails</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

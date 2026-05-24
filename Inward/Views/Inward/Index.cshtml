@@ -79,6 +79,16 @@
 			<div class="col-md-4">
 				<!-- Inward No -->
 				<div class="form-group">
+					<label for="name">Enrolment Program</label>
+					<select asp-for="programid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.ProgramList, "Value", "Text", finid))"  required>
+						<option value="">---Select Program---</option>
+					</select>
+					<span asp-validation-for="programid" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<!-- Inward No -->
+				<div class="form-group">
 					<label for="name">Enrolment Semester</label>
 					<select id="semid" class="form-control" data-live-search="true" asp-items="@(new SelectList(ViewBag.TermList, "Value", "Text", finid))" onchange="bindterm()" required>
 						<option value="">---Select Enrolment Semester---</option>
@@ -363,6 +373,29 @@
 		// 		$('#fillDetailsForm').submit();
 		// 	}
 		// })
+		$('#programid').on('change',function(){
+			var programId = $(this).val();
+	if(programId) {
+		$.ajax({
+			url: '@Url.Action("GetTermsByProgramId", "FinancialYearTermWiseFee")', // Adjust the URL based on your controller
+			type: 'GET',
+			data: { programid: programId },
+			success: function(data) {
+				var termSelect = $('#semid');
+				termSelect.empty(); // Clear existing options
+				termSelect.append('<option value="">---Select Enrolment Semester---</option>'); // Add default option
+				$.each(data, function(index, term) {
+					termSelect.append('<option value="' + term.value + '">' + term.text + '</option>');
+				});
+			},
+			error: function() {
+				alert('Error fetching terms for the selected program.');
+			}
+		});
+	} else {
+		$('#semid').empty().append('<option value="">---Select Enrolment Semester---</option>'); // Reset if no program is selected
+	}
+		})
 		function validateacademicyear() {
 				validateacademicyear1();
 		var form = $('#fillDetailsForm');

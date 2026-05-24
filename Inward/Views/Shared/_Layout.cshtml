@@ -225,10 +225,108 @@
 
 	<!-- Site JS -->
 	<script src="~/js/site.js" asp-append-version="true"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 	<!-- Global DataTables Initialization -->
 	<script>
+				function exportEntireTableToExcel(tableId, filename = 'Export', excludeColumns = []) {
+			var table = $('#' + tableId);
+
+			if (table.length === 0) {
+				alert('Table not found!');
+				return;
+			}
+
+			var exportData = [];
+			var headers = [];
+
+			// Check if it's a DataTable
+			if ($.fn.DataTable.isDataTable('#' + tableId)) {
+				var dt = table.DataTable();
+
+				// Get headers (excluding specified columns)
+				var headerCells = dt.columns().header().toArray();
+				headerCells.forEach(function(cell, index) {
+					if (!excludeColumns.includes(index)) {
+						headers.push($(cell).text().trim());
+					}
+				});
+
+				// Get ALL rows data (not just current page)
+				var allData = dt.rows({ search: 'applied' }).data().toArray();
+
+				// Process each row
+				allData.forEach(function(rowData) {
+					var row = {};
+					var colIndex = 0;
+
+					for (var i = 0; i < rowData.length; i++) {
+						if (!excludeColumns.includes(i)) {
+							// Clean HTML tags and get text content
+							var cellValue = $('<div>').html(rowData[i]).text().trim();
+							row[headers[colIndex]] = cellValue;
+							colIndex++;
+						}
+					}
+					exportData.push(row);
+				});
+
+			} else {
+				// Regular table (non-DataTable)
+				// Get headers
+				table.find('thead tr th, thead tr td').each(function(index) {
+					if (!excludeColumns.includes(index)) {
+						headers.push($(this).text().trim());
+					}
+				});
+
+				// Get all rows from tbody
+				table.find('tbody tr').each(function() {
+					var row = {};
+					var colIndex = 0;
+
+					$(this).find('td, th').each(function(index) {
+						if (!excludeColumns.includes(index)) {
+							row[headers[colIndex]] = $(this).text().trim();
+							colIndex++;
+						}
+					});
+
+					exportData.push(row);
+				});
+			}
+
+			if (exportData.length === 0) {
+				alert('No data to export!');
+				return;
+			}
+
+			// Create worksheet
+			var ws = XLSX.utils.json_to_sheet(exportData);
+
+			// Create workbook
+			var wb = XLSX.utils.book_new();
+			XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+
+			// Download
+			var fullFilename = filename + '_' + getFormattedDate() + '.xlsx';
+			XLSX.writeFile(wb, fullFilename);
+
+			// Show success
+			alert('Exported ' + exportData.length + ' rows successfully!');
+		}
+
+		/**
+		 * Get formatted date for filename
+		 */
+		function getFormattedDate() {
+			var d = new Date();
+			var year = d.getFullYear();
+			var month = ('0' + (d.getMonth() + 1)).slice(-2);
+			var day = ('0' + d.getDate()).slice(-2);
+			return year + month + day;
+		}
 		$(document).ready(function () {
+		
 			$('.datatable').each(function () {
 				if (!$.fn.DataTable.isDataTable(this)) {
 					$(this).DataTable({

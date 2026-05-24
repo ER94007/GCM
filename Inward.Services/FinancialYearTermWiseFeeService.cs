@@ -92,13 +92,17 @@ namespace GCM.Services
         {
             return await _financialYearTermWiseFeeRepo.AddFinancialYearTermFee(financialYearTermWiseFeeEntity);
         }
+        public async Task<List<SelectListItem>> BindProgram()
+        {
+            return await _financialYearTermWiseFeeRepo.BindProgram();
+        }
         public async Task<List<SelectListItem>> BindYear()
         {
             return await _financialYearTermWiseFeeRepo.BindYear();
         }
-        public async Task<List<SelectListItem>> BindTerm()
+        public async Task<List<SelectListItem>> BindTerm(long programid)
         {
-            return await _financialYearTermWiseFeeRepo.BindTerm();
+            return await _financialYearTermWiseFeeRepo.BindTerm(programid);
         }
         public async Task<List<SelectListItem>> BindSubhead()
         {

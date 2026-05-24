@@ -132,6 +132,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="wwwroot\Dataset\dbStudentdetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dbStudentdetails.xsd</DependentUpon>
+    </Content>
     <Content Update="wwwroot\Dataset\dbStudentdetails.xsd">
       <SubType>Designer</SubType>
       <LastGenOutput>dbStudentdetails.Designer.cs</LastGenOutput>

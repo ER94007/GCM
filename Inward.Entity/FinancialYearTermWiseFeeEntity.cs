@@ -12,12 +12,14 @@ namespace GCM.Entity
     {
         public long FinancialYearWiseTermWiseFeeDetailid { get; set; }
         public long FinancialYearId {  get; set; }
+        public long ProgramId { get; set; }
         public long TermId { get; set; }
         public string SelectedTermIds { get; set; }
         public long SubHeadId { get; set; }
         public decimal malefee { get; set; }
         public decimal femalefee { get; set; }
         public string financialYear { get; set; }
+        public string programname { get; set; }
         public string termname { get; set; }
         public string subheadname { get; set; }
         public DataTable dt { get; set; }

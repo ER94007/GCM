@@ -29,7 +29,7 @@ namespace Inward.Services.Abstraction
         Task<List<SelectListItem>> BindCategory();
         Task<ResponseMessage> AddUpdateStudent(Student st);
         Task<IEnumerable<Student>> GetStudentList();
-        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId);
+        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId);
         Task<ResponseMessage> DeleteStudent(long studentid);
         Task<Student> GetStudentByid(long studentId);
 		Task<IEnumerable<HeadMasterEntity>> GetHeadList();
@@ -39,7 +39,7 @@ namespace Inward.Services.Abstraction
         Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate, string todate);
 		Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userId);
         Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId);
-        Task<DataTable> GetFCREXCEL();
+        Task<DataTable> GetFCREXCEL(long YearId, long ProgramId, long TermId);
 
     }
 }

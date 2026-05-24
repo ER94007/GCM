@@ -455,7 +455,7 @@ namespace Inward.Repository
 
 
 		}
-		public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId)
+		public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId)
 		{
 			try
 			{
@@ -463,7 +463,7 @@ namespace Inward.Repository
 				{
 					var queryParameters = new DynamicParameters();
 					queryParameters.Add("@YearId", YearId);
-					queryParameters.Add("@TermId", TermId);
+					queryParameters.Add("@ProgramId", ProgramId);
 
 					var res = await conn.QueryAsync<StudentFeeDetailReport>(StoreProcedures.GetStudentFeeDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
 					return res;
@@ -619,7 +619,7 @@ namespace Inward.Repository
             }
         }
 		        
-        public async Task<DataTable> GetFCREXCEL()
+        public async Task<DataTable> GetFCREXCEL(long YearId, long ProgramId, long TermId)
         {
             using (var conn = (DbConnection)GetConnection())
             {
@@ -630,10 +630,17 @@ namespace Inward.Repository
 
                 using (var cmd = conn.CreateCommand())
                 {
+                    var queryParameters = new DynamicParameters();
+                    queryParameters.Add("@YearId", YearId);
+                    queryParameters.Add("@ProgramId", ProgramId);
+                    queryParameters.Add("@TermId", TermId);
                     cmd.CommandText = StoreProcedures.Report_studentsFeeMasterDetail_excel;
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    using (var reader = await cmd.ExecuteReaderAsync())
+                    using (var reader = await conn.ExecuteReaderAsync(
+            StoreProcedures.Report_studentsFeeMasterDetail_excel,
+            queryParameters,
+            commandType: CommandType.StoredProcedure))
                     {
                         dt.Load(reader);
                     }

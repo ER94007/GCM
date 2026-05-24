@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<GCM.Entity.StudentFeeCollection>
 
 @{
+	Layout = "~/Views/Shared/_Layout.cshtml";
 	ViewData["Title"] = "ViewStudentFeeCollection";
 	var msg = TempData["SaveStatus"] as string;
 	//
@@ -24,6 +25,7 @@
 										<th>Sr.</th>
 										<th>Student</th>
 										<th>Financial Year</th>
+										<th>Program</th>
 										<th>Term</th>
 										<th>Reciept No</th>
 										<th>Fee Mode</th>
@@ -37,6 +39,7 @@
 											<td>@item.Index</td> @* Serial number instead of studentid *@
 											<td>@item.Data.Name</td>
 											<td>@item.Data.FinancialYear</td>
+											<td>@item.Data.ProgramName</td>
 											<td>@item.Data.TermName</td>
 											<td>@item.Data.RecieptNo</td>
 											<td>@item.Data.FeeModeDescription</td>
@@ -61,6 +64,9 @@
 							<i class="fas fa-list mr-1"></i>
 							Go to Add Mannual Form
 						</a>
+						<button onclick="exportTableToExcel('InwardList','StudentFeeCollection',[7])" class="btn btn-primary">
+							Export to Excel
+						</button>
 					</div>
 				</div>
 			</div>
@@ -79,9 +85,9 @@
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
 <script src="~/js/common.js"></script>
 <script src="~/assets/dist/js/sweetalert.js"></script>
-
 <script type="text/javascript">
 	$(document).ready(function () {
+	$('#InwardList').DataTable();
 		var msg = '@msg';
 		if (msg != null && msg != '') {
 			ShowDynamicSwalAlert("", msg);

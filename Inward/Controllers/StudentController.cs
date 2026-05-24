@@ -518,11 +518,11 @@ namespace GCM.Controllers
             return Json(new { success = true, data = yearlist });
         }
         [HttpGet]
-        public async Task<IActionResult> ExportStudentFeeDetailReport(int YearId, int TermId)
+        public async Task<IActionResult> ExportStudentFeeDetailReport(int YearId, int ProgramId)
         {
             try
             {
-                var students = await _userLoginService.GetStudentFeeDetailReport(YearId, TermId);
+                var students = await _userLoginService.GetStudentFeeDetailReport(YearId, ProgramId);
 
                 var report = new LocalReport();
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentDetailReport.rdlc");
@@ -666,9 +666,9 @@ namespace GCM.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> DownloadFcrExcel()
+        public async Task<IActionResult> DownloadFcrExcel(long YearId, long ProgramId, long TermId)
         {
-            DataTable dt = await _userLoginService.GetFCREXCEL();
+            DataTable dt = await _userLoginService.GetFCREXCEL(YearId, ProgramId, TermId);
 
             using var workbook = new XLWorkbook();
             var worksheet = workbook.Worksheets.Add("StudentFCR");
