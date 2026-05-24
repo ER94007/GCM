@@ -33,7 +33,8 @@ namespace GCM.Controllers
 				FinancialYearTermWiseFeeEntity ft = new FinancialYearTermWiseFeeEntity();
 				//ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-				ViewBag.TermList = _ifinancialYearTermWiseFee.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.ProgramList =  _ifinancialYearTermWiseFee.BindProgram().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _ifinancialYearTermWiseFee.BindTerm(ft.ProgramId).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				return View(ft);
 			}
@@ -79,8 +80,17 @@ namespace GCM.Controllers
 			}
 
 		}
-
-		public async Task<IActionResult> GetFinancialTermData()
+		public async Task<IActionResult> GetTermsByProgramId(string programid)
+        {
+            var termList = await _ifinancialYearTermWiseFee.BindTerm(Convert.ToInt64(programid));
+            return Json(termList);
+        }
+		public async Task<IActionResult> BindProgram()
+        {
+            var termList = await _ifinancialYearTermWiseFee.BindProgram();
+            return Json(new { success = true, data = termList });
+        }
+        public async Task<IActionResult> GetFinancialTermData()
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
@@ -97,10 +107,11 @@ namespace GCM.Controllers
 		{
 			if (User.FindFirst(ClaimTypes.NameIdentifier) != null)
 			{
-				ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-				ViewBag.TermList = _ifinancialYearTermWiseFee.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-				ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				var fn = await _ifinancialYearTermWiseFee.GetFinanceDataById(Convert.ToInt64(FinancialYearWiseTermWiseFeeDetailid));
+				ViewBag.YearList = _ifinancialYearTermWiseFee.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.ProgramList = _ifinancialYearTermWiseFee.BindProgram().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _ifinancialYearTermWiseFee.BindTerm(fn.ProgramId).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+				ViewBag.SubheadList = _ifinancialYearTermWiseFee.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				return View(fn);
 			}
 			else

@@ -30,7 +30,8 @@ namespace GCM.Services.Abstraction
         Task<IEnumerable<FinancialYearTermWiseFeeEntity>> GetFinanceData();
         Task<ResponseMessage> AddFinancialYearTermFee(FinancialYearTermWiseFeeEntity financialYearTermWiseFeeEntity);
         Task<List<SelectListItem>> BindYear();
-        Task<List<SelectListItem>> BindTerm();
+        Task<List<SelectListItem>> BindProgram();
+        Task<List<SelectListItem>> BindTerm(long programid);
         Task<List<SelectListItem>> BindSubhead();
         Task<List<SelectListItem>> BindCheques();
         Task<List<SelectListItem>> BindHeads();

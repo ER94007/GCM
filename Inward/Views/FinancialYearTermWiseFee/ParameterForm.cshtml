@@ -15,7 +15,7 @@
 										<div class="form-group row">
 											<label class="control-label col-md-3">Finance Year:</label>
 											<div class="col-md-9 control-form">
-												<select class="form-control select2" id="reportSelect" onchange="selectReport()">
+												<select class="form-control select2" id="reportSelect">
 													<option class="bi-option" value="">---Select Report---</option>
 													<option class="bi-option" value="1">Student Details</option>
 													<option class="bi-option" value="2">Student Fee Reciept Report</option>
@@ -23,7 +23,6 @@
 													<option class="bi-option" value="4">Verticle Ledger</option>
 													<option class="bi-option" value="5">FCR Exel</option>
 												</select>
-
 											</div>
 										</div>
 									</div>
@@ -31,14 +30,22 @@
 								<div class="col-md-4">
 									<div id="yearSelection" style="margin-top: 10px; display: none;">
 										<label for="yearSelect">Select Year:</label>
-										<select class="form-control" id="yearSelect" onchange="BindStudent(this.value)">
+										<select class="form-control" id="yearSelect">
 											<option value="">---Select Year---</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-md-4">
+									<div id="programSelection" style="margin-top: 10px; display: none;">
+										<label for="programSelect">Select Program:</label>
+										<select class="form-control" id="programSelect">
+											<option value="">---Select Program---</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-4">
 									<div id="studentSelection" style="margin-top: 10px; display: none;">
-										<label for="yearSelect">Select Student:</label>
+										<label for="studentSelect">Select Student:</label>
 										<select class="form-control" id="studentSelect">
 											<option value="">---Select Student---</option>
 										</select>
@@ -46,8 +53,8 @@
 								</div>
 								<div class="col-md-4">
 									<div id="termSelection" style="margin-top: 10px; display: none;">
-										<label for="yearSelect">Select Term:</label>
-										<select class="form-control" id="termSelect" onchange="callBtn()">
+										<label for="termSelect">Select Term:</label>
+										<select class="form-control" id="termSelect">
 											<option value="">---Select Term---</option>
 										</select>
 									</div>
@@ -66,7 +73,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="text-center" id="viewbtn"></div>
+							<div class="text-center" id="viewbtn">
+								<button class="btn btn-primary" onclick="exportStudent()">View</button>
+							</div>
 							<div class="text-center" id="btnDetailReport" style="margin-top: 10px; display: none;">
 								<button class="btn btn-primary" onclick="exportReport()">View</button>
 							</div>
@@ -83,204 +92,253 @@
 			</div>
 		</div>
 	</section>
-	<script>
-		function selectReport(){
-			var selectedopt = $('#reportSelect').val();
-			if(selectedopt == "1"){
-				$('#viewbtn').show();
-				 $('#btnFeecollectionReport').hide();
-				 $('#yearSelection').hide();
-				  $('#studentSelection').hide();
-				  $('#termSelection').hide();
-				  $('#fromdateSelection').hide();
-				  $('#todateSelection').hide();
-				  $('#btnDetailReport').hide();
+</div>
 
-				var list = '<a href="/Student/ExportStudentReport" class="btn btn-primary">View</a> ';
-				$('#viewbtn').html(list);
-				// window.location.href = '@Url.Action("ExportStudentReport", "Student")';
+<script>
+	$(document).ready(function() {
+		// Attach event handlers using jQuery
+		$('#reportSelect').on('change', selectReport);
+		$('#yearSelect').on('change', function() {
+			BindStudent($(this).val());
+		});
+		$('#programSelect').on('change', function() {
+			BindTerm($(this).val());
+		});
+		$('#termSelect').on('change', callBtn);
+	});
 
-			}
-			else if(selectedopt == "2"){
-				$('#viewbtn').show();
-				  $('#fromdateSelection').hide();
-				  $('#btnFeecollectionReport').hide();
-				  $('#todateSelection').hide();
-				  $('#btnDetailReport').hide();
-				  $('#yearSelection').show();
-				  BindYear();
+	function selectReport(){
+		var selectedopt = $('#reportSelect').val();
 
-			}
-			else if(selectedopt == "3"){
-				$('#viewbtn').hide();
-				$('#studentSelection').hide();
-				$('#btnFeecollectionReport').show();
-				  $('#fromdateSelection').hide();
-				  $('#todateSelection').hide();
-				  $('#btnDetailReport').hide();
-				  $('#yearSelection').show();
-				  BindYear();
-				  $('#termSelection').show();
-				BindTerm();
+		// Hide all sections first
+		$('#viewbtn').hide();
+		$('#btnFeecollectionReport').hide();
+		$('#btnDetailReport').hide();
+		$('#btnFCREXL').hide();
+		$('#yearSelection').hide();
+		$('#programSelection').hide();
+		$('#studentSelection').hide();
+		$('#termSelection').hide();
+		$('#fromdateSelection').hide();
+		$('#todateSelection').hide();
 
-			}
-			else if(selectedopt == "4"){
-				$('#viewbtn').hide();
-				$('#btnFeecollectionReport').hide();
-				  $('#yearSelection').hide();
-				  $('#studentSelection').hide();
-				  $('#termSelection').hide();
-				  $('#fromdateSelection').show();
-				  $('#todateSelection').show();
-				  $('#btnDetailReport').show();}
+		if(selectedopt == "1"){
+				$('#yearSelection').show();
+			$('#programSelection').show();
+			BindYear();
+			BindProgram();
+			$('#viewbtn').show();
 			
-		  else if(selectedopt == "5"){
-				$('#viewbtn').hide();
-				$('#btnFeecollectionReport').hide();
-				  $('#yearSelection').hide();
-				  $('#studentSelection').hide();
-				  $('#termSelection').hide();
-				  $('#fromdateSelection').hide();
-				  $('#todateSelection').hide();
-				  $('#btnDetailReport').hide();
-				  $('#btnFCREXL').show();
-
-
-
-			}
-			else{
-				alert("Please select a valid option.");
-			}
+			
 		}
+		else if(selectedopt == "2"){
+			$('#yearSelection').show();
+			BindYear();
+		}
+		else if(selectedopt == "3"){
+			$('#btnFeecollectionReport').show();
+			$('#yearSelection').show();
+			$('#programSelection').show();
+			BindYear();
+			BindProgram();
+		}
+		else if(selectedopt == "4"){
+			$('#fromdateSelection').show();
+			$('#todateSelection').show();
+			$('#btnDetailReport').show();
+		}
+		else if(selectedopt == "5"){
+				$('#yearSelection').show();
+			$('#programSelection').show();
+			BindYear();
+			BindProgram();
+			$('#btnFCREXL').show();
+		}
+		else{
+			alert("Please select a valid option.");
+		}
+	}
 
-		function BindYear(){
-			var selectedopt = $('#reportSelect').val();
-				$.ajax({
-				url: '/Student/BindYear',
-				type: 'GET',
-				success: function (response) {
-					if (response.success) {
-						var yearDropdown = $('#yearSelect');
-						yearDropdown.empty(); // Clear previous options
-						yearDropdown.append('<option value="">---Select Year---</option>');
+	function BindYear(){
+		var selectedopt = $('#reportSelect').val();
+		$.ajax({
+			url: '/Student/BindYear',
+			type: 'GET',
+			success: function (response) {
+				if (response.success) {
+					var yearDropdown = $('#yearSelect');
+					yearDropdown.empty();
+					yearDropdown.append('<option value="">---Select Year---</option>');
 
-						$.each(response.data, function (index, year) {
-							yearDropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
-				});
-				if(selectedopt==2){
-					$('#studentSelection').show();
-				}
-					} else {
-						alert("Error: " + response.message);
+					$.each(response.data, function (index, year) {
+						yearDropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
+					});
+
+					if(selectedopt == "2"){
+						$('#studentSelection').show();
+						$('#programSelection').show();
+						BindProgram();
 					}
-				},
-				error: function () {
-					alert("An error occurred while deleting the student.");
+				} else {
+					alert("Error: " + response.message);
 				}
-			});
-		}
-		function BindStudent(yearid){
-			$.ajax({
+			},
+			error: function () {
+				alert("An error occurred while loading years.");
+			}
+		});
+	}
+
+	function BindProgram(){
+		$.ajax({
+			url: '/FinancialYearTermWiseFee/BindProgram',
+			type: 'GET',
+			success: function (response) {
+				if (response) {
+					var programDropdown = $('#programSelect');
+					programDropdown.empty();
+					programDropdown.append('<option value="0">---All---</option>');
+
+					$.each(response.data, function (index, program) {
+						programDropdown.append('<option value="' + program.value + '">' + program.text + '</option>');
+					});
+				} else {
+					alert("Error: " + response.message);
+				}
+			},
+			error: function () {
+				alert("An error occurred while loading programs.");
+			}
+		});
+	}
+
+	function BindStudent(yearid){
+		if(!yearid) return;
+
+		$.ajax({
 			url: '/Student/BindStudents',
-			data:{yearid:yearid},
+			data: {yearid: yearid},
 			type: 'GET',
 			success: function (response) {
 				if (response.success) {
-					var studentdropdown = $('#studentSelect');
-						studentdropdown.empty(); // Clear previous options
-						studentdropdown.append('<option value="">---Select Student---</option>');
+					var studentDropdown = $('#studentSelect');
+					studentDropdown.empty();
+					studentDropdown.append('<option value="">---Select Student---</option>');
 
-						$.each(response.data, function (index, year) {
-							studentdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
-				});
-				$('#termSelection').show();
-				BindTerm();
+					$.each(response.data, function (index, student) {
+						studentDropdown.append('<option value="' + student.value + '">' + student.text + '</option>');
+					});
+					$('#termSelection').show();
+					BindTerm($('#programSelect').val());
 				} else {
 					alert("Error: " + response.message);
 				}
 			},
 			error: function () {
-				alert("An error occurred while deleting the student.");
+				alert("An error occurred while loading students.");
 			}
 		});
+	}
+
+	function BindTerm(programid){
+		if(!programid) {
+			var termDropdown = $('#termSelect');
+			termDropdown.empty();
+			termDropdown.append('<option value="">---Select Term---</option>');
+			return;
 		}
 
-		function BindTerm(){
-			$.ajax({
-			url: '/Student/BindTerm',
+		$.ajax({
+			url: '/FinancialYearTermWiseFee/GetTermsByProgramId',
+			data: {programid: programid},
 			type: 'GET',
 			success: function (response) {
-				if (response.success) {
-					var termdropdown = $('#termSelect');
-						termdropdown.empty(); // Clear previous options
-						termdropdown.append('<option value="">---Select Term---</option>');
+				if (response) {
+					var termDropdown = $('#termSelect');
+					termDropdown.empty();
+					termDropdown.append('<option value="0">---ALL---</option>');
 
-						$.each(response.data, function (index, year) {
-							termdropdown.append('<option value="' + year.value + '">' + year.text + '</option>');
-				});
+					$.each(response, function (index, term) {
+						termDropdown.append('<option value="' + term.value + '">' + term.text + '</option>');
+					});
 
-
+					$('#termSelection').show();
 				} else {
 					alert("Error: " + response.message);
 				}
 			},
 			error: function () {
-				alert("An error occurred while deleting the student.");
+				alert("An error occurred while loading terms.");
 			}
 		});
+	}
+
+	function callBtn(){
+		var yearid = $('#yearSelect').val();
+		var studentid = $('#studentSelect').val();
+		var termid = $('#termSelect').val();
+
+		if(!yearid || !studentid || !termid) return;
+
+		var url = '@Url.Action("ExportStudentFeeCollectionReport", "StudentFeeCollection")';
+		url += '?studentid=' + studentid + '&yearid=' + yearid + '&termid=' + termid;
+
+		var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';
+		$('#viewbtn').html(list);
+		$('#viewbtn').show();
+	}
+
+	function exportStudent(){
+		const year = document.getElementById('yearSelect').value;
+		const program = document.getElementById('programSelect').value;
+
+		if (!year || !program ) {
+			alert("Please select year, program");
+			return;
 		}
 
+		const url = `/Student/ExportStudentFeeDetailReport?YearId=${year}&ProgramId=${program}`;
+		var list = '<a href="/Student/ExportStudentFeeDetailReport?YearId=${year}&ProgramId=${program}" class="btn btn-primary">View</a> ';
+			$('#viewbtn').html(list);
+		window.open(url, '_blank');
+	}
+	function exportReport() {
+		const fromDate = document.getElementById('fromdate').value;
+		const toDate = document.getElementById('todate').value;
 
-		function callBtn(){
-			var yearid = $('#yearSelect').val();
-			var studentid = $('#studentSelect').val();
-			var termid = $('#termSelect').val();
-			   var url = '@Url.Action("ExportStudentFeeCollectionReport", "StudentFeeCollection")';
-						url += '?studentid=' + studentid +'&yearid=' + yearid +  '&termid=' + termid;
-
-						// Create the View button dynamically
-						var list = '<a href="' + url + '" class="btn btn-primary" target="_blank">View</a>';
-						$('#viewbtn').html(list);
+		if (!fromDate || !toDate) {
+			alert("Please select both From Date and To Date.");
+			return;
 		}
 
+		const url = `/StudentFeeCollection/ExportFeeCollectionDetailReport?fromdate=${fromDate}&todate=${toDate}`;
+		window.open(url, '_blank');
+	}
 
-		function exportReport() {
+	function exportFeecollectionReport() {
+		const year = document.getElementById('yearSelect').value;
+		const program = document.getElementById('programSelect').value;
+		const term = document.getElementById('termSelect').value;
 
-			const fromDate = document.getElementById('fromdate').value;
-			const toDate = document.getElementById('todate').value;
-
-			if (!fromDate || !toDate) {
-				alert("Please select both From Date and To Date.");
-				return;
-			}
-
-			const url = `/StudentFeeCollection/ExportFeeCollectionDetailReport?fromdate=${fromDate}&todate=${toDate}`;
-
-			// Opens the PDF in a new tab or triggers download depending on browser settings
-			window.open(url, '_blank');
+		if (!year || !program || !term) {
+			alert("Please select year, program, and term.");
+			return;
 		}
 
-		function exportFeecollectionReport() {
-			const year = document.getElementById('yearSelect').value;
-			const term = document.getElementById('termSelect').value;
+		const url = `/Student/ExportStudentFeeDetailReport?YearId=${year}&TermId=${term}`;
+		window.open(url, '_blank');
+	}
 
-			if (!year || !term) {
-				alert("Please select both year and term.");
-				return;
-			}
+	function exportfcrexl() {
+		const year = document.getElementById('yearSelect').value;
+		const program = document.getElementById('programSelect').value;
+		const term = document.getElementById('termSelect').value;
 
-			const url = `/Student/ExportStudentFeeDetailReport?YearId=${year}&TermId=${term}`;
-
-			// Opens the PDF in a new tab or triggers download depending on browser settings
-			window.open(url, '_blank');
+		if (!year || !program || !term) {
+			alert("Please select year, program, and term.");
+			return;
 		}
-		
-		function exportfcrexl() {
-			
-			const url = `/Student/DownloadFcrExcel`;
-
-			// Opens the PDF in a new tab or triggers download depending on browser settings
-			window.open(url, '_blank');
-		}
-
-	</script>
+		const url = `/Student/DownloadFcrExcel?YearId=${year}&ProgramId=${program}&TermId=${term}`;
+		window.open(url, '_blank');
+	}
+</script>

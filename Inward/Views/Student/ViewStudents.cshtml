@@ -12,8 +12,8 @@
     <a href="@Url.Action("ExportStudentDetailReport", "Student")" class="btn btn-primary">Export to PDF Details</a>
     <a href="@Url.Action("ViewStudents", "Student")" class="btn btn-info">Refresh Report Viewer</a>
 </p>
-
-<table class="table table-bordered table-responsive">
+<div class="">
+<table id="InwardList" class="table table-bordered table-responsive">
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.name)</th>
@@ -52,7 +52,7 @@
         }
     </tbody>
 </table>
-
+</div>
 @if (ViewBag.ReportHtml != null)
 {
     <hr />
@@ -61,3 +61,9 @@
         @Html.Raw(ViewBag.ReportHtml)
     </div>
 }
+<script type="text/javascript">
+    $(document).ready(function () {
+    $('#InwardList').DataTable();
+        
+    });
+</script>

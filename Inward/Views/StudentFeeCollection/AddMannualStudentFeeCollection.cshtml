@@ -54,6 +54,20 @@
 						</div>
 					</div>
 				</div>
+				<div class="col-md-6">
+					<div class="form-horizontal form-bordered">
+						<div class="form-group row">
+
+							<label class="control-label col-md-3">Program:</label>
+							<div class="col-md-9 control-form">
+								<select asp-for="ProgramId" class="form-control select2" asp-items="@(new SelectList(ViewBag.ProgramList, "Value", "Text"))">
+									<option class="bi-option" value="">---Select Program---</option>
+								</select>
+								<span asp-validation-for="ProgramId" class="text-danger"></span>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="col-md-6" style="margin-bottom: 25px;">
 					<div class="form-horizontal form-bordered">
 						<div class="form-group row">
@@ -140,6 +154,26 @@
 			if (msg != null && msg != '') {
 				ShowDynamicSwalAlert("", msg);
 			}
+		});
+			$('#ProgramId').on('change',function(){
+			var programId = $(this).val();
+
+			$.ajax({
+				url: '@Url.Action("GetTermsByProgramId", "FinancialYearTermWiseFee")',
+				type: 'GET',
+				data: { programid: programId },
+				success: function (terms) {
+					var termSelect = $('#TermId');
+					termSelect.empty();
+					termSelect.append('<option value="">---Select Term---</option>');
+					$.each(terms, function (index, term) {
+						termSelect.append('<option value="' + term.value + '">' + term.text + '</option>');
+					});
+				},
+				error: function () {
+					alert('Error fetching terms. Please try again.');
+				}
+			})
 		});
 	</script>
 }

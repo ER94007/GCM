@@ -21,6 +21,7 @@ namespace GCM.Controllers
 	public class StudentFeeCollectionController : Controller
 	{
 		private readonly IStudentFeeCollectionService _studentFeeCollectionService;
+		private readonly IFinancialYearTermWiseFeeService _ifinancialYearTermWiseFeeService;
 		private readonly ILoginService _userLoginService;
 		private readonly IConfiguration _config;
 		private readonly string _baseURL;
@@ -29,8 +30,9 @@ namespace GCM.Controllers
 		private readonly IWebHostEnvironment _env;
 
 		
-		public StudentFeeCollectionController(IStudentFeeCollectionService studentFeeCollectionService, ILoginService userLoginService, IConfiguration config, IWebHostEnvironment env)
+		public StudentFeeCollectionController(IFinancialYearTermWiseFeeService financialYearTermWiseFeeService, IStudentFeeCollectionService studentFeeCollectionService, ILoginService userLoginService, IConfiguration config, IWebHostEnvironment env)
 		{
+            _ifinancialYearTermWiseFeeService = financialYearTermWiseFeeService ?? throw new ArgumentNullException(nameof(financialYearTermWiseFeeService));
 			_studentFeeCollectionService = studentFeeCollectionService ?? throw new ArgumentNullException(nameof(studentFeeCollectionService));
 			_userLoginService = userLoginService ?? throw new ArgumentNullException(nameof(userLoginService));
 			_config = config; 
@@ -58,7 +60,8 @@ namespace GCM.Controllers
 			{
 				StudentFeeCollection sft = new StudentFeeCollection();
 				ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-				ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.ProgramList =  _ifinancialYearTermWiseFeeService.BindProgram().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _ifinancialYearTermWiseFeeService.BindTerm(sft.ProgramId).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
 				return View(sft);
 
@@ -76,7 +79,8 @@ namespace GCM.Controllers
             {
                 StudentFeeCollection sft = new StudentFeeCollection();
                 ViewBag.YearList = _studentFeeCollectionService.BindFinancialYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-                ViewBag.TermList = _studentFeeCollectionService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.ProgramList = _ifinancialYearTermWiseFeeService.BindProgram().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+                ViewBag.TermList = _ifinancialYearTermWiseFeeService.BindTerm(sft.ProgramId).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
                 ViewBag.SubheadList = _studentFeeCollectionService.BindSubhead().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
                 return View(sft);
 

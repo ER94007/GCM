@@ -12,6 +12,7 @@ namespace GCM.Entity
     {
         public long FinancialYearId { get; set; }
         public long TermId { get; set; }
+        public long ProgramId { get; set; }
         public long SubHeadId { get; set; }
         public string subheadname { get; set; }
         public long subheadid { get; set; }
@@ -21,6 +22,7 @@ namespace GCM.Entity
         public DataTable feesdetails { get; set; }
         public string FinancialYear { get; set; }
         public string Name { get; set; }
+        public string ProgramName { get; set; }
         public string TermName { get; set; }
         public string RecieptNo { get; set; } 
         public string FeeModeDescription { get; set; }

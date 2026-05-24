@@ -62,7 +62,8 @@ namespace Inward.Controllers
             ViewBag.GenderList = _userLoginService.BindGender().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             ViewBag.CategoryList = _userLoginService.BindCategory().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList(); ;
             ViewBag.YearList = _ifinancialYearTermWiseFeeService.BindYear().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
-            ViewBag.TermList = _ifinancialYearTermWiseFeeService.BindTerm().Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
+            ViewBag.ProgramList = await _ifinancialYearTermWiseFeeService.BindProgram();
+            ViewBag.TermList = _ifinancialYearTermWiseFeeService.BindTerm(student.programid).Result.Select(c => new SelectListItem() { Text = c.Text, Value = c.Value.ToString() }).ToList();
             
             return View(student);
         }

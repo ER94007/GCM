@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Inward.Entity.Student>
 @{
-	
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
@@ -16,11 +16,12 @@
 							<h3 class="card-title">List of Students</h3>
 						</div>
 						<div class="card-body">
-							<table id="InwardList" class="table table-bordered table-striped datatable">
+							<table id="InwardList" class="table table-bordered table-striped">
 								<thead>
 									<tr>
 										<th>Sr.</th>
 										<th>Financial Year.</th>
+										<th>Program</th>
 										<th>Name</th>
 										<th>Mobile No</th>
 										<th>Email</th>
@@ -39,6 +40,7 @@
 										<tr>
 											<td>@item.studentid</td>
 											<td>@item.FinancialYear</td>
+											<td>@item.programname</td>
 											<td>@item.name</td>
 											<td>@item.mobileno</td>
 											<td>@item.email</td>
@@ -89,9 +91,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-@* 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.7/css/jquery.dataTables.css">
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.7/js/jquery.dataTables.js"></script> *@
+
 <script src="~/assets/dist/js/sweetalert.js"></script>
 
 <script>

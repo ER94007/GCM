@@ -34,7 +34,7 @@ namespace Inward.Repository.Abstraction
         Task<InwardEntity> GetLastInwardNo();
         Task<List<FarmerEntity>> FillUnit(string gradeid);
 
-        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId);
+        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId);
 		Task<IEnumerable<HeadMasterEntity>> GetHeadList();
 
 		Task<ResponseMessage> Deletehead(long id);
@@ -43,7 +43,7 @@ namespace Inward.Repository.Abstraction
         Task<IEnumerable<FeeCollectionDetailReport>> GetFeeCollectionDetailReport(string fromdate,string todate);
 		Task<List<MenuViewModel>> GetMenusByUserIdAsync(int userid);
 		Task<IEnumerable<StudentUpdate>> GetStudentForUpdate(int YearId, int TermId);
-        Task<DataTable> GetFCREXCEL();
+        Task<DataTable> GetFCREXCEL(long YearId, long ProgramId, long TermId);
 
 
     }

@@ -70,6 +70,7 @@ namespace Inward.Entity
         public static string GetIncomeData = "GetIncomeData";
         public static string AddIncome = "AddIncome";
         public static string GetIncomeReport = "GetIncomeReport ";
+        public static string BindProgram = "BindProgram";
 
 
     }

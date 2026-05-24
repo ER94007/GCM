@@ -102,9 +102,9 @@ namespace Inward.Services
         {
             return await _LoginRepo.FillUnit(gradeId);
         }
-        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int TermId)
+        public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId)
         {
-            return await _LoginRepo.GetStudentFeeDetailReport(YearId, TermId);
+            return await _LoginRepo.GetStudentFeeDetailReport(YearId, ProgramId);
         }
         public async Task<IEnumerable<HeadMasterEntity>> GetHeadList()
         {
@@ -139,9 +139,9 @@ namespace Inward.Services
             return await _LoginRepo.GetStudentForUpdate(YearId, TermId);
         }
     
-        public async Task<DataTable> GetFCREXCEL()
+        public async Task<DataTable> GetFCREXCEL(long YearId , long ProgramId,long TermId)
         {
-            return await _LoginRepo.GetFCREXCEL();
+            return await _LoginRepo.GetFCREXCEL(YearId , ProgramId, TermId);
         }
 
     }
