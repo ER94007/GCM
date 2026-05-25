@@ -309,7 +309,7 @@ namespace GCM.wwwroot.Dataset {
             
             private global::System.Data.DataColumn columngender;
             
-            private global::System.Data.DataColumn columnProgramName;
+            private global::System.Data.DataColumn columnShortName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -460,9 +460,9 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ProgramNameColumn {
+            public global::System.Data.DataColumn ShortNameColumn {
                 get {
-                    return this.columnProgramName;
+                    return this.columnShortName;
                 }
             }
             
@@ -503,7 +503,7 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo, string ApplicationNo, string TermName, string RecieptNo, string CreatedDate, string TotalAmount, string gender, string ProgramName) {
+            public studentfeecollectionRow AddstudentfeecollectionRow(string no, string GovernmentFee, string GovAmount, string PrivateFee, string PrivAmount, string name, string GovernmentTotal, string EnrolmentNo, string ApplicationNo, string TermName, string RecieptNo, string CreatedDate, string TotalAmount, string gender, string ShortName) {
                 studentfeecollectionRow rowstudentfeecollectionRow = ((studentfeecollectionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         no,
@@ -520,7 +520,7 @@ namespace GCM.wwwroot.Dataset {
                         CreatedDate,
                         TotalAmount,
                         gender,
-                        ProgramName};
+                        ShortName};
                 rowstudentfeecollectionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentfeecollectionRow);
                 return rowstudentfeecollectionRow;
@@ -557,7 +557,7 @@ namespace GCM.wwwroot.Dataset {
                 this.columnCreatedDate = base.Columns["CreatedDate"];
                 this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columngender = base.Columns["gender"];
-                this.columnProgramName = base.Columns["ProgramName"];
+                this.columnShortName = base.Columns["ShortName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -591,8 +591,8 @@ namespace GCM.wwwroot.Dataset {
                 base.Columns.Add(this.columnTotalAmount);
                 this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngender);
-                this.columnProgramName = new global::System.Data.DataColumn("ProgramName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnProgramName);
+                this.columnShortName = new global::System.Data.DataColumn("ShortName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShortName);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_studentfeecollection");
                 this.ExtendedProperties.Add("Generator_UserTableName", "studentfeecollection");
             }
@@ -962,17 +962,17 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ProgramName {
+            public string ShortName {
                 get {
                     try {
-                        return ((string)(this[this.tablestudentfeecollection.ProgramNameColumn]));
+                        return ((string)(this[this.tablestudentfeecollection.ShortNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ProgramName\' in table \'studentfeecollection\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ShortName\' in table \'studentfeecollection\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablestudentfeecollection.ProgramNameColumn] = value;
+                    this[this.tablestudentfeecollection.ShortNameColumn] = value;
                 }
             }
             
@@ -1146,14 +1146,14 @@ namespace GCM.wwwroot.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsProgramNameNull() {
-                return this.IsNull(this.tablestudentfeecollection.ProgramNameColumn);
+            public bool IsShortNameNull() {
+                return this.IsNull(this.tablestudentfeecollection.ShortNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetProgramNameNull() {
-                this[this.tablestudentfeecollection.ProgramNameColumn] = global::System.Convert.DBNull;
+            public void SetShortNameNull() {
+                this[this.tablestudentfeecollection.ShortNameColumn] = global::System.Convert.DBNull;
             }
         }
         

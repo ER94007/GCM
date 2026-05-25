@@ -99,6 +99,7 @@ namespace Inward.Entity
         public string StudentName { get; set; }
         public string GenderName { get; set; }
         public string TermName { get; set; }
+        public string ProgramName { get; set; }
         public string SubHeadName { get; set; }
         public Int64 Amount { get; set; }
         public Int64 GovtTotal { get; set; }
