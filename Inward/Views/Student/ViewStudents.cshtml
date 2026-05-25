@@ -3,6 +3,27 @@
     Layout = null;
     ViewData["Title"] = "ViewStudents";
 }
+<style>
+
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    #InwardList {
+        width: 100% !important;
+        table-layout: fixed;
+    }
+
+        #InwardList th,
+        #InwardList td {
+            white-space: normal !important;
+            word-break: break-word;
+            font-size: 13px;
+            padding: 6px;
+        }
+
+</style>
 
 <h1>ViewStudents</h1>
 
@@ -12,9 +33,9 @@
     <a href="@Url.Action("ExportStudentDetailReport", "Student")" class="btn btn-primary">Export to PDF Details</a>
     <a href="@Url.Action("ViewStudents", "Student")" class="btn btn-info">Refresh Report Viewer</a>
 </p>
-<div class="">
-<table id="InwardList" class="table table-bordered table-responsive">
-    <thead>
+<div class="table-responsive">
+    <table id="InwardList" class="table table-bordered table-striped nowrap w-100">
+        <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.name)</th>
             <th>@Html.DisplayNameFor(model => model.mobileno)</th>
@@ -53,6 +74,8 @@
     </tbody>
 </table>
 </div>
+
+
 @if (ViewBag.ReportHtml != null)
 {
     <hr />
@@ -63,7 +86,10 @@
 }
 <script type="text/javascript">
     $(document).ready(function () {
-    $('#InwardList').DataTable();
+      $('#InwardList').DataTable({
+            scrollX: true,
+            autoWidth: false
+        });
         
     });
 </script>

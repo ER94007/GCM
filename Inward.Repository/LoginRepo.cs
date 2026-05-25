@@ -455,7 +455,7 @@ namespace Inward.Repository
 
 
 		}
-		public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId)
+		public async Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId, int TermId)
 		{
 			try
 			{
@@ -464,6 +464,7 @@ namespace Inward.Repository
 					var queryParameters = new DynamicParameters();
 					queryParameters.Add("@YearId", YearId);
 					queryParameters.Add("@ProgramId", ProgramId);
+					queryParameters.Add("@TermId", TermId);
 
 					var res = await conn.QueryAsync<StudentFeeDetailReport>(StoreProcedures.GetStudentFeeDetailReport, queryParameters, commandType: CommandType.StoredProcedure);
 					return res;
