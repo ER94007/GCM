@@ -14,6 +14,7 @@ namespace GCM.Entity
         public long TermId { get; set; }
         public long ProgramId { get; set; }
         public long SubHeadId { get; set; }
+        public string ShortName { get; set; }
         public string subheadname { get; set; }
         public long subheadid { get; set; }
         public string fees { get; set; }

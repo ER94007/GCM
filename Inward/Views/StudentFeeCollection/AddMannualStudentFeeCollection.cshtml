@@ -17,7 +17,7 @@
 
 <section class="content">
 	<div class="content-wrapper">
-		<form asp-action="AddStudentFeeCollection" method="post">
+		<form asp-action="AddStudentFeeCollection" method="post" id="feeForm">
 			<input type="hidden" name="TotalFees" id="hiddenTotalAmount">
 			<input type="hidden" id="hdnStudentID" asp-for="StudentId">
 			@Html.AntiForgeryToken()
@@ -139,7 +139,7 @@
 	</div>
 </section>
 
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 @* <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  *@
@@ -148,6 +148,27 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
 
 	<script>
+		$("#feeForm").submit(function (e) {
+
+			var financialYear = $("#FinancialYearId").val();
+			var termId = $("#TermId").val();
+
+			if (!financialYear) {
+				alert("Please select Financial Year.");
+				$("#FinancialYearId").focus();
+				e.preventDefault();
+				return false;
+			}
+
+			if (!termId) {
+				alert("Please select Term.");
+				$("#TermId").focus();
+				e.preventDefault();
+				return false;
+			}
+
+			return true;
+		});
 		$(document).ready(function () {
 			$("#showcontent").hide();
 			var msg = '@msg';
@@ -200,6 +221,8 @@
 									$("#hdnStudentID").val(student.studentid);
 									$("#studentDetails").show();
 									$("#showcontent").show();
+	$('#ProgramId').val(student.programid);
+									$('#ProgramId').trigger('change');
 								} else {
 									alert("Student not found.");
 									$("#studentDetails").hide();
