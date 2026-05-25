@@ -164,3 +164,25 @@ th,
 table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
     text-align: center !important;
 }
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#InwardList {
+    width: 100% !important;
+}
+
+    #InwardList th,
+    #InwardList td {
+        white-space: nowrap;
+    }
+
+.dataTables_wrapper {
+    width: 100%;
+}
+
+.dataTables_scrollBody {
+    overflow-x: auto !important;
+}

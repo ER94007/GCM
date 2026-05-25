@@ -518,18 +518,16 @@ namespace GCM.Controllers
             return Json(new { success = true, data = yearlist });
         }
         [HttpGet]
-        public async Task<IActionResult> ExportStudentFeeDetailReport(int YearId, int ProgramId)
+        public async Task<IActionResult> ExportStudentFeeDetailReport(int YearId, int ProgramId,int TermId)
         {
             try
             {
-                var students = await _userLoginService.GetStudentFeeDetailReport(YearId, ProgramId);
+                var students = await _userLoginService.GetStudentFeeDetailReport(YearId, ProgramId, TermId);
 
                 var report = new LocalReport();
                 var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Reports", "StudentDetailReport.rdlc");
                 report.ReportPath = path;
-
                 report.DataSources.Add(new ReportDataSource("Report_studentsFeeMasterDetail_Rutvik", students));
-
                 var result = report.Render("PDF", null, out var mimeType, out var encoding, out var filenameExtension, out var streams, out var warnings);
 
                 return File(result, "application/pdf", "FeeCollectionReport(FCR).pdf");

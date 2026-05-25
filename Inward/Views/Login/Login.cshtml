@@ -7,140 +7,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GCM | Log in</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GCM | Sign In</title>
+
     <link href="~/assets/dist/css/adminlte.min.css" rel="stylesheet" />
     <link href="~/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/dist/css/sweetalert.css" rel="stylesheet" />
     <link href="~/assets/dist/css/fontawesome-free/css/all.min.css" rel="stylesheet" />
-    <link href="~/css/login.css" rel="stylesheet" />
+
+    <!-- Google Fonts: Sora (display) + DM Sans (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 
     <style>
-        /* Add margin to body to avoid it being stuck at the top */
-        body {
-            margin-top: 20px; /* Adjust as needed */
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            margin-top: 40px; /* Adjusted margin for better spacing */
-        }
-
-        /* Input fields styling */
-        .form-control {
-            border-radius: 10px; /* Rounded corners */
-            padding: 12px 15px; /* Adequate padding */
-            font-size: 16px; /* Larger font size */
-            border: 1px solid #ccc; /* Light border */
-            box-shadow: none;
-            transition: border-color 0.3s ease-in-out;
-            position: relative;
-        }
-
-            .form-control:focus {
-                border-color: #007bff; /* Focus color */
-                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow effect */
+            *, *::before, *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
             }
 
-            .form-control::after {
-                content: '';
-                font-size: 20px;
+            :root {
+                --brand: #26215C;
+                --brand-mid: #534AB7;
+                --brand-light: #EEEDFE;
+                --brand-pale: #AFA9EC;
+                --accent: #1D9E75;
+                --accent-light: #9FE1CB;
+                --surface: #F7F6FF;
+                --white: #ffffff;
+                --text-primary: #1a1830;
+                --text-secondary: #6b6880;
+                --text-muted: #a09dba;
+                --border: rgba(83,74,183,0.15);
+                --border-hover: rgba(83,74,183,0.35);
+                --radius-sm: 8px;
+                --radius-md: 12px;
+                --radius-lg: 20px;
+                --font-display: 'Sora', sans-serif;
+                --font-body: 'DM Sans', sans-serif;
+            }
+
+            html, body {
+                height: 100%;
+                font-family: var(--font-body);
+                background: var(--surface);
+                color: var(--text-primary);
+            }
+
+            /* ── PAGE WRAPPER ── */
+            .gcm-page {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem 1rem;
+                background: var(--surface);
+            }
+
+            /* ── CARD ── */
+            .gcm-card {
+                display: flex;
+                width: 100%;
+                max-width: 900px;
+                min-height: 580px;
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                box-shadow: 0 24px 64px rgba(38,33,92,0.14), 0 2px 8px rgba(38,33,92,0.08);
+                animation: cardIn 0.5s cubic-bezier(0.22,1,0.36,1) both;
+            }
+
+            @@keyframes cardIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(24px) scale(0.98);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            /* ── LEFT PANEL ── */
+            .gcm-left {
+                width: 46%;
+                background: var(--brand);
+                padding: 2.5rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                overflow: hidden;
+            }
+
+                /* geometric decoration */
+                .gcm-left::before {
+                    content: '';
+                    position: absolute;
+                    top: -80px;
+                    right: -80px;
+                    width: 280px;
+                    height: 280px;
+                    border-radius: 50%;
+                    background: rgba(95,78,183,0.35);
+                }
+
+                .gcm-left::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -60px;
+                    left: -60px;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    background: rgba(29,158,117,0.22);
+                }
+
+            .geo-ring {
                 position: absolute;
-                right: 15px; /* Position the emoji at the end */
-                top: 50%;
-                transform: translateY(-50%);
+                border: 0.5px solid rgba(255,255,255,0.08);
+                border-radius: 50%;
             }
 
-        /* Username field emoji */
-        #UserName.form-control::after {
-            content: '🔑'; /* Key emoji */
-        }
-
-        /* Password field emoji */
-        #Password.form-control::after {
-            content: '🔒'; /* Lock emoji */
-        }
-
-        .text-center img {
-            margin-bottom: 20px; /* Adjust space below logo */
-        }
-
-        .btn {
-            background-color: #007bff; /* Blue color for the button */
-            color: white;
-            border-radius: 5px; /* Rounded corners */
-            padding: 10px 20px; /* Adequate padding */
-            font-size: 18px; /* Larger font size */
-            transition: background-color 0.3s ease-in-out;
-        }
-
-            .btn:hover {
-                background-color: #0056b3; /* Darker blue on hover */
+            .brand-zone {
+                position: relative;
+                z-index: 2;
             }
 
-        /* Adding spacing to the bottom of the page */
-        .card {
-            padding: 20px;
-        }
+            .brand-status {
+                display: inline-flex;
+                align-items: center;
+                gap: 7px;
+                background: rgba(255,255,255,0.1);
+                border: 0.5px solid rgba(255,255,255,0.18);
+                border-radius: 30px;
+                padding: 5px 14px;
+                margin-bottom: 1.5rem;
+            }
 
-        /* Error message styling */
-        .text-danger {
-            font-size: 14px; /* Slightly smaller font size for error messages */
-        }
+            .status-dot {
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                background: var(--accent-light);
+                box-shadow: 0 0 0 3px rgba(157,225,203,0.25);
+                animation: pulse 2.5s ease infinite;
+            }
+
+            @@keyframes pulse {
+                0%, 100% {
+                    box-shadow: 0 0 0 3px rgba(157,225,203,0.25);
+                }
+
+                50% {
+                    box-shadow: 0 0 0 6px rgba(157,225,203,0.1);
+                }
+            }
+
+            .status-text {
+                font-size: 11px;
+                letter-spacing: 0.5px;
+                color: rgba(255,255,255,0.75);
+                font-family: var(--font-body);
+            }
+
+            .brand-title {
+                font-family: var(--font-display);
+                font-size: 28px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 1.25;
+                margin-bottom: 0.75rem;
+            }
+
+            .brand-desc {
+                font-size: 13px;
+                color: rgba(255,255,255,0.5);
+                line-height: 1.7;
+                max-width: 220px;
+            }
+
+            /* stats */
+            .stats-zone {
+                position: relative;
+                z-index: 2;
+            }
+
+            .trust-row {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 1rem;
+            }
+
+            .trust-icon {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+                color: var(--accent-light);
+            }
+
+            .trust-text {
+                font-size: 12px;
+                color: rgba(255,255,255,0.45);
+            }
+
+            .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .stat-cell {
+                background: rgba(255,255,255,0.07);
+                border: 0.5px solid rgba(255,255,255,0.12);
+                border-radius: var(--radius-sm);
+                padding: 12px 10px;
+            }
+
+            .stat-num {
+                font-family: var(--font-display);
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 2px;
+            }
+
+            .stat-lbl {
+                font-size: 10px;
+                color: rgba(255,255,255,0.4);
+                letter-spacing: 0.3px;
+            }
+
+            /* ── RIGHT PANEL ── */
+            .gcm-right {
+                width: 54%;
+                background: var(--white);
+                padding: 2.75rem 2.25rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* welcome pill */
+            .welcome-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: var(--brand-light);
+                border-radius: 20px;
+                padding: 4px 12px;
+                margin-bottom: 14px;
+                width: fit-content;
+            }
+
+                .welcome-pill i {
+                    font-size: 12px;
+                    color: var(--brand-mid);
+                }
+
+                .welcome-pill span {
+                    font-size: 12px;
+                    font-weight: 500;
+                    color: #3C3489;
+                }
+
+            .form-title {
+                font-family: var(--font-display);
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--text-primary);
+                margin-bottom: 4px;
+            }
+
+            .form-sub {
+                font-size: 13px;
+                color: var(--text-secondary);
+                margin-bottom: 1.75rem;
+            }
+
+            /* ── FIELDS ── */
+            .field-block {
+                margin-bottom: 1rem;
+            }
+
+            .field-label {
+                display: block;
+                font-size: 12px;
+                font-weight: 500;
+                color: var(--text-secondary);
+                letter-spacing: 0.2px;
+                margin-bottom: 5px;
+            }
+
+            .field-wrap {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .field-icon {
+                position: absolute;
+                left: 11px;
+                font-size: 15px;
+                color: var(--text-muted);
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .gcm-input {
+                width: 100%;
+                padding: 10px 12px 10px 36px;
+                font-size: 14px;
+                font-family: var(--font-body);
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                background: #FAFAFA;
+                color: var(--text-primary);
+                outline: none;
+                transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+            }
+
+                .gcm-input::placeholder {
+                    color: var(--text-muted);
+                }
+
+                .gcm-input:hover {
+                    border-color: var(--border-hover);
+                }
+
+                .gcm-input:focus {
+                    border-color: var(--brand-mid);
+                    box-shadow: 0 0 0 3px rgba(83,74,183,0.12);
+                    background: #fff;
+                }
+
+                .gcm-input.input-error {
+                    border-color: #E24B4A;
+                    box-shadow: 0 0 0 3px rgba(226,75,74,0.1);
+                }
+
+            .pw-eye {
+                position: absolute;
+                right: 10px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: var(--text-muted);
+                font-size: 15px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                transition: color 0.15s;
+            }
+
+                .pw-eye:hover {
+                    color: var(--text-secondary);
+                }
+
+            /* validation spans from ASP.NET */
+            .field-block .text-danger {
+                display: block;
+                font-size: 11px;
+                color: #A32D2D;
+                margin-top: 4px;
+            }
+
+            /* ── REMEMBER / FORGOT ── */
+            .form-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1.25rem;
+            }
+
+            .remember-label {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 12px;
+                color: var(--text-secondary);
+                cursor: pointer;
+            }
+
+                .remember-label input[type="checkbox"] {
+                    accent-color: var(--brand-mid);
+                    width: 14px;
+                    height: 14px;
+                    cursor: pointer;
+                }
+
+            .forgot-link {
+                font-size: 12px;
+                color: var(--brand-mid);
+                text-decoration: none;
+                transition: color 0.15s;
+            }
+
+                .forgot-link:hover {
+                    color: var(--brand);
+                    text-decoration: underline;
+                }
+
+            /* ── SIGN-IN BUTTON ── */
+            .gcm-btn {
+                width: 100%;
+                padding: 11px 16px;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: var(--font-body);
+                color: #fff;
+                background: var(--brand-mid);
+                border: none;
+                border-radius: var(--radius-sm);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                transition: background 0.18s, transform 0.1s;
+                letter-spacing: 0.1px;
+                margin-bottom: 1rem;
+            }
+
+                .gcm-btn:hover {
+                    background: var(--brand);
+                }
+
+                .gcm-btn:active {
+                    transform: scale(0.985);
+                }
+
+                .gcm-btn:disabled {
+                    background: var(--brand-pale);
+                    cursor: not-allowed;
+                }
+
+            /* ── DIVIDER ── */
+            .divider {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 1rem;
+            }
+
+            .div-line {
+                flex: 1;
+                height: 1px;
+                background: var(--border);
+            }
+
+            .div-text {
+                font-size: 11px;
+                color: var(--text-muted);
+                white-space: nowrap;
+            }
+
+            /* ── SSO BUTTON ── */
+            .gcm-sso {
+                width: 100%;
+                padding: 10px 16px;
+                font-size: 13px;
+                font-family: var(--font-body);
+                color: var(--text-secondary);
+                background: #FAFAFA;
+                border: 1px solid var(--border);
+                border-radius: var(--radius-sm);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                transition: background 0.15s, border-color 0.15s, color 0.15s;
+            }
+
+                .gcm-sso:hover {
+                    background: var(--brand-light);
+                    border-color: var(--brand-mid);
+                    color: var(--brand);
+                }
+
+            /* ── FOOTER ── */
+            .form-foot {
+                text-align: center;
+                font-size: 11px;
+                color: var(--text-muted);
+                margin-top: 1.25rem;
+                padding-top: 1rem;
+                border-top: 1px solid var(--border);
+            }
+
+                .form-foot a {
+                    color: var(--brand-mid);
+                    text-decoration: none;
+                }
+
+                    .form-foot a:hover {
+                        text-decoration: underline;
+                    }
+
+            /* ── SPINNER ── */
+            @@keyframes spin {
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .spin {
+                animation: spin 0.75s linear infinite;
+                display: inline-block;
+            }
+
+            /* ── RESPONSIVE ── */
+            @@media (max-width: 640px) {
+                .gcm-card {
+                    flex-direction: column;
+                    max-width: 420px;
+                }
+
+                .gcm-left {
+                    width: 100%;
+                    padding: 1.75rem 1.5rem;
+                }
+
+                .gcm-right {
+                    width: 100%;
+                    padding: 2rem 1.5rem;
+                }
+
+                .brand-desc, .stats-zone .trust-row {
+                    display: none;
+                }
+
+                .stats-grid {
+                    grid-template-columns: repeat(3,1fr);
+                }
+            }
     </style>
 </head>
-<body class="hold-transition login-page" >
+<body class="hold-transition">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                
-                <div class="card my-5">
-                        
-                    <form asp-action="Login" asp-controller="Login" >
+    <div class="gcm-page">
+        <div class="gcm-card">
 
-                        <div class="text-center">
-                            <img src="~/images/college_logo_coloured.png" style="width:40%!important" />
-                        </div>
+            <!-- ═══════════ LEFT PANEL ═══════════ -->
+            <div class="gcm-left">
 
-                        <div class="mb-3">
-                            <input asp-for="UserName" type="text" class="form-control" id="UserName" placeholder="Enter your username">
-                            <span asp-validation-for="UserName" class="text-danger"></span>
-                        </div> 
+                <!-- decorative rings -->
+                <div class="geo-ring" style="width:320px;height:320px;top:-60px;right:-120px;"></div>
+                <div class="geo-ring" style="width:180px;height:180px;bottom:60px;left:-50px;"></div>
+                <div class="geo-ring" style="width:90px;height:90px;top:45%;right:20px;"></div>
 
-                        <div class="mb-3">
-                            <input asp-for="Password" type="password" class="form-control" id="Password" placeholder="Enter your Password">
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
-                        
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-color px-5 mb-5 w-100">Sign In</button>
-                        </div>
-                    </form>
+                <div class="brand-zone">
+                   
+                    <div class="brand-title">College<br>Management</div>
+                    <p class="brand-desc">Your unified portal for academics, administration, and campus operations.</p>
                 </div>
 
+               
             </div>
+
+            <!-- ═══════════ RIGHT PANEL ═══════════ -->
+            <div class="gcm-right">
+
+                <div class="welcome-pill">
+                    <i class="fas fa-star"></i>
+                    <span>Welcome back</span>
+                </div>
+
+                <div class="form-title">Sign in to your account</div>
+                <p class="form-sub">Enter your credentials to access the portal</p>
+
+                <form asp-action="Login" asp-controller="Login" autocomplete="off" novalidate>
+
+                    <!-- Username -->
+                    <div class="field-block">
+                        <label class="field-label" for="UserName">Username / Employee ID</label>
+                        <div class="field-wrap">
+                            <i class="fas fa-id-badge field-icon"></i>
+                            <input asp-for="UserName"
+                                   type="text"
+                                   class="gcm-input"
+                                   id="UserName"
+                                   placeholder="e.g. EMP00123 or admin"
+                                   autocomplete="username" />
+                        </div>
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="field-block">
+                        <label class="field-label" for="Password">Password</label>
+                        <div class="field-wrap">
+                            <i class="fas fa-lock field-icon"></i>
+                            <input asp-for="Password"
+                                   type="password"
+                                   class="gcm-input"
+                                   id="Password"
+                                   placeholder="Enter your password"
+                                   autocomplete="current-password" />
+                            <button type="button" class="pw-eye" id="pwToggle" aria-label="Toggle password visibility">
+                                <i class="fas fa-eye" id="pwIcon"></i>
+                            </button>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="gcm-btn" id="signInBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign in to portal
+                    </button>
+
+
+                    
+
+                </form>
+
+               
+             
+
+            </div>
+            <!-- /right -->
+
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="~/assets/plugins/jquery/jquery.min.js"></script>
     <script src="~/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/common.js"></script>
     <script src="~/assets/dist/js/sweetalert.js"></script>
 
     <script type="text/javascript">
+
+        /* ── SweetAlert for server-side messages (ViewBag) ── */
         $(document).ready(function () {
-            debugger;
-            var msg = '@Html.Raw(@ViewBag.Message)';
-            if (msg != null && msg != '') {
-                ShowDynamicSwalAlert("", msg);
-            }
+        var msg = '@Html.Raw(@ViewBag.Message)';
+        if (msg !== null && msg !== '') {
+        ShowDynamicSwalAlert("", msg);
+        }
         });
 
-        $("#UserName").change(function () {
-            $("#lblErrorMsg").text('');
+        /* ── Clear error label on username change ── */
+        $("#UserName").on("change input", function () {
+        $("#lblErrorMsg").text('');
+        $(this).removeClass("input-error");
         });
+
+        /* ── Password show / hide ── */
+        document.getElementById("pwToggle").addEventListener("click", function () {
+        var pw   = document.getElementById("Password");
+        var icon = document.getElementById("pwIcon");
+        var show = pw.type === "password";
+        pw.type  = show ? "text" : "password";
+        icon.className = show ? "fas fa-eye-slash" : "fas fa-eye";
+        });
+
+        /* ── Submit button loading state ── */
+        $("form").on("submit", function () {
+        var user = $("#UserName").val().trim();
+        var pass = $("#Password").val().trim();
+
+        if (!user) { $("#UserName").addClass("input-error"); }
+        if (!pass) { $("#Password").addClass("input-error"); }
+
+        if (user && pass) {
+        var btn = document.getElementById("signInBtn");
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fas fa-circle-notch spin"></i>&nbsp; Signing in…';
+        }
+        });
+
     </script>
+
 </body>
 </html>

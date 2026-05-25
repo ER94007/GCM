@@ -34,7 +34,7 @@ namespace Inward.Repository.Abstraction
         Task<InwardEntity> GetLastInwardNo();
         Task<List<FarmerEntity>> FillUnit(string gradeid);
 
-        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId);
+        Task<IEnumerable<StudentFeeDetailReport>> GetStudentFeeDetailReport(int YearId, int ProgramId, int TermId);
 		Task<IEnumerable<HeadMasterEntity>> GetHeadList();
 
 		Task<ResponseMessage> Deletehead(long id);
