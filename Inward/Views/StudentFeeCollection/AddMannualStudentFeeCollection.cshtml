@@ -14,7 +14,14 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-
+<style>
+	.readonly {
+    background-color: #f5f5f5;
+    pointer-events: none;
+    touch-action: none;
+    color: #555;
+}
+</style>
 <section class="content">
 	<div class="content-wrapper">
 		<form asp-action="AddStudentFeeCollection" method="post" id="feeForm">
@@ -60,7 +67,7 @@
 
 							<label class="control-label col-md-3">Program:</label>
 							<div class="col-md-9 control-form">
-								<select asp-for="ProgramId" class="form-control select2" asp-items="@(new SelectList(ViewBag.ProgramList, "Value", "Text"))">
+								<select asp-for="ProgramId" class="form-control select2 readonly" asp-items="@(new SelectList(ViewBag.ProgramList, "Value", "Text"))">
 									<option class="bi-option" value="">---Select Program---</option>
 								</select>
 								<span asp-validation-for="ProgramId" class="text-danger"></span>
